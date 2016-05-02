@@ -42,15 +42,16 @@ void allDigitOff()
 	
 void activeDigitN(unsigned int position)
 {
-	 
+   allDigitOff(); //so that the wrong number won't show!
    switch(position)
   {
-     case 0: P1_0=0;P1_1=1;P1_2=1;P1_3=1;break;
-     case 1: P1_1=0;P1_0=1;P1_2=1;P1_3=1;break;
-     case 2: P1_2=0;P1_0=1;P1_1=1;P1_3=1;break;
-     case 3: P1_3=0;P1_0=1;P1_1=1;P1_2=1;break;
+     case 0: P1_0=0; break;
+     case 1: P1_1=0; break;
+     case 2: P1_2=0; break;
+     case 3: P1_3=0; break;
    }
 }
+
 
 
 
@@ -168,10 +169,10 @@ void interruptInitForDisplayRefreshTimer()
 {
    PX0=1;  //external interrupt is high priority
    PT0=0;  //timer is low priority
-   TMOD = 0x0;
-   TH0 =  222;
-   TL0 = 0;
-   TR0 = 1;
+   TMOD = 0x1;
+    TH0 =  0xF0;
+   TL0 =  0x60;
+   TR0 = 1;    //start timer0
    ET0 = 1;            // Enable timer0 interrupt
    EA = 1;             // Enable all interrupts
    EX0=1;
@@ -181,9 +182,11 @@ void interruptInitForDisplayRefreshTimer()
 void timer0_refreshDisplay_interrupt(void) interrupt 1  //Timer 0 Interrupt
 {   
    static unsigned char digitIndex=0;
-   ET0=0;
-   TH0 = 222;
-   TL0 =  0;
+     
+    ET0=0;
+    TH0 =  0xF0;
+   TL0 =  0x60;
+   
    showDigitInPositionN(digitIndex, g_displayBuffer[digitIndex]);
    digitIndex++;
    if(digitIndex>=MAX_DIGITS_COUNT) 
@@ -237,8 +240,8 @@ void main ()
       int i=0;
       setDisplayBuffer(g_counter);
       g_counter++;
-
-      for(  i=0;i<30000;i++)
+  
+      for(  i=0;i<3000;i++)
       {;}
   } 
 }
