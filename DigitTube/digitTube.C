@@ -37,12 +37,12 @@ unsigned int g_counter=0;
 void allDigitOff()
 {
   P1_0=1;P1_1=1;P1_2=1;P1_3=1;
-
+   
 }
 	
 void activeDigitN(unsigned int position)
 {
-   allDigitOff(); //so that the wrong number won't show!
+  
    switch(position)
   {
      case 0: P1_0=0; break;
@@ -57,8 +57,9 @@ void activeDigitN(unsigned int position)
 
 void showDigitInPositionN(unsigned char position , unsigned char digit)
 {
-   activeDigitN(position);
+   allDigitOff(); //so that the wrong number won't show!
    P0 = DIG_CODE[digit];
+   activeDigitN(position);
 }
 
 
@@ -165,27 +166,62 @@ void testall0()
 }
   
  
+void counterIncrease(unsigned int increase)
+{
+   g_counter+=increase;
+   if(g_counter >=DigitMAX) 
+   {
+      g_counter=DigitMAX;
+      ; //keep the MAX number
+   }
+   setDisplayBuffer(g_counter);
+   return;
+}
+  
 void interruptInitForDisplayRefreshTimer()
 {
    PX0=1;  //external interrupt is high priority
    PT0=0;  //timer is low priority
-   TMOD = 0x1;
-    TH0 =  0xF0;
-   TL0 =  0x60;
+   // T1 = 0b1001  external    T0: 0b 0001  internal timer
+   TMOD = 0x50; //0b1001---0001  
+   //init T0 timer  
+   TH0 =  0x65;
+   TL0 =  0x00;
    TR0 = 1;    //start timer0
    ET0 = 1;            // Enable timer0 interrupt
+   PT0=0;  // this t0 timer has lower priority
+    
+   // init T1 ext interrupt
+   TH1 =  0xFF;
+   TL1 =  0xFF;
+   
    EA = 1;             // Enable all interrupts
+   TR1 = 1;    //start timer1
    EX0=1;
+   ET1 = 1;            // Enable timer1 interrupt
+   PT1=1;  // higher priority for external interrupt
+  
 }
 
  
+void externalInterrupt3(void) interrupt 3  //Timer 1 Interrupt
+{
+     
+   TH1 =  0xFF;
+   TL1 =  0xFF; 
+   counterIncrease(1 );
+   setDisplayBuffer(g_counter);
+   
+}
+
+     
 void timer0_refreshDisplay_interrupt(void) interrupt 1  //Timer 0 Interrupt
 {   
    static unsigned char digitIndex=0;
      
     ET0=0;
-    TH0 =  0xF0;
-   TL0 =  0x60;
+    TH0 =  0x65;
+    TL0 =  0x00;
    
    showDigitInPositionN(digitIndex, g_displayBuffer[digitIndex]);
    digitIndex++;
@@ -207,25 +243,7 @@ void resetDisplayBufferToZero()
 }
 
 
-void counterPlusPlus()
-{
-   g_counter++;
-   if(g_counter >=DigitMAX) 
-   {
-      return; //keep the MAX number
-   }
-   
-}
-  
-void externalInterrupt(void) interrupt 3  //Timer 1 Interrupt
-{
-   counterPlusPlus();
-   setDisplayBuffer(g_counter);
 
-}
-  
-  
-  
 void main ()
 {
   
@@ -234,14 +252,18 @@ void main ()
   interruptInitForDisplayRefreshTimer();
   g_counter = 0;
   
-
+  
    while(1)
   {
-      int i=0;
-      setDisplayBuffer(g_counter);
-      g_counter++;
-  
-      for(  i=0;i<3000;i++)
-      {;}
+      unsigned int i=0;
+      
+      for(  i=0;i<5000;i++)
+      {
+         int j=0;
+         for( j=0;j<4;j++)
+         {
+           ;
+         }
+      }
   } 
 }
