@@ -1,5 +1,5 @@
 
-// Module connection pins (Digital Pins)
+// Pins connect to arduino
 #define pin_CLK 2
 #define pin_DIO 3
 
@@ -21,7 +21,7 @@ const uint8_t digitToSegment[] = {
   0b01011110,    // d
   0b01111001,    // E
   0b01110001,    // F
-  0b11111111,    //8.
+  0b11111111,    //8.  with a dot
 };
 
 
