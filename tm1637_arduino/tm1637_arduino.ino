@@ -1,7 +1,11 @@
+#include <Keyboard.h>
+
 
 // Pins connect to arduino
 #define pin_CLK 2
 #define pin_DIO 3
+
+const bool debug = false;
 
 
 const uint8_t digitToSegment[] = {
@@ -37,43 +41,49 @@ uint8_t Command_Address_Command_Setting = 0b11000000; //0xc0
 uint8_t TM1637_Starting_Address = 0xc0;
 
 
-void myInit()
+
+void debugPrint(int i)
 {
-  pinMode(pin_CLK, OUTPUT);
-  pinMode(pin_DIO, OUTPUT);
-  digitalWrite(pin_CLK, LOW);
-  digitalWrite(pin_DIO, LOW);
-  delayCLKDIO();
+  if (debug)
+  {
+    Serial.print(i);
+  }
 
 }
 
+void debugPrint(char *str)
+{
+  if (debug)
+  {
+    Serial.print(str);
+  }
 
-
-
+}
 
 void delayCLKDIO( )
 {
-  delayMicroseconds(100);
+  //delayMicroseconds(30);
+  delayMicroseconds(5);
+
   //delay(1600);
 }
 
 void i2cStart()
 {
-  Serial.print("i2cStart begin\n");
-  //pinMode(pin_DIO, OUTPUT);
+  debugPrint("i2cStart begin\n");
   digitalWrite(pin_DIO, HIGH);
   delayCLKDIO();
 
   digitalWrite(pin_CLK, HIGH);
   delayCLKDIO();
   digitalWrite(pin_DIO, LOW);
-  Serial.print("i2cStart done\n");
+  debugPrint("i2cStart done\n");
 
 }
 
 void i2cStop()
 {
-  Serial.print("stop begin\n");
+  debugPrint("stop begin\n");
   digitalWrite(pin_CLK, LOW);
   delayCLKDIO();
   digitalWrite(pin_DIO, LOW);
@@ -82,27 +92,35 @@ void i2cStop()
   digitalWrite(pin_CLK, HIGH);
   delayCLKDIO();
   digitalWrite(pin_DIO, HIGH);
-  Serial.print("stop done\n");
+  debugPrint("stop done\n");
 
 }
 
 void i2cAck()
 {
-  Serial.print("ack begin\n");
+  debugPrint("ack begin\n");
+  //digitalWrite(LED_BUILTIN, LOW);
+
+  // pinMode(pin_DIO, INPUT );
+
   digitalWrite(pin_CLK, LOW);
   delayCLKDIO();
+
+
   unsigned char dio;
-  //pinMode(pin_DIO, INPUT);
+  bool on = true;
   do {
     //Serial.print("waiting DIO low\n");
-    
+
     dio = digitalRead(pin_DIO);
   } while (dio);
-  
+
   digitalWrite(pin_CLK, HIGH);
   delayCLKDIO();
   digitalWrite(pin_CLK, LOW);
-  Serial.print("ack end\n");
+  //digitalWrite(LED_BUILTIN, HIGH);
+
+  debugPrint("ack end\n");
 }
 
 
@@ -112,21 +130,16 @@ void i2cWriteByte(unsigned char oneByte)
   unsigned char i = 0;
   const int BitsPerByte = 8; //always 8, dont' change it
 
-  Serial.print("write byte begin\n");
+  debugPrint("write byte begin\n");
   for (i = 0; i < BitsPerByte; i++)
   {
-    Serial.print("for in writeByte ");
-    Serial.print(i); Serial.print("\n");
+    debugPrint("for in writeByte ");
+    debugPrint(i); debugPrint("\n");
 
     digitalWrite(pin_CLK, LOW);
     delayCLKDIO();
-    digitalWrite(pin_DIO, oneByte & 0x01? HIGH:LOW);
-    /*if (oneByte & 0x01)
-    {
-      digitalWrite(pin_DIO, HIGH);
-    } else {
-      digitalWrite(pin_DIO, LOW );
-    }*/
+    digitalWrite(pin_DIO, oneByte & 0x01 );
+
 
     delayCLKDIO();
     oneByte = oneByte >> 1;
@@ -134,7 +147,7 @@ void i2cWriteByte(unsigned char oneByte)
     delayCLKDIO();
 
   }
-  Serial.print("write byte done\n");
+  debugPrint("write byte done\n");
 }
 
 void showOneDigit()
@@ -157,7 +170,7 @@ void showNumber(int num)
 
 void myAPITest()
 {
-  Serial.print("my test begin\n");
+  debugPrint("my test begin\n");
   i2cStart();
   i2cWriteByte(Command_Data_Setting_Write_Data_To_Display_Register); //0x40
   i2cAck();
@@ -166,44 +179,91 @@ void myAPITest()
 
 
   i2cWriteByte(TM1637_Starting_Address); //starting address
-  Serial.print("write starting addr 0xC0 done\n");
+  debugPrint("write starting addr 0xC0 done\n");
   i2cAck();
   int i;
   for (i = 0; i < 4; i++)
   {
-    Serial.print("for in apiTest: ");
-    Serial.print(i);
-    Serial.print("\n");
+    debugPrint("for in apiTest: ");
+    debugPrint(i);
+    debugPrint("\n");
 
-    i2cWriteByte( 0b10000001);
+    i2cWriteByte( 0b11111111);
     i2cAck();
   }
   i2cStop();
+  //digitalWrite(LED_BUILTIN, LOW);
 
-  Serial.print("for is done\n");
+  debugPrint("for is done\n");
   i2cStart();
   i2cWriteByte( 0x8f);
   i2cAck();
   i2cStop();
 
-  Serial.print("my test done\n");
+  debugPrint("my test done\n");
+
+}
+
+
+void clearAll()
+{
+  i2cStart();
+  i2cWriteByte(Command_Data_Setting_Write_Data_To_Display_Register); //0x40
+  i2cAck();
+  i2cStop();
+  i2cStart();
+
+
+  i2cWriteByte(TM1637_Starting_Address); //starting address
+  debugPrint("write starting addr 0xC0 done\n");
+  i2cAck();
+  int i;
+  for (i = 0; i < 6; i++)
+  {
+    debugPrint("clearAll for");
+    debugPrint(i);
+    debugPrint("\n");
+
+    i2cWriteByte( 0);
+    i2cAck();
+  }
+  i2cStop();
+  debugPrint("clearAll done");
+  delay(1000);
+
+}
+
+
+
+void myInit()
+{
+  pinMode(pin_CLK, OUTPUT);
+  pinMode(pin_DIO, OUTPUT );
+  digitalWrite(pin_CLK, LOW);
+  digitalWrite(pin_DIO, LOW);
+  delayCLKDIO();
 
 }
 
 
 void setup()
 {
-  Serial.begin(9600);      // open the serial port at 9600 bps:
-  myInit();
-  Serial.print("setup done\n");
-  myAPITest();
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);
 
+  Serial.begin(9600);      // open the serial port at 9600 bps:
+
+  myInit();
+  debugPrint("setup done\n");
+  clearAll();
+  myAPITest();
+  digitalWrite(LED_BUILTIN, HIGH);
 
 }
 
 void loop()
 {
-  
+
   delay(1000);
 
 }
