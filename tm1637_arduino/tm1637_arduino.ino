@@ -1,31 +1,12 @@
-
-/*===========================================================
-  Hardware connection
-   digitube A, on the right, it's a 4 digits seven-segement tube.
-   digitube B, on the Left, it's a 2 digits seven-segement tube.
-   digitube B is placed on the left of digitube A.
-   digitube B could be absent, so the system can only display 4 digits (ie. 3456)
-   If digitube B is installed, then the system can display 6 digits (ie. 123456)
-
-     TM1637 Pin15(Grid1) connect digitube A, From Left to Right, the 4th digit
-     TM1637 Pin14(Grid2) connect digitube A, From Left to Right, the 3rd digit
-     TM1637 Pin13(Grid3) connect digitube A, From Left to Right, the 2nd digit
-     TM1637 Pin12(Grid4) connect digitube A, From Left to Right, the 1st digit
-     TM1637 Pin11(Grid5) connect digitube B, From Left to Right, the 2nd digit
-     TM1637 Pin10(Grid6) connect digitube B, From Left to Right, the 1st digit
-
-   Connect wires like this, can make the PCB trace design easier.
-
-  If frozen, try to add two 100pf capacitors for CLK and DIO wires as the TM1637 datasheet suggests, or use shorter wires.
-
-  //===========================================================*/
+#include "TM1637_Arduino_Chris.hpp"
 // Pins connect to arduino
 // if use arduino RX, TX (0,1), no pull up resistor is needed, other pins, need pull up resistor for each.
 #define pin_CLK 2
 #define pin_DIO 12
 // if frozen, try to add two 100pf capacitors for each wire
 
-const bool debug = true;
+const bool debugLowLevel = false;
+const bool debugHighLevel = false;
 
 // TM1637 supports 6 digit-seven-segments display, but you will probably just use a 4 digit tube
 const uint8_t MaxDigitCount = 6;
@@ -51,10 +32,11 @@ const uint8_t DigitBitmaps[] = {
   0b01011110,    // d
   0b01111001,    // E
   0b01110001,    // F
+  0b10000000,    // dot
+  0b00000000     // empty bitmap
 };
-const uint8_t DotBitmap = 0b10000000;
-const uint8_t EmptyBitmap = 0b00000000;
-
+const uint8_t Index_Dot_Bitmap = 16;
+const uint8_t Index_Empty_Bitmap = 17;
 
 
 
@@ -69,18 +51,36 @@ uint8_t TM1637_Starting_Address = 0xc0;
 
 
 
-void debugPrint(int i)
+
+
+void debugHighLevelPrint(int i)
 {
-  if (debug)
+  if (debugHighLevel)
+  {
+    Serial.print(i);
+  }
+}
+
+
+void debugHighLevelPrint(char * str)
+{
+  if (debugHighLevel)
+  {
+    Serial.print(str);
+  }
+}
+void debugLowLevelPrint(int i)
+{
+  if (debugLowLevel)
   {
     Serial.print(i);
   }
 
 }
 
-void debugPrint(char *str)
+void debugLowLevelPrint(char *str)
 {
-  if (debug)
+  if (debugLowLevel)
   {
     Serial.print(str);
   }
@@ -97,20 +97,20 @@ void delayCLKDIO( )
 
 void i2cStart()
 {
-  debugPrint("i2cStart begin\n");
+  debugLowLevelPrint("i2cStart begin\n");
   digitalWrite(pin_DIO, HIGH);
   delayCLKDIO();
 
   digitalWrite(pin_CLK, HIGH);
   delayCLKDIO();
   digitalWrite(pin_DIO, LOW);
-  debugPrint("i2cStart done\n");
+  debugLowLevelPrint("i2cStart done\n");
 
 }
 
 void i2cStop()
 {
-  debugPrint("stop begin\n");
+  debugLowLevelPrint("stop begin\n");
   digitalWrite(pin_CLK, LOW);
   delayCLKDIO();
   digitalWrite(pin_DIO, LOW);
@@ -119,13 +119,13 @@ void i2cStop()
   digitalWrite(pin_CLK, HIGH);
   delayCLKDIO();
   digitalWrite(pin_DIO, HIGH);
-  debugPrint("stop done\n");
+  debugLowLevelPrint("stop done\n");
 
 }
 
 void i2cAck()
 {
-  debugPrint("ack begin\n");
+  debugLowLevelPrint("ack begin\n");
   //digitalWrite(LED_BUILTIN, LOW);
 
   digitalWrite(pin_CLK, LOW);
@@ -143,7 +143,7 @@ void i2cAck()
   digitalWrite(pin_CLK, LOW);
   //digitalWrite(LED_BUILTIN, HIGH);
   //now DIO should be released by TM1637
-  debugPrint("ack end\n");
+  debugLowLevelPrint("ack end\n");
 }
 
 
@@ -152,11 +152,11 @@ void i2cWriteByte(unsigned char oneByte)
   const uint8_t BitsPerByte = 8; //always 8, dont' change it
   uint8_t i = 0;
 
-  debugPrint("write byte begin\n");
+  debugLowLevelPrint("write byte begin\n");
   for (i = 0; i < BitsPerByte; i++)
   {
-    debugPrint("for in writeByte ");
-    debugPrint(i); debugPrint("\n");
+    debugLowLevelPrint("for in writeByte ");
+    debugLowLevelPrint(i); debugLowLevelPrint("\n");
 
     digitalWrite(pin_CLK, LOW);
     delayCLKDIO();
@@ -169,7 +169,7 @@ void i2cWriteByte(unsigned char oneByte)
     delayCLKDIO();
 
   }
-  debugPrint("write byte done\n");
+  debugLowLevelPrint("write byte done\n");
 }
 
 
@@ -177,10 +177,10 @@ void i2cWriteByte(unsigned char oneByte)
 
 void setDisplayBuffer(uint8_t * indexArray_p, uint8_t digitCount = MaxDigitCount )
 {
-  debugPrint("my test begin\n");
+
   if (!indexArray_p)
   {
-    debugPrint("null pointer for indexArray\n");
+    debugHighLevelPrint("null pointer for indexArray\n");
     return;
   }
   if (digitCount >= MaxDigitCount)
@@ -196,55 +196,36 @@ void setDisplayBuffer(uint8_t * indexArray_p, uint8_t digitCount = MaxDigitCount
 
 
   i2cWriteByte(TM1637_Starting_Address); //starting address
-  debugPrint("write starting addr 0xC0 done\n");
+  debugLowLevelPrint("write starting addr 0xC0 done\n");
   i2cAck();
   int i;
-  
+
   //showing digit from the back so the 1st digit is always need to show
   bool isLeadingZero = true;
   for (i = 0 ; i < MaxDigitCount; i++)
   {
-    debugPrint("for in apiTest: ");
-    debugPrint(i);
-    debugPrint(" : ");
+    debugHighLevelPrint("for in setDisplayBuffer: ");
+    debugHighLevelPrint(i);
+    debugHighLevelPrint(" : ");
     uint8_t digit = indexArray_p[i];
-    debugPrint(digit);
-    debugPrint("\n");
-    if (digit != 0)
-    {
-      isLeadingZero = false;
-      i2cWriteByte( DigitBitmaps[digit]  );
+    debugHighLevelPrint(digit);
+    debugHighLevelPrint("\n");
 
-    } else
-    {
-      if (!showLeadingZero)
-      {
-        if ( isLeadingZero ) {
-          i2cWriteByte( EmptyBitmap );
-        }
-        else {
-          i2cWriteByte( DigitBitmaps[0]  );
-        };
-      } else
-      {
-        i2cWriteByte( DigitBitmaps[ 0]  );
+    i2cWriteByte(  DigitBitmaps[digit ]  );
 
-      }
-
-    }
     i2cAck();
   }
 
   i2cStop();
   //digitalWrite(LED_BUILTIN, LOW);
 
-  debugPrint("for is done\n");
+  debugLowLevelPrint("for is done\n");
   i2cStart();
   i2cWriteByte( 0x8f);
   i2cAck();
   i2cStop();
 
-  debugPrint("my test done\n");
+  debugLowLevelPrint("setDisplayBuffer\n");
 
 }
 
@@ -253,54 +234,54 @@ void setDisplayBuffer(uint8_t * indexArray_p, uint8_t digitCount = MaxDigitCount
 void showNumber(unsigned long num)
 {
   uint8_t i;
-  unsigned int divide = 10;
+  const unsigned int Ten = 10;
   bool isLeadingZero = true;
+  //clear the previous index buffer
+  memset(bitmapIndexArray, 0, MaxDigitCount );
   for (i = 0; i < MaxDigitCount; i++)
   {
-    uint8_t digit = num % divide;
+    uint8_t digit = num % Ten;
     bitmapIndexArray[i] = digit;
-    num = num / divide;
+    num = num / Ten;
+    if (num == 0)
+    {
+      break;
+    }
   }
-  setDisplayBuffer(bitmapIndexArray, MaxDigitCount);
 
-}
-
-
-void myAPITest()
-{
-  debugPrint("my test begin\n");
-  i2cStart();
-  i2cWriteByte(Command_Data_Setting_Write_Data_To_Display_Register); //0x40
-  i2cAck();
-  i2cStop();
-  i2cStart();
-
-
-  i2cWriteByte(TM1637_Starting_Address); //starting address
-  debugPrint("write starting addr 0xC0 done\n");
-  i2cAck();
-  int i;
-  for (i = 0; i < 4; i++)
+  for (i = 0; i < MaxDigitCount; i++)
   {
-    debugPrint("for in apiTest: ");
-    debugPrint(i);
-    debugPrint("\n");
-
-    i2cWriteByte( 0b11111111);
-    i2cAck();
+    debugHighLevelPrint( bitmapIndexArray[i]);
+    debugHighLevelPrint(",");
   }
-  i2cStop();
-  //digitalWrite(LED_BUILTIN, LOW);
+  debugHighLevelPrint("\n");
 
-  debugPrint("for is done\n");
-  i2cStart();
-  i2cWriteByte( 0x8f);
-  i2cAck();
-  i2cStop();
 
-  debugPrint("my test done\n");
+  if ( !showLeadingZero)
+  { //now deal with leading zero
+    for (i = MaxDigitCount - 1; i >= 0; i--)
+    {
+      debugHighLevelPrint("bitmapIndexArray[i]: ");
+      debugHighLevelPrint(bitmapIndexArray[i]);
+      debugHighLevelPrint("\n");
+      if (bitmapIndexArray[i] == 0)
+      {
+        //this is a leading zero, so use empty bitmap index instead of 0 bitmap index
+        debugHighLevelPrint("replacing 0 to empty\n");
+        bitmapIndexArray[i] = Index_Empty_Bitmap;
+      } else
+      {
+        //stop processing leading zero once we meet the first non-zero number
+        break;
+      }
+    }
+  }
+
+  setDisplayBuffer(bitmapIndexArray);
 
 }
+
+
 
 
 void clearAll()
@@ -313,20 +294,16 @@ void clearAll()
 
 
   i2cWriteByte(TM1637_Starting_Address); //starting address
-  debugPrint("write starting addr 0xC0 done\n");
+  debugHighLevelPrint("write starting addr 0xC0 done\n");
   i2cAck();
   int i;
   for (i = 0; i < 6; i++)
   {
-    debugPrint("clearAll for");
-    debugPrint(i);
-    debugPrint("\n");
-
     i2cWriteByte(0);
     i2cAck();
   }
   i2cStop();
-  debugPrint("clearAll done\n");
+  debugHighLevelPrint("clearAll done\n");
   delay(300);
 
 }
@@ -349,26 +326,26 @@ void setup()
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW);
 
-  if (debug) {
+  if (debugLowLevel || debugHighLevel) {
     Serial.begin(9600);      // open the serial port at 9600 bps:
   }
 
   myInit();
-  debugPrint("setup done\n");
+  debugHighLevelPrint("setup done\n");
   clearAll();
 
   //setDisplayBuffer(bitmapIndexArray, 4);
 
-
-  showNumber(9);
-  delay(1000);
+  showNumber(7890);
+  delay(300);
+  showNumber(20);
+  delay(300);
 
 
   /*
-  clearAll();
+    clearAll();
 
-  showNumber(890);
-  delay(1000);
+
 
 
 
@@ -390,7 +367,12 @@ void setup()
 
 void loop()
 {
+  TM1637_Arduino_Chris myTM1637(pin_CLK, pin_DIO);
 
-  delay(1000);
+
+  static unsigned long i = 0;
+  i++;
+  showNumber(i);
+  delay(80);
 
 }
