@@ -77,8 +77,7 @@ void MyI2CDriver::i2cWaitForAck()
   i2cDelayMicroSecond();
   //The 9th clock low
   digitalWrite(m_pin_Clk, LOW);
-  //digitalWrite(LED_BUILTIN, HIGH);
-  //now DIO should be released by TM1637
+  //now DIO should be released
   debugPrint("ack end\n");
 }
 
@@ -113,11 +112,10 @@ void MyI2CDriver::i2cDelayMicroSecond(unsigned long int microSec  )
   delayMicroseconds(microSec);
 }
 
-void MyI2CDriver:: i2cWriteByteArray(unsigned char * array_p, uint8_t arraySize)
+void MyI2CDriver:: i2cWriteByteArray(const unsigned char * array_p, uint8_t arraySize)
 {
   if (arraySize <= 0) {
     debugPrint("error: i2cWriteByteArray 0 array size\n");
-
     return ;
   }
   if (array_p == null) {
@@ -128,7 +126,6 @@ void MyI2CDriver:: i2cWriteByteArray(unsigned char * array_p, uint8_t arraySize)
   {
     i2cWriteByte(array_p[i]);
     i2cWaitForAck();
-
   }
 
 }
@@ -141,7 +138,7 @@ void MyI2CDriver:: startCommand(unsigned char commandByte)
   i2cStop();
 }
 
-void MyI2CDriver::startCommandData(unsigned char commandByte, unsigned char * dataArray_p, uint8_t arraySize)
+void MyI2CDriver::startCommandData(unsigned char commandByte, const unsigned char * dataArray_p, uint8_t arraySize)
 {
   i2cStart();
   i2cWriteByte(commandByte);
