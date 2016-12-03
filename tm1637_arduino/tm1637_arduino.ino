@@ -7,8 +7,8 @@
 #define pin_DIO 12
 // if frozen, try to add two 100pf capacitors for each wire
 
-const bool debugLowLevel = false;
-const bool debugHighLevel = false;
+const bool debugI2C = false;
+const bool debugTM1637 = false;
 
 
 
@@ -16,13 +16,12 @@ TM1637_Arduino_Chris myTM1637(pin_CLK, pin_DIO);
 
 void setup()
 {
-  myTM1637.m_debugLowLevel=debugLowLevel;
-  myTM1637.m_debugHighLevel=debugHighLevel;
-  
+  myTM1637.m_debugPrint=debugTM1637;
+   
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW);
 
-  if (myTM1637.m_debugLowLevel || myTM1637.m_debugHighLevel) {
+  if (myTM1637.m_debugPrint  ) {
     Serial.begin(9600);      // open the serial port at 9600 bps:
   }
   myTM1637.clearAll();
