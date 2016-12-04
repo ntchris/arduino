@@ -232,162 +232,15 @@ uint8_t TM1637_Arduino_Chris::charToBitMap(char numberChar)
   return bitmap;
 }
 
-
-/*
-  //only show the first 6 digits.  12345678 only shows 123456
-  //if only one 4 digits digitube is install on TM1637 grid1-grid4(pin12-15), then only show the last 4 digits, 3456
-  void TM1637_Arduino_Chris::showNumber(const char* number)
-  {
-  uint8_t bitmapArray[MaxDigitCount];
-  if (number == null) return;
-
-  memset(bitmapArray, BitMapEmpty, MaxDigitCount);
-
-  //all space or one space is special situation
-  if (number[0] == 0 )
-  {
-  } else
-  {
-    // find the end of the number string
-    int end = 0;
-
-    while (number[end + 1])
-    {
-      // however, we only process 0 to MaxDigitCount(6 for TM1637), so even if the input string is super long
-      // we still process the first 6 digits.
-
-      if ((end + 1) >= MaxDigitCount)
-      {
-        debugPrint("end is ");
-        debugPrint(end);
-        debugPrint("\n");
-        break;
-      }
-      end++;
-
-    };
-
-    for (int i = 0; i < MaxDigitCount ; i++)
-    {
-      //process from the end of number
-      char c = number[end - i];
-      debugPrint(c);
-      debugPrint("\n");
-      if (c == null) break;
-      uint8_t intValueOfChar = charToInt(c);
-      if (intValueOfChar < sizeof(DigitBitmapArray)  )
-      { bitmapArray[ i ] = DigitBitmapArray[intValueOfChar];
-      } else
-      {
-        bitmapArray[ i ] = BitMapEmpty;
-      }
-
-    }
-  }
-  i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
-  i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
-  i2cDriver_p->startCommand(0x8f);
-
-  }
-*/
-/*
-  void TM1637_Arduino_Chris:: display(String str)
-  {
-  uint8_t bitmapArray[MaxDigitCount];
-  // make a copy of the string so we don't trim the original string
-  String trimstr = str;
-  trimstr.trim();
-  memset(bitmapArray, BitMapEmpty, MaxDigitCount);
-
-  //deal with special cases first
-  if (str.length() == 0)
-  {
-    debugPrint("empty string\n");
-  } else if ( trimstr.length() == 0)
-  {
-    debugPrint("trimmed, empty string\n");
-
-  } else if (str[0] = '.' && str.length() == 1)
-  {
-    //only one dot
-    bitmapArray[0] = BitMapDot;
-  }
-  else
-  {
-    // find the end of the number string
-    int endIndex = str.length() - 1;
-    if (str.length() >= MaxDigitCount)
-    {
-      endIndex = MaxDigitCount - 1;
-    }
-
-    debugPrint("endIndex is ", endIndex);
-    bool hasDot = false;
-    int bitmapArrayIndex = 0;
-    for (int strIndex = 0; strIndex < MaxDigitCount ; strIndex++)
-    {
-      //process from the end of number
-      char c = str[endIndex - strIndex];
-
-      debugPrint("c is ",  (c));
-      if (c == 0) break;
-
-      if (c == '.')
-      {
-        debugPrint(".... is ",  c );
-        if (hasDot = true)
-        {
-          //double dot!
-          debugPrint("double dot");
-          bitmapArray[bitmapArrayIndex] |= BitMapDot;
-          bitmapArrayIndex++;
-
-        }
-        hasDot = true; //for next digit
-        //no need to increase bitmap array index since a dot will be added in next digit's bitmap
-        continue;
-      } else
-      {
-        bitmapArray[bitmapArrayIndex] = charToBitMap(c) ;
-        if (hasDot)
-        {
-          bitmapArray[bitmapArrayIndex] |= BitMapDot;
-          hasDot = false;
-
-        }
-        bitmapArrayIndex++;
-
-      }
-
-
-    }
-
-    //the original string ended but we still has a dot need to display
-    if (hasDot = true)
-    {
-      //double dot!
-      debugPrint("last dot (first ) dot");
-      bitmapArray[bitmapArrayIndex] |= BitMapDot;
-
-    }
-  }
-  i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
-  i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
-  i2cDriver_p->startCommand(0x8f);
-
-
-
-  }
-*/
-
+ 
 
 void TM1637_Arduino_Chris::display(unsigned long num)
 {
-  char string[MaxDigitCount];
+  char string[MaxDigitCount+1]; // don't forget the ending 0 for string
   const unsigned int Ten = 10;
   debugPrint("showNumber(num) ", num);
 
-  memset(string, 0, MaxDigitCount);
+  memset(string, 0, MaxDigitCount+1);
 
   // special condition for 0
   //zero is special, no matter what it need to show
@@ -435,6 +288,64 @@ void TM1637_Arduino_Chris::display(unsigned long num)
 
 }
 
+
+/*
+
+void TM1637_Arduino_Chris::display(unsigned long num)
+{
+  char string[MaxDigitCount+1]; // don't forget the ending 0 for string
+  const unsigned int Ten = 10;
+  debugPrint("showNumber(num) ", num);
+
+  memset(string, 0, MaxDigitCount+1);
+
+  // special condition for 0
+  //zero is special, no matter what it need to show
+  if (num == 0)
+  {
+    display("0");
+    return;
+  }
+
+  // making a string [] to represent the int number
+  for (int i = 0; i < MaxDigitCount; i++)
+  {
+    uint8_t digit = num % Ten;
+    string[MaxDigitCount - i - 1] = digit + '0';
+    num = num / Ten;
+
+  }
+
+  debugPrint("number string =  ", string );
+
+  //Now we have a string to represent the integer number.
+  //Replacing leading zero with space
+  //however if we don't want to show all the leading zero we need to replace them with space
+  if (!showLeadingZero)
+  {
+    for (int i = 0; i < MaxDigitCount; i++)
+    {
+      debugPrint("string[i]=  ", string[i]);
+      //if it's a leading zero then replace it with empty
+      if ( string[i] == '0')
+      {
+        string[i] = ' ';
+      } else
+      { //we have something else, so from now on it can't be leading zero
+        break;
+      }
+
+    }
+  }
+
+  debugPrint(string);
+
+  display(string);
+  debugPrint("end showNumber(num) end\n\n\n");
+
+}
+
+*/
 void TM1637_Arduino_Chris:: display(String str)
 {
   uint8_t bitmapArray[MaxDigitCount];
@@ -508,9 +419,24 @@ void TM1637_Arduino_Chris:: display(String str)
 
 void TM1637_Arduino_Chris::doTest()
 {
+ 
+    showLeadingZero=true;
+     display(10);delay(1000);
+     display(100);delay(1000);
+    /*  display(1000);delay(1000);
+ 
+    showLeadingZero=false;
+    display(0);delay(1000);
+    
+    display(10);delay(1000);
+    display(100);delay(1000);
+     display(1000);delay(1000);
 
+    
+     display("");
+    display(" "); delay(1000);
+    display("-1.2.3."); delay(1000);
 
-  //display("                                                   ");
   display("5.13V"); delay(1000);
 
   display("1.0."); delay(1000);
@@ -526,20 +452,12 @@ void TM1637_Arduino_Chris::doTest()
   display("....."); delay(1000);
   display(0);delay(1000);
   display(10);delay(1000);
-  
-  //display("0.1.0");  delay(1000);
-
-  /*
-
-    display(1000); delay(1000);
-    display(0); delay(1000);
-    display(100); delay(1000);
     display("abcd");  delay(1000);
     display("defg");  delay(1000);
     display("vuVU");  delay(1000);
     display(String(10));  delay(1000);
     display("-10v"); delay(1000);
-  */
+ */
   /*
 
     display("0123");
