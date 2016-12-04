@@ -11,8 +11,7 @@
 #define installDigits  4
 
 
-const bool debugI2C = false;
-const bool debugTM1637 = true;
+const bool debugTM1637 = false;
 
 
 
@@ -33,7 +32,6 @@ void setup()
 
   myTM1637.clearAll();
 
-    myTM1637.doTest();
 
 }
 
@@ -47,7 +45,7 @@ void loop()
   // myTM1637.showNumber("   123456789");
   //delay(1200);
   //myTM1637.showNumber("123456");
-  delay(1200);
+      myTM1637.doTest();
 
   digitalWrite(LED_BUILTIN, LOW);
 }

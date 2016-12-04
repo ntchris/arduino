@@ -398,7 +398,7 @@ void TM1637_Arduino_Chris:: display(String str)
       //safety guard
       if (bitmapArrayIndex > m_maxDisplayDigits) break;
       debugPrint("bitmapArrayIndex is ", bitmapArrayIndex);
-      
+
     }
   }
 
@@ -482,22 +482,33 @@ bool TM1637_Arduino_Chris::checkIfOverflow(String str)
 
 }
 
+void TM1637_Arduino_Chris::doTestIntLoop()
+{
+  display((unsigned long)0);
+  delay(1000);
+  for (unsigned long i = 0; i < 10000; i++)
+  {
+    display(i); delay(200);
+
+  }
+
+}
 void TM1637_Arduino_Chris::doTest()
 {
 
   display("...."); delay(1000);
-  
+
   display("....."); delay(1000);
 
   display("1.2.3.4."); delay(1000);
   display("......"); delay(1000);
-    display("1.2.3.4.5."); delay(1000);
+  display("1.2.3.4.5."); delay(1000);
 
   display("1.2.3.4.5.6"); delay(1000);
   display("1.2.3.4.5.6."); delay(1000);
-    display("01.2.3.4.5.6."); delay(1000);
+  display("01.2.3.4.5.6."); delay(1000);
 
- 
+
 
 
 
@@ -518,7 +529,6 @@ void TM1637_Arduino_Chris::doTest()
 
   display("") ; delay(1000);
 
-  display(".........."); delay(1000);
 
   display("1234"); delay(1000);
   display("1.2.3.4."); delay(1000);
@@ -560,7 +570,8 @@ void TM1637_Arduino_Chris::doTest()
   display("vuVU");  delay(1000);
   display(String(10));  delay(1000);
   display("-1.2v"); delay(1000);
-
+  doTestIntLoop();
+  
   /*
 
     display("0123");

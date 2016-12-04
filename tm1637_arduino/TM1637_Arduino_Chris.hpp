@@ -83,6 +83,7 @@ class TM1637_Arduino_Chris
     void clearAll();
 
     void doTest();
+    void doTestIntLoop();
 
     ~TM1637_Arduino_Chris();
 
