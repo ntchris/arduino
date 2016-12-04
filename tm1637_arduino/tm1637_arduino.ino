@@ -27,6 +27,7 @@ void setup()
   if (myTM1637.m_debugPrint  ) {
     Serial.begin(9600);      // open the serial port at 9600 bps:
   }
+    Serial.begin(9600); 
   digitalWrite(LED_BUILTIN, HIGH);
   // myTM1637.showNumber(10);
 
@@ -45,8 +46,12 @@ void loop()
   // myTM1637.showNumber("   123456789");
   //delay(1200);
   //myTM1637.showNumber("123456");
-      myTM1637.doTest();
+  //   myTM1637.doTest();
+  myTM1637.doTest8888();
+  //myTM1637.doTestSwitchOnOff();
+  myTM1637.doTestBrightnessLevel();
 
+  
   digitalWrite(LED_BUILTIN, LOW);
 }
 

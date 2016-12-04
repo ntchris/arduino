@@ -23,12 +23,16 @@ TM1637_Arduino_Chris::TM1637_Arduino_Chris(uint8_t pinClk, uint8_t pinDio, uint8
 {
   m_pin_Clk = pinClk;
   m_pin_Dio = pinDio;
-
+  m_displayBrightness = 4; //default brightness
   m_debugPrint = false;
+  m_currentDisplayOnOffBit = DisplayOnBit;
+
   m_maxDisplayDigits = digitubeDigits;
-
+  uint8_t displaySetting = Command_SetDisplayBrightness | m_displayBrightness | m_currentDisplayOnOffBit ;
   i2cDriver_p = new MyI2CDriver(m_pin_Clk, m_pin_Dio );
+  //i2cDriver_p->m_debugPrint = m_debugPrint ;
 
+  i2cDriver_p->startCommand(displaySetting);
 }
 
 TM1637_Arduino_Chris:: ~TM1637_Arduino_Chris()
@@ -57,7 +61,7 @@ void TM1637_Arduino_Chris::debugPrint(const char *str)
 }
 
 
-void TM1637_Arduino_Chris::debugPrint(const char *name, unsigned long int  value)
+void TM1637_Arduino_Chris::debugPrint(const String name, unsigned long int  value)
 {
   if (m_debugPrint)
   {
@@ -68,7 +72,7 @@ void TM1637_Arduino_Chris::debugPrint(const char *name, unsigned long int  value
 
 }
 
-void TM1637_Arduino_Chris::debugPrint(const char *name, const char * str)
+void TM1637_Arduino_Chris::debugPrint(const String name, const String str)
 {
   if ( m_debugPrint)
   {
@@ -321,6 +325,18 @@ void TM1637_Arduino_Chris:: displayOverflow()
 
 */
 
+void TM1637_Arduino_Chris:: setDisplayBuffer(uint8_t *bitmapArray, uint8_t arraySize)
+{
+
+  bool success = true;
+  int retryCount=0;
+  i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
+
+   
+  i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
+   
+}
+
 
 void TM1637_Arduino_Chris:: display(String str)
 {
@@ -330,6 +346,7 @@ void TM1637_Arduino_Chris:: display(String str)
   trimstr.trim();
 
   //check if string is longer than the installed digitube digits
+  debugPrint("display " , str);
 
   memset(bitmapArray, BitMapEmpty, MaxDigitCount);
 
@@ -401,10 +418,11 @@ void TM1637_Arduino_Chris:: display(String str)
 
     }
   }
-
-  i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
-  i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
-  i2cDriver_p->startCommand(0x8f);
+  debugPrint("starting i2c\n");
+  //i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
+  //i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
+  setDisplayBuffer(bitmapArray, MaxDigitCount);
+  //i2cDriver_p->startCommand(m_currentDisplaySetting);
 
 }
 
@@ -482,96 +500,164 @@ bool TM1637_Arduino_Chris::checkIfOverflow(String str)
 
 }
 
+void TM1637_Arduino_Chris::switchOnOff(bool on)
+{
+  debugPrint("onOff is ", on);
+  uint8_t displaySetting;
+  if (on)
+  {
+    m_currentDisplayOnOffBit = DisplayOnBit;
+    displaySetting = Command_SetDisplayBrightness | DisplayOnBit | m_displayBrightness ;
+  } else
+  {
+    m_currentDisplayOnOffBit = DisplayOffBit;
+    displaySetting = Command_SetDisplayBrightness | DisplayOffBit | m_displayBrightness  ;
+  }
+  debugPrint("onOff command is ", displaySetting );
+  i2cDriver_p->startCommand( displaySetting );
+  delay(1000);
+
+
+}
+
+void TM1637_Arduino_Chris::setBrightness(uint8_t level)
+{
+  if (level > MaxBrightness)
+  {
+    level = MaxBrightness;
+  }
+
+  m_displayBrightness = level;
+  uint8_t commd = Command_SetDisplayBrightness | m_currentDisplayOnOffBit | m_displayBrightness;
+  debugPrint("brightness   is ", m_displayBrightness);
+  i2cDriver_p->startCommand( commd );
+
+
+}
+
+void TM1637_Arduino_Chris::doTestBrightnessLevel()
+{
+
+  int i = 4;
+  do
+  {
+    setBrightness(i);
+    delay(1000);
+    if (i < MaxBrightness)
+    {
+      i += 1;
+    } else
+    {
+      i = 4;
+
+    }
+
+
+  } while (true);
+
+
+}
+
+void TM1637_Arduino_Chris::doTestSwitchOnOff()
+{
+  switchOnOff( 0);
+
+  delay(500);
+
+  switchOnOff( 1);
+
+}
+
+
+void TM1637_Arduino_Chris::doTest8888()
+{
+  static unsigned long i = 0;
+
+  display("8.8.8.8.");
+  i++;
+
+
+  //delay(50);
+
+
+
+}
+
 void TM1637_Arduino_Chris::doTestIntLoop()
 {
   display((unsigned long)0);
   delay(1000);
   for (unsigned long i = 0; i < 10000; i++)
   {
-    display(i); delay(200);
+    display(i); //delay(200);
 
   }
 
 }
 void TM1637_Arduino_Chris::doTest()
 {
+  //doTestIntLoop();
 
-  display("...."); delay(1000);
+  display("...."); //delay(300);
 
-  display("....."); delay(1000);
+  display("....."); //delay(300);
 
+  display("1.2.3.4."); //delay(300);
+  display("......"); //delay(300);
+  display("1.2.3.4.5."); //delay(300);
+
+  display("1.2.3.4.5.6"); //delay(300);
+  display("1.2.3.4.5.6."); //delay(300);
+  display("01.2.3.4.5.6."); //delay(300);
+
+
+
+
+
+  display("1.2.3.4."); //delay(300);
+  display("1.2.3.4.5"); //delay(300);
+
+  display("."); //delay(300);
+  display(".."); //delay(300);
+  display("..."); //delay(300);
+  display("...."); //delay(300);
+  display("....."); //delay(300);
+  display(" "); //delay(300);
+  display("......"); //delay(300);
+  display((unsigned long)10); //delay(300);
+  display("") ; //delay(300);
+  display("1234"); //delay(300);
   display("1.2.3.4."); delay(1000);
-  display("......"); delay(1000);
-  display("1.2.3.4.5."); delay(1000);
-
-  display("1.2.3.4.5.6"); delay(1000);
-  display("1.2.3.4.5.6."); delay(1000);
-  display("01.2.3.4.5.6."); delay(1000);
-
-
-
-
-
-  display("1.2.3.4."); delay(1000);
-  display("1.2.3.4.5"); delay(1000);
-
-  display("."); delay(1000);
-  display(".."); delay(1000);
-  display("..."); delay(1000);
-  display("...."); delay(1000);
-  display("....."); delay(1000);
-  display(" "); delay(1000);
-  display("......"); delay(1000);
-
-
-
-  display((unsigned long)10); delay(1000);
-
-  display("") ; delay(1000);
-
-
-  display("1234"); delay(1000);
-  display("1.2.3.4."); delay(1000);
-
-
-  display((float)0.12); delay(1000);
-  display((float) - 3.14); delay(1000);
-
-
-  display((unsigned long)0); delay(1000);
-
-  display((unsigned long)10); delay(1000);
-  display((unsigned long)100); delay(1000);
-  display((unsigned long)1000); delay(1000);
-  display((unsigned long)10001); delay(1000);
-
-
+  display((float)0.12); //delay(300);
+  display((float) - 3.14); //delay(300);
+  display((unsigned long)0); //delay(300);
+  display((unsigned long)10); //delay(300);
+  display((unsigned long)100); //delay(300);
+  display((unsigned long)1000); //delay(300);
+  display((unsigned long)10001); //delay(300);
   display("");
-  display(" "); delay(1000);
-  display("-1.2.3."); delay(1000);
+  display(" "); //delay(300);
+  display("-1.2.3."); //delay(300);
+  display("5.13V"); //delay(300);
+  display("1.0."); //delay(300);
+  display("0.1.2.3"); //delay(300);
+  display("1.2.3.4."); //delay(300);
+  display("1.2.3.4.5."); //delay(300);
+  display("1.2.3.4.5.6.7.8.9."); //delay(300);
+  display("."); //delay(300);
+  display(".."); //delay(300);
+  display("..."); //delay(300);
+  display("...."); //delay(300);
+  display("....."); //delay(300);
+  display((unsigned long )0); //delay(300);
+  display( (unsigned long )10); //delay(300);
+  display("abcd");  //delay(300);
+  display("defg");  //delay(300);
+  display("vuVU");  //delay(300);
+  display(String(10));  //delay(300);
+  display("-1.2v"); //delay(300);
+  //doTestIntLoop();
 
-  display("5.13V"); delay(1000);
-
-  display("1.0."); delay(1000);
-
-  display("0.1.2.3"); delay(1000);
-  display("1.2.3.4."); delay(1000);
-  display("1.2.3.4.5."); delay(1000);
-  display("1.2.3.4.5.6.7.8.9."); delay(1000);
-  display("."); delay(1000);
-  display(".."); delay(1000);
-  display("..."); delay(1000);
-  display("...."); delay(1000);
-  display("....."); delay(1000);
-  display((unsigned long )0); delay(1000);
-  display( (unsigned long )10); delay(1000);
-  display("abcd");  delay(1000);
-  display("defg");  delay(1000);
-  display("vuVU");  delay(1000);
-  display(String(10));  delay(1000);
-  display("-1.2v"); delay(1000);
-  doTestIntLoop();
-  
   /*
 
     display("0123");

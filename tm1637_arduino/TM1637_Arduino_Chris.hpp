@@ -34,17 +34,26 @@
 class TM1637_Arduino_Chris
 {
     static const uint8_t Command_Data_Setting_Write_Data_To_Display_Register = 0b01000000; //0x40
+    static const uint8_t Command_SetDisplayBrightness = 0b10000000;
+    static const uint8_t DisplayBrightness = 0b011; // brightness is 10/16
+    static const uint8_t DisplayOnBit = 0b1000; // ON
+    static const uint8_t DisplayOffBit = 0b0000; // OFF
     static const uint8_t TM1637_Starting_Address = 0xc0;
     static const uint8_t BitMapDot = 0b10000000; // dot bitmap
     static const uint8_t BitMapEmpty = 0b00000000; // empty, shows nothing
     static const uint8_t BitMapUV = 0b00111110;    // U V
     static const uint8_t BitMapMinus = 0b01000000;    // U V
+    static const uint8_t MaxBrightness = 7;
+    uint8_t m_displayBrightness;
+    uint8_t m_currentDisplayOnOffBit;
+
+
+
     //    static const uint8_t BitMapOverflow = 0b11111111;    // 8.
     //TM1637 supports 6 digits, however we may only connect a 4 digits digitube, or a 3 digits digitube.
     //so when user input a longer string, it's overflow, we should report error by showing  overflow digits 8.8.8.8.8.
     //otherwise, if usr input "-1234" , a 4 digits digitube display 1234, then it's very misleading.
     int m_maxDisplayDigits;
-
     static const uint8_t MaxDigitCount = 6;  // TM1637 supports 6 digits
     MyI2CDriver *i2cDriver_p;
     // TM1637 supports 6 digit-seven-segments display, but you will probably just use a 4 digit tube
@@ -60,8 +69,10 @@ class TM1637_Arduino_Chris
     uint8_t charToBitMap(char numberChar);
     void   displayOverflow();
     bool checkIfOverflow(String str);
-    
+    void switchOnOff(bool on);
     //void setDisplayBuffer(const uint8_t * indexArray_p, uint8_t digitCount = MaxDigitCount);
+
+    void setDisplayBuffer(uint8_t *bitmapArray, uint8_t arraySize);
   public:
 
     bool m_debugPrint;
@@ -73,17 +84,22 @@ class TM1637_Arduino_Chris
 
     void display(String str);
     void display(float f);
-
+    //valid value is 0 to 7, larger than 7 then take it as 7
+    void setBrightness(uint8_t level);
     void debugPrint(const char * str);
     void debugPrint(int i);
-    void debugPrint(const char *name, unsigned long int value);
-    void debugPrint(const char *name, const char * str);
+    void debugPrint(const String name, unsigned long int value);
+    void debugPrint(const String name, const String str);
 
 
     void clearAll();
 
     void doTest();
     void doTestIntLoop();
+    void doTest8888();
+    void doTestSwitchOnOff();
+    void doTestBrightnessLevel();
+
 
     ~TM1637_Arduino_Chris();
 

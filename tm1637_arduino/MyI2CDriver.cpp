@@ -7,7 +7,7 @@ MyI2CDriver::MyI2CDriver(uint8_t pinClk, uint8_t pinDio )
 {
   m_pin_Clk = pinClk;
   m_pin_Dio = pinDio;
-  m_debugPrint = false;
+  m_debugPrint = true;
   pinMode(m_pin_Clk, OUTPUT);
   pinMode(m_pin_Dio, OUTPUT);
   digitalWrite(m_pin_Clk, LOW);
@@ -33,20 +33,20 @@ void MyI2CDriver::debugPrint(int i)
 }
 void MyI2CDriver::i2cStart()
 {
-  debugPrint("i2cStart begin\n");
+  //debugPrint("i2cStart begin\n");
   digitalWrite(m_pin_Dio, HIGH);
   i2cDelayMicroSecond();
 
   digitalWrite(m_pin_Clk, HIGH);
   i2cDelayMicroSecond();
   digitalWrite(m_pin_Dio, LOW);
-  debugPrint("i2cStart done\n");
+  //debugPrint("i2cStart done\n");
 
 }
 
 void MyI2CDriver::i2cStop()
 {
-  debugPrint("stop begin\n");
+  //debugPrint("stop begin\n");
   digitalWrite(m_pin_Clk, LOW);
   i2cDelayMicroSecond();
   digitalWrite(m_pin_Dio, LOW);
@@ -55,22 +55,34 @@ void MyI2CDriver::i2cStop()
   digitalWrite(m_pin_Clk, HIGH);
   i2cDelayMicroSecond();
   digitalWrite(m_pin_Dio, HIGH);
-  debugPrint("stop done\n");
+  //debugPrint("stop done\n");
 
 }
 
-void MyI2CDriver::i2cWaitForAck()
+bool MyI2CDriver::i2cWaitForAck()
 {
-  debugPrint("ack begin\n");
+  //debugPrint("ack begin\n");
   //digitalWrite(LED_BUILTIN, LOW);
 
   digitalWrite(m_pin_Clk, LOW);
-  i2cDelayMicroSecond();
+  i2cDelayMicroSecond(5);
 
   unsigned char dio;
-
+  int waitingCount = 0;
+  const int MaxRetry = 2000;
   do {
+
     dio = digitalRead(m_pin_Dio);
+    waitingCount++;
+    if (waitingCount >= MaxRetry)
+    {
+      //digitalWrite(m_pin_Clk, LOW);
+
+      debugPrint("ack waited too long\n");
+      return false;
+    }
+    //Serial.print(waitingCount );
+    //Serial.print("\n");
   } while (dio);
   //The 9th clock high
   digitalWrite(m_pin_Clk, HIGH);
@@ -78,7 +90,8 @@ void MyI2CDriver::i2cWaitForAck()
   //The 9th clock low
   digitalWrite(m_pin_Clk, LOW);
   //now DIO should be released
-  debugPrint("ack end\n");
+  //debugPrint("ack end\n");
+  return true;
 }
 
 
@@ -87,11 +100,11 @@ void MyI2CDriver::i2cWriteByte(unsigned char oneByte)
   const uint8_t BitsPerByte = 8; //always 8, dont' change it
   uint8_t i = 0;
 
-  debugPrint("write byte begin\n");
+  //debugPrint("write byte begin\n");
   for (i = 0; i < BitsPerByte; i++)
   {
-    debugPrint("for in writeByte ");
-    debugPrint(i); debugPrint("\n");
+    //debugPrint("for in writeByte ");
+    //debugPrint(i); debugPrint("\n");
 
     digitalWrite(m_pin_Clk, LOW);
     i2cDelayMicroSecond();
@@ -104,7 +117,7 @@ void MyI2CDriver::i2cWriteByte(unsigned char oneByte)
     i2cDelayMicroSecond();
 
   }
-  debugPrint("write byte done\n");
+  //debugPrint("write byte done\n");
 }
 
 void MyI2CDriver::i2cDelayMicroSecond(unsigned long int microSec  )
@@ -112,7 +125,7 @@ void MyI2CDriver::i2cDelayMicroSecond(unsigned long int microSec  )
   delayMicroseconds(microSec);
 }
 
-void MyI2CDriver:: i2cWriteByteArray(const unsigned char * array_p, uint8_t arraySize)
+bool MyI2CDriver:: i2cWriteByteArray(const unsigned char * array_p, uint8_t arraySize)
 {
   if (arraySize <= 0) {
     debugPrint("error: i2cWriteByteArray 0 array size\n");
@@ -122,28 +135,59 @@ void MyI2CDriver:: i2cWriteByteArray(const unsigned char * array_p, uint8_t arra
     debugPrint("error: i2cWriteByteArray null pionter\n");
     return ;
   }
+
+  bool success = true;
+
   for (int i = 0; i < arraySize; i++)
   {
     i2cWriteByte(array_p[i]);
-    i2cWaitForAck();
+    success = i2cWaitForAck();
+    if (!success) break;
   }
-
+  return success;
 }
-
 void MyI2CDriver:: startCommand(unsigned char commandByte)
 {
-  i2cStart();
-  i2cWriteByte(commandByte);
-  i2cWaitForAck();
+
+  bool success = true;
+  do {
+    i2cStart();
+    i2cWriteByte(commandByte);
+    success = i2cWaitForAck();
+    if (!success)
+    {
+      i2cStop();
+    }
+
+  } while (!success);
   i2cStop();
 }
 
 void MyI2CDriver::startCommandData(unsigned char commandByte, const unsigned char * dataArray_p, uint8_t arraySize)
 {
-  i2cStart();
-  i2cWriteByte(commandByte);
-  i2cWaitForAck();
-  i2cWriteByteArray(dataArray_p, arraySize );
+  bool success = true;
+  do
+  {
+    i2cStart();
+    i2cWriteByte(commandByte);
+    success = i2cWaitForAck();
+    if (!success)
+    {
+      i2cDelayMicroSecond(3000);
+      debugPrint("i2cWriteByte failed, retry\n");
+      i2cStop();
+      continue;
+    }
+
+    success = i2cWriteByteArray(dataArray_p, arraySize );
+    if (!success)
+    {
+      i2cDelayMicroSecond(3000);
+
+      debugPrint("i2cWriteByteArray failed, retry\n");
+      i2cStop();
+      continue;
+    }
+  } while (!success);
   i2cStop();
 }
-

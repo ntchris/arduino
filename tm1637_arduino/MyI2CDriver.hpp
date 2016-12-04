@@ -15,10 +15,11 @@ class MyI2CDriver
     void i2cWriteByte(unsigned char oneByte);
     void i2cStart();
     void i2cStop();
-    void i2cWaitForAck();
-    // send a byte array to i2c, without a new start, also expect the ack from slave.
-    void i2cWriteByteArray( const unsigned char * array_p, uint8_t arraySize);
-    void i2cDelayMicroSecond(unsigned long int microSec = 5 );
+    // true means successful
+    bool i2cWaitForAck();
+    // send a byte array to i2c, without a new start, also expect the ack from slave. true means successful
+    bool i2cWriteByteArray( const unsigned char * array_p, uint8_t arraySize);
+    void i2cDelayMicroSecond(unsigned long int microSec = 3 );
 
   public:
     bool m_debugPrint;
@@ -28,7 +29,7 @@ class MyI2CDriver
     void startCommand(unsigned char command);
 
     // send a command with start to i2c and a data array, wait for ack and stop
-    void startCommandData(unsigned char commandByte,const unsigned char * dataArray_p, uint8_t arraySize);
+    void startCommandData(unsigned char commandByte, const unsigned char * dataArray_p, uint8_t arraySize);
 
 
     void debugPrint(const char *str);
