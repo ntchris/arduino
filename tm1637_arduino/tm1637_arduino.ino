@@ -7,12 +7,16 @@
 #define pin_DIO 12
 // if frozen, try to add two 100pf capacitors for each wire
 
+// only connected a 4 digit digitube
+#define installDigits  4
+
+
 const bool debugI2C = false;
 const bool debugTM1637 = true;
 
 
 
-TM1637_Arduino_Chris myTM1637(pin_CLK, pin_DIO);
+TM1637_Arduino_Chris myTM1637(pin_CLK, pin_DIO, installDigits);
 
 void setup()
 {

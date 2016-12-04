@@ -30,7 +30,7 @@
 #include <string.h>
 #include <arduino.h>
 #include "MyI2CDriver.hpp"
- 
+
 class TM1637_Arduino_Chris
 {
     static const uint8_t Command_Data_Setting_Write_Data_To_Display_Register = 0b01000000; //0x40
@@ -39,14 +39,16 @@ class TM1637_Arduino_Chris
     static const uint8_t BitMapEmpty = 0b00000000; // empty, shows nothing
     static const uint8_t BitMapUV = 0b00111110;    // U V
     static const uint8_t BitMapMinus = 0b01000000;    // U V
+    //    static const uint8_t BitMapOverflow = 0b11111111;    // 8.
+    //TM1637 supports 6 digits, however we may only connect a 4 digits digitube, or a 3 digits digitube.
+    //so when user input a longer string, it's overflow, we should report error by showing  overflow digits 8.8.8.8.8.
+    //otherwise, if usr input "-1234" , a 4 digits digitube display 1234, then it's very misleading.
+    int m_maxDisplayDigits;
 
-
-    static const uint8_t MaxDigitCount = 6;
+    static const uint8_t MaxDigitCount = 6;  // TM1637 supports 6 digits
     MyI2CDriver *i2cDriver_p;
     // TM1637 supports 6 digit-seven-segments display, but you will probably just use a 4 digit tube
 
-    // Do we show the leading zero ? so if 12, show 0012 ?
-    bool showLeadingZero = false;
 
     // contains all the bitmaps for 0 1 2 ... F
     static const uint8_t DigitBitmapArray[];
@@ -56,31 +58,32 @@ class TM1637_Arduino_Chris
     uint8_t m_pin_Clk, m_pin_Dio;
     uint8_t charToInt(char numberChar);
     uint8_t charToBitMap(char numberChar);
+    void   displayOverflow();
+    bool checkIfOverflow(String str);
     
     //void setDisplayBuffer(const uint8_t * indexArray_p, uint8_t digitCount = MaxDigitCount);
   public:
 
     bool m_debugPrint;
 
-    TM1637_Arduino_Chris(uint8_t pinClk, uint8_t pinDio);
+    TM1637_Arduino_Chris(uint8_t pinClk, uint8_t pinDio, uint8_t digitubeDigits);
 
     // let digit tube to show a number 1234
     void display(unsigned long number);
 
-    //
-    //void showNumber(const char* number);
     void display(String str);
+    void display(float f);
 
     void debugPrint(const char * str);
     void debugPrint(int i);
     void debugPrint(const char *name, unsigned long int value);
     void debugPrint(const char *name, const char * str);
- 
+
 
     void clearAll();
 
     void doTest();
-    
+
     ~TM1637_Arduino_Chris();
 
 
