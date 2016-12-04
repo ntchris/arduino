@@ -329,12 +329,12 @@ void TM1637_Arduino_Chris:: setDisplayBuffer(uint8_t *bitmapArray, uint8_t array
 {
 
   bool success = true;
-  int retryCount=0;
+  int retryCount = 0;
   i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
 
-   
+
   i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
-   
+
 }
 
 
@@ -536,24 +536,32 @@ void TM1637_Arduino_Chris::setBrightness(uint8_t level)
 }
 
 void TM1637_Arduino_Chris::doTestBrightnessLevel()
-{
-
-  int i = 4;
-  do
+{ static unsigned long i = 0;
+  static bool direction = true;
+  digitalWrite(LED_BUILTIN,  i % 2);
+  if (direction)
   {
-    setBrightness(i);
-    delay(1000);
-    if (i < MaxBrightness)
+    if (i <  MaxBrightness)
     {
       i += 1;
     } else
     {
-      i = 4;
-
+      direction = !direction;
     }
+  } else
+  {
+    if (i > 0)
+    {
+      i--;
+    } else
+    {
+      direction = !direction;
+    }
+  }
 
-
-  } while (true);
+   doTest8888();
+   setBrightness(i);
+  delay(400);
 
 
 }

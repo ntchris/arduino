@@ -43,7 +43,6 @@ class TM1637_Arduino_Chris
     static const uint8_t BitMapEmpty = 0b00000000; // empty, shows nothing
     static const uint8_t BitMapUV = 0b00111110;    // U V
     static const uint8_t BitMapMinus = 0b01000000;    // U V
-    static const uint8_t MaxBrightness = 7;
     uint8_t m_displayBrightness;
     uint8_t m_currentDisplayOnOffBit;
 
@@ -74,6 +73,7 @@ class TM1637_Arduino_Chris
 
     void setDisplayBuffer(uint8_t *bitmapArray, uint8_t arraySize);
   public:
+    static const uint8_t MaxBrightness = 7;
 
     bool m_debugPrint;
 
