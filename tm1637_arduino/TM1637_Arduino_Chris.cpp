@@ -723,14 +723,14 @@ void TM1637_Arduino_Chris::doTestIntLoop()
 void TM1637_Arduino_Chris::doTest()
 {
     //doTestIntLoop();
-    /*
+    
         display("..."); delay(1000);
         display("...."); delay(1000);
 
         display("....."); delay(1000);
-    */
+    
     display("12:34"); delay(10000);
-    /*
+   
         display("......"); //delay(300);
         display("1.2.3.4.5."); //delay(300);
 
@@ -795,12 +795,8 @@ void TM1637_Arduino_Chris::doTest()
 
         display("0123");
         delay(1000);
-
-        showNumber( "020");
-        delay(1000);
-        showNumber("");
-        delay(1000);
-    */
+ 
+   
 
 }
 
