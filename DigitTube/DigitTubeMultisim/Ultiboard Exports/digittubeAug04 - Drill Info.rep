@@ -1,0 +1,21 @@
+ULTIBOARD DRILL REPORT
+
+Design: digittubeAug04
+
+DRILL FILE SETTINGS
+Excellon 2, Absolute, Metric, 3.4 
+
+
+DEFINITION COPPER LAYERS
+Copper Top
+Copper Bottom
+
+
+--------------------------------------------------------------------
+
+DRILLFILE                                       LAMINATION
+digittubeAug04 - Copper Top-Copper Bottom.drl   Copper Top .. Copper Bottom
+
+TOOL     SIZE   TYPE  COUNT
+   1   0.6000    PTH    113
+   2   0.8000    PTH      4

@@ -1,0 +1,105 @@
+HI-TECH Software 8051-C Compiler V9.60
+
+Linker command line:
+
+--edf=C:\PROGRA~2\HI-TEC~1\HC51\9.60\dat\en_msgs.txt \
+  -h+H:\电子技~1\MCU51\DIGITT~2\AT89C5~1\project1\project1.sym -z -Q8051AH \
+  -ol.obj -MH:\电子技~1\MCU51\DIGITT~2\AT89C5~1\project1\project1.map -E1 \
+  -ver=8051-C#V9.60 -ACODE=00h-0FFFh -pvectors=00h \
+  -prbit=0/20h,rbss,rdata/CODE,irdata/CODE,idata/rbss -pbss=XDATA/idata \
+  -pdata=CODE+100h -pconst=CODE+100h -pstrings=CODE+100h -pnvram=bss,heap \
+  c:\temp\s7v8.obj H:\电子技~1\MCU51\DIGITT~2\AT89C5~1\project1\main_0.obj \
+  C:\PROGRA~2\HI-TEC~1\HC51\9.60\lib\51--nsc.lib 
+
+Object code version is 3.8
+
+Machine type is 8051AH
+
+Call graph:
+
+*start1 size 0,0 offset 0
+*    _main size 0,2 offset 0
+*        _showDigitInPositionN size 0,1 offset 2
+
+		Name          Link     Load   Length Selector Space Scale
+c:\temp\s7v8.obj
+		vectors          0        0        3       0     0
+		text            E1       E1       14       0     0
+H:\电子技~1\MCU51\DIGITT~2\AT89C5~1\project1\main_0.obj
+		data           100      100        2     100     0
+		code            F5       F5        A       0     0
+		text           102      102      177     100     0
+
+C:\PROGRA~2\HI-TEC~1\HC51\9.60\lib\51--nsc.lib
+powerup.obj     text           279      279        3     100     0
+mul.obj         text            C3       C3       1E       0     0
+div.obj         text             3        3       C0       0     0
+
+COMMON          rbss            20       20        7      20     1
+
+TOTAL		Name          Link     Load   Length
+	CLASS	CODE     
+		vectors          0        0        3
+		data           100      100        2
+		text            E1       E1       14
+		code            F5       F5        A
+		text           102      102      177
+		text           279      279        3
+		text            C3       C3       1E
+		text             3        3       C0
+
+	CLASS	DATA     
+		rbss            20       20        7
+
+	CLASS	XDATA    
+
+	CLASS	BITSEG   
+
+
+
+SEGMENTS	Name		Load	Length	 Top	Selector    Space Class
+
+		vectors         000000	0000FF	0000FF	       0       0  CODE    
+		rbit            000020	000007	000027	      20       1  BITSEG  
+		data            000100	00017C	00027C	     100       0  CODE    
+
+
+UNUSED ADDRESS RANGES
+
+	CODE             0FF-0FF
+	                 27C-FFF
+
+                                  Symbol Table
+
+?a_activeDigitN         rbss    020  ?a_loopAllDigits        rbss    020
+?a_main                 rbss    020  ?a_showDigit            rbss    020
+?a_showDigitInPositionN rbss    022  ?a_sleep100ms           rbss    020
+?a_sleep1sec            rbss    020  _DIG_CODE               code    0F5
+_MAX                    data    100  __Bbss                  bss     027
+__Bidata                idata   027  __Birdata               irdata  003
+__Brbit                 rbit    020  __Brdata                rdata   003
+__Hbss                  bss     027  __Hcode                 code    027
+__Hconst                const   100  __Hdata                 data    102
+__Hheap                 heap    027  __Hidata                idata   027
+__Hirdata               irdata  027  __Hnvram                nvram   027
+__Hrbit                 rbit    000  __Hrbss                 rbss    027
+__Hrdata                rdata   027  __Hstrings              strings 100
+__Htext                 text    027  __Hvectors              vectors 003
+__Lbss                  bss     027  __Lcode                 code    027
+__Lconst                const   100  __Ldata                 data    100
+__Lheap                 heap    027  __Lidata                idata   027
+__Lirdata               irdata  027  __Lnvram                nvram   027
+__Lrbit                 rbit    000  __Lrbss                 rbss    020
+__Lrdata                rdata   027  __Lstrings              strings 100
+__Ltext                 text    027  __Lvectors              vectors 000
+__S0                    (abs)   27C  _activeDigitN           text    102
+_exit                   text    0F2  _loopAllDigits          text    225
+_main                   text    266  _showDigit              text    1BF
+_showDigitInPositionN   text    19C  _sleep100ms             text    139
+_sleep1sec              text    169  awdiv                   text    093
+awmod                   text    08B  awmul                   text    0C3
+intlevel0               (abs)   000  intlevel1               (abs)   000
+lwdiv                   text    058  lwmod                   text    064
+lwmul                   text    0C3  powerup                 text    279
+small_model             (abs)   001  stack_internal          (abs)   001
+start                   vectors 000  start1                  text    0E1

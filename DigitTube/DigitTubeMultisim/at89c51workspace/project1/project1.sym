@@ -1,0 +1,118 @@
+__Lrdata 27 FFFFFFDC DATA
+__Hrbss 27 0 DATA
+__Lrbss 20 0 DATA
+_DIG_CODE F5 0 CODE
+_showDigitInPositionN 19C 0 CODE
+__Birdata 3 FFFFFFDC DATA
+__Hirdata 27 FFFFFFDC DATA
+__Lirdata 27 FFFFFFDC DATA
+?a_sleep1sec 20 0 DATA
+powerup 279 0 CODE
+__Htext 27 0
+__Ltext 27 0
+_loopAllDigits 225 0 CODE
+?a_sleep100ms 20 0 DATA
+__Hcode 27 0
+__Lcode 27 0
+__Hdata 102 0 CODE
+__Hconst 100 0 CODE
+__Ldata 100 0 CODE
+__Lconst 100 0 CODE
+__Bbss 27 0 XDATA
+__Hbss 27 0 XDATA
+__Hstrings 100 0 CODE
+__Lbss 27 0 XDATA
+__Lstrings 100 0 CODE
+__S0 27C 0
+_sleep1sec 169 0 CODE
+start1 E1 0 CODE
+__Hnvram 27 0 XDATA
+small_model 1 0
+__Lnvram 27 0 XDATA
+?a_showDigit 20 0 DATA
+_MAX 100 0 CODE
+awmod 8B 0 CODE
+lwmod 64 0 CODE
+__Hheap 27 0 XDATA
+_activeDigitN 102 0 CODE
+__Lheap 27 0 XDATA
+_main 266 0 CODE
+?a_activeDigitN 20 0 DATA
+awmul C3 0 CODE
+?a_main 20 0 DATA
+lwmul C3 0 CODE
+awdiv 93 0 CODE
+_exit F2 0 CODE
+lwdiv 58 0 CODE
+start 0 0 CODE
+intlevel0 0 0
+_sleep100ms 139 0 CODE
+_showDigit 1BF 0 CODE
+__Brbit 20 20 BITSEG
+__Hrbit 0 20 BITSEG
+intlevel1 0 0
+__Hvectors 3 0 CODE
+__Lrbit 0 20 BITSEG
+__Lvectors 0 0 CODE
+?a_loopAllDigits 20 0 DATA
+__Bidata 27 0 DATA
+?a_showDigitInPositionN 22 0 DATA
+__Hidata 27 0 DATA
+__Lidata 27 0 DATA
+stack_internal 1 0
+__Brdata 3 FFFFFFDC DATA
+__Hrdata 27 FFFFFFDC DATA
+%segments
+vectors 0 FE CODE
+rbit 0 6 BITSEG
+data 100 27B CODE
+%locals
+H:\电子技~1\MCU51\DIGITT~2\AT89C5~1\project1\main_0.obj
+H:\电子技~1\MCU51\DIGITT~2\AT89C5~1\project1\main.c
+30 102 0 CODE
+31 108 0 CODE
+33 10A 0 CODE
+34 10E 0 CODE
+35 112 0 CODE
+36 116 0 CODE
+37 11A 0 CODE
+31 11C 0 CODE
+38 136 0 CODE
+41 139 0 CODE
+43 13B 0 CODE
+47 166 0 CODE
+49 169 0 CODE
+51 16B 0 CODE
+53 180 0 CODE
+51 183 0 CODE
+55 199 0 CODE
+61 19C 0 CODE
+65 19E 0 CODE
+66 1AF 0 CODE
+67 1B2 0 CODE
+68 1B5 0 CODE
+71 1BC 0 CODE
+77 1BF 0 CODE
+78 1C1 0 CODE
+79 1C4 0 CODE
+81 1CA 0 CODE
+80 1D0 0 CODE
+81 1D4 0 CODE
+83 1E6 0 CODE
+85 1F4 0 CODE
+86 1FB 0 CODE
+81 20A 0 CODE
+89 222 0 CODE
+93 225 0 CODE
+96 227 0 CODE
+99 22D 0 CODE
+101 234 0 CODE
+102 244 0 CODE
+99 247 0 CODE
+97 261 0 CODE
+105 263 0 CODE
+108 266 0 CODE
+110 268 0 CODE
+124 26D 0 CODE
+121 274 0 CODE
+127 276 0 CODE

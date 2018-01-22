@@ -1,0 +1,302 @@
+C51 COMPILER V9.56.0.0   DIGITTUBE                                                         08/25/2016 23:11:53 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE DIGITTUBE
+OBJECT MODULE PLACED IN digitTube.OBJ
+COMPILER INVOKED BY: D:\KeilC51\C51\BIN\C51.EXE digitTube.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          /* BLINKY.C - LED Flasher for the Keil MCBx51 Evaluation Board with 80C51 device*/
+   2                            
+   3          #include <REGX51.H>
+   4          
+   5          // When you have enabled the option Stop Program Execution with Serial
+   6          // Interrupt, the Monitor-51 uses the serial interrupt of the UART.
+   7          // It is therefore required to reserve the memory locations for the interrupt
+   8          // vector.  You can do this by adding one of the following code lines:
+   9          
+  10          // char code reserve [3] _at_ 0x23;   // when using on-chip UART for communication
+  11          // char code reserve [3] _at_  0x3;   // when using off-chip UART for communication
+  12          
+  13          
+  14          unsigned int DigitMAX = 9999;
+  15          #define   MAX_DIGITS_COUNT    4 
+  16          unsigned int MaxDiv=1000;
+  17          
+  18          unsigned char code DIG_CODE[ ]={0x40, //0
+  19                                           0x79, //1
+  20                                           0x24, //2
+  21                                           0x30, //3
+  22                                           0x19, //4
+  23                                           0x12, //5
+  24                                           0x2, //6
+  25                                           0x78, //7
+  26                                           0x0, //8
+  27                                           0x10  //9
+  28            
+  29          };
+  30          
+  31          unsigned char g_displayBuffer[MAX_DIGITS_COUNT];
+  32          
+  33          unsigned int g_counter=0;
+  34            
+  35            
+  36          
+  37          void allDigitOff()
+  38          {
+  39   1        P1_0=1;P1_1=1;P1_2=1;P1_3=1;
+  40   1         
+  41   1      }
+  42            
+  43          void activeDigitN(unsigned int position)
+  44          {
+  45   1        
+  46   1         switch(position)
+  47   1        {
+  48   2           case 0: P1_0=0; break;
+  49   2           case 1: P1_1=0; break;
+  50   2           case 2: P1_2=0; break;
+  51   2           case 3: P1_3=0; break;
+  52   2         }
+  53   1      }
+  54          
+  55          
+C51 COMPILER V9.56.0.0   DIGITTUBE                                                         08/25/2016 23:11:53 PAGE 2   
+
+  56          
+  57          
+  58          void showDigitInPositionN(unsigned char position , unsigned char digit)
+  59          {
+  60   1         allDigitOff(); //so that the wrong number won't show!
+  61   1         P0 = DIG_CODE[digit];
+  62   1         activeDigitN(position);
+  63   1      }
+  64          
+  65          
+  66          
+  67          //maximum 9999
+  68           void showDigits(unsigned int digit)
+  69          {   
+  70   1          unsigned char skipZero=1;
+  71   1          unsigned int Div=MaxDiv;
+  72   1          unsigned char i=MAX_DIGITS_COUNT;
+  73   1          unsigned int digitsLeftToShow=digit;
+  74   1          if(digit>DigitMAX) return;
+  75   1       
+  76   1          if(digit==0)
+  77   1          {
+  78   2             showDigitInPositionN(1, digit);
+  79   2             return;
+  80   2          }
+  81   1         
+  82   1          do
+  83   1          {  
+  84   2             unsigned char showOneDigit=digitsLeftToShow/Div;
+  85   2             if(showOneDigit!=0)skipZero=0; //from now on , all zero should be displayed (because 1000 ,  all 00
+             -0 should be displayed
+  86   2            
+  87   2             digitsLeftToShow=digitsLeftToShow%Div;
+  88   2             
+  89   2             if((showOneDigit!=0) || !skipZero) 
+  90   2             {
+  91   3                showDigitInPositionN(i, showOneDigit);
+  92   3               
+  93   3                
+  94   3             }
+  95   2             Div/=10;
+  96   2      
+  97   2             i--;
+  98   2             
+  99   2          }while(i>=1);
+ 100   1      
+ 101   1      }
+ 102          
+ 103          
+ 104          
+ 105          //maximum 9999
+ 106          //this function only changes the buffer, interrupt function shows the buffer.
+ 107          void setDisplayBuffer(unsigned int digit)
+ 108          {   
+ 109   1          //static unsigned int previousDigit ;
+ 110   1          unsigned char skipZero=1;
+ 111   1          unsigned int Div=MaxDiv;
+ 112   1          unsigned char i=MAX_DIGITS_COUNT-1;
+ 113   1          unsigned int digitsLeftToShow=digit;
+ 114   1          //if(digit == previousDigit)
+ 115   1          {
+ 116   2             //same, skip
+C51 COMPILER V9.56.0.0   DIGITTUBE                                                         08/25/2016 23:11:53 PAGE 3   
+
+ 117   2            // return;
+ 118   2          }
+ 119   1          //previousDigit = digit;
+ 120   1          if(digit>DigitMAX) return;
+ 121   1        
+ 122   1          while(1)
+ 123   1          {  
+ 124   2             unsigned char showOneDigit=digitsLeftToShow/Div;
+ 125   2             //if(showOneDigit!=0)skipZero=0; //from now on , all zero should be displayed (because 1000 ,  all 
+             -000 should be displayed
+ 126   2            
+ 127   2             digitsLeftToShow=digitsLeftToShow%Div;
+ 128   2             g_displayBuffer[i]=showOneDigit;
+ 129   2             
+ 130   2             Div/=10;
+ 131   2             if(i==0)break;
+ 132   2             i--;
+ 133   2             
+ 134   2          } 
+ 135   1      
+ 136   1      }
+ 137          
+ 138          void testloopAllDigits(void)
+ 139          {
+ 140   1         unsigned int i;                     /* Delay var */
+ 141   1       
+ 142   1         int arraySize = sizeof(DIG_CODE);
+ 143   1         while (1) 
+ 144   1         {               /* Loop forever */
+ 145   2           for (i=0; i< arraySize; i++)  
+ 146   2           {   
+ 147   3              P0 = DIG_CODE[i];                         
+ 148   3            }
+ 149   2         }
+ 150   1      }
+ 151          
+ 152          
+ 153          void testP1(unsigned char value)
+ 154          {
+ 155   1         P1=value;
+ 156   1      }
+ 157            
+ 158          
+ 159          void testall0()
+ 160          {
+ 161   1        P0=0;
+ 162   1        P1=0;
+ 163   1        P2=0;
+ 164   1        P3=0;
+ 165   1      
+ 166   1      }
+ 167            
+ 168           
+ 169          void counterIncrease(unsigned int increase)
+ 170          {
+ 171   1         g_counter+=increase;
+ 172   1         if(g_counter >=DigitMAX) 
+ 173   1         {
+ 174   2            g_counter=DigitMAX;
+ 175   2            ; //keep the MAX number
+ 176   2         }
+ 177   1         setDisplayBuffer(g_counter);
+C51 COMPILER V9.56.0.0   DIGITTUBE                                                         08/25/2016 23:11:53 PAGE 4   
+
+ 178   1         return;
+ 179   1      }
+ 180            
+ 181          void interruptInitForDisplayRefreshTimer()
+ 182          {
+ 183   1         PX0=1;  //external interrupt is high priority
+ 184   1         PT0=0;  //timer is low priority
+ 185   1         // T1 = 0b1001  external    T0: 0b 0001  internal timer
+ 186   1         TMOD = 0x50; //0b1001---0001  
+ 187   1         //init T0 timer  
+ 188   1         TH0 =  0x65;
+ 189   1         TL0 =  0x00;
+ 190   1         TR0 = 1;    //start timer0
+ 191   1         ET0 = 1;            // Enable timer0 interrupt
+ 192   1         PT0=0;  // this t0 timer has lower priority
+ 193   1          
+ 194   1         // init T1 ext interrupt
+ 195   1         TH1 =  0xFF;
+ 196   1         TL1 =  0xFF;
+ 197   1         
+ 198   1         EA = 1;             // Enable all interrupts
+ 199   1         TR1 = 1;    //start timer1
+ 200   1         EX0=1;
+ 201   1         ET1 = 1;            // Enable timer1 interrupt
+ 202   1         PT1=1;  // higher priority for external interrupt
+ 203   1        
+ 204   1      }
+ 205          
+ 206           
+ 207          void externalInterrupt3(void) interrupt 3  //Timer 1 Interrupt
+ 208          {
+ 209   1           
+ 210   1         TH1 =  0xFF;
+ 211   1         TL1 =  0xFF; 
+ 212   1         counterIncrease(1 );
+ 213   1         setDisplayBuffer(g_counter);
+ 214   1         
+ 215   1      }
+ 216          
+ 217               
+ 218          void timer0_refreshDisplay_interrupt(void) interrupt 1  //Timer 0 Interrupt
+ 219          {   
+ 220   1         static unsigned char digitIndex=0;
+ 221   1           
+ 222   1          ET0=0;
+ 223   1          TH0 =  0x65;
+ 224   1          TL0 =  0x00;
+ 225   1         
+ 226   1         showDigitInPositionN(digitIndex, g_displayBuffer[digitIndex]);
+ 227   1         digitIndex++;
+ 228   1         if(digitIndex>=MAX_DIGITS_COUNT) 
+ 229   1         { 
+ 230   2            digitIndex=0;
+ 231   2         }
+ 232   1         ET0=1;
+ 233   1      
+ 234   1       }
+ 235           
+ 236          
+ 237          void resetDisplayBufferToZero()
+ 238          {
+ 239   1        g_displayBuffer[0]=0;
+C51 COMPILER V9.56.0.0   DIGITTUBE                                                         08/25/2016 23:11:53 PAGE 5   
+
+ 240   1        g_displayBuffer[1]=0;
+ 241   1        g_displayBuffer[2]=0;
+ 242   1        g_displayBuffer[3]=0;
+ 243   1      }
+ 244          
+ 245          
+ 246          
+ 247          void main ()
+ 248          {
+ 249   1        
+ 250   1        int arraySize = sizeof(DIG_CODE);
+ 251   1        resetDisplayBufferToZero();
+ 252   1        interruptInitForDisplayRefreshTimer();
+ 253   1        g_counter = 0;
+ 254   1        
+ 255   1        
+ 256   1         while(1)
+ 257   1        {
+ 258   2            unsigned int i=0;
+ 259   2            
+ 260   2            for(  i=0;i<5000;i++)
+ 261   2            {
+ 262   3               int j=0;
+ 263   3               for( j=0;j<4;j++)
+ 264   3               {
+ 265   4                 ;
+ 266   4               }
+ 267   3            }
+ 268   2        } 
+ 269   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    576    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     11      18
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

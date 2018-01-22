@@ -19,21 +19,31 @@ DallasTemperature sensors(&ourWire);
 //LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
 LiquidCrystal lcd(2,3,4,5,6,7 );
 
+const int IS_DEBUG = false;
+
+
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
-  sensors.begin();
+  if(IS_DEBUG)
+  {
+    Serial.begin(9600);
+    sensors.begin();
+  }
   lcd.begin(16, 2);
-    lcd.display();
+  lcd.display();
 }
 
 float readTempDS18B20()
 {
    sensors.requestTemperatures(); // Send the command to get temperatures
    float temp = sensors.getTempCByIndex(0);
-   Serial.print(temp);
-   Serial.println(" C");
-   return temp;
+   if(IS_DEBUG)
+   {
+      Serial.print(temp);
+      Serial.println(" C");
+   }
+  temp = temp - 1;
+  return temp;
 }
 
 
@@ -45,19 +55,19 @@ void loop() {
   if(i%4!=0)
   {
        lcd.print(".");
-       delay(500);
+       delay(300);
        i++;
        return;
     } 
    i=1;
     
   // put your main code here, to run repeatedly:
-   float tempC = readTempDS18B20();
+   char text = "Hello world!";
    lcd.clear();
-   lcd.print(tempC,1);
-   lcd.print('C');
+   lcd.print(text,1);
    
-   delay(500);
+   
+   delay(300);
      
 
 

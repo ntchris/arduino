@@ -1,0 +1,24 @@
+Ultiboard Information Export File,,,
+,,,
+Design Name  : digittubeAug04 - Bill of materials,,,
+Report Date  : 25 August 2016,,,
+Report Time  : 08:22,,,
+--------------------------------------------------------------------------------,,,
+,,,
+VALUE,#,REFDES,FOOTPRINT
+,,,
+1.1kOhm,7,"R1,R2,R3,R4,R5,R6,R7",R0805
+4.7kOhm,4,"R10,R11,R12,R13",R0805
+5kOhm,1,R8,R0805
+10uF,1,C3,R1210
+22pF,2,"C1,C2",C0603
+200Ohm,1,R21,R0805
+500Ohm,1,R20,R0805
+8051,1,AT51,DIP40
+1981584-1,1,J2,TYCO_1981584-1
+SS8550,4,"Q1,Q2,Q3,Q4",SOT95P230X110-3N
+DigiTube_4,1,DIGITUBE,Digittube_4
+Crystal,1,X1,QUARZ_HC49
+HDR1X3,1,J3,HDR1X3
+HDR2X5,1,J1,HDR2X5
+Switch,1,S1,SKHH_1

@@ -1,0 +1,402 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/26/2016  00:49:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEILC51\C51\BIN\BL51.EXE digitTube.obj TO digitTubeCounter RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  digitTube.obj (DIGITTUBE)
+  D:\KEILC51\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEILC51\C51\LIB\C51S.LIB (?C?UIDIV)
+  D:\KEILC51\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  digitTubeCounter (DIGITTUBE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000BH     UNIT         ?DT?DIGITTUBE
+            DATA    0013H     000BH     UNIT         _DATA_GROUP_
+            DATA    001EH     0007H     UNIT         ?DT?_SHOWDIGITS?DIGITTUBE
+            IDATA   0025H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     000DH                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+                    001EH     07E2H                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     006FH     UNIT         ?PR?_SHOWDIGITS?DIGITTUBE
+            CODE    08FBH     0055H     UNIT         ?C?LIB_CODE
+            CODE    0950H     0052H     UNIT         ?PR?_SETDISPLAYBUFFER?DIGITTUBE
+            CODE    09A2H     0046H     UNIT         ?PR?TIMER0_REFRESHDISPLAY_INTERRUPT?DIGITTUBE
+            CODE    09E8H     0043H     UNIT         ?PR?MAIN?DIGITTUBE
+            CODE    0A2BH     0040H     UNIT         ?PR?EXTERNALINTERRUPT3?DIGITTUBE
+            CODE    0A6BH     0024H     UNIT         ?PR?INTERRUPTINITFORDISPLAYREFRESHTIMER?DIGITTUBE
+            CODE    0A8FH     0023H     UNIT         ?PR?TESTLOOPALLDIGITS?DIGITTUBE
+            CODE    0AB2H     0023H     UNIT         ?PR?_COUNTERINCREASE?DIGITTUBE
+            CODE    0AD5H     001DH     UNIT         ?PR?_ACTIVEDIGITN?DIGITTUBE
+            CODE    0AF2H     0010H     UNIT         ?C_INITSEG
+            CODE    0B02H     000FH     UNIT         ?PR?_SHOWDIGITINPOSITIONN?DIGITTUBE
+            CODE    0B11H     000AH     UNIT         ?PR?TESTALL0?DIGITTUBE
+            CODE    0B1BH     000AH     UNIT         ?PR?RESETDISPLAYBUFFERTOZERO?DIGITTUBE
+            CODE    0B25H     000AH     UNIT         ?CO?DIGITTUBE
+            CODE    0B2FH     0009H     UNIT         ?PR?ALLDIGITOFF?DIGITTUBE
+            CODE    0B38H     0003H     UNIT         ?PR?_TESTP1?DIGITTUBE
+
+
+
+OVERLAY MAP OF MODULE:   digitTubeCounter (DIGITTUBE)
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/26/2016  00:49:44  PAGE 2
+
+
+SEGMENT                                            DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH
+----------------------------------------------------------------
+?PR?EXTERNALINTERRUPT3?DIGITTUBE                 -----    -----
+  +--> ?PR?_COUNTERINCREASE?DIGITTUBE
+  +--> ?PR?_SETDISPLAYBUFFER?DIGITTUBE
+
+?PR?_COUNTERINCREASE?DIGITTUBE                   -----    -----
+  +--> ?PR?_SETDISPLAYBUFFER?DIGITTUBE
+
+?PR?_SETDISPLAYBUFFER?DIGITTUBE                  0013H    0005H
+
+*** NEW ROOT ***************************************************
+
+?PR?TIMER0_REFRESHDISPLAY_INTERRUPT?D...         -----    -----
+  +--> ?PR?_SHOWDIGITINPOSITIONN?DIGITTUBE
+
+?PR?_SHOWDIGITINPOSITIONN?DIGITTUBE              -----    -----
+  +--> ?PR?ALLDIGITOFF?DIGITTUBE
+  +--> ?CO?DIGITTUBE
+  +--> ?PR?_ACTIVEDIGITN?DIGITTUBE
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                                    -----    -----
+  +--> ?PR?MAIN?DIGITTUBE
+  +--> ?C_INITSEG
+
+?PR?MAIN?DIGITTUBE                               0018H    0006H
+  +--> ?PR?RESETDISPLAYBUFFERTOZERO?DIGITTUBE
+  +--> ?PR?INTERRUPTINITFORDISPLAYREFRESHTIM...
+
+
+
+SYMBOL TABLE OF MODULE:  digitTubeCounter (DIGITTUBE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DIGITTUBE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0A8FH         PUBLIC        testloopAllDigits
+  B:00A8H.7       PUBLIC        EA
+  C:0950H         PUBLIC        _setDisplayBuffer
+  B:0090H.0       PUBLIC        P1_0
+  B:0090H.1       PUBLIC        P1_1
+  B:0090H.2       PUBLIC        P1_2
+  B:0090H.3       PUBLIC        P1_3
+  C:0B02H         PUBLIC        _showDigitInPositionN
+  D:0009H         PUBLIC        g_displayBuffer
+  C:09E8H         PUBLIC        main
+  C:088CH         PUBLIC        _showDigits
+  C:0B11H         PUBLIC        testall0
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/26/2016  00:49:44  PAGE 3
+
+
+  C:0AB2H         PUBLIC        _counterIncrease
+  D:0089H         PUBLIC        TMOD
+  C:0AD5H         PUBLIC        _activeDigitN
+  C:0B38H         PUBLIC        _testP1
+  C:0B1BH         PUBLIC        resetDisplayBufferToZero
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.3       PUBLIC        ET1
+  C:0B2FH         PUBLIC        allDigitOff
+  D:000DH         PUBLIC        g_counter
+  D:000FH         PUBLIC        MaxDiv
+  D:008CH         PUBLIC        TH0
+  B:00A8H.0       PUBLIC        EX0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  C:0B25H         PUBLIC        DIG_CODE
+  D:008BH         PUBLIC        TL1
+  B:00B8H.1       PUBLIC        PT0
+  B:00B8H.3       PUBLIC        PT1
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  B:00B8H.0       PUBLIC        PX0
+  C:09A2H         PUBLIC        timer0_refreshDisplay_interrupt
+  D:0011H         PUBLIC        DigitMAX
+  C:0A6BH         PUBLIC        interruptInitForDisplayRefreshTimer
+  C:0A2BH         PUBLIC        externalInterrupt3
+  -------         PROC          ALLDIGITOFF
+  C:0B2FH         LINE#         37
+  C:0B2FH         LINE#         38
+  C:0B2FH         LINE#         39
+  C:0B37H         LINE#         41
+  -------         ENDPROC       ALLDIGITOFF
+  -------         PROC          _ACTIVEDIGITN
+  D:0006H         SYMBOL        position
+  C:0AD5H         LINE#         43
+  C:0AD5H         LINE#         44
+  C:0AD5H         LINE#         46
+  C:0AE6H         LINE#         47
+  C:0AE6H         LINE#         48
+  C:0AE9H         LINE#         49
+  C:0AECH         LINE#         50
+  C:0AEFH         LINE#         51
+  C:0AF1H         LINE#         52
+  C:0AF1H         LINE#         53
+  -------         ENDPROC       _ACTIVEDIGITN
+  -------         PROC          _SHOWDIGITINPOSITIONN
+  D:0007H         SYMBOL        position
+  D:0005H         SYMBOL        digit
+  C:0B02H         LINE#         58
+  C:0B02H         LINE#         59
+  C:0B02H         LINE#         60
+  C:0B05H         LINE#         61
+  C:0B0CH         LINE#         62
+  -------         ENDPROC       _SHOWDIGITINPOSITIONN
+  -------         PROC          _SHOWDIGITS
+  D:0006H         SYMBOL        digit
+  -------         DO            
+  D:001EH         SYMBOL        skipZero
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/26/2016  00:49:44  PAGE 4
+
+
+  D:001FH         SYMBOL        Div
+  D:0021H         SYMBOL        i
+  D:0022H         SYMBOL        digitsLeftToShow
+  -------         DO            
+  D:0024H         SYMBOL        showOneDigit
+  -------         ENDDO         
+  -------         ENDDO         
+  C:088CH         LINE#         68
+  C:088CH         LINE#         69
+  C:088CH         LINE#         70
+  C:088FH         LINE#         71
+  C:0895H         LINE#         72
+  C:0898H         LINE#         73
+  C:089CH         LINE#         74
+  C:08A5H         LINE#         76
+  C:08A9H         LINE#         77
+  C:08A9H         LINE#         78
+  C:08B0H         LINE#         80
+  C:08B0H         LINE#         83
+  C:08B0H         LINE#         84
+  C:08BDH         LINE#         85
+  C:08C4H         LINE#         87
+  C:08D3H         LINE#         89
+  C:08DBH         LINE#         90
+  C:08DBH         LINE#         91
+  C:08E2H         LINE#         94
+  C:08E2H         LINE#         95
+  C:08F1H         LINE#         97
+  C:08F3H         LINE#         99
+  C:08FAH         LINE#         101
+  -------         ENDPROC       _SHOWDIGITS
+  -------         PROC          _SETDISPLAYBUFFER
+  D:0006H         SYMBOL        digit
+  -------         DO            
+  D:0013H         SYMBOL        skipZero
+  D:0002H         SYMBOL        Div
+  D:0014H         SYMBOL        i
+  D:0015H         SYMBOL        digitsLeftToShow
+  -------         DO            
+  D:0017H         SYMBOL        showOneDigit
+  -------         ENDDO         
+  -------         ENDDO         
+  C:0950H         LINE#         107
+  C:0950H         LINE#         108
+  C:0950H         LINE#         110
+  C:0953H         LINE#         111
+  C:0957H         LINE#         112
+  C:095AH         LINE#         113
+  C:095EH         LINE#         118
+  C:095EH         LINE#         120
+  C:0967H         LINE#         122
+  C:0967H         LINE#         123
+  C:0967H         LINE#         124
+  C:0974H         LINE#         127
+  C:0983H         LINE#         128
+  C:098AH         LINE#         130
+  C:0999H         LINE#         131
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/26/2016  00:49:44  PAGE 5
+
+
+  C:099DH         LINE#         132
+  C:099FH         LINE#         134
+  C:09A1H         LINE#         136
+  -------         ENDPROC       _SETDISPLAYBUFFER
+  -------         PROC          TESTLOOPALLDIGITS
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0006H         SYMBOL        arraySize
+  -------         ENDDO         
+  C:0A8FH         LINE#         138
+  C:0A8FH         LINE#         139
+  C:0A8FH         LINE#         142
+  C:0A93H         LINE#         143
+  C:0A93H         LINE#         144
+  C:0A93H         LINE#         145
+  C:0A9DH         LINE#         146
+  C:0A9DH         LINE#         147
+  C:0AABH         LINE#         148
+  -------         ENDPROC       TESTLOOPALLDIGITS
+  -------         PROC          _TESTP1
+  D:0007H         SYMBOL        value
+  C:0B38H         LINE#         153
+  C:0B38H         LINE#         154
+  C:0B38H         LINE#         155
+  C:0B3AH         LINE#         156
+  -------         ENDPROC       _TESTP1
+  -------         PROC          TESTALL0
+  C:0B11H         LINE#         159
+  C:0B11H         LINE#         160
+  C:0B11H         LINE#         161
+  C:0B14H         LINE#         162
+  C:0B16H         LINE#         163
+  C:0B18H         LINE#         164
+  C:0B1AH         LINE#         166
+  -------         ENDPROC       TESTALL0
+  -------         PROC          _COUNTERINCREASE
+  D:0006H         SYMBOL        increase
+  C:0AB2H         LINE#         169
+  C:0AB2H         LINE#         170
+  C:0AB2H         LINE#         171
+  C:0ABCH         LINE#         172
+  C:0AC7H         LINE#         173
+  C:0AC7H         LINE#         174
+  C:0ACDH         LINE#         176
+  C:0ACDH         LINE#         177
+  C:0AD4H         LINE#         179
+  -------         ENDPROC       _COUNTERINCREASE
+  -------         PROC          INTERRUPTINITFORDISPLAYREFRESHTIMER
+  C:0A6BH         LINE#         181
+  C:0A6BH         LINE#         182
+  C:0A6BH         LINE#         183
+  C:0A6DH         LINE#         184
+  C:0A6FH         LINE#         186
+  C:0A72H         LINE#         188
+  C:0A75H         LINE#         189
+  C:0A78H         LINE#         190
+  C:0A7AH         LINE#         191
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/26/2016  00:49:44  PAGE 6
+
+
+  C:0A7CH         LINE#         192
+  C:0A7EH         LINE#         195
+  C:0A81H         LINE#         196
+  C:0A84H         LINE#         198
+  C:0A86H         LINE#         199
+  C:0A88H         LINE#         200
+  C:0A8AH         LINE#         201
+  C:0A8CH         LINE#         202
+  C:0A8EH         LINE#         204
+  -------         ENDPROC       INTERRUPTINITFORDISPLAYREFRESHTIMER
+  -------         PROC          EXTERNALINTERRUPT3
+  C:0A2BH         LINE#         207
+  C:0A42H         LINE#         210
+  C:0A45H         LINE#         211
+  C:0A48H         LINE#         212
+  C:0A4FH         LINE#         213
+  C:0A56H         LINE#         215
+  -------         ENDPROC       EXTERNALINTERRUPT3
+  -------         PROC          TIMER0_REFRESHDISPLAY_INTERRUPT
+  -------         DO            
+  D:0008H         SYMBOL        digitIndex
+  -------         ENDDO         
+  C:09A2H         LINE#         218
+  C:09B5H         LINE#         222
+  C:09B7H         LINE#         223
+  C:09BAH         LINE#         224
+  C:09BDH         LINE#         226
+  C:09C9H         LINE#         227
+  C:09CBH         LINE#         228
+  C:09D2H         LINE#         229
+  C:09D2H         LINE#         230
+  C:09D5H         LINE#         231
+  C:09D5H         LINE#         232
+  C:09D7H         LINE#         234
+  -------         ENDPROC       TIMER0_REFRESHDISPLAY_INTERRUPT
+  -------         PROC          RESETDISPLAYBUFFERTOZERO
+  C:0B1BH         LINE#         237
+  C:0B1BH         LINE#         238
+  C:0B1BH         LINE#         239
+  C:0B1EH         LINE#         240
+  C:0B20H         LINE#         241
+  C:0B22H         LINE#         242
+  C:0B24H         LINE#         243
+  -------         ENDPROC       RESETDISPLAYBUFFERTOZERO
+  -------         PROC          MAIN
+  -------         DO            
+  D:0018H         SYMBOL        arraySize
+  -------         DO            
+  D:001AH         SYMBOL        i
+  -------         DO            
+  D:001CH         SYMBOL        j
+  -------         ENDDO         
+  -------         ENDDO         
+  -------         ENDDO         
+  C:09E8H         LINE#         247
+  C:09E8H         LINE#         248
+  C:09E8H         LINE#         250
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/26/2016  00:49:44  PAGE 7
+
+
+  C:09EEH         LINE#         251
+  C:09F1H         LINE#         252
+  C:09F4H         LINE#         253
+  C:09F9H         LINE#         256
+  C:09F9H         LINE#         257
+  C:09F9H         LINE#         258
+  C:09FEH         LINE#         260
+  C:0A02H         LINE#         261
+  C:0A02H         LINE#         262
+  C:0A07H         LINE#         263
+  C:0A0BH         LINE#         264
+  C:0A0BH         LINE#         266
+  C:0A19H         LINE#         267
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DIGITTUBE
+
+  -------         MODULE        ?C?UIDIV
+  C:08FBH         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SHOWDIGITS?DIGITTUBE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TESTLOOPALLDIGITS?DIGITTUBE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_TESTP1?DIGITTUBE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TESTALL0?DIGITTUBE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 025FH BYTE (29%) *
+******************************************************************************
+
+Program Size: data=38.0 xdata=0 code=836
+LINK/LOCATE RUN COMPLETE.  4 WARNING(S),  0 ERROR(S)
