@@ -41,10 +41,10 @@ void loop()
 {
     static int number =0;
    
-    //myTM1637.doTestDisplayAndKeys();
-    //myTM1637.display(String(1234));
+   // myTM1637.doTestDisplayAndKeys();
     myTM1637.doTest();
-    
+    delay(100000);
+   
 }
 
 
