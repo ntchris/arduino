@@ -203,11 +203,11 @@ uint8_t MyI2CDriver:: startCommandAndReadOneByte(unsigned char commandByte)
     success = i2cWaitForAck();
     if (!success)
     {
-      debugPrint("fail to send read key command");
+      //debugPrint("fail to send read key command");
       i2cStop();
     }else
     {
-        debugPrint("read key command success\n");
+     //   debugPrint("read key command success\n");
      }
   } while (!success);
 
@@ -215,7 +215,7 @@ uint8_t MyI2CDriver:: startCommandAndReadOneByte(unsigned char commandByte)
    digitalWrite(m_pin_Dio, HIGH);
 
    uint8_t readkey = 0;
-   debugPrint("value is ");
+   //debugPrint("value is ");
 
   for (int i = 0; i < BitsPerByte ; i++)
   {
@@ -229,8 +229,8 @@ uint8_t MyI2CDriver:: startCommandAndReadOneByte(unsigned char commandByte)
 
     readkey<<=1;
     
-    debugPrint(value);
-    debugPrint(" ");
+    //debugPrint(value);
+    //debugPrint(" ");
     
     readkey = readkey | value ;
     

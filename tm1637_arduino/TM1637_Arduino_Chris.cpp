@@ -332,7 +332,9 @@ uint8_t TM1637_Arduino_Chris:: readKey( )
 {
 
     uint8_t key = i2cDriver_p->startCommandAndReadOneByte( Command_SetReadKey);
-    debugPrint("read key is ", key);
+    if (m_debugPrint) 
+    {  debugPrint("read key is ", key);
+    }
     return key;
 }
 
@@ -842,7 +844,10 @@ void TM1637_Arduino_Chris::doTestDisplayAndKeys()
             default :
                 continue;
         }
-        debugPrint("read key is ", key);
+        if (m_debugPrint) 
+        {
+            debugPrint("read key is ", key); 
+        }
         if (key != nokey) // number changed
         {
             display(String(number));

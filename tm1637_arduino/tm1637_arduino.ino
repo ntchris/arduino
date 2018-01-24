@@ -3,8 +3,8 @@
 
 // Pins connect to arduino
 // if use arduino RX, TX (0,1), no pull up resistor is needed, other pins, need pull up resistor for each.
-#define pin_CLK 2
-#define pin_DIO 12
+#define pin_CLK A1
+#define pin_DIO A0
 // if frozen, try to add two 100pf capacitors for each wire
 
 // only connected a 4 digit digitube
@@ -41,8 +41,8 @@ void loop()
 {
     static int number =0;
    
-   // myTM1637.doTestDisplayAndKeys();
-    myTM1637.doTest();
+    myTM1637.doTestDisplayAndKeys();
+    //myTM1637.doTest();
     delay(100000);
    
 }

@@ -63,12 +63,7 @@ class TM1637_Arduino_Chris
         static const uint8_t BitMapMinus = 0b01000000;    // U V
         static const uint8_t ColonDigitIndex = 1; // For clock digitube, set digit2 (index=1), and active DP, its clock colon :
 
-        static const uint8_t nokey = 0b11111111;
-        static const uint8_t key1 = 0b11101111;
-        static const uint8_t key2 = 0b01101111;
-        static const uint8_t key3 = 0b10101111;
-        static const uint8_t key4 = 0b00101111;
-
+     
 
         uint8_t m_displayBrightness;
         uint8_t m_currentDisplayOnOffBit;
@@ -103,6 +98,12 @@ class TM1637_Arduino_Chris
 
 
     public:
+        static const uint8_t nokey = 0b11111111;
+        static const uint8_t key1 = 0b11101111;
+        static const uint8_t key2 = 0b01101111;
+        static const uint8_t key3 = 0b10101111;
+        static const uint8_t key4 = 0b00101111;
+
         static const uint8_t MaxBrightness = 7;
 
         bool m_debugPrint;
@@ -115,7 +116,7 @@ class TM1637_Arduino_Chris
         void display(String str);
         void display(float f);
         void switchOnOff(bool on);
-
+        
         uint8_t readKey();
 
         //valid value is 0 to 7, larger than 7 then take it as 7
