@@ -6,7 +6,9 @@
 // if use arduino RX, TX (0,1), no pull up resistor is needed, other pins, need pull up resistor for each.
 #define pin_CLK A1
 #define pin_DIO A0
-#define pin_firealarm A3
+#define pin_firealarm A2
+#define pin_relay_delayOff A3
+
 // if frozen, try to add two 100pf capacitors for each wire
 
 // only connected a 4 digit digitube
@@ -22,7 +24,7 @@ TM1637_Arduino_Chris myTM1637(pin_CLK, pin_DIO, installDigits);
 
 //make the longest timer as one hour -1 second
 const long MAXTimerSecond = 60 * 60 - 1;
-
+const long STEP_TIME_SETTING = 30;
 static long second = 0;
 
 /*
@@ -50,7 +52,13 @@ inline void refreshDisplayTime(long second)
 }
 
 
-void fireAlarm(void)
+void fireAlarmSound(void)
+{
+    digitalWrite(pin_firealarm, HIGH);
+
+}
+
+void stopAlarmSound(void)
 {
     digitalWrite(pin_firealarm, LOW);
 
@@ -59,14 +67,37 @@ void fireAlarm(void)
 
 void timerInterrupt()          // timer compare interrupt service routine
 {
+    static int MaxAlarmDuration = 2;
+    static int alarmTimeCountSecond = 0;
     if ( second == 0 )
     {
 
-        refreshDisplayTime(second);
+        if (alarmTimeCountSecond == 0 )
+        {
 
-        Timer1.stop();
+            digitalWrite(pin_relay_delayOff, LOW);
+            fireAlarmSound();
+            alarmTimeCountSecond++;
+            Serial.print("alarm fired!!! \n");
+            refreshDisplayTime(second);
+            return;
+        }
+        else if (alarmTimeCountSecond > 0 && alarmTimeCountSecond < MaxAlarmDuration  )
+        {
+            alarmTimeCountSecond ++;
 
-        fireAlarm();
+            Serial.print("alarm fired and waiting for next time int\n");
+            return;
+
+        } else if (alarmTimeCountSecond >= MaxAlarmDuration)
+        {
+            alarmTimeCountSecond = 0;
+            //Timer1.detachInterrupt();
+            Timer1.stop();
+            stopAlarmSound();
+            Serial.print("alarm stoped\n");
+        }
+
         return;
     } else
     {
@@ -96,32 +127,30 @@ inline String secondToTime(long second)
 
 void setup()
 {
+    Serial.begin(9600);
+    Serial.print("Setup \n");
     myTM1637.m_debugPrint = debugTM1637;
-
-    pinMode(LED_BUILTIN, OUTPUT);
-    digitalWrite(LED_BUILTIN, LOW);
+    pinMode(pin_relay_delayOff, OUTPUT);
+    digitalWrite(pin_relay_delayOff, LOW);
 
     pinMode(pin_firealarm , OUTPUT);
-    digitalWrite(pin_firealarm, LOW);
-
-    if (myTM1637.m_debugPrint  ) {
-        Serial.begin(9600);      // open the serial port at 9600 bps:
-    }
-    Serial.begin(9600);
-    digitalWrite(LED_BUILTIN, HIGH);
+    fireAlarmSound();
 
     myTM1637.setBrightness(0);
 
     myTM1637.clearAll();
     Timer1.stop();
-    Timer1.attachInterrupt( timerInterrupt ); // attach the service routine here
+    //Timer1.attachInterrupt( timerInterrupt ); // attach the service routine here
+
+    delay(100);
+    stopAlarmSound();
 
 }
 
 
 void timerBottonPlus()
 {
-    second += 20;
+    second += STEP_TIME_SETTING;
     if (second > MAXTimerSecond )
     {
         second = MAXTimerSecond ;
@@ -131,7 +160,7 @@ void timerBottonPlus()
 
 
 void timerButtonMinus()
-{   second -= 20;
+{   second -= STEP_TIME_SETTING;
     if (second < 0)
     {
         second = 0;
@@ -155,20 +184,31 @@ void loop()
                 continue;
 
             case myTM1637.key1:
-
+                fireAlarmSound();
                 timerButtonMinus();
+                delay(150);
+                stopAlarmSound();
+                delay(100);
+
                 break;
             case myTM1637.key2:
+                fireAlarmSound();
                 timerBottonPlus();
-
+                delay(150);
+                stopAlarmSound();
+                delay(100);
                 break;
             case myTM1637.key3:
+                fireAlarmSound();
+                delay(350);
+                stopAlarmSound();
 
                 if (second > 0)
                 {
                     Timer1.initialize(OneSecond);
+                    Timer1.attachInterrupt( timerInterrupt ); // attach the service routine here
+                    digitalWrite(pin_relay_delayOff, HIGH);
 
-                    digitalWrite(pin_firealarm, HIGH);
                 }
 
                 break;
@@ -177,6 +217,7 @@ void loop()
                 break;
             default :
                 continue;
+
         }
         //myTM1637.debugPrint("read key is ", key);
 
@@ -188,6 +229,7 @@ void loop()
             //don't take another key in too short time
             delay(300);
         }
+
     } while (true);
 
 
