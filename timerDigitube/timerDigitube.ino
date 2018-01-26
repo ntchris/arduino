@@ -184,6 +184,8 @@ void loop()
                 continue;
 
             case myTM1637.key1:
+                Serial.print("have key1\n");
+
                 fireAlarmSound();
                 timerButtonMinus();
                 delay(150);
@@ -192,6 +194,7 @@ void loop()
 
                 break;
             case myTM1637.key2:
+                Serial.print("have key2\n");
                 fireAlarmSound();
                 timerBottonPlus();
                 delay(150);
@@ -199,6 +202,7 @@ void loop()
                 delay(100);
                 break;
             case myTM1637.key3:
+                Serial.print("have key3\n");
                 fireAlarmSound();
                 delay(350);
                 stopAlarmSound();
@@ -213,13 +217,14 @@ void loop()
 
                 break;
             case myTM1637.key4:
+                Serial.print("have key4\n");
                 //second += 30;
                 break;
             default :
                 continue;
 
         }
-        //myTM1637.debugPrint("read key is ", key);
+        
 
         Serial.print("new second is " + String(second) + "\n");
         if (key != myTM1637.nokey) // number changed

@@ -69,7 +69,7 @@ bool MyI2CDriver::i2cWaitForAck()
 
   unsigned char dio;
   int waitingCount = 0;
-  const int MaxRetry = 3;
+  const int MaxRetry = 10;
   do {
 
     dio = digitalRead(m_pin_Dio);
@@ -241,6 +241,7 @@ uint8_t MyI2CDriver:: startCommandAndReadOneByte(unsigned char commandByte)
   if (!success)
   {
     debugPrint("readkey i2c waitForAck() failed");
+    readkey=0;
    }
   i2cStop();
 
