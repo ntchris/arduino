@@ -1,8 +1,15 @@
 
+#include "superRotaryEncoder.hpp"
+
+
 // built in LED
 const int LedPin = 13;
 const int RotaryEncoderA = 3;
 const int RotaryEncoderB = 2;
+
+SuperRotaryEncoder rotEncoder(RotaryEncoderA, RotaryEncoderB);
+
+
 // Connect pin C to GND
 // HOW to determine which PIN is A, which is B, but it deosn't really matter.
 // Using  displayValues() function, check serial output window
@@ -12,13 +19,15 @@ void setup() {
     // put your setup code here, to run once:
     Serial.begin(9600);
     Serial.print("Setup \n");
-
+   
     pinMode(LedPin, OUTPUT);
-    pinMode(RotaryEncoderA, INPUT_PULLUP);
-    pinMode(RotaryEncoderB, INPUT_PULLUP);
+
+    
+    //pinMode(RotaryEncoderA, INPUT_PULLUP);
+    //pinMode(RotaryEncoderB, INPUT_PULLUP);
 
     digitalWrite(LedPin, LOW);
-
+    rotEncoder.debug=true;
 }
 
 
@@ -529,7 +538,7 @@ int getEncoderValueSum()
             //already started, now it's time to end
             if (valueASum > valueBSum)
             {
-                if (valueASum > MinSum)
+                //if (valueASum > MinSum)
                 {
                     //Serial.println(String(valueASum)+ " vs "+ String(valueBSum));
                     encoderValue++;
@@ -696,9 +705,10 @@ void loop() {
     //Serial.print(encoderValue);
     //Serial.print("\n");
 
-    displayValues();
+    //displayValues();
     
-    //getEncoderValueSum();
+    //rotEncoder.getEncoderValueSum();
+    rotEncoder.selftest();
  //   getEncoderValueSumAccel();
 
     
