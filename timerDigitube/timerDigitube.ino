@@ -1,4 +1,4 @@
-#include "TM1637_Arduino_Chris.hpp"
+#include "Super_TM1637_Arduino.hpp"
 #include <TimerOne.h>
 
 
@@ -15,12 +15,12 @@
 #define installDigits  4
 
 
-const bool debugTM1637 = false;
+const bool debugTM1637 = true;
 
 const long OneSecond = 1000000;
 
 
-TM1637_Arduino_Chris myTM1637(pin_CLK, pin_DIO, installDigits);
+Super_TM1637_Arduino myTM1637(pin_CLK, pin_DIO, installDigits);
 
 //make the longest timer as one hour -1 second
 const long MAXTimerSecond = 60 * 60 - 1;
