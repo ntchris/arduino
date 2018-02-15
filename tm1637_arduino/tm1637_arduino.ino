@@ -1,10 +1,9 @@
-#include "TM1637_Arduino_Chris.hpp"
-
+#include "Super_TM1637_Arduino.hpp" 
 
 // Pins connect to arduino
 // if use arduino RX, TX (0,1), no pull up resistor is needed, other pins, need pull up resistor for each.
-#define pin_CLK A1
-#define pin_DIO A0
+#define pin_CLK  2
+#define pin_DIO  12
 // if frozen, try to add two 100pf capacitors for each wire
 
 // only connected a 4 digit digitube
@@ -15,7 +14,7 @@ const bool debugTM1637 = true;
 
 
 
-TM1637_Arduino_Chris myTM1637(pin_CLK, pin_DIO, installDigits);
+Super_TM1637_Arduino myTM1637(pin_CLK, pin_DIO, installDigits);
 
 void setup()
 {
@@ -41,8 +40,8 @@ void loop()
 {
     static int number =0;
    
-    myTM1637.doTestDisplayAndKeys();
-    //myTM1637.doTest();
+    //myTM1637.doTestDisplayAndKeys();
+    myTM1637.doTest();
     delay(100000);
    
 }

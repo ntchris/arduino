@@ -39,14 +39,14 @@
 */
 
 
-#ifndef __TM1637_Arduino_Chris__
-#define __TM1637_Arduino_Chris__
+#ifndef __Super_TM1637_Arduino__
+#define __Super_TM1637_Arduino__
 
 #include <string.h>
 #include <arduino.h>
-#include "MyI2CDriver.hpp"
+#include "SuperI2CDriver.hpp"
 
-class TM1637_Arduino_Chris
+class Super_TM1637_Arduino
 {
         static const uint8_t Command_Data_Setting_Write_Data_To_Display_Register = 0b01000000; //0x40
         static const uint8_t Command_SetDisplayBrightness = 0b10000000;
@@ -76,7 +76,7 @@ class TM1637_Arduino_Chris
         //otherwise, if usr input "-1234" , a 4 digits digitube display 1234, then it's very misleading.
         int m_maxDisplayDigits;
         static const uint8_t MaxDigitCount = 6;  // TM1637 supports 6 digits
-        MyI2CDriver *i2cDriver_p;
+        SuperI2CDriver *i2cDriver_p;
         // TM1637 supports 6 digit-seven-segments display, but you will probably just use a 4 digit tube
 
 
@@ -108,7 +108,7 @@ class TM1637_Arduino_Chris
 
         bool m_debugPrint;
 
-        TM1637_Arduino_Chris(uint8_t pinClk, uint8_t pinDio, uint8_t digitubeDigits);
+        Super_TM1637_Arduino(uint8_t pinClk, uint8_t pinDio, uint8_t digitubeDigits);
 
         // let digit tube to show a number 1234
         void display(unsigned long number);
@@ -136,11 +136,11 @@ class TM1637_Arduino_Chris
         void doTestBrightnessLevel();
         void doTestDisplayAndKeys();
 
-        ~TM1637_Arduino_Chris();
+        ~Super_TM1637_Arduino();
 
 
 };
-#endif  // __TM1637_Arduino_Chris__
+#endif  // __Super_TM1637_Arduino__
 
 
 

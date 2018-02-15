@@ -1,6 +1,6 @@
-#include "TM1637_Arduino_Chris.hpp"
+#include "Super_TM1637_Arduino.hpp"
 
-const uint8_t TM1637_Arduino_Chris::DigitBitmapArray[]  = {
+const uint8_t Super_TM1637_Arduino::DigitBitmapArray[]  = {
     0b00111111,    // 0
     0b00000110,    // 1
     0b01011011,    // 2
@@ -19,7 +19,7 @@ const uint8_t TM1637_Arduino_Chris::DigitBitmapArray[]  = {
     0b01110001,    // F
 };
 
-TM1637_Arduino_Chris::TM1637_Arduino_Chris(uint8_t pinClk, uint8_t pinDio, uint8_t digitubeDigits)
+Super_TM1637_Arduino::Super_TM1637_Arduino(uint8_t pinClk, uint8_t pinDio, uint8_t digitubeDigits)
 {
     m_pin_Clk = pinClk;
     m_pin_Dio = pinDio;
@@ -29,20 +29,20 @@ TM1637_Arduino_Chris::TM1637_Arduino_Chris(uint8_t pinClk, uint8_t pinDio, uint8
 
     m_maxDisplayDigits = digitubeDigits;
     uint8_t displaySetting = Command_SetDisplayBrightness | m_displayBrightness | m_currentDisplayOnOffBit ;
-    i2cDriver_p = new MyI2CDriver(m_pin_Clk, m_pin_Dio );
+    i2cDriver_p = new SuperI2CDriver(m_pin_Clk, m_pin_Dio );
     //i2cDriver_p->m_debugPrint = m_debugPrint ;
 
     i2cDriver_p->startCommand(displaySetting);
 }
 
-TM1637_Arduino_Chris:: ~TM1637_Arduino_Chris()
+Super_TM1637_Arduino:: ~Super_TM1637_Arduino()
 {
     delete i2cDriver_p;
 }
 
 
 
-void TM1637_Arduino_Chris::debugPrint(int i)
+void Super_TM1637_Arduino::debugPrint(int i)
 {
     if (m_debugPrint)
     {
@@ -51,7 +51,7 @@ void TM1637_Arduino_Chris::debugPrint(int i)
 
 }
 
-void TM1637_Arduino_Chris::debugPrint(const char *str)
+void Super_TM1637_Arduino::debugPrint(const char *str)
 {
     if (m_debugPrint)
     {
@@ -61,7 +61,7 @@ void TM1637_Arduino_Chris::debugPrint(const char *str)
 }
 
 
-void TM1637_Arduino_Chris::debugPrint(const String name, unsigned long int  value)
+void Super_TM1637_Arduino::debugPrint(const String name, unsigned long int  value)
 {
     if (m_debugPrint)
     {
@@ -72,7 +72,7 @@ void TM1637_Arduino_Chris::debugPrint(const String name, unsigned long int  valu
 
 }
 
-void TM1637_Arduino_Chris::debugPrint(const String name, const String str)
+void Super_TM1637_Arduino::debugPrint(const String name, const String str)
 {
     if ( m_debugPrint)
     {
@@ -84,13 +84,13 @@ void TM1637_Arduino_Chris::debugPrint(const String name, const String str)
 }
 
 
-void TM1637_Arduino_Chris::clearAll()
+void Super_TM1637_Arduino::clearAll()
 {
     display("");
 }
 
 
-uint8_t TM1637_Arduino_Chris::charToBitMap(char numberChar)
+uint8_t Super_TM1637_Arduino::charToBitMap(char numberChar)
 {
     uint8_t bitmap = BitMapEmpty;
     if (numberChar >= '0' && numberChar <= '9' )
@@ -117,7 +117,7 @@ uint8_t TM1637_Arduino_Chris::charToBitMap(char numberChar)
 
 
 
-void TM1637_Arduino_Chris::display(unsigned long num)
+void Super_TM1637_Arduino::display(unsigned long num)
 {
 
 
@@ -126,7 +126,7 @@ void TM1637_Arduino_Chris::display(unsigned long num)
 }
 
 
-void TM1637_Arduino_Chris:: displayOverflow()
+void Super_TM1637_Arduino:: displayOverflow()
 {
     String overflowString = "";
     for (int i = 0; i < m_maxDisplayDigits; i++)
@@ -328,7 +328,7 @@ void TM1637_Arduino_Chris:: displayOverflow()
 
 
 
-uint8_t TM1637_Arduino_Chris:: readKey( )
+uint8_t Super_TM1637_Arduino:: readKey( )
 {
 
     uint8_t key = i2cDriver_p->startCommandAndReadOneByte( Command_SetReadKey);
@@ -340,7 +340,7 @@ uint8_t TM1637_Arduino_Chris:: readKey( )
 
 
 
-void TM1637_Arduino_Chris:: setDisplayBuffer(uint8_t *bitmapArray, uint8_t arraySize)
+void Super_TM1637_Arduino:: setDisplayBuffer(uint8_t *bitmapArray, uint8_t arraySize)
 {
 
     bool success = true;
@@ -353,7 +353,7 @@ void TM1637_Arduino_Chris:: setDisplayBuffer(uint8_t *bitmapArray, uint8_t array
 }
 
 
-void TM1637_Arduino_Chris:: display_from_end(String str)
+void Super_TM1637_Arduino:: display_from_end(String str)
 {
     uint8_t bitmapArray[MaxDigitCount];
     // make a copy of the string so we don't trim the original string
@@ -441,7 +441,7 @@ void TM1637_Arduino_Chris:: display_from_end(String str)
 
 }
 
-bool TM1637_Arduino_Chris::checkIfOverflow(String str)
+bool Super_TM1637_Arduino::checkIfOverflow(String str)
 {
     int req = checkRequiredDigitCount(str);
     if (req > m_maxDisplayDigits)
@@ -452,7 +452,7 @@ bool TM1637_Arduino_Chris::checkIfOverflow(String str)
 }
 
 // if string has : , simply change or enable the certain digit with dp.
-void TM1637_Arduino_Chris:: display(String str)
+void Super_TM1637_Arduino:: display(String str)
 {
     uint8_t bitmapArray[MaxDigitCount];
     // make a copy of the string so we don't trim the original string
@@ -542,7 +542,7 @@ void TM1637_Arduino_Chris:: display(String str)
 
 
 
-void TM1637_Arduino_Chris::display(float f)
+void Super_TM1637_Arduino::display(float f)
 {
     String floatString = String(f) ;
 
@@ -554,7 +554,7 @@ void TM1637_Arduino_Chris::display(float f)
 //  if m_maxDisplayDigits is 4,  then 8.8.8.8 is not overflow, 12:34 is not overflow.
 // so can not simply check string.length()
 //  88888 is overflow
-int TM1637_Arduino_Chris::checkRequiredDigitCount(String str)
+int Super_TM1637_Arduino::checkRequiredDigitCount(String str)
 {
     uint8_t bitmapCount = 0;
 
@@ -620,7 +620,7 @@ int TM1637_Arduino_Chris::checkRequiredDigitCount(String str)
 
 }
 
-void TM1637_Arduino_Chris::switchOnOff(bool on)
+void Super_TM1637_Arduino::switchOnOff(bool on)
 {
     debugPrint("onOff is ", on);
     uint8_t displaySetting;
@@ -640,7 +640,7 @@ void TM1637_Arduino_Chris::switchOnOff(bool on)
 
 }
 
-void TM1637_Arduino_Chris::setBrightness(uint8_t level)
+void Super_TM1637_Arduino::setBrightness(uint8_t level)
 {
     if (level > MaxBrightness)
     {
@@ -655,7 +655,7 @@ void TM1637_Arduino_Chris::setBrightness(uint8_t level)
 
 }
 
-void TM1637_Arduino_Chris::doTestBrightnessLevel()
+void Super_TM1637_Arduino::doTestBrightnessLevel()
 {   static unsigned long i = 0;
     static bool direction = true;
     digitalWrite(LED_BUILTIN,  i % 2);
@@ -686,7 +686,7 @@ void TM1637_Arduino_Chris::doTestBrightnessLevel()
 
 }
 
-void TM1637_Arduino_Chris::doTestSwitchOnOff()
+void Super_TM1637_Arduino::doTestSwitchOnOff()
 {
     switchOnOff( 0);
 
@@ -697,7 +697,7 @@ void TM1637_Arduino_Chris::doTestSwitchOnOff()
 }
 
 
-void TM1637_Arduino_Chris::doTest8888()
+void Super_TM1637_Arduino::doTest8888()
 {
     static unsigned long i = 0;
 
@@ -711,7 +711,7 @@ void TM1637_Arduino_Chris::doTest8888()
 
 }
 
-void TM1637_Arduino_Chris::doTestIntLoop()
+void Super_TM1637_Arduino::doTestIntLoop()
 {
     display((unsigned long)0);
     delay(1000);
@@ -722,7 +722,7 @@ void TM1637_Arduino_Chris::doTestIntLoop()
     }
 
 }
-void TM1637_Arduino_Chris::doTest()
+void Super_TM1637_Arduino::doTest()
 {
     //doTestIntLoop();
     /*
@@ -809,7 +809,7 @@ void TM1637_Arduino_Chris::doTest()
 
 
 
-void TM1637_Arduino_Chris::doTestDisplayAndKeys()
+void Super_TM1637_Arduino::doTestDisplayAndKeys()
 {
     static int number = 1;
     //myTM1637.doTest();
