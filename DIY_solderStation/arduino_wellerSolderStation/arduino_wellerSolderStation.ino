@@ -1,15 +1,20 @@
+#include "superRotaryEncoder.hpp"
 
 
 const int opampPin = A0;
 const float ADC1024 = 1024.0;
-const float VCC5 = 5.0;
+const float VCC5 = 4.97;
 const float NotConnectedVoltage = 4.9;
 const int NotConnectedVoltageInt = 1015;  // ADC, if 5.0v then it's 1023
 const int HeaterEnableAPin = 2;
 const int OpAmpR1 = 220;//KOhm
-const int OpAmpR2 = 1; // KOhm
-const int TCuVPerC = 41;
+const float OpAmpR2 = 0.330; // 330R,  0.330 KOhm
 
+const int TCuVPerC = 11;  //41uV per C  thermal couple type K.
+const int RotaryPinA = 11;
+const int RotaryPinB = 12;
+const int MIN_TARGET_TEMP = 20;
+const int Default_Target_Temp = 80;
 /**
      note: must clean up all flux otherwise ADC reading could be 0 or low while not connected
      (but it should be constantly high or 1023 or 4.9 )
@@ -27,6 +32,9 @@ const int TCuVPerC = 41;
 
 
 
+   61C , 0.11 gained,  
+   solder melt  int 146 0.7V    95C (wrong ??)
+
                          63       0.31  (not melt solder)
          150C            98,  0.48
 
@@ -37,18 +45,19 @@ const int TCuVPerC = 41;
 
 */
 
+SuperRotaryEncoder rotEncoder(RotaryPinA, RotaryPinB);
 
 void showADCValue(int opampAdcInt)
 {
     static int oldOpAmpInt = -1;
-
+    
     if (oldOpAmpInt != opampAdcInt)
     {
         float voltage = VCC5 * opampAdcInt / ADC1024;
 
         Serial.println("opampValInt:" + String(opampAdcInt) + ", Voltage:" + String(voltage)  );
 
-        float temp = voltageToTempC(voltage, 20 );
+        float temp = voltageToTempC(voltage, 18 );
 
         Serial.println("temp: " + String(temp) );
 
@@ -105,9 +114,8 @@ bool isHandleConnected()
 */
 bool isTempTooHigh(float opampVoltageLimit)
 {
-    static int oldOpAmpInt = 0;
     digitalWrite(HeaterEnableAPin, false);
-    delay(10);
+    delay(5);
     int opampValInt = analogRead(opampPin);
 
     showADCValue(opampValInt );
@@ -128,21 +136,55 @@ bool isTempTooHigh(float opampVoltageLimit)
 }
 
 
+// , float opampVoltage, int envTempC
+bool isTempTooHigh_temp(int target_temp)
+{
+    digitalWrite(HeaterEnableAPin, false);
+    delay(5);
+
+    const float MAX = 10.0;
+    int i;
+    float opampAdcInt;
+    for(i=0;i<MAX;i++)
+    {
+       opampAdcInt += analogRead(opampPin);
+       delay(3);
+    }
+    opampAdcInt = opampAdcInt /MAX;
+    
+    showADCValue(opampAdcInt );
+
+    float voltage = VCC5 * opampAdcInt / ADC1024;
+    
+    float measured_temp = voltageToTempC(voltage, 18);
+    if ( measured_temp > target_temp )
+    {
+        //Serial.println("measured temp: " + String(measured_temp));
+        return true;
+    } else
+    {
+        return false;
+    }
+
+
+}
+
+
 //The opamp voltage to temp
 // measured temp  -->
 // 41uV/C
 float voltageToTempC(float vol, int envTempC)
 {
-    float ampTimes = OpAmpR1 * 1.0 / OpAmpR2 + 1;
-    float thermalJunction_mV = (vol * 1000.0 ) / ampTimes;
-    Serial.println("thermalJunction_mV: " + String(thermalJunction_mV));
+    float ampGain = OpAmpR1 * 1.0 / OpAmpR2 + 1.0;
+    float thermalJunction_mV = (vol * 1000.0 ) / ampGain;
+    //Serial.println("thermalJunction_mV: " + String(thermalJunction_mV));
     //assume env is always 20C for now
-    float envTCVoltage_mv = 720.0 / 1000; // envTempC voltage ,  uV   18C
+    float envTCVoltage_mv = envTempC * TCuVPerC / 1000; // envTempC voltage ,  uV   18C
 
     float v1_mv = envTCVoltage_mv + thermalJunction_mV;
     float JunctionTemp = v1_mv * 1000.0 / TCuVPerC ;
     return JunctionTemp;
-    
+
 }
 
 
@@ -152,25 +194,50 @@ void loop() {
 
     bool isconnected = isHandleConnected();
 
-    float opampVolLimit = 0.5;
+
+    static float targetTemp = Default_Target_Temp;
+
+    static int old_rotaryValue = 99;
+    int rotaryValue = rotEncoder.getEncoderValueSumAccel();
+    if ( rotaryValue  != old_rotaryValue )
+    {
+        const int RotaryToTempDeltaTimes = 5;
+        int delta = rotaryValue - old_rotaryValue;
+        targetTemp = targetTemp + delta * RotaryToTempDeltaTimes;
+        if(targetTemp < MIN_TARGET_TEMP)
+        {
+           targetTemp = MIN_TARGET_TEMP;  
+        }
+        Serial.println("setting target temp: " + String(targetTemp));
+        old_rotaryValue = rotaryValue;
+    }
 
     if (isconnected )
     {
-        static bool oldTooHigh = true;
 
-        bool istoohigh = isTempTooHigh(opampVolLimit);
+
+        //  bool istoohigh = isTempTooHigh(opampVolLimit);
+        static bool oldIsTooHigh = false;
+        bool istoohigh = isTempTooHigh_temp(targetTemp);
         bool output = false;
-        if (oldTooHigh != istoohigh )
+
+        if ( oldIsTooHigh != istoohigh )
         {
             output = true;
-            oldTooHigh = istoohigh ;
+            oldIsTooHigh = istoohigh ;
+        } else
+        {
+            output = false;
         }
+
 
         if ( istoohigh  )
         {
+          
             if (output)
             {   //turn off
                 Serial.println("Setting HeaterPin OFF");
+                Serial.println("targetTemp: "+String(targetTemp)+ " vs ");
             }
             digitalWrite(HeaterEnableAPin, false);
 
@@ -181,12 +248,12 @@ void loop() {
             {
                 Serial.println("Setting HeaterPin ON");
             }
-            digitalWrite(HeaterEnableAPin, false);
+            digitalWrite(HeaterEnableAPin, true);
         }
 
     }
 
-    delay(20);
+    delay(30); 
 
 
 }
