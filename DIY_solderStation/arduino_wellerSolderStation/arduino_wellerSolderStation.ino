@@ -51,7 +51,7 @@ void showADCValue(int opampAdcInt)
 {
     static int oldOpAmpInt = -1;
     
-    if (oldOpAmpInt != opampAdcInt)
+    if ( abs( oldOpAmpInt - opampAdcInt)>=2  )
     {
         float voltage = VCC5 * opampAdcInt / ADC1024;
 
@@ -193,7 +193,6 @@ void loop() {
     // put your main code here, to run repeatedly:
 
     bool isconnected = isHandleConnected();
-
 
     static float targetTemp = Default_Target_Temp;
 
