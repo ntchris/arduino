@@ -9,7 +9,7 @@ SuperI2CDriver::SuperI2CDriver(uint8_t pinClk, uint8_t pinDio )
   m_pin_Dio = pinDio;
   m_debugPrint = true;
   pinMode(m_pin_Clk, OUTPUT);  //default, input , input_pullup mode not working
-  //pinMode(m_pin_Dio, INPUT);
+  pinMode(m_pin_Dio, INPUT_PULLUP);
   digitalWrite(m_pin_Clk, LOW);
   digitalWrite(m_pin_Dio, LOW);
 

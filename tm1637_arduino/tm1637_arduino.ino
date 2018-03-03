@@ -42,7 +42,7 @@ void loop()
    
     //myTM1637.doTestDisplayAndKeys();
     myTM1637.doTest();
-    delay(100000);
+    delay(100);
    
 }
 
