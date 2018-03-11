@@ -1,5 +1,7 @@
 #include "Super_TM1637_Arduino.hpp"
 
+
+// to do ? numbers use one array, letter a-z use another
 const uint8_t Super_TM1637_Arduino::DigitBitmapArray[]  = {
     0b00111111,    // 0
     0b00000110,    // 1
@@ -17,7 +19,18 @@ const uint8_t Super_TM1637_Arduino::DigitBitmapArray[]  = {
     0b01011110,    // d
     0b01111001,    // E
     0b01110001,    // F
+    
 };
+
+
+
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterS  = 0b01101101;
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetters  = 0b01101101;
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettert  = 0b01111000;    // t
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterT  = 0b00111001;    // t
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettery  = 0b01100110;    // y  same as Y
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterY  = 0b01100110;    // Y  same as y
+    
 
 Super_TM1637_Arduino::Super_TM1637_Arduino(uint8_t pinClk, uint8_t pinDio, uint8_t digitubeDigits)
 {
@@ -111,7 +124,17 @@ uint8_t Super_TM1637_Arduino::charToBitMap(char numberChar)
     {
         bitmap = BitMapMinus;
 
-    }
+    } else if (numberChar == 's' || numberChar == 'S')
+    {   // the same as 5
+        bitmap = DigitBitmapArrayLetters;
+    
+    } else if (numberChar == 't')
+    {    
+        bitmap = DigitBitmapArrayLettert;
+    }else if (numberChar == 'y' || numberChar == 'Y' )
+    {    
+        bitmap = DigitBitmapArrayLettery;
+    }      
     return bitmap;
 }
 

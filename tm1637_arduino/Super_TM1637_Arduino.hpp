@@ -82,6 +82,15 @@ class Super_TM1637_Arduino
 
         // contains all the bitmaps for 0 1 2 ... F
         static const uint8_t DigitBitmapArray[];
+        
+        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterS;//  = 0b01101101;
+        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetters;//  = 0b01101101;
+
+        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettert;//  = 0b00111001;    // t
+        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterT;//  = 0b00111001;    // t
+        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettery;
+        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterY;
+
         const uint8_t Index_Empty_Bitmap = 16; //this need to be removed
 
         //Arduino pins for clk and dio of TM1637
