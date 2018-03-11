@@ -118,14 +118,15 @@ int SuperRotaryEncoder::getEncoderValueSum()
 int SuperRotaryEncoder::getEncoderValueSumAccel()
 {
 
-    const unsigned long  AllowTimeDeltaMillieSec = 40; // key value change only accept if it's larger than this micro second
-    const int MaxAccel = 2;
+    const unsigned long  AllowTimeDeltaMillieSec = 20; // key value change only accept if it's larger than this micro second
+    const int MaxAccel = 5;
     //acceleration
     static int accel = 0;
     static int encoderValue = 100;
     static int valueASum = 0;
     static int valueBSum = 0;
     //const int MinSum = 5;
+    const unsigned long IdleTimeMillieSec = 600;
 
     // begin with A=1 B=1 and end with A=1  B=1
     int valueA = digitalRead( RotaryEncoderA );
@@ -134,19 +135,25 @@ int SuperRotaryEncoder::getEncoderValueSumAccel()
     unsigned long timestamp = getTimeStamp();
     static unsigned long oldTimeStamp = 0;
 
+    if (( timestamp - oldTimeStamp ) > IdleTimeMillieSec )
+    {
+       accel=0;
+    }
+    
+            
     if ( (valueA == HIGH) && (valueB == HIGH))
     {
         if (!started)
         {
-            //Serial.println("not started, all high");
+          //  Serial.println("not started, all high");
             //idle, nothing changed
 
             //clear accel when idle for long time
            
-            if (( timestamp - oldTimeStamp ) > AllowTimeDeltaMillieSec )
-            {
-               accel=0;
-            }
+          //  if (( timestamp - oldTimeStamp ) > IdleTimeMillieSec )
+          //  {
+          //     accel=0;
+         //   }
             return encoderValue;
 
         } else
@@ -154,7 +161,7 @@ int SuperRotaryEncoder::getEncoderValueSumAccel()
             //started and HIGH HIGH
             if (( timestamp - oldTimeStamp ) < AllowTimeDeltaMillieSec )
             {
-                //Serial.println("drop");
+                Serial.println("drop");
 
                 //happened too fast, drop
                 valueASum = 0;
@@ -176,7 +183,7 @@ int SuperRotaryEncoder::getEncoderValueSumAccel()
                     encoderValue++;
                 }
             }
-            else
+            else if( valueASum < valueBSum   )
             {
 
                 if (accel > (-1)*MaxAccel )
