@@ -24,13 +24,13 @@ const uint8_t Super_TM1637_Arduino::DigitBitmapArray[]  = {
 
 
 
-const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterS  = 0b01101101;
-const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetters  = 0b01101101;
-const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettert  = 0b01111000;    // t
-const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterT  = 0b00111001;    // t
-const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettery  = 0b01100110;    // y  same as Y
-const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterY  = 0b01100110;    // Y  same as y
-    
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterS = 0b01101101;
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetters = 0b01101101;
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettert = 0b01111000;    // t
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterT = 0b00111001;    // t
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettery = 0b01100110;    // y  same as Y
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterY = 0b01100110;    // Y  same as y
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterO = 0b00111111;    // same as 0
 
 Super_TM1637_Arduino::Super_TM1637_Arduino(uint8_t pinClk, uint8_t pinDio, uint8_t digitubeDigits)
 {
@@ -134,7 +134,12 @@ uint8_t Super_TM1637_Arduino::charToBitMap(char numberChar)
     }else if (numberChar == 'y' || numberChar == 'Y' )
     {    
         bitmap = DigitBitmapArrayLettery;
-    }      
+    }
+    else if (numberChar == 'o' || numberChar == 'O' )
+    {    
+        bitmap = DigitBitmapArrayLetterO;
+    } 
+    
     return bitmap;
 }
 
@@ -477,6 +482,14 @@ bool Super_TM1637_Arduino::checkIfOverflow(String str)
 // if string has : , simply change or enable the certain digit with dp.
 void Super_TM1637_Arduino:: display(String str)
 {
+    static String oldstring="";
+    if( oldstring.equals(str))
+    {
+        //since it's already set, no need to do all the same again
+        return;
+    }
+    oldstring = str;
+    
     uint8_t bitmapArray[MaxDigitCount];
     // make a copy of the string so we don't trim the original string
     String trimstr = str;

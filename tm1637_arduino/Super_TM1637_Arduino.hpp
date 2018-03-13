@@ -90,6 +90,7 @@ class Super_TM1637_Arduino
         static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterT;//  = 0b00111001;    // t
         static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettery;
         static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterY;
+        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterO;
 
         const uint8_t Index_Empty_Bitmap = 16; //this need to be removed
 
