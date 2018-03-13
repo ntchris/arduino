@@ -43,7 +43,7 @@
 #define __Super_TM1637_Arduino__
 
 #include <string.h>
-#include <arduino.h>
+#include "Arduino.h"
 #include "SuperI2CDriver.hpp"
 
 class Super_TM1637_Arduino
