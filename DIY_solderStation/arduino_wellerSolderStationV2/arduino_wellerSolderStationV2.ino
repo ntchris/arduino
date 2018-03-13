@@ -103,6 +103,17 @@ SuperRotaryEncoder rotEncoder(RotaryPinA, RotaryPinB);
 
 
 //=======================================================
+class SolderStationStatus
+{
+   static bool isConnected;
+
+   static bool isOnRest;
+
+
+
+};
+
+
 
 
 bool isHandleConnected()
@@ -230,13 +241,14 @@ void displayInit()
 
 void enableHeater(int heaterpin)
 {
+   //digitalWrite(heaterpin, HIGH);
 
 }
 
 
 void disableHeater(int heaterpin)
 {
-
+   digitalWrite(heaterpin, LOW);
 }
 
 void disableAllHeaters()
@@ -374,6 +386,17 @@ int getRedTemperature()
 }
 
 
+int getBrownTemperature()
+{
+    disableHeater(HeaterEnableABrown);
+    delay(4);
+    int measuretemp = getOpampOutputTemperature(OpampOutput1ForBlack);
+    // Serial.println("brown measured temp: " + String(measuretemp));
+    return measuretemp;
+
+}
+
+
 
 // must disable heater first and delay!!
 int getOpampOutputTemperature(int analogReadPin)
@@ -397,7 +420,7 @@ int getOpampOutputTemperature(int analogReadPin)
 }
 
  
-
+/*
 // , float opampVoltage, int envTempC
 bool isTempTooHigh_temp(int target_temp)
 {
@@ -428,7 +451,7 @@ bool isTempTooHigh_temp(int target_temp)
         return false;
     }
 }
-
+*/
 
 int getTargetTemperature()
 {
@@ -452,6 +475,36 @@ int getTargetTemperature()
 
     return targetTeperature;
 }
+
+
+void refreshDisplayFlashing(int digit)
+{
+   static int flashingcounter=0;
+   static bool showDecimal=true;
+   const int Max=50;
+
+
+   if(flashingcounter>max)
+   {
+      flashingcounter=0;
+
+      if(showDecimal)
+      {
+         myTM1637.display( String(digit)+(".") );
+         showDecimal = !showDecimal;
+      }else
+     {
+         myTM1637.display( String(digit));
+     }
+   }
+
+   flashingcounter++;
+   
+
+}
+
+
+
 
 void loop() {
 
@@ -483,31 +536,48 @@ void loop() {
 
     if (isconnected )
     { 
+        //  ==================   check Red   ===================
         int redtemp = getRedTemperature();
-
-        myTM1637.display(String(redtemp));
-
-
-        bool istoohigh_red = redtemp > targetTemp;
-
-         
-        if ( istoohigh_red  )
+        bool is_too_high_red = redtemp > targetTemp;
+        if ( is_too_high_red )
         {
-           // if (output)
-            {   //turn off
-                //Serial.println("Setting HeaterPin OFF");
-                //Serial.println("targetTemp: " + String(targetTemp) + " vs ");
-            }
+            // turning off
+            // but should have been disabled at this point in the get temp function
             disableHeater(HeaterEnableARed);  
+
         } else
         {
-            //turn on
-            //if (output)
-            {
-                Serial.println("Setting HeaterPin ON");
-            }
-            // enableHeater(HeaterEnableARed);
+            // not too high, still need heating , turn on heater
+            enableHeater(HeaterEnableARed);
         }
+
+
+        //  ==================   check brown   ===================
+        int browntemp = getBrownTemperature();
+        bool is_too_high_brown = browntemp > targetTemp;
+        if ( is_too_high_brown )
+        {
+            // turning off
+            // but should have been disabled at this point in the get temp function
+            disableHeater(HeaterEnableABrown);
+
+        } else
+        {
+            // not too high, still need heating , turn on heater
+            enableHeater(HeaterEnableABrown);
+        }
+
+
+        if( is_too_high_red && is_too_high_brown)
+        {
+           // both temperature is good now. 
+           myTM1637.display(String(targetTem);
+        }else
+        {
+           //still heating , show flashing point
+           refreshDisplayFlashing(targetTem);
+        }
+
 
     }
 
