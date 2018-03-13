@@ -1,3 +1,5 @@
+#include <TFT.h>
+
 // DIY Weller solder pen controller.
 // kty cold junction compensation is not done to reduce the project's complexicity; and I don't think it's important.
 // magnet detection is included.
@@ -390,7 +392,7 @@ int getBrownTemperature()
 {
     disableHeater(HeaterEnableABrown);
     delay(4);
-    int measuretemp = getOpampOutputTemperature(OpampOutput1ForBlack);
+    int measuretemp = getOpampOutputTemperature(OpampOutput2ForBlack);
     // Serial.println("brown measured temp: " + String(measuretemp));
     return measuretemp;
 
@@ -484,7 +486,7 @@ void refreshDisplayFlashing(int digit)
    const int Max=50;
 
 
-   if(flashingcounter>max)
+   if(flashingcounter>Max)
    {
       flashingcounter=0;
 
@@ -571,11 +573,11 @@ void loop() {
         if( is_too_high_red && is_too_high_brown)
         {
            // both temperature is good now. 
-           myTM1637.display(String(targetTem);
+           myTM1637.display(String(targetTemp));
         }else
         {
            //still heating , show flashing point
-           refreshDisplayFlashing(targetTem);
+           refreshDisplayFlashing(targetTemp);
         }
 
 
