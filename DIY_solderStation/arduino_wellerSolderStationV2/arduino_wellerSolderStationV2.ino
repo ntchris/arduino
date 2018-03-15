@@ -55,8 +55,11 @@ const float OpampGain = OpampGainPurple ;
 const int TCuVPerC = 12;  //41uV per C  thermal couple type K.
 
 const int MIN_TARGET_TEMP = 35;
-const int Default_Target_Temp = 38;
+const int Default_Target_Temp = 200;
 
+// adjust the reading to make two heating element about the same temperature
+const int DeltaAnalogReadIntDeltaForPurple= 0; 
+const int DeltaTempForPurple= 35; 
 
 //===============================================================================
 // ****************  For display TM1637 and seven segment digitube  *****************
@@ -119,66 +122,6 @@ class WellerSolderControllerStatus
 WellerSolderControllerStatus myWellerSolderController;
 
 
-bool isHandleConnected()
-{
-    static bool check_purple = true;
-    static bool connect_state = true;
-    static bool showConnectState = true;
-    static bool old_purple_connected = 123;
-    static bool old_black_connected = 234;
-
-    static bool purple_connected = false, black_connected = false;
-    bool connected;
-
-    if ( check_purple )
-    {
-        purple_connected = isPurpleConnected();
-        if (old_purple_connected != purple_connected)
-        {
-            old_purple_connected = purple_connected;
-        }
-
-        /*
-
-            if (purple_connected )
-            {
-             Serial.println(" purple is connected.");
-            } else
-            {
-             Serial.println(" purple not connected.");
-            }
-        */
-    } else
-    {
-        black_connected = isBlackConnected();
-        if (old_black_connected != black_connected)
-        {
-            old_black_connected = black_connected;
-        }
-
-        /*  if (black_connected)
-            {
-            Serial.println(" black is connected.");
-            } else
-            {
-            Serial.println(" black is Not connected.");
-            }*/
-    }
-
-    check_purple = !check_purple;
-    if ( !purple_connected && !black_connected )
-    {
-        //Serial.println("purple connected is " + String(purple_connected));
-        //Serial.println("black connected is " + String(black_connected));
-
-        connected = false;
-    } else
-    {
-        connected = true;
-    }
-    //Serial.println("connected is " + String(connected));
-    return connected;
-}
 
 // only for reading int value from purple and black pin's value
 bool opampReadIntToIsConnected(int opampValInt )
@@ -202,33 +145,14 @@ int getAnalogAvgReadingInt(int analogReadPin, int avgCount)
     for (i = 0; i < avgCount; i++)
     {
         opampValInt += analogRead(analogReadPin);
-        delay(1);
+        delayMicroseconds(600);
     }
     opampValInt = opampValInt / avgCount;
     return opampValInt;
 }
 
-
-bool isPurpleConnected()
-{
-    disableHeater( HeaterEnableARed );
-    delay(1);
-
-    int opampValInt = getAnalogAvgReadingInt(OpampOutput1ForPurplePin, 2 );
-    return opampReadIntToIsConnected(opampValInt);
-
-}
-
-
-bool isBlackConnected()
-{
-    disableHeater( HeaterEnableABrown );
-    delay(1);
-
-    int opampValInt = getAnalogAvgReadingInt( OpampOutput2ForBlackPin, 2 );
-    return opampReadIntToIsConnected(opampValInt);
-
-}
+ 
+ 
 
 void pinInit()
 {
@@ -240,12 +164,10 @@ void pinInit()
     pinMode(HeaterEnableABrown, OUTPUT );
     digitalWrite(HeaterEnableABrown, LOW);
 
-    // pinMode(MagnetDetectEnablePin, OUTPUT ); // conflict with opamp pin7 output
-    //digitalWrite(MagnetDetectEnablePin,LOW);
 
-    pinMode(OpampOutput1ForPurplePin, INPUT );  // input ?? input_pullup ??
-    pinMode(OpampOutput2ForBlackPin, INPUT );  // input ?? input_pullup ??
-
+    pinMode(OpampOutput1ForPurplePin, INPUT );
+    pinMode(OpampOutput2ForBlackPin, INPUT );
+    pinMode(MagnetDetectEnablePin, INPUT);
 
 }
 
@@ -286,12 +208,11 @@ bool isPenPutOnRest()
     //  when on use , magnet connect to 2K then to ground, reading should be higher than 0.
 
     disableAllHeaters();
-    delayMicroseconds(200);
+    delayMicroseconds(500);
     pinMode(MagnetDetectEnablePin, OUTPUT ); // when output conflict with opamp pin7 output
 
-    //analogWrite(MagnetDetectEnablePin, 190);
     digitalWrite(MagnetDetectEnablePin, HIGH);
-    delayMicroseconds(100);
+    delayMicroseconds(200);
 
     int magnetReadInt = analogRead(MagnetDetectPin);
 
@@ -300,10 +221,10 @@ bool isPenPutOnRest()
     //Serial.println("magnet detect pin avg: " + String(magnetReadInt) );
 
 
-    //digitalWrite(MagnetDetectEnablePin,LOW);
+    digitalWrite(MagnetDetectEnablePin, LOW);
 
     pinMode(MagnetDetectEnablePin, INPUT); // when output conflict with opamp pin7 output
-
+    delay(2);
     bool isOnRest = (magnetReadInt < MagnetDetectValue );
     return isOnRest;
 }
@@ -398,6 +319,9 @@ int getPurpleOpAmpOutputInt()
     disableHeater( HeaterEnableARed );
     delay(4);
     int purpleInt = getAnalogAvgReadingInt(OpampOutput1ForPurplePin, 3);
+    //Serial.println( "purpleInt before:"+String(purpleInt));
+    purpleInt = purpleInt  + DeltaAnalogReadIntDeltaForPurple;
+    //Serial.println( "purpleInt after:"+String(purpleInt));
     return purpleInt;
 }
 
@@ -411,46 +335,51 @@ int getBlackOpAmpOutputInt()
 
 
 /*
-int getRedTemperature()
-{
+    int getRedTemperature()
+    {
     //disableHeater(HeaterEnableARed);
     //delay(2);
     int measuretemp = getOpampOutputTemperature(OpampOutput1ForPurplePin);!!!!!
     // Serial.println("red measured temp: " + String(measuretemp));
     return measuretemp;
 
-}
+    }
 
 
-int getBrownTemperature()
-{
+    int getBrownTemperature()
+    {
     disableHeater(HeaterEnableABrown);
     delay(2);
     int measuretemp = getOpampOutputTemperature(OpampOutput2ForBlackPin);
     // Serial.println("brown measured temp: " + String(measuretemp));
     return measuretemp;
 
-}
+    }
 */
 
 
 // must disable heater first and delay!!
 int getOpampOutputIntToTemperature(int analogReadingInt)
 {
-   /* const int MAX = 4;
-    int i;
-    int opampAdcInt;
-    for (i = 0; i < MAX; i++)
+    /*  const int MAX = 4;
+        int i;
+        int opampAdcInt;
+        for (i = 0; i < MAX; i++)
+        {
+         opampAdcInt += analogRead(OpampOutput1ForPurplePin);
+         delayMicroseconds(500);
+        }
+        opampAdcInt = opampAdcInt / MAX;
+    */
+    static int  measured_temp = 0;
+    const int MAX_VALID_INT=700;
+    if ( analogReadingInt > MAX_VALID_INT )
     {
-        opampAdcInt += analogRead(OpampOutput1ForPurplePin);
-        delayMicroseconds(500);
+       return measured_temp;   
     }
-    opampAdcInt = opampAdcInt / MAX;
-*/
-
     float voltage = VCC5 * analogReadingInt * 1.0 / ADC1024;
 
-    int  measured_temp = voltageToTempC(voltage, 18);
+    measured_temp = voltageToTempC(voltage, 18);
     return measured_temp;
 }
 
@@ -547,80 +476,99 @@ void loop() {
     static unsigned int actionCounter = 0;
     const unsigned int ActionCounterMax = 65535;
     static int oldval = 0;
+    int targetTemp = getTargetTemperature(); //from rotary encoder
 
     // put your main code here, to run repeatedly:
-
-    myWellerSolderController.purpleInt = getPurpleOpAmpOutputInt();
-    myWellerSolderController.isPurpleConnected = opampReadIntToIsConnected(myWellerSolderController.purpleInt);
-
-    myWellerSolderController.blackInt = getBlackOpAmpOutputInt();
-    myWellerSolderController.isBlackConnected = opampReadIntToIsConnected(myWellerSolderController.blackInt);
-
-
-     if ( !myWellerSolderController.isPurpleConnected && !myWellerSolderController.isBlackConnected )
+    
+    if (   actionCounter >= ActionCounterMax  )
     {
-        //Serial.println("purple connected is " + String(purple_connected));
-        //Serial.println("black connected is " + String(black_connected));
-
-        myWellerSolderController.isConnected = false;
-    } else
-    {
-        myWellerSolderController.isConnected = true;
+        actionCounter  = 0;
     }
-
-
-    if (myWellerSolderController.isConnected)
+    actionCounter++;
+    if ( actionCounter % 50 )
     {
-        myWellerSolderController.isOnRest = isPenPutOnRest();
-        if ( myWellerSolderController.isOnRest )
+       myTM1637.display(String(targetTemp));
+
+      return;
+    }
+     
+        myWellerSolderController.purpleInt = getPurpleOpAmpOutputInt();
+        myWellerSolderController.isPurpleConnected = opampReadIntToIsConnected(myWellerSolderController.purpleInt);
+
+        myWellerSolderController.blackInt = getBlackOpAmpOutputInt();
+        myWellerSolderController.isBlackConnected = opampReadIntToIsConnected(myWellerSolderController.blackInt);
+
+
+        if ( !myWellerSolderController.isPurpleConnected && !myWellerSolderController.isBlackConnected )
         {
-            //already disbled ?? 
-            disableAllHeaters();
-            myTM1637.display("OFF");
+            //Serial.println("purple connected is " + String(purple_connected));
+            //Serial.println("black connected is " + String(black_connected));
+
+            myWellerSolderController.isConnected = false;
+        } else
+        {
+            myWellerSolderController.isConnected = true;
+        }
+
+
+        if (myWellerSolderController.isConnected)
+        {
+            myWellerSolderController.isOnRest = isPenPutOnRest();
+            if ( myWellerSolderController.isOnRest )
+            {
+                //already disbled ??
+                disableAllHeaters();
+                myTM1637.display("OFF");
+                return;
+            }
+        } else
+        {
+            myTM1637.display("dsc");
             return;
         }
-    } else
-    {
-        myTM1637.display("dsc");
-        return;
-    }
-
-    int targetTemp = getTargetTemperature(); //from rotary encoder
+   
 
     if (myWellerSolderController.isConnected )
     {
         //  ==================   check Red   ===================
         //int redtemp = getRedTemperature();!!!!!
-        int redtemp = getOpampOutputIntToTemperature(myWellerSolderController.purpleInt);
-        showADCValue("purple int", myWellerSolderController.purpleInt );
+        int redtemp = getOpampOutputIntToTemperature(myWellerSolderController.purpleInt) + DeltaTempForPurple;
         
+        if(myWellerSolderController.purpleInt>500)
+        {
+          showADCValue("!!!!!!!!!!!purple int!!!!!!!!!!! ", myWellerSolderController.purpleInt );
+        }else
+        {
+            showADCValue("purple int ", myWellerSolderController.purpleInt );
+        }
+
         bool is_too_high_red = redtemp > targetTemp;
         if ( is_too_high_red )
         {
             // turning off
             // but should have been disabled at this point in the get temp function
-            //disableHeater(HeaterEnableARed);
+            disableHeater(HeaterEnableARed);
 
         } else
         {
             // not too high, still need heating , turn on heater
-             Serial.println("red heating on!!! red temp " + String(redtemp) );
-             enableHeater(HeaterEnableARed);
+            Serial.println("red heating on!!! red temp " + String(redtemp) );
+            enableHeater(HeaterEnableARed);
         }
 
 
         //  ==================   check brown   ===================
         int browntemp = getOpampOutputIntToTemperature(myWellerSolderController.blackInt);
-         showADCValue("brown int", myWellerSolderController.blackInt );
+        showADCValue("brown int", myWellerSolderController.blackInt );
 
         bool is_too_high_brown = browntemp > targetTemp;
         if ( is_too_high_brown )
         {
             // turning off
             // but should have been disabled at this point in the get temp function
-             Serial.println("brown heating offff!");
+            //Serial.println("brown heating offff!");
 
-             disableHeater(HeaterEnableABrown);
+            disableHeater(HeaterEnableABrown);
 
         } else
         {
@@ -643,21 +591,9 @@ void loop() {
 
 
     }
+ 
 
 
-    if ( myWellerSolderController.isConnected && !myWellerSolderController.isOnRest)
-    {
-        //        myTM1637.display(String(targetTemp));
-
-        //      Serial.println("!!!targetTemp: " + String(targetTemp) + " vs ");
-    }
-
-
-    if (   actionCounter >= ActionCounterMax  )
-    {
-        actionCounter  = 0;
-    }
-    actionCounter++;
 
     //delay(1);
 
