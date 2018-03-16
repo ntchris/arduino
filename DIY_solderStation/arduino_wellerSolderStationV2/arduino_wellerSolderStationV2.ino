@@ -474,7 +474,7 @@ void refreshDisplayFlashing(int digit)
 
 bool checkButton()
 {
-    static bool toggle = true;
+    static bool toggle = false;
     static int oldState = HIGH;
 
     int state = digitalRead(RotaryButtonPin);
