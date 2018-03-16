@@ -498,7 +498,7 @@ void loop() {
     static int oldval = 0;
 
 
-    static bool shouldEnableHeater = true; // for rotary button
+    static bool shouldEnableHeater = false; // for rotary button
 
     shouldEnableHeater = checkButton();
     if (!shouldEnableHeater )
