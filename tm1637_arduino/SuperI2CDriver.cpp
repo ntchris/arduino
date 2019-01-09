@@ -127,16 +127,17 @@ void SuperI2CDriver::i2cDelayMicroSecond(unsigned long int microSec  )
 
 bool SuperI2CDriver:: i2cWriteByteArray(const unsigned char * array_p, uint8_t arraySize)
 {
-  if (arraySize <= 0) {
+    bool success = true;
+
+	if (arraySize <= 0) {
     debugPrint("error: i2cWriteByteArray 0 array size\n");
-    return ;
+    return false;
   }
   if (array_p == null) {
     debugPrint("error: i2cWriteByteArray null pionter\n");
-    return ;
+    return false;
   }
 
-  bool success = true;
 
   for (int i = 0; i < arraySize; i++)
   {

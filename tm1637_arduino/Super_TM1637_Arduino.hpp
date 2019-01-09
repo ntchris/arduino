@@ -83,14 +83,14 @@ class Super_TM1637_Arduino
         // contains all the bitmaps for 0 1 2 ... F
         static const uint8_t DigitBitmapArray[];
         
-        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterS;//  = 0b01101101;
-        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetters;//  = 0b01101101;
+        static const uint8_t DigitBitmapArrayLetterS;//  = 0b01101101;
+        static const uint8_t DigitBitmapArrayLetters;//  = 0b01101101;
 
-        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettert;//  = 0b00111001;    // t
-        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterT;//  = 0b00111001;    // t
-        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettery;
-        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterY;
-        static const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterO;
+        static const uint8_t DigitBitmapArrayLettert;//  = 0b00111001;    // t
+        static const uint8_t DigitBitmapArrayLetterT;//  = 0b00111001;    // t
+        static const uint8_t DigitBitmapArrayLettery;
+        static const uint8_t DigitBitmapArrayLetterY;
+        static const uint8_t DigitBitmapArrayLetterO;
 
         const uint8_t Index_Empty_Bitmap = 16; //this need to be removed
 
