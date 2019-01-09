@@ -1,3 +1,7 @@
-1. No 12V ?  do not power on heaters
-2. rotary is not responsive, use interrupt ?
-3. red temp is not high ?
+1. turn off also need to show temperature reading
+2. should use interrupt to read rotary
+3. add safty check, at least 1 second should check temp and turn off heater if over heat
+
+
+
+
