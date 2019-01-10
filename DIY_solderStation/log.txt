@@ -1,0 +1,4574 @@
+ all heaters 
+23:45:58.473 -> Disable all heaters 
+23:45:58.473 -> Disable all heaters 
+23:45:58.473 -> DisabStarting
+23:46:08.231 -> Disable all heaters 
+23:46:08.265 -> checking disconnected?
+23:46:08.265 -> Disable all heaters 
+23:46:08.265 -> checking disconnected?
+23:46:08.299 -> Disable all heaters 
+23:46:08.299 -> checking disconnected?
+23:46:08.299 -> Disable all heaters 
+23:46:08.333 -> checking disconnected?
+23:46:08.333 -> Disable all heaters 
+23:46:08.333 -> checking disconnected?
+23:46:08.368 -> Disable all heaters 
+23:46:08.368 -> checking disconnected?
+23:46:08.368 -> Disable all heaters 
+23:46:08.402 -> checking disconnected?
+23:46:08.402 -> Disable all heaters 
+23:46:08.402 -> checking disconnected?
+23:46:08.402 -> Disable all heaters 
+23:46:08.436 -> checking disconnected?
+23:46:08.436 -> Disable all heaters 
+23:46:08.436 -> checking disconnected?
+23:46:08.470 -> Disable all heaters 
+23:46:08.470 -> checking disconnected?
+23:46:08.504 -> Disable all heaters 
+23:46:08.504 -> checking disconnected?
+23:46:08.504 -> Disable all heaters 
+23:46:08.538 -> checking disconnected?
+23:46:08.538 -> Disable all heaters 
+23:46:08.538 -> checking disconnected?
+23:46:08.572 -> Disable all heaters 
+23:46:08.572 -> checking disconnected?
+23:46:08.572 -> Disable all heaters 
+23:46:08.607 -> checking disconnected?
+23:46:08.607 -> Disable all heaters 
+23:46:08.640 -> checking disconnected?
+23:46:08.640 -> Disable all heaters 
+23:46:08.640 -> checking disconnected?
+23:46:08.674 -> Disable all heaters 
+23:46:08.674 -> checking disconnected?
+23:46:08.674 -> Disable all heaters 
+23:46:08.708 -> checking disconnected?
+23:46:08.708 -> Disable all heaters 
+23:46:08.708 -> redTemp 25
+23:46:08.743 -> brownTemp 3
+23:46:08.743 -> checking disconnected?
+23:46:08.743 -> red heating on!!! red temp 25
+23:46:08.776 -> brown heating on! brown temp 3
+23:46:08.776 -> Disable all heaters 
+23:46:08.776 -> checking disconnected?
+23:46:08.811 -> red heating on!!! red temp 25
+23:46:08.811 -> brown heating on! brown temp 3
+23:46:08.846 -> Disable all heaters 
+23:46:08.846 -> checking disconnected?
+23:46:08.879 -> red heating on!!! red temp 25
+23:46:08.879 -> brown heating on! brown temp 3
+23:46:08.914 -> Disable all heaters 
+23:46:08.914 -> checking disconnected?
+23:46:08.914 -> red heating on!!! red temp 25
+23:46:08.948 -> brown heating on! brown temp 3
+23:46:08.948 -> Disable all heaters 
+23:46:08.982 -> checking disconnected?
+23:46:08.982 -> red heating on!!! red temp 25
+23:46:08.982 -> brown heating on! brown temp 3
+23:46:09.015 -> Disable all heaters 
+23:46:09.015 -> checking disconnected?
+23:46:09.048 -> red heating on!!! red temp 25
+23:46:09.048 -> brown heating on! brown temp 3
+23:46:09.081 -> Disable all heaters 
+23:46:09.081 -> checking disconnected?
+23:46:09.081 -> red heating on!!! red temp 25
+23:46:09.115 -> brown heating on! brown temp 3
+23:46:09.115 -> Disable all heaters 
+23:46:09.148 -> checking disconnected?
+23:46:09.148 -> red heating on!!! red temp 25
+23:46:09.184 -> brown heating on! brown temp 3
+23:46:09.184 -> Disable all heaters 
+23:46:09.184 -> checking disconnected?
+23:46:09.184 -> red heating on!!! red temp 25
+23:46:09.217 -> brown heating on! brown temp 3
+23:46:09.217 -> Disable all heaters 
+23:46:09.250 -> checking disconnected?
+23:46:09.250 -> red heating on!!! red temp 25
+23:46:09.250 -> brown heating on! brown temp 3
+23:46:09.284 -> Disable all heaters 
+23:46:09.284 -> checking disconnected?
+23:46:09.318 -> red heating on!!! red temp 25
+23:46:09.318 -> brown heating on! brown temp 3
+23:46:09.352 -> Disable all heaters 
+23:46:09.352 -> checking disconnected?
+23:46:09.352 -> red heating on!!! red temp 25
+23:46:09.386 -> brown heating on! brown temp 3
+23:46:09.386 -> Disable all heaters 
+23:46:09.419 -> checking disconnected?
+23:46:09.419 -> red heating on!!! red temp 25
+23:46:09.452 -> brown heating on! brown temp 3
+23:46:09.452 -> Disable all heaters 
+23:46:09.452 -> checking disconnected?
+23:46:09.487 -> red heating on!!! red temp 25
+23:46:09.487 -> brown heating on! brown temp 3
+23:46:09.521 -> Disable all heaters 
+23:46:09.521 -> checking disconnected?
+23:46:09.521 -> red heating on!!! red temp 25
+23:46:09.555 -> brown heating on! brown temp 3
+23:46:09.555 -> Disable all heaters 
+23:46:09.589 -> checking disconnected?
+23:46:09.589 -> red heating on!!! red temp 25
+23:46:09.623 -> brown heating on! brown temp 3
+23:46:09.623 -> Disable all heaters 
+23:46:09.657 -> checking disconnected?
+23:46:09.657 -> red heating on!!! red temp 25
+23:46:09.657 -> brown heating on! brown temp 3
+23:46:09.691 -> Disable all heaters 
+23:46:09.691 -> checking disconnected?
+23:46:09.724 -> red heating on!!! red temp 25
+23:46:09.724 -> brown heating on! brown temp 3
+23:46:09.759 -> Disable all heaters 
+23:46:09.759 -> checking disconnected?
+23:46:09.759 -> red heating on!!! red temp 25
+23:46:09.793 -> brown heating on! brown temp 3
+23:46:09.793 -> Disable all heaters 
+23:46:09.827 -> checking disconnected?
+23:46:09.827 -> red heating on!!! red temp 25
+23:46:09.827 -> brown heating on! brown temp 3
+23:46:09.861 -> Disable all heaters 
+23:46:09.861 -> redTemp 54
+23:46:09.894 -> brownTemp 25
+23:46:09.894 -> checking disconnected?
+23:46:09.894 -> Disable all heaters 
+23:46:09.894 -> red heating on!!! red temp 54
+23:46:09.927 -> brown heating on! brown temp 25
+23:46:09.927 -> Disable all heaters 
+23:46:09.962 -> checking disconnected?
+23:46:09.962 -> red heating on!!! red temp 54
+23:46:09.997 -> brown heating on! brown temp 25
+23:46:09.997 -> Disable all heaters 
+23:46:10.030 -> checking disconnected?
+23:46:10.030 -> red heating on!!! red temp 54
+23:46:10.030 -> brown heating on! brown temp 25
+23:46:10.064 -> Disable all heaters 
+23:46:10.064 -> checking disconnected?
+23:46:10.097 -> red heating on!!! red temp 54
+23:46:10.097 -> brown heating on! brown temp 25
+23:46:10.131 -> Disable all heaters 
+23:46:10.131 -> checking disconnected?
+23:46:10.131 -> red heating on!!! red temp 54
+23:46:10.131 -> brown heating on! brown temp 25
+23:46:10.165 -> Disable all heaters 
+23:46:10.165 -> checking disconnected?
+23:46:10.198 -> red heating on!!! red temp 54
+23:46:10.198 -> brown heating on! brown temp 25
+23:46:10.231 -> Disable all heaters 
+23:46:10.231 -> checking disconnected?
+23:46:10.231 -> red heating on!!! red temp 54
+23:46:10.265 -> brown heating on! brown temp 25
+23:46:10.265 -> Disable all heaters 
+23:46:10.299 -> checking disconnected?
+23:46:10.299 -> red heating on!!! red temp 54
+23:46:10.299 -> brown heating on! brown temp 25
+23:46:10.333 -> Disable all heaters 
+23:46:10.333 -> checking disconnected?
+23:46:10.367 -> red heating on!!! red temp 54
+23:46:10.367 -> brown heating on! brown temp 25
+23:46:10.402 -> Disable all heaters 
+23:46:10.402 -> checking disconnected?
+23:46:10.402 -> red heating on!!! red temp 54
+23:46:10.437 -> brown heating on! brown temp 25
+23:46:10.437 -> Disable all heaters 
+23:46:10.471 -> checking disconnected?
+23:46:10.471 -> red heating on!!! red temp 54
+23:46:10.504 -> brown heating on! brown temp 25
+23:46:10.504 -> Disable all heaters 
+23:46:10.504 -> checking disconnected?
+23:46:10.538 -> red heating on!!! red temp 54
+23:46:10.538 -> brown heating on! brown temp 25
+23:46:10.573 -> Disable all heaters 
+23:46:10.573 -> checking disconnected?
+23:46:10.606 -> red heating on!!! red temp 54
+23:46:10.606 -> brown heating on! brown temp 25
+23:46:10.639 -> Disable all heaters 
+23:46:10.639 -> checking disconnected?
+23:46:10.639 -> red heating on!!! red temp 54
+23:46:10.674 -> brown heating on! brown temp 25
+23:46:10.674 -> Disable all heaters 
+23:46:10.708 -> checking disconnected?
+23:46:10.708 -> red heating on!!! red temp 54
+23:46:10.742 -> brown heating on! brown temp 25
+23:46:10.742 -> Disable all heaters 
+23:46:10.742 -> checking disconnected?
+23:46:10.775 -> red heating on!!! red temp 54
+23:46:10.775 -> brown heating on! brown temp 25
+23:46:10.810 -> Disable all heaters 
+23:46:10.810 -> checking disconnected?
+23:46:10.810 -> red heating on!!! red temp 54
+23:46:10.844 -> brown heating on! brown temp 25
+23:46:10.844 -> Disable all heaters 
+23:46:10.879 -> checking disconnected?
+23:46:10.879 -> red heating on!!! red temp 54
+23:46:10.913 -> brown heating on! brown temp 25
+23:46:10.913 -> Disable all heaters 
+23:46:10.913 -> checking disconnected?
+23:46:10.913 -> red heating on!!! red temp 54
+23:46:10.947 -> brown heating on! brown temp 25
+23:46:10.947 -> Disable all heaters 
+23:46:10.981 -> checking disconnected?
+23:46:10.981 -> red heating on!!! red temp 54
+23:46:11.015 -> brown heating on! brown temp 25
+23:46:11.015 -> Disable all heaters 
+23:46:11.015 -> redTemp 121
+23:46:11.048 -> brownTemp 39
+23:46:11.048 -> checking disconnected?
+23:46:11.048 -> red heating on!!! red temp 121
+23:46:11.082 -> brown heating on! brown temp 39
+23:46:11.082 -> Disable all heaters 
+23:46:11.116 -> checking disconnected?
+23:46:11.116 -> Disable all heaters 
+23:46:11.116 -> red heating on!!! red temp 121
+23:46:11.149 -> brown heating on! brown temp 39
+23:46:11.149 -> Disable all heaters 
+23:46:11.183 -> checking disconnected?
+23:46:11.183 -> red heating on!!! red temp 121
+23:46:11.216 -> brown heating on! brown temp 39
+23:46:11.216 -> Disable all heaters 
+23:46:11.216 -> checking disconnected?
+23:46:11.249 -> red heating on!!! red temp 121
+23:46:11.249 -> brown heating on! brown temp 39
+23:46:11.283 -> Disable all heaters 
+23:46:11.283 -> checking disconnected?
+23:46:11.318 -> red heating on!!! red temp 121
+23:46:11.318 -> brown heating on! brown temp 39
+23:46:11.353 -> Disable all heaters 
+23:46:11.353 -> checking disconnected?
+23:46:11.353 -> red heating on!!! red temp 121
+23:46:11.387 -> brown heating on! brown temp 39
+23:46:11.387 -> Disable all heaters 
+23:46:11.422 -> checking disconnected?
+23:46:11.422 -> red heating on!!! red temp 121
+23:46:11.455 -> brown heating on! brown temp 39
+23:46:11.455 -> Disable all heaters 
+23:46:11.455 -> checking disconnected?
+23:46:11.488 -> red heating on!!! red temp 121
+23:46:11.488 -> brown heating on! brown temp 39
+23:46:11.523 -> Disable all heaters 
+23:46:11.523 -> checking disconnected?
+23:46:11.523 -> red heating on!!! red temp 121
+23:46:11.556 -> brown heating on! brown temp 39
+23:46:11.556 -> Disable all heaters 
+23:46:11.589 -> checking disconnected?
+23:46:11.589 -> red heating on!!! red temp 121
+23:46:11.623 -> brown heating on! brown temp 39
+23:46:11.623 -> Disable all heaters 
+23:46:11.656 -> checking disconnected?
+23:46:11.656 -> red heating on!!! red temp 121
+23:46:11.656 -> brown heating on! brown temp 39
+23:46:11.690 -> Disable all heaters 
+23:46:11.690 -> checking disconnected?
+23:46:11.725 -> red heating on!!! red temp 121
+23:46:11.725 -> brown heating on! brown temp 39
+23:46:11.758 -> Disable all heaters 
+23:46:11.758 -> checking disconnected?
+23:46:11.758 -> red heating on!!! red temp 121
+23:46:11.792 -> brown heating on! brown temp 39
+23:46:11.792 -> Disable all heaters 
+23:46:11.825 -> checking disconnected?
+23:46:11.825 -> red heating on!!! red temp 121
+23:46:11.859 -> brown heating on! brown temp 39
+23:46:11.859 -> Disable all heaters 
+23:46:11.893 -> checking disconnected?
+23:46:11.893 -> red heating on!!! red temp 121
+23:46:11.893 -> brown heating on! brown temp 39
+23:46:11.893 -> Disable all heaters 
+23:46:11.927 -> checking disconnected?
+23:46:11.927 -> red heating on!!! red temp 121
+23:46:11.960 -> brown heating on! brown temp 39
+23:46:11.960 -> Disable all heaters 
+23:46:11.960 -> checking disconnected?
+23:46:11.995 -> red heating on!!! red temp 121
+23:46:11.995 -> brown heating on! brown temp 39
+23:46:12.029 -> Disable all heaters 
+23:46:12.029 -> checking disconnected?
+23:46:12.064 -> red heating on!!! red temp 121
+23:46:12.064 -> brown heating on! brown temp 39
+23:46:12.098 -> Disable all heaters 
+23:46:12.098 -> checking disconnected?
+23:46:12.098 -> red heating on!!! red temp 121
+23:46:12.132 -> brown heating on! brown temp 39
+23:46:12.132 -> Disable all heaters 
+23:46:12.166 -> checking disconnected?
+23:46:12.166 -> red heating on!!! red temp 121
+23:46:12.199 -> brown heating on! brown temp 39
+23:46:12.199 -> Disable all heaters 
+23:46:12.199 -> redTemp 161
+23:46:12.233 -> brownTemp 54
+23:46:12.233 -> checking disconnected?
+23:46:12.233 -> red heating on!!! red temp 161
+23:46:12.267 -> brown heating on! brown temp 54
+23:46:12.267 -> Disable all heaters 
+23:46:12.301 -> checking disconnected?
+23:46:12.301 -> red heating on!!! red temp 161
+23:46:12.301 -> brown heating on! brown temp 54
+23:46:12.335 -> Disable all heaters 
+23:46:12.335 -> checking disconnected?
+23:46:12.369 -> Disable all heaters 
+23:46:12.369 -> red heating on!!! red temp 161
+23:46:12.403 -> brown heating on! brown temp 54
+23:46:12.403 -> Disable all heaters 
+23:46:12.403 -> checking disconnected?
+23:46:12.438 -> red heating on!!! red temp 161
+23:46:12.438 -> brown heating on! brown temp 54
+23:46:12.471 -> Disable all heaters 
+23:46:12.471 -> checking disconnected?
+23:46:12.471 -> red heating on!!! red temp 161
+23:46:12.505 -> brown heating on! brown temp 54
+23:46:12.539 -> Disable all heaters 
+23:46:12.539 -> checking disconnected?
+23:46:12.539 -> red heating on!!! red temp 161
+23:46:12.573 -> brown heating on! brown temp 54
+23:46:12.573 -> Disable all heaters 
+23:46:12.606 -> checking disconnected?
+23:46:12.606 -> red heating on!!! red temp 161
+23:46:12.606 -> brown heating on! brown temp 54
+23:46:12.640 -> Disable all heaters 
+23:46:12.640 -> checking disconnected?
+23:46:12.674 -> red heating on!!! red temp 161
+23:46:12.674 -> brown heating on! brown temp 54
+23:46:12.708 -> Disable all heaters 
+23:46:12.708 -> checking disconnected?
+23:46:12.708 -> red heating on!!! red temp 161
+23:46:12.742 -> brown heating on! brown temp 54
+23:46:12.742 -> Disable all heaters 
+23:46:12.742 -> checking disconnected?
+23:46:12.776 -> red heating on!!! red temp 161
+23:46:12.776 -> brown heating on! brown temp 54
+23:46:12.810 -> Disable all heaters 
+23:46:12.810 -> checking disconnected?
+23:46:12.810 -> red heating on!!! red temp 161
+23:46:12.845 -> brown heating on! brown temp 54
+23:46:12.845 -> Disable all heaters 
+23:46:12.879 -> checking disconnected?
+23:46:12.879 -> red heating on!!! red temp 161
+23:46:12.913 -> brown heating on! brown temp 54
+23:46:12.913 -> Disable all heaters 
+23:46:12.913 -> checking disconnected?
+23:46:12.948 -> red heating on!!! red temp 161
+23:46:12.948 -> brown heating on! brown temp 54
+23:46:12.982 -> Disable all heaters 
+23:46:12.982 -> checking disconnected?
+23:46:13.017 -> red heating on!!! red temp 161
+23:46:13.017 -> brown heating on! brown temp 54
+23:46:13.050 -> Disable all heaters 
+23:46:13.050 -> checking disconnected?
+23:46:13.050 -> red heating on!!! red temp 161
+23:46:13.084 -> brown heating on! brown temp 54
+23:46:13.084 -> Disable all heaters 
+23:46:13.117 -> checking disconnected?
+23:46:13.117 -> red heating on!!! red temp 161
+23:46:13.150 -> brown heating on! brown temp 54
+23:46:13.150 -> Disable all heaters 
+23:46:13.150 -> checking disconnected?
+23:46:13.184 -> red heating on!!! red temp 161
+23:46:13.184 -> brown heating on! brown temp 54
+23:46:13.218 -> Disable all heaters 
+23:46:13.218 -> checking disconnected?
+23:46:13.251 -> red heating on!!! red temp 161
+23:46:13.251 -> brown heating on! brown temp 54
+23:46:13.284 -> Disable all heaters 
+23:46:13.284 -> checking disconnected?
+23:46:13.284 -> red heating on!!! red temp 161
+23:46:13.319 -> brown heating on! brown temp 54
+23:46:13.319 -> Disable all heaters 
+23:46:13.353 -> checking disconnected?
+23:46:13.353 -> red heating on!!! red temp 161
+23:46:13.386 -> brown heating on! brown temp 54
+23:46:13.386 -> Disable all heaters 
+23:46:13.386 -> redTemp 241
+23:46:13.419 -> brownTemp 61
+23:46:13.419 -> checking disconnected?
+23:46:13.419 -> red heating OFF!! red temp 241
+23:46:13.453 -> brown heating on! brown temp 61
+23:46:13.453 -> Disable all heaters 
+23:46:13.486 -> checking disconnected?
+23:46:13.486 -> red heating OFF!! red temp 241
+23:46:13.486 -> brown heating on! brown temp 61
+23:46:13.519 -> Disable all heaters 
+23:46:13.519 -> checking disconnected?
+23:46:13.553 -> red heating OFF!! red temp 241
+23:46:13.553 -> brown heating on! brown temp 61
+23:46:13.587 -> Disable all heaters 
+23:46:13.587 -> checking disconnected?
+23:46:13.587 -> Disable all heaters 
+23:46:13.622 -> red heating OFF!! red temp 241
+23:46:13.622 -> brown heating on! brown temp 61
+23:46:13.657 -> Disable all heaters 
+23:46:13.657 -> checking disconnected?
+23:46:13.657 -> red heating OFF!! red temp 241
+23:46:13.657 -> brown heating on! brown temp 61
+23:46:13.690 -> Disable all heaters 
+23:46:13.690 -> checking disconnected?
+23:46:13.723 -> red heating OFF!! red temp 241
+23:46:13.723 -> brown heating on! brown temp 61
+23:46:13.756 -> Disable all heaters 
+23:46:13.756 -> checking disconnected?
+23:46:13.756 -> red heating OFF!! red temp 241
+23:46:13.790 -> brown heating on! brown temp 61
+23:46:13.790 -> Disable all heaters 
+23:46:13.824 -> checking disconnected?
+23:46:13.824 -> red heating OFF!! red temp 241
+23:46:13.857 -> brown heating on! brown temp 61
+23:46:13.857 -> Disable all heaters 
+23:46:13.890 -> checking disconnected?
+23:46:13.890 -> red heating OFF!! red temp 241
+23:46:13.890 -> brown heating on! brown temp 61
+23:46:13.924 -> Disable all heaters 
+23:46:13.924 -> checking disconnected?
+23:46:13.959 -> red heating OFF!! red temp 241
+23:46:13.959 -> brown heating on! brown temp 61
+23:46:13.993 -> Disable all heaters 
+23:46:13.993 -> checking disconnected?
+23:46:13.993 -> red heating OFF!! red temp 241
+23:46:14.026 -> brown heating on! brown temp 61
+23:46:14.026 -> Disable all heaters 
+23:46:14.059 -> checking disconnected?
+23:46:14.059 -> red heating OFF!! red temp 241
+23:46:14.093 -> brown heating on! brown temp 61
+23:46:14.093 -> Disable all heaters 
+23:46:14.093 -> checking disconnected?
+23:46:14.127 -> red heating OFF!! red temp 241
+23:46:14.127 -> brown heating on! brown temp 61
+23:46:14.160 -> Disable all heaters 
+23:46:14.160 -> checking disconnected?
+23:46:14.194 -> red heating OFF!! red temp 241
+23:46:14.194 -> brown heating on! brown temp 61
+23:46:14.227 -> Disable all heaters 
+23:46:14.227 -> checking disconnected?
+23:46:14.227 -> red heating OFF!! red temp 241
+23:46:14.262 -> brown heating on! brown temp 61
+23:46:14.262 -> Disable all heaters 
+23:46:14.296 -> checking disconnected?
+23:46:14.296 -> red heating OFF!! red temp 241
+23:46:14.329 -> brown heating on! brown temp 61
+23:46:14.329 -> Disable all heaters 
+23:46:14.329 -> checking disconnected?
+23:46:14.362 -> red heating OFF!! red temp 241
+23:46:14.362 -> brown heating on! brown temp 61
+23:46:14.396 -> Disable all heaters 
+23:46:14.396 -> checking disconnected?
+23:46:14.396 -> red heating OFF!! red temp 241
+23:46:14.430 -> brown heating on! brown temp 61
+23:46:14.464 -> Disable all heaters 
+23:46:14.464 -> checking disconnected?
+23:46:14.464 -> red heating OFF!! red temp 241
+23:46:14.497 -> brown heating on! brown temp 61
+23:46:14.497 -> Disable all heaters 
+23:46:14.530 -> checking disconnected?
+23:46:14.530 -> red heating OFF!! red temp 241
+23:46:14.530 -> brown heating on! brown temp 61
+23:46:14.564 -> Disable all heaters 
+23:46:14.564 -> brownTemp 93
+23:46:14.597 -> checking disconnected?
+23:46:14.597 -> red heating OFF!! red temp 241
+23:46:14.597 -> brown heating on! brown temp 93
+23:46:14.632 -> Disable all heaters 
+23:46:14.632 -> checking disconnected?
+23:46:14.665 -> red heating OFF!! red temp 241
+23:46:14.665 -> brown heating on! brown temp 93
+23:46:14.698 -> Disable all heaters 
+23:46:14.698 -> checking disconnected?
+23:46:14.698 -> red heating OFF!! red temp 241
+23:46:14.733 -> brown heating on! brown temp 93
+23:46:14.733 -> Disable all heaters 
+23:46:14.767 -> checking disconnected?
+23:46:14.767 -> red heating OFF!! red temp 241
+23:46:14.802 -> brown heating on! brown temp 93
+23:46:14.802 -> Disable all heaters 
+23:46:14.802 -> checking disconnected?
+23:46:14.836 -> Disable all heaters 
+23:46:14.836 -> red heating OFF!! red temp 241
+23:46:14.869 -> brown heating on! brown temp 93
+23:46:14.869 -> Disable all heaters 
+23:46:14.903 -> checking disconnected?
+23:46:14.903 -> red heating OFF!! red temp 241
+23:46:14.903 -> brown heating on! brown temp 93
+23:46:14.903 -> Disable all heaters 
+23:46:14.936 -> checking disconnected?
+23:46:14.936 -> red heating OFF!! red temp 241
+23:46:14.971 -> brown heating on! brown temp 93
+23:46:14.971 -> Disable all heaters 
+23:46:15.005 -> checking disconnected?
+23:46:15.005 -> red heating OFF!! red temp 241
+23:46:15.005 -> brown heating on! brown temp 93
+23:46:15.040 -> Disable all heaters 
+23:46:15.040 -> checking disconnected?
+23:46:15.073 -> red heating OFF!! red temp 241
+23:46:15.073 -> brown heating on! brown temp 93
+23:46:15.106 -> Disable all heaters 
+23:46:15.106 -> checking disconnected?
+23:46:15.106 -> red heating OFF!! red temp 241
+23:46:15.141 -> brown heating on! brown temp 93
+23:46:15.141 -> Disable all heaters 
+23:46:15.175 -> checking disconnected?
+23:46:15.175 -> red heating OFF!! red temp 241
+23:46:15.209 -> brown heating on! brown temp 93
+23:46:15.209 -> Disable all heaters 
+23:46:15.209 -> checking disconnected?
+23:46:15.243 -> red heating OFF!! red temp 241
+23:46:15.243 -> brown heating on! brown temp 93
+23:46:15.276 -> Disable all heaters 
+23:46:15.276 -> checking disconnected?
+23:46:15.309 -> red heating OFF!! red temp 241
+23:46:15.309 -> brown heating on! brown temp 93
+23:46:15.344 -> Disable all heaters 
+23:46:15.344 -> checking disconnected?
+23:46:15.344 -> red heating OFF!! red temp 241
+23:46:15.377 -> brown heating on! brown temp 93
+23:46:15.377 -> Disable all heaters 
+23:46:15.410 -> checking disconnected?
+23:46:15.410 -> red heating OFF!! red temp 241
+23:46:15.444 -> brown heating on! brown temp 93
+23:46:15.444 -> Disable all heaters 
+23:46:15.444 -> checking disconnected?
+23:46:15.477 -> red heating OFF!! red temp 241
+23:46:15.477 -> brown heating on! brown temp 93
+23:46:15.510 -> Disable all heaters 
+23:46:15.510 -> checking disconnected?
+23:46:15.543 -> red heating OFF!! red temp 241
+23:46:15.543 -> brown heating on! brown temp 93
+23:46:15.576 -> Disable all heaters 
+23:46:15.576 -> checking disconnected?
+23:46:15.576 -> red heating OFF!! red temp 241
+23:46:15.611 -> brown heating on! brown temp 93
+23:46:15.611 -> Disable all heaters 
+23:46:15.644 -> checking disconnected?
+23:46:15.644 -> red heating OFF!! red temp 241
+23:46:15.644 -> brown heating on! brown temp 93
+23:46:15.678 -> Disable all heaters 
+23:46:15.678 -> checking disconnected?
+23:46:15.712 -> red heating OFF!! red temp 241
+23:46:15.712 -> brown heating on! brown temp 93
+23:46:15.746 -> Disable all heaters 
+23:46:15.746 -> brownTemp 123
+23:46:15.746 -> checking disconnected?
+23:46:15.779 -> red heating OFF!! red temp 241
+23:46:15.779 -> brown heating on! brown temp 123
+23:46:15.813 -> Disable all heaters 
+23:46:15.813 -> checking disconnected?
+23:46:15.813 -> red heating OFF!! red temp 241
+23:46:15.848 -> brown heating on! brown temp 123
+23:46:15.848 -> Disable all heaters 
+23:46:15.882 -> checking disconnected?
+23:46:15.882 -> red heating OFF!! red temp 241
+23:46:15.915 -> brown heating on! brown temp 123
+23:46:15.915 -> Disable all heaters 
+23:46:15.948 -> checking disconnected?
+23:46:15.948 -> red heating OFF!! red temp 241
+23:46:15.948 -> brown heating on! brown temp 123
+23:46:15.983 -> Disable all heaters 
+23:46:15.983 -> checking disconnected?
+23:46:16.017 -> red heating OFF!! red temp 241
+23:46:16.017 -> brown heating on! brown temp 123
+23:46:16.017 -> Disable all heaters 
+23:46:16.051 -> checking disconnected?
+23:46:16.051 -> Disable all heaters 
+23:46:16.051 -> red heating OFF!! red temp 241
+23:46:16.084 -> brown heating on! brown temp 123
+23:46:16.084 -> Disable all heaters 
+23:46:16.118 -> checking disconnected?
+23:46:16.118 -> red heating OFF!! red temp 241
+23:46:16.152 -> brown heating on! brown temp 123
+23:46:16.152 -> Disable all heaters 
+23:46:16.152 -> checking disconnected?
+23:46:16.186 -> red heating OFF!! red temp 241
+23:46:16.186 -> brown heating on! brown temp 123
+23:46:16.220 -> Disable all heaters 
+23:46:16.220 -> checking disconnected?
+23:46:16.253 -> red heating OFF!! red temp 241
+23:46:16.253 -> brown heating on! brown temp 123
+23:46:16.286 -> Disable all heaters 
+23:46:16.286 -> checking disconnected?
+23:46:16.286 -> red heating OFF!! red temp 241
+23:46:16.321 -> brown heating on! brown temp 123
+23:46:16.321 -> Disable all heaters 
+23:46:16.354 -> checking disconnected?
+23:46:16.354 -> red heating OFF!! red temp 241
+23:46:16.388 -> brown heating on! brown temp 123
+23:46:16.388 -> Disable all heaters 
+23:46:16.388 -> checking disconnected?
+23:46:16.421 -> red heating OFF!! red temp 241
+23:46:16.421 -> brown heating on! brown temp 123
+23:46:16.454 -> Disable all heaters 
+23:46:16.454 -> checking disconnected?
+23:46:16.488 -> red heating OFF!! red temp 241
+23:46:16.488 -> brown heating on! brown temp 123
+23:46:16.522 -> Disable all heaters 
+23:46:16.522 -> checking disconnected?
+23:46:16.522 -> red heating OFF!! red temp 241
+23:46:16.556 -> brown heating on! brown temp 123
+23:46:16.556 -> Disable all heaters 
+23:46:16.590 -> checking disconnected?
+23:46:16.590 -> red heating OFF!! red temp 241
+23:46:16.623 -> brown heating on! brown temp 123
+23:46:16.623 -> Disable all heaters 
+23:46:16.623 -> checking disconnected?
+23:46:16.658 -> red heating OFF!! red temp 241
+23:46:16.658 -> brown heating on! brown temp 123
+23:46:16.692 -> Disable all heaters 
+23:46:16.692 -> checking disconnected?
+23:46:16.725 -> red heating OFF!! red temp 241
+23:46:16.725 -> brown heating on! brown temp 123
+23:46:16.760 -> Disable all heaters 
+23:46:16.760 -> checking disconnected?
+23:46:16.760 -> red heating OFF!! red temp 241
+23:46:16.794 -> brown heating on! brown temp 123
+23:46:16.794 -> Disable all heaters 
+23:46:16.827 -> checking disconnected?
+23:46:16.827 -> red heating OFF!! red temp 241
+23:46:16.860 -> brown heating on! brown temp 123
+23:46:16.860 -> Disable all heaters 
+23:46:16.860 -> checking disconnected?
+23:46:16.893 -> red heating OFF!! red temp 241
+23:46:16.893 -> brown heating on! brown temp 123
+23:46:16.928 -> Disable all heaters 
+23:46:16.928 -> brownTemp 148
+23:46:16.928 -> checking disconnected?
+23:46:16.962 -> red heating OFF!! red temp 241
+23:46:16.962 -> brown heating on! brown temp 148
+23:46:16.997 -> Disable all heaters 
+23:46:16.997 -> checking disconnected?
+23:46:17.032 -> red heating OFF!! red temp 241
+23:46:17.032 -> brown heating on! brown temp 148
+23:46:17.032 -> Disable all heaters 
+23:46:17.032 -> checking disconnected?
+23:46:17.066 -> red heating OFF!! red temp 241
+23:46:17.066 -> brown heating on! brown temp 148
+23:46:17.099 -> Disable all heaters 
+23:46:17.099 -> checking disconnected?
+23:46:17.134 -> red heating OFF!! red temp 241
+23:46:17.134 -> brown heating on! brown temp 148
+23:46:17.167 -> Disable all heaters 
+23:46:17.167 -> checking disconnected?
+23:46:17.167 -> red heating OFF!! red temp 241
+23:46:17.202 -> brown heating on! brown temp 148
+23:46:17.202 -> Disable all heaters 
+23:46:17.237 -> checking disconnected?
+23:46:17.237 -> red heating OFF!! red temp 241
+23:46:17.271 -> brown heating on! brown temp 148
+23:46:17.271 -> Disable all heaters 
+23:46:17.271 -> checking disconnected?
+23:46:17.304 -> Disable all heaters 
+23:46:17.304 -> red heating OFF!! red temp 241
+23:46:17.338 -> brown heating on! brown temp 148
+23:46:17.338 -> Disable all heaters 
+23:46:17.338 -> checking disconnected?
+23:46:17.373 -> red heating OFF!! red temp 241
+23:46:17.373 -> brown heating on! brown temp 148
+23:46:17.408 -> Disable all heaters 
+23:46:17.408 -> checking disconnected?
+23:46:17.443 -> red heating OFF!! red temp 241
+23:46:17.443 -> brown heating on! brown temp 148
+23:46:17.477 -> Disable all heaters 
+23:46:17.477 -> checking disconnected?
+23:46:17.477 -> red heating OFF!! red temp 241
+23:46:17.510 -> brown heating on! brown temp 148
+23:46:17.510 -> Disable all heaters 
+23:46:17.544 -> checking disconnected?
+23:46:17.544 -> red heating OFF!! red temp 241
+23:46:17.578 -> brown heating on! brown temp 148
+23:46:17.578 -> Disable all heaters 
+23:46:17.578 -> checking disconnected?
+23:46:17.613 -> red heating OFF!! red temp 241
+23:46:17.613 -> brown heating on! brown temp 148
+23:46:17.647 -> Disable all heaters 
+23:46:17.647 -> checking disconnected?
+23:46:17.647 -> red heating OFF!! red temp 241
+23:46:17.680 -> brown heating on! brown temp 148
+23:46:17.680 -> Disable all heaters 
+23:46:17.680 -> checking disconnected?
+23:46:17.714 -> red heating OFF!! red temp 241
+23:46:17.714 -> brown heating on! brown temp 148
+23:46:17.747 -> Disable all heaters 
+23:46:17.747 -> checking disconnected?
+23:46:17.780 -> red heating OFF!! red temp 241
+23:46:17.780 -> brown heating on! brown temp 148
+23:46:17.813 -> Disable all heaters 
+23:46:17.813 -> checking disconnected?
+23:46:17.813 -> red heating OFF!! red temp 241
+23:46:17.847 -> brown heating on! brown temp 148
+23:46:17.847 -> Disable all heaters 
+23:46:17.882 -> checking disconnected?
+23:46:17.882 -> red heating OFF!! red temp 241
+23:46:17.915 -> brown heating on! brown temp 148
+23:46:17.915 -> Disable all heaters 
+23:46:17.915 -> checking disconnected?
+23:46:17.948 -> red heating OFF!! red temp 241
+23:46:17.948 -> brown heating on! brown temp 148
+23:46:17.982 -> Disable all heaters 
+23:46:17.982 -> checking disconnected?
+23:46:18.017 -> red heating OFF!! red temp 241
+23:46:18.017 -> brown heating on! brown temp 148
+23:46:18.052 -> Disable all heaters 
+23:46:18.052 -> checking disconnected?
+23:46:18.052 -> red heating OFF!! red temp 241
+23:46:18.087 -> brown heating on! brown temp 148
+23:46:18.087 -> Disable all heaters 
+23:46:18.122 -> brownTemp 175
+23:46:18.122 -> checking disconnected?
+23:46:18.122 -> red heating OFF!! red temp 241
+23:46:18.156 -> brown heating on! brown temp 175
+23:46:18.156 -> Disable all heaters 
+23:46:18.189 -> checking disconnected?
+23:46:18.189 -> red heating OFF!! red temp 241
+23:46:18.223 -> brown heating on! brown temp 175
+23:46:18.223 -> Disable all heaters 
+23:46:18.223 -> checking disconnected?
+23:46:18.256 -> red heating OFF!! red temp 241
+23:46:18.256 -> brown heating on! brown temp 175
+23:46:18.289 -> Disable all heaters 
+23:46:18.289 -> checking disconnected?
+23:46:18.324 -> red heating OFF!! red temp 241
+23:46:18.324 -> brown heating on! brown temp 175
+23:46:18.358 -> Disable all heaters 
+23:46:18.358 -> checking disconnected?
+23:46:18.358 -> red heating OFF!! red temp 241
+23:46:18.391 -> brown heating on! brown temp 175
+23:46:18.391 -> Disable all heaters 
+23:46:18.426 -> checking disconnected?
+23:46:18.426 -> red heating OFF!! red temp 241
+23:46:18.459 -> brown heating on! brown temp 175
+23:46:18.459 -> Disable all heaters 
+23:46:18.459 -> checking disconnected?
+23:46:18.493 -> red heating OFF!! red temp 241
+23:46:18.493 -> brown heating on! brown temp 175
+23:46:18.526 -> Disable all heaters 
+23:46:18.526 -> checking disconnected?
+23:46:18.559 -> Disable all heaters 
+23:46:18.559 -> red heating OFF!! red temp 241
+23:46:18.559 -> brown heating on! brown temp 175
+23:46:18.593 -> Disable all heaters 
+23:46:18.593 -> checking disconnected?
+23:46:18.627 -> red heating OFF!! red temp 241
+23:46:18.627 -> brown heating on! brown temp 175
+23:46:18.627 -> Disable all heaters 
+23:46:18.661 -> checking disconnected?
+23:46:18.661 -> red heating OFF!! red temp 241
+23:46:18.661 -> brown heating on! brown temp 175
+23:46:18.695 -> Disable all heaters 
+23:46:18.695 -> checking disconnected?
+23:46:18.728 -> red heating OFF!! red temp 241
+23:46:18.728 -> brown heating on! brown temp 175
+23:46:18.763 -> Disable all heaters 
+23:46:18.763 -> checking disconnected?
+23:46:18.763 -> red heating OFF!! red temp 241
+23:46:18.797 -> brown heating on! brown temp 175
+23:46:18.797 -> Disable all heaters 
+23:46:18.830 -> checking disconnected?
+23:46:18.830 -> red heating OFF!! red temp 241
+23:46:18.864 -> brown heating on! brown temp 175
+23:46:18.864 -> Disable all heaters 
+23:46:18.898 -> checking disconnected?
+23:46:18.898 -> red heating OFF!! red temp 241
+23:46:18.898 -> brown heating on! brown temp 175
+23:46:18.932 -> Disable all heaters 
+23:46:18.932 -> checking disconnected?
+23:46:18.966 -> red heating OFF!! red temp 241
+23:46:18.966 -> brown heating on! brown temp 175
+23:46:19.000 -> Disable all heaters 
+23:46:19.000 -> checking disconnected?
+23:46:19.000 -> red heating OFF!! red temp 241
+23:46:19.035 -> brown heating on! brown temp 175
+23:46:19.035 -> Disable all heaters 
+23:46:19.070 -> checking disconnected?
+23:46:19.070 -> red heating OFF!! red temp 241
+23:46:19.104 -> brown heating on! brown temp 175
+23:46:19.104 -> Disable all heaters 
+23:46:19.138 -> checking disconnected?
+23:46:19.138 -> red heating OFF!! red temp 241
+23:46:19.138 -> brown heating on! brown temp 175
+23:46:19.172 -> Disable all heaters 
+23:46:19.172 -> checking disconnected?
+23:46:19.206 -> red heating OFF!! red temp 241
+23:46:19.206 -> brown heating on! brown temp 175
+23:46:19.239 -> Disable all heaters 
+23:46:19.239 -> checking disconnected?
+23:46:19.239 -> red heating OFF!! red temp 241
+23:46:19.274 -> brown heating on! brown temp 175
+23:46:19.274 -> Disable all heaters 
+23:46:19.308 -> brownTemp 195
+23:46:19.308 -> checking disconnected?
+23:46:19.308 -> red heating OFF!! red temp 241
+23:46:19.342 -> brown heating on! brown temp 195
+23:46:19.342 -> Disable all heaters 
+23:46:19.342 -> checking disconnected?
+23:46:19.378 -> red heating OFF!! red temp 241
+23:46:19.378 -> brown heating on! brown temp 195
+23:46:19.412 -> Disable all heaters 
+23:46:19.412 -> checking disconnected?
+23:46:19.412 -> red heating OFF!! red temp 241
+23:46:19.446 -> brown heating on! brown temp 195
+23:46:19.446 -> Disable all heaters 
+23:46:19.480 -> checking disconnected?
+23:46:19.480 -> red heating OFF!! red temp 241
+23:46:19.514 -> brown heating on! brown temp 195
+23:46:19.514 -> Disable all heaters 
+23:46:19.547 -> checking disconnected?
+23:46:19.547 -> red heating OFF!! red temp 241
+23:46:19.547 -> brown heating on! brown temp 195
+23:46:19.580 -> Disable all heaters 
+23:46:19.580 -> checking disconnected?
+23:46:19.614 -> red heating OFF!! red temp 241
+23:46:19.614 -> brown heating on! brown temp 195
+23:46:19.647 -> Disable all heaters 
+23:46:19.647 -> checking disconnected?
+23:46:19.647 -> red heating OFF!! red temp 241
+23:46:19.681 -> brown heating on! brown temp 195
+23:46:19.681 -> Disable all heaters 
+23:46:19.715 -> checking disconnected?
+23:46:19.715 -> red heating OFF!! red temp 241
+23:46:19.748 -> brown heating on! brown temp 195
+23:46:19.748 -> Disable all heaters 
+23:46:19.783 -> checking disconnected?
+23:46:19.783 -> Disable all heaters 
+23:46:19.783 -> red heating OFF!! red temp 241
+23:46:19.816 -> brown heating on! brown temp 195
+23:46:19.816 -> Disable all heaters 
+23:46:19.849 -> checking disconnected?
+23:46:19.849 -> red heating OFF!! red temp 241
+23:46:19.882 -> brown heating on! brown temp 195
+23:46:19.882 -> Disable all heaters 
+23:46:19.882 -> checking disconnected?
+23:46:19.916 -> red heating OFF!! red temp 241
+23:46:19.916 -> brown heating on! brown temp 195
+23:46:19.949 -> Disable all heaters 
+23:46:19.949 -> checking disconnected?
+23:46:19.983 -> red heating OFF!! red temp 241
+23:46:19.983 -> brown heating on! brown temp 195
+23:46:20.017 -> Disable all heaters 
+23:46:20.017 -> checking disconnected?
+23:46:20.017 -> red heating OFF!! red temp 241
+23:46:20.050 -> brown heating on! brown temp 195
+23:46:20.050 -> Disable all heaters 
+23:46:20.084 -> checking disconnected?
+23:46:20.084 -> red heating OFF!! red temp 241
+23:46:20.117 -> brown heating on! brown temp 195
+23:46:20.117 -> Disable all heaters 
+23:46:20.117 -> checking disconnected?
+23:46:20.150 -> red heating OFF!! red temp 241
+23:46:20.150 -> brown heating on! brown temp 195
+23:46:20.185 -> Disable all heaters 
+23:46:20.185 -> checking disconnected?
+23:46:20.218 -> red heating OFF!! red temp 241
+23:46:20.218 -> brown heating on! brown temp 195
+23:46:20.253 -> Disable all heaters 
+23:46:20.253 -> checking disconnected?
+23:46:20.253 -> red heating OFF!! red temp 241
+23:46:20.287 -> brown heating on! brown temp 195
+23:46:20.287 -> Disable all heaters 
+23:46:20.322 -> checking disconnected?
+23:46:20.322 -> red heating OFF!! red temp 241
+23:46:20.356 -> brown heating on! brown temp 195
+23:46:20.356 -> Disable all heaters 
+23:46:20.356 -> checking disconnected?
+23:46:20.356 -> red heating OFF!! red temp 241
+23:46:20.390 -> brown heating on! brown temp 195
+23:46:20.390 -> Disable all heaters 
+23:46:20.424 -> checking disconnected?
+23:46:20.424 -> red heating OFF!! red temp 241
+23:46:20.457 -> brown heating on! brown temp 195
+23:46:20.457 -> Disable all heaters 
+23:46:20.457 -> brownTemp 223
+23:46:20.490 -> checking disconnected?
+23:46:20.490 -> red heating OFF!! red temp 241
+23:46:20.490 -> brown heating offff! 223
+23:46:20.524 -> Disable all heaters 
+23:46:20.524 -> checking disconnected?
+23:46:20.558 -> red heating OFF!! red temp 241
+23:46:20.558 -> brown heating offff! 223
+23:46:20.592 -> Disable all heaters 
+23:46:20.592 -> checking disconnected?
+23:46:20.592 -> red heating OFF!! red temp 241
+23:46:20.626 -> brown heating offff! 223
+23:46:20.626 -> Disable all heaters 
+23:46:20.626 -> checking disconnected?
+23:46:20.659 -> red heating OFF!! red temp 241
+23:46:20.659 -> brown heating offff! 223
+23:46:20.692 -> Disable all heaters 
+23:46:20.692 -> checking disconnected?
+23:46:20.692 -> red heating OFF!! red temp 241
+23:46:20.726 -> brown heating offff! 223
+23:46:20.726 -> Disable all heaters 
+23:46:20.759 -> checking disconnected?
+23:46:20.759 -> red heating OFF!! red temp 241
+23:46:20.793 -> brown heating offff! 223
+23:46:20.793 -> Disable all heaters 
+23:46:20.793 -> checking disconnected?
+23:46:20.826 -> red heating OFF!! red temp 241
+23:46:20.826 -> brown heating offff! 223
+23:46:20.859 -> Disable all heaters 
+23:46:20.859 -> checking disconnected?
+23:46:20.859 -> red heating OFF!! red temp 241
+23:46:20.893 -> brown heating offff! 223
+23:46:20.893 -> Disable all heaters 
+23:46:20.928 -> checking disconnected?
+23:46:20.928 -> red heating OFF!! red temp 241
+23:46:20.928 -> brown heating offff! 223
+23:46:20.961 -> Disable all heaters 
+23:46:20.961 -> checking disconnected?
+23:46:20.995 -> Disable all heaters 
+23:46:20.995 -> red heating OFF!! red temp 241
+23:46:20.995 -> brown heating offff! 223
+23:46:21.028 -> Disable all heaters 
+23:46:21.028 -> checking disconnected?
+23:46:21.061 -> red heating OFF!! red temp 241
+23:46:21.061 -> brown heating offff! 223
+23:46:21.061 -> Disable all heaters 
+23:46:21.095 -> checking disconnected?
+23:46:21.095 -> red heating OFF!! red temp 241
+23:46:21.130 -> brown heating offff! 223
+23:46:21.130 -> Disable all heaters 
+23:46:21.130 -> checking disconnected?
+23:46:21.163 -> red heating OFF!! red temp 241
+23:46:21.163 -> brown heating offff! 223
+23:46:21.196 -> Disable all heaters 
+23:46:21.196 -> checking disconnected?
+23:46:21.196 -> red heating OFF!! red temp 241
+23:46:21.229 -> brown heating offff! 223
+23:46:21.229 -> Disable all heaters 
+23:46:21.263 -> checking disconnected?
+23:46:21.263 -> red heating OFF!! red temp 241
+23:46:21.296 -> brown heating offff! 223
+23:46:21.296 -> Disable all heaters 
+23:46:21.296 -> checking disconnected?
+23:46:21.329 -> red heating OFF!! red temp 241
+23:46:21.329 -> brown heating offff! 223
+23:46:21.362 -> Disable all heaters 
+23:46:21.362 -> checking disconnected?
+23:46:21.362 -> red heating OFF!! red temp 241
+23:46:21.396 -> brown heating offff! 223
+23:46:21.396 -> Disable all heaters 
+23:46:21.430 -> checking disconnected?
+23:46:21.430 -> red heating OFF!! red temp 241
+23:46:21.430 -> brown heating offff! 223
+23:46:21.464 -> Disable all heaters 
+23:46:21.464 -> checking disconnected?
+23:46:21.498 -> red heating OFF!! red temp 241
+23:46:21.498 -> brown heating offff! 223
+23:46:21.498 -> Disable all heaters 
+23:46:21.532 -> checking disconnected?
+23:46:21.532 -> red heating OFF!! red temp 241
+23:46:21.566 -> brown heating offff! 223
+23:46:21.566 -> Disable all heaters 
+23:46:21.566 -> checking disconnected?
+23:46:21.599 -> red heating OFF!! red temp 241
+23:46:21.599 -> brown heating offff! 223
+23:46:21.633 -> Disable all heaters 
+23:46:21.633 -> checking disconnected?
+23:46:21.633 -> red heating OFF!! red temp 241
+23:46:21.666 -> brown heating offff! 223
+23:46:21.666 -> Disable all heaters 
+23:46:21.701 -> checking disconnected?
+23:46:21.701 -> red heating OFF!! red temp 241
+23:46:21.735 -> brown heating offff! 223
+23:46:21.735 -> Disable all heaters 
+23:46:21.735 -> checking disconnected?
+23:46:21.768 -> red heating OFF!! red temp 241
+23:46:21.768 -> brown heating offff! 223
+23:46:21.801 -> Disable all heaters 
+23:46:21.801 -> checking disconnected?
+23:46:21.801 -> red heating OFF!! red temp 241
+23:46:21.836 -> brown heating offff! 223
+23:46:21.836 -> Disable all heaters 
+23:46:21.871 -> checking disconnected?
+23:46:21.871 -> red heating OFF!! red temp 241
+23:46:21.871 -> brown heating offff! 223
+23:46:21.871 -> Disable all heaters 
+23:46:21.904 -> checking disconnected?
+23:46:21.904 -> red heating OFF!! red temp 241
+23:46:21.938 -> brown heating offff! 223
+23:46:21.938 -> Disable all heaters 
+23:46:21.938 -> checking disconnected?
+23:46:21.972 -> red heating OFF!! red temp 241
+23:46:21.972 -> brown heating offff! 223
+23:46:22.006 -> Disable all heaters 
+23:46:22.006 -> checking disconnected?
+23:46:22.006 -> red heating OFF!! red temp 241
+23:46:22.041 -> brown heating offff! 223
+23:46:22.041 -> Disable all heaters 
+23:46:22.074 -> checking disconnected?
+23:46:22.074 -> red heating OFF!! red temp 241
+23:46:22.074 -> brown heating offff! 223
+23:46:22.107 -> Disable all heaters 
+23:46:22.107 -> checking disconnected?
+23:46:22.140 -> Disable all heaters 
+23:46:22.140 -> red heating OFF!! red temp 241
+23:46:22.140 -> brown heating offff! 223
+23:46:22.174 -> Disable all heaters 
+23:46:22.174 -> checking disconnected?
+23:46:22.207 -> red heating OFF!! red temp 241
+23:46:22.207 -> brown heating offff! 223
+23:46:22.207 -> Disable all heaters 
+23:46:22.242 -> checking disconnected?
+23:46:22.242 -> red heating OFF!! red temp 241
+23:46:22.277 -> brown heating offff! 223
+23:46:22.277 -> Disable all heaters 
+23:46:22.277 -> checking disconnected?
+23:46:22.310 -> red heating OFF!! red temp 241
+23:46:22.310 -> brown heating offff! 223
+23:46:22.343 -> Disable all heaters 
+23:46:22.343 -> checking disconnected?
+23:46:22.343 -> red heating OFF!! red temp 241
+23:46:22.377 -> brown heating offff! 223
+23:46:22.377 -> Disable all heaters 
+23:46:22.411 -> checking disconnected?
+23:46:22.411 -> red heating OFF!! red temp 241
+23:46:22.445 -> brown heating offff! 223
+23:46:22.445 -> Disable all heaters 
+23:46:22.445 -> checking disconnected?
+23:46:22.478 -> red heating OFF!! red temp 241
+23:46:22.478 -> brown heating offff! 223
+23:46:22.512 -> Disable all heaters 
+23:46:22.512 -> checking disconnected?
+23:46:22.512 -> red heating OFF!! red temp 241
+23:46:22.545 -> brown heating offff! 223
+23:46:22.545 -> Disable all heaters 
+23:46:22.580 -> checking disconnected?
+23:46:22.580 -> red heating OFF!! red temp 241
+23:46:22.580 -> brown heating offff! 223
+23:46:22.613 -> Disable all heaters 
+23:46:22.613 -> checking disconnected?
+23:46:22.647 -> red heating OFF!! red temp 241
+23:46:22.647 -> brown heating offff! 223
+23:46:22.647 -> Disable all heaters 
+23:46:22.681 -> checking disconnected?
+23:46:22.681 -> red heating OFF!! red temp 241
+23:46:22.714 -> brown heating offff! 223
+23:46:22.714 -> Disable all heaters 
+23:46:22.714 -> checking disconnected?
+23:46:22.748 -> red heating OFF!! red temp 241
+23:46:22.748 -> brown heating offff! 223
+23:46:22.783 -> Disable all heaters 
+23:46:22.783 -> checking disconnected?
+23:46:22.783 -> red heating OFF!! red temp 241
+23:46:22.817 -> brown heating offff! 223
+23:46:22.817 -> Disable all heaters 
+23:46:22.817 -> checking disconnected?
+23:46:22.850 -> red heating OFF!! red temp 241
+23:46:22.850 -> brown heating offff! 223
+23:46:22.850 -> Disable all heaters 
+23:46:22.884 -> checking disconnected?
+23:46:22.884 -> red heating OFF!! red temp 241
+23:46:22.917 -> brown heating offff! 223
+23:46:22.917 -> Disable all heaters 
+23:46:22.917 -> checking disconnected?
+23:46:22.954 -> red heating OFF!! red temp 241
+23:46:22.954 -> brown heating offff! 223
+23:46:22.985 -> Disable all heaters 
+23:46:22.985 -> checking disconnected?
+23:46:22.985 -> red heating OFF!! red temp 241
+23:46:23.019 -> brown heating offff! 223
+23:46:23.019 -> Disable all heaters 
+23:46:23.053 -> checking disconnected?
+23:46:23.053 -> red heating OFF!! red temp 241
+23:46:23.087 -> brown heating offff! 223
+23:46:23.087 -> Disable all heaters 
+23:46:23.087 -> checking disconnected?
+23:46:23.120 -> red heating OFF!! red temp 241
+23:46:23.120 -> brown heating offff! 223
+23:46:23.154 -> Disable all heaters 
+23:46:23.154 -> checking disconnected?
+23:46:23.154 -> red heating OFF!! red temp 241
+23:46:23.187 -> brown heating offff! 223
+23:46:23.187 -> Disable all heaters 
+23:46:23.220 -> checking disconnected?
+23:46:23.220 -> red heating OFF!! red temp 241
+23:46:23.220 -> brown heating offff! 223
+23:46:23.254 -> Disable all heaters 
+23:46:23.254 -> checking disconnected?
+23:46:23.287 -> Disable all heaters 
+23:46:23.287 -> red heating OFF!! red temp 241
+23:46:23.287 -> brown heating offff! 223
+23:46:23.322 -> Disable all heaters 
+23:46:23.322 -> checking disconnected?
+23:46:23.356 -> red heating OFF!! red temp 241
+23:46:23.356 -> brown heating offff! 223
+23:46:23.356 -> Disable all heaters 
+23:46:23.389 -> checking disconnected?
+23:46:23.389 -> red heating OFF!! red temp 241
+23:46:23.423 -> brown heating offff! 223
+23:46:23.423 -> Disable all heaters 
+23:46:23.423 -> checking disconnected?
+23:46:23.457 -> red heating OFF!! red temp 241
+23:46:23.457 -> brown heating offff! 223
+23:46:23.491 -> Disable all heaters 
+23:46:23.491 -> checking disconnected?
+23:46:23.491 -> red heating OFF!! red temp 241
+23:46:23.525 -> brown heating offff! 223
+23:46:23.525 -> Disable all heaters 
+23:46:23.559 -> checking disconnected?
+23:46:23.559 -> red heating OFF!! red temp 241
+23:46:23.593 -> brown heating offff! 223
+23:46:23.593 -> Disable all heaters 
+23:46:23.593 -> checking disconnected?
+23:46:23.628 -> red heating OFF!! red temp 241
+23:46:23.628 -> brown heating offff! 223
+23:46:23.663 -> Disable all heaters 
+23:46:23.663 -> checking disconnected?
+23:46:23.663 -> red heating OFF!! red temp 241
+23:46:23.697 -> brown heating offff! 223
+23:46:23.697 -> Disable all heaters 
+23:46:23.730 -> checking disconnected?
+23:46:23.730 -> red heating OFF!! red temp 241
+23:46:23.730 -> brown heating offff! 223
+23:46:23.765 -> Disable all heaters 
+23:46:23.765 -> checking disconnected?
+23:46:23.798 -> red heating OFF!! red temp 241
+23:46:23.798 -> brown heating offff! 223
+23:46:23.798 -> Disable all heaters 
+23:46:23.798 -> checking disconnected?
+23:46:23.832 -> red heating OFF!! red temp 241
+23:46:23.832 -> brown heating offff! 223
+23:46:23.867 -> Disable all heaters 
+23:46:23.867 -> checking disconnected?
+23:46:23.867 -> red heating OFF!! red temp 241
+23:46:23.900 -> brown heating offff! 223
+23:46:23.900 -> Disable all heaters 
+23:46:23.934 -> checking disconnected?
+23:46:23.934 -> red heating OFF!! red temp 241
+23:46:23.934 -> brown heating offff! 223
+23:46:23.968 -> Disable all heaters 
+23:46:23.968 -> checking disconnected?
+23:46:24.003 -> red heating OFF!! red temp 241
+23:46:24.003 -> brown heating offff! 223
+23:46:24.003 -> Disable all heaters 
+23:46:24.036 -> checking disconnected?
+23:46:24.036 -> red heating OFF!! red temp 241
+23:46:24.069 -> brown heating offff! 223
+23:46:24.069 -> Disable all heaters 
+23:46:24.069 -> checking disconnected?
+23:46:24.103 -> red heating OFF!! red temp 241
+23:46:24.103 -> brown heating offff! 223
+23:46:24.137 -> Disable all heaters 
+23:46:24.137 -> checking disconnected?
+23:46:24.137 -> red heating OFF!! red temp 241
+23:46:24.170 -> brown heating offff! 223
+23:46:24.170 -> Disable all heaters 
+23:46:24.204 -> checking disconnected?
+23:46:24.204 -> red heating OFF!! red temp 241
+23:46:24.239 -> brown heating offff! 223
+23:46:24.239 -> Disable all heaters 
+23:46:24.239 -> checking disconnected?
+23:46:24.273 -> red heating OFF!! red temp 241
+23:46:24.273 -> brown heating offff! 223
+23:46:24.306 -> Disable all heaters 
+23:46:24.306 -> checking disconnected?
+23:46:24.306 -> red heating OFF!! red temp 241
+23:46:24.339 -> brown heating offff! 223
+23:46:24.339 -> Disable all heaters 
+23:46:24.373 -> checking disconnected?
+23:46:24.373 -> red heating OFF!! red temp 241
+23:46:24.373 -> brown heating offff! 223
+23:46:24.407 -> Disable all heaters 
+23:46:24.407 -> checking disconnected?
+23:46:24.440 -> Disable all heaters 
+23:46:24.440 -> red heating OFF!! red temp 241
+23:46:24.440 -> brown heating offff! 223
+23:46:24.474 -> Disable all heaters 
+23:46:24.474 -> checking disconnected?
+23:46:24.474 -> red heating OFF!! red temp 241
+23:46:24.507 -> brown heating offff! 223
+23:46:24.507 -> Disable all heaters 
+23:46:24.540 -> checking disconnected?
+23:46:24.540 -> red heating OFF!! red temp 241
+23:46:24.574 -> brown heating offff! 223
+23:46:24.574 -> Disable all heaters 
+23:46:24.574 -> checking disconnected?
+23:46:24.607 -> red heating OFF!! red temp 241
+23:46:24.607 -> brown heating offff! 223
+23:46:24.640 -> Disable all heaters 
+23:46:24.640 -> checking disconnected?
+23:46:24.640 -> red heating OFF!! red temp 241
+23:46:24.674 -> brown heating offff! 223
+23:46:24.674 -> Disable all heaters 
+23:46:24.709 -> checking disconnected?
+23:46:24.709 -> red heating OFF!! red temp 241
+23:46:24.709 -> brown heating offff! 223
+23:46:24.743 -> Disable all heaters 
+23:46:24.743 -> checking disconnected?
+23:46:24.777 -> red heating OFF!! red temp 241
+23:46:24.777 -> brown heating offff! 223
+23:46:24.812 -> Disable all heaters 
+23:46:24.812 -> checking disconnected?
+23:46:24.812 -> red heating OFF!! red temp 241
+23:46:24.845 -> brown heating offff! 223
+23:46:24.845 -> Disable all heaters 
+23:46:24.845 -> checking disconnected?
+23:46:24.879 -> red heating OFF!! red temp 241
+23:46:24.879 -> brown heating offff! 223
+23:46:24.913 -> Disable all heaters 
+23:46:24.913 -> checking disconnected?
+23:46:24.913 -> red heating OFF!! red temp 241
+23:46:24.913 -> brown heating offff! 223
+23:46:24.947 -> Disable all heaters 
+23:46:24.947 -> checking disconnected?
+23:46:24.980 -> red heating OFF!! red temp 241
+23:46:24.980 -> brown heating offff! 223
+23:46:25.013 -> Disable all heaters 
+23:46:25.013 -> checking disconnected?
+23:46:25.013 -> red heating OFF!! red temp 241
+23:46:25.046 -> brown heating offff! 223
+23:46:25.046 -> Disable all heaters 
+23:46:25.046 -> checking disconnected?
+23:46:25.079 -> red heating OFF!! red temp 241
+23:46:25.079 -> brown heating offff! 223
+23:46:25.112 -> Disable all heaters 
+23:46:25.112 -> checking disconnected?
+23:46:25.112 -> red heating OFF!! red temp 241
+23:46:25.146 -> brown heating offff! 223
+23:46:25.146 -> Disable all heaters 
+23:46:25.181 -> checking disconnected?
+23:46:25.181 -> red heating OFF!! red temp 241
+23:46:25.214 -> brown heating offff! 223
+23:46:25.214 -> Disable all heaters 
+23:46:25.214 -> checking disconnected?
+23:46:25.248 -> red heating OFF!! red temp 241
+23:46:25.248 -> brown heating offff! 223
+23:46:25.283 -> Disable all heaters 
+23:46:25.283 -> checking disconnected?
+23:46:25.283 -> red heating OFF!! red temp 241
+23:46:25.318 -> brown heating offff! 223
+23:46:25.318 -> Disable all heaters 
+23:46:25.352 -> checking disconnected?
+23:46:25.352 -> red heating OFF!! red temp 241
+23:46:25.352 -> brown heating offff! 223
+23:46:25.385 -> Disable all heaters 
+23:46:25.385 -> checking disconnected?
+23:46:25.418 -> red heating OFF!! red temp 241
+23:46:25.418 -> brown heating offff! 223
+23:46:25.452 -> Disable all heaters 
+23:46:25.452 -> checking disconnected?
+23:46:25.452 -> red heating OFF!! red temp 241
+23:46:25.487 -> brown heating offff! 223
+23:46:25.487 -> Disable all heaters 
+23:46:25.487 -> checking disconnected?
+23:46:25.520 -> red heating OFF!! red temp 241
+23:46:25.520 -> brown heating offff! 223
+23:46:25.553 -> Disable all heaters 
+23:46:25.553 -> checking disconnected?
+23:46:25.553 -> Disable all heaters 
+23:46:25.587 -> red heating OFF!! red temp 241
+23:46:25.587 -> brown heating offff! 223
+23:46:25.620 -> Disable all heaters 
+23:46:25.620 -> checking disconnected?
+23:46:25.620 -> red heating OFF!! red temp 241
+23:46:25.653 -> brown heating offff! 223
+23:46:25.653 -> Disable all heaters 
+23:46:25.688 -> checking disconnected?
+23:46:25.688 -> red heating OFF!! red temp 241
+23:46:25.722 -> brown heating offff! 223
+23:46:25.722 -> Disable all heaters 
+23:46:25.722 -> checking disconnected?
+23:46:25.755 -> red heating OFF!! red temp 241
+23:46:25.755 -> brown heating offff! 223
+23:46:25.788 -> Disable all heaters 
+23:46:25.788 -> checking disconnected?
+23:46:25.788 -> red heating OFF!! red temp 241
+23:46:25.823 -> brown heating offff! 223
+23:46:25.823 -> Disable all heaters 
+23:46:25.856 -> checking disconnected?
+23:46:25.856 -> red heating OFF!! red temp 241
+23:46:25.856 -> brown heating offff! 223
+23:46:25.889 -> Disable all heaters 
+23:46:25.889 -> checking disconnected?
+23:46:25.922 -> red heating OFF!! red temp 241
+23:46:25.922 -> brown heating offff! 223
+23:46:25.922 -> Disable all heaters 
+23:46:25.956 -> checking disconnected?
+23:46:25.956 -> red heating OFF!! red temp 241
+23:46:25.990 -> brown heating offff! 223
+23:46:25.990 -> Disable all heaters 
+23:46:25.990 -> checking disconnected?
+23:46:26.024 -> red heating OFF!! red temp 241
+23:46:26.024 -> brown heating offff! 223
+23:46:26.057 -> Disable all heaters 
+23:46:26.057 -> checking disconnected?
+23:46:26.057 -> red heating OFF!! red temp 241
+23:46:26.090 -> brown heating offff! 223
+23:46:26.090 -> Disable all heaters 
+23:46:26.124 -> checking disconnected?
+23:46:26.124 -> red heating OFF!! red temp 241
+23:46:26.157 -> brown heating offff! 223
+23:46:26.157 -> Disable all heaters 
+23:46:26.157 -> checking disconnected?
+23:46:26.191 -> red heating OFF!! red temp 241
+23:46:26.191 -> brown heating offff! 223
+23:46:26.224 -> Disable all heaters 
+23:46:26.224 -> checking disconnected?
+23:46:26.224 -> red heating OFF!! red temp 241
+23:46:26.258 -> brown heating offff! 223
+23:46:26.258 -> Disable all heaters 
+23:46:26.292 -> checking disconnected?
+23:46:26.292 -> red heating OFF!! red temp 241
+23:46:26.292 -> brown heating offff! 223
+23:46:26.325 -> Disable all heaters 
+23:46:26.325 -> checking disconnected?
+23:46:26.360 -> red heating OFF!! red temp 241
+23:46:26.360 -> brown heating offff! 223
+23:46:26.360 -> Disable all heaters 
+23:46:26.360 -> checking disconnected?
+23:46:26.395 -> red heating OFF!! red temp 241
+23:46:26.395 -> brown heating offff! 223
+23:46:26.428 -> Disable all heaters 
+23:46:26.428 -> checking disconnected?
+23:46:26.428 -> red heating OFF!! red temp 241
+23:46:26.462 -> brown heating offff! 223
+23:46:26.462 -> Disable all heaters 
+23:46:26.495 -> checking disconnected?
+23:46:26.495 -> red heating OFF!! red temp 241
+23:46:26.495 -> brown heating offff! 223
+23:46:26.529 -> Disable all heaters 
+23:46:26.529 -> checking disconnected?
+23:46:26.563 -> red heating OFF!! red temp 241
+23:46:26.563 -> brown heating offff! 223
+23:46:26.563 -> Disable all heaters 
+23:46:26.597 -> checking disconnected?
+23:46:26.597 -> red heating OFF!! red temp 241
+23:46:26.631 -> brown heating offff! 223
+23:46:26.631 -> Disable all heaters 
+23:46:26.631 -> checking disconnected?
+23:46:26.666 -> red heating OFF!! red temp 241
+23:46:26.666 -> brown heating offff! 223
+23:46:26.699 -> Disable all heaters 
+23:46:26.699 -> checking disconnected?
+23:46:26.699 -> Disable all heaters 
+23:46:26.733 -> red heating OFF!! red temp 241
+23:46:26.733 -> brown heating offff! 223
+23:46:26.767 -> Disable all heaters 
+23:46:26.767 -> checking disconnected?
+23:46:26.767 -> red heating OFF!! red temp 241
+23:46:26.802 -> brown heating offff! 223
+23:46:26.802 -> Disable all heaters 
+23:46:26.835 -> checking disconnected?
+23:46:26.835 -> red heating OFF!! red temp 241
+23:46:26.869 -> brown heating offff! 223
+23:46:26.869 -> Disable all heaters 
+23:46:26.869 -> checking disconnected?
+23:46:26.903 -> red heating OFF!! red temp 241
+23:46:26.903 -> brown heating offff! 223
+23:46:26.937 -> Disable all heaters 
+23:46:26.937 -> checking disconnected?
+23:46:26.937 -> red heating OFF!! red temp 241
+23:46:26.972 -> brown heating offff! 223
+23:46:26.972 -> Disable all heaters 
+23:46:27.005 -> checking disconnected?
+23:46:27.005 -> red heating OFF!! red temp 241
+23:46:27.005 -> brown heating offff! 223
+23:46:27.038 -> Disable all heaters 
+23:46:27.038 -> checking disconnected?
+23:46:27.072 -> red heating OFF!! red temp 241
+23:46:27.072 -> brown heating offff! 223
+23:46:27.072 -> Disable all heaters 
+23:46:27.106 -> checking disconnected?
+23:46:27.106 -> red heating OFF!! red temp 241
+23:46:27.139 -> brown heating offff! 223
+23:46:27.139 -> Disable all heaters 
+23:46:27.139 -> checking disconnected?
+23:46:27.174 -> red heating OFF!! red temp 241
+23:46:27.174 -> brown heating offff! 223
+23:46:27.174 -> Disable all heaters 
+23:46:27.207 -> checking disconnected?
+23:46:27.207 -> red heating OFF!! red temp 241
+23:46:27.240 -> brown heating offff! 223
+23:46:27.240 -> Disable all heaters 
+23:46:27.274 -> checking disconnected?
+23:46:27.274 -> red heating OFF!! red temp 241
+23:46:27.274 -> brown heating offff! 223
+23:46:27.274 -> Disable all heaters 
+23:46:27.309 -> checking disconnected?
+23:46:27.309 -> red heating OFF!! red temp 241
+23:46:27.343 -> brown heating offff! 223
+23:46:27.343 -> Disable all heaters 
+23:46:27.343 -> checking disconnected?
+23:46:27.377 -> red heating OFF!! red temp 241
+23:46:27.377 -> brown heating offff! 223
+23:46:27.410 -> Disable all heaters 
+23:46:27.410 -> checking disconnected?
+23:46:27.410 -> red heating OFF!! red temp 241
+23:46:27.445 -> brown heating offff! 223
+23:46:27.445 -> Disable all heaters 
+23:46:27.478 -> checking disconnected?
+23:46:27.478 -> red heating OFF!! red temp 241
+23:46:27.512 -> brown heating offff! 223
+23:46:27.512 -> Disable all heaters 
+23:46:27.512 -> checking disconnected?
+23:46:27.547 -> red heating OFF!! red temp 241
+23:46:27.547 -> brown heating offff! 223
+23:46:27.580 -> Disable all heaters 
+23:46:27.580 -> checking disconnected?
+23:46:27.580 -> red heating OFF!! red temp 241
+23:46:27.613 -> brown heating offff! 223
+23:46:27.613 -> Disable all heaters 
+23:46:27.646 -> checking disconnected?
+23:46:27.646 -> red heating OFF!! red temp 241
+23:46:27.646 -> brown heating offff! 223
+23:46:27.679 -> Disable all heaters 
+23:46:27.679 -> checking disconnected?
+23:46:27.714 -> red heating OFF!! red temp 241
+23:46:27.714 -> brown heating offff! 223
+23:46:27.714 -> Disable all heaters 
+23:46:27.747 -> checking disconnected?
+23:46:27.747 -> red heating OFF!! red temp 241
+23:46:27.782 -> brown heating offff! 223
+23:46:27.782 -> Disable all heaters 
+23:46:27.782 -> checking disconnected?
+23:46:27.815 -> red heating OFF!! red temp 241
+23:46:27.815 -> brown heating offff! 223
+23:46:27.849 -> Disable all heaters 
+23:46:27.849 -> checking disconnected?
+23:46:27.849 -> Disable all heaters 
+23:46:27.883 -> red heating OFF!! red temp 241
+23:46:27.883 -> brown heating offff! 223
+23:46:27.916 -> Disable all heaters 
+23:46:27.916 -> checking disconnected?
+23:46:27.916 -> red heating OFF!! red temp 241
+23:46:27.950 -> brown heating offff! 223
+23:46:27.950 -> Disable all heaters 
+23:46:27.985 -> checking disconnected?
+23:46:27.985 -> red heating OFF!! red temp 241
+23:46:28.018 -> brown heating offff! 223
+23:46:28.018 -> Disable all heaters 
+23:46:28.018 -> checking disconnected?
+23:46:28.052 -> red heating OFF!! red temp 241
+23:46:28.052 -> brown heating offff! 223
+23:46:28.085 -> Disable all heaters 
+23:46:28.085 -> checking disconnected?
+23:46:28.085 -> red heating OFF!! red temp 241
+23:46:28.119 -> brown heating offff! 223
+23:46:28.119 -> Disable all heaters 
+23:46:28.153 -> checking disconnected?
+23:46:28.153 -> red heating OFF!! red temp 241
+23:46:28.153 -> brown heating offff! 223
+23:46:28.187 -> Disable all heaters 
+23:46:28.187 -> checking disconnected?
+23:46:28.222 -> red heating OFF!! red temp 241
+23:46:28.222 -> brown heating offff! 223
+23:46:28.222 -> Disable all heaters 
+23:46:28.222 -> checking disconnected?
+23:46:28.255 -> red heating OFF!! red temp 241
+23:46:28.255 -> brown heating offff! 223
+23:46:28.289 -> Disable all heaters 
+23:46:28.289 -> checking disconnected?
+23:46:28.289 -> red heating OFF!! red temp 241
+23:46:28.324 -> brown heating offff! 223
+23:46:28.324 -> Disable all heaters 
+23:46:28.357 -> checking disconnected?
+23:46:28.357 -> red heating OFF!! red temp 241
+23:46:28.357 -> brown heating offff! 223
+23:46:28.390 -> Disable all heaters 
+23:46:28.390 -> checking disconnected?
+23:46:28.425 -> red heating OFF!! red temp 241
+23:46:28.425 -> brown heating offff! 223
+23:46:28.425 -> Disable all heaters 
+23:46:28.459 -> checking disconnected?
+23:46:28.459 -> red heating OFF!! red temp 241
+23:46:28.494 -> brown heating offff! 223
+23:46:28.494 -> Disable all heaters 
+23:46:28.494 -> checking disconnected?
+23:46:28.527 -> red heating OFF!! red temp 241
+23:46:28.527 -> brown heating offff! 223
+23:46:28.562 -> Disable all heaters 
+23:46:28.562 -> checking disconnected?
+23:46:28.562 -> red heating OFF!! red temp 241
+23:46:28.597 -> brown heating offff! 223
+23:46:28.597 -> Disable all heaters 
+23:46:28.631 -> checking disconnected?
+23:46:28.631 -> red heating OFF!! red temp 241
+23:46:28.664 -> brown heating offff! 223
+23:46:28.664 -> Disable all heaters 
+23:46:28.664 -> checking disconnected?
+23:46:28.698 -> red heating OFF!! red temp 241
+23:46:28.698 -> brown heating offff! 223
+23:46:28.732 -> Disable all heaters 
+23:46:28.732 -> checking disconnected?
+23:46:28.732 -> red heating OFF!! red temp 241
+23:46:28.765 -> brown heating offff! 223
+23:46:28.765 -> Disable all heaters 
+23:46:28.798 -> checking disconnected?
+23:46:28.798 -> red heating OFF!! red temp 241
+23:46:28.798 -> brown heating offff! 223
+23:46:28.832 -> Disable all heaters 
+23:46:28.832 -> checking disconnected?
+23:46:28.865 -> red heating OFF!! red temp 241
+23:46:28.865 -> brown heating offff! 223
+23:46:28.865 -> Disable all heaters 
+23:46:28.898 -> checking disconnected?
+23:46:28.898 -> red heating OFF!! red temp 241
+23:46:28.933 -> brown heating offff! 223
+23:46:28.933 -> Disable all heaters 
+23:46:28.933 -> checking disconnected?
+23:46:28.966 -> red heating OFF!! red temp 241
+23:46:28.966 -> brown heating offff! 223
+23:46:28.999 -> Disable all heaters 
+23:46:28.999 -> checking disconnected?
+23:46:28.999 -> Disable all heaters 
+23:46:29.033 -> red heating OFF!! red temp 241
+23:46:29.033 -> brown heating offff! 223
+23:46:29.066 -> Disable all heaters 
+23:46:29.066 -> checking disconnected?
+23:46:29.066 -> red heating OFF!! red temp 241
+23:46:29.101 -> brown heating offff! 223
+23:46:29.101 -> Disable all heaters 
+23:46:29.135 -> checking disconnected?
+23:46:29.135 -> red heating OFF!! red temp 241
+23:46:29.135 -> brown heating offff! 223
+23:46:29.168 -> Disable all heaters 
+23:46:29.168 -> checking disconnected?
+23:46:29.202 -> red heating OFF!! red temp 241
+23:46:29.202 -> brown heating offff! 223
+23:46:29.202 -> Disable all heaters 
+23:46:29.202 -> checking disconnected?
+23:46:29.237 -> red heating OFF!! red temp 241
+23:46:29.237 -> brown heating offff! 223
+23:46:29.270 -> Disable all heaters 
+23:46:29.270 -> checking disconnected?
+23:46:29.270 -> red heating OFF!! red temp 241
+23:46:29.304 -> brown heating offff! 223
+23:46:29.304 -> Disable all heaters 
+23:46:29.339 -> checking disconnected?
+23:46:29.339 -> red heating OFF!! red temp 241
+23:46:29.339 -> brown heating offff! 223
+23:46:29.373 -> Disable all heaters 
+23:46:29.373 -> checking disconnected?
+23:46:29.407 -> red heating OFF!! red temp 241
+23:46:29.407 -> brown heating offff! 223
+23:46:29.440 -> Disable all heaters 
+23:46:29.440 -> checking disconnected?
+23:46:29.440 -> red heating OFF!! red temp 241
+23:46:29.473 -> brown heating offff! 223
+23:46:29.473 -> Disable all heaters 
+23:46:29.473 -> checking disconnected?
+23:46:29.506 -> red heating OFF!! red temp 241
+23:46:29.506 -> brown heating offff! 223
+23:46:29.539 -> Disable all heaters 
+23:46:29.539 -> checking disconnected?
+23:46:29.539 -> red heating OFF!! red temp 241
+23:46:29.573 -> brown heating offff! 223
+23:46:29.573 -> Disable all heaters 
+23:46:29.607 -> checking disconnected?
+23:46:29.607 -> red heating OFF!! red temp 241
+23:46:29.641 -> brown heating offff! 223
+23:46:29.641 -> Disable all heaters 
+23:46:29.641 -> checking disconnected?
+23:46:29.674 -> red heating OFF!! red temp 241
+23:46:29.674 -> brown heating offff! 223
+23:46:29.707 -> Disable all heaters 
+23:46:29.707 -> checking disconnected?
+23:46:29.707 -> red heating OFF!! red temp 241
+23:46:29.740 -> brown heating offff! 223
+23:46:29.740 -> Disable all heaters 
+23:46:29.774 -> checking disconnected?
+23:46:29.774 -> red heating OFF!! red temp 241
+23:46:29.774 -> brown heating offff! 223
+23:46:29.808 -> Disable all heaters 
+23:46:29.808 -> checking disconnected?
+23:46:29.842 -> red heating OFF!! red temp 241
+23:46:29.842 -> brown heating offff! 223
+23:46:29.876 -> Disable all heaters 
+23:46:29.876 -> checking disconnected?
+23:46:29.876 -> red heating OFF!! red temp 241
+23:46:29.909 -> brown heating offff! 223
+23:46:29.909 -> Disable all heaters 
+23:46:29.909 -> checking disconnected?
+23:46:29.943 -> red heating OFF!! red temp 241
+23:46:29.943 -> brown heating offff! 223
+23:46:29.978 -> Disable all heaters 
+23:46:29.978 -> checking disconnected?
+23:46:29.978 -> red heating OFF!! red temp 241
+23:46:30.013 -> brown heating offff! 223
+23:46:30.013 -> Disable all heaters 
+23:46:30.046 -> checking disconnected?
+23:46:30.046 -> red heating OFF!! red temp 241
+23:46:30.079 -> brown heating offff! 223
+23:46:30.079 -> Disable all heaters 
+23:46:30.079 -> checking disconnected?
+23:46:30.113 -> red heating OFF!! red temp 241
+23:46:30.113 -> brown heating offff! 223
+23:46:30.148 -> Disable all heaters 
+23:46:30.148 -> checking disconnected?
+23:46:30.148 -> Disable all heaters 
+23:46:30.182 -> red heating OFF!! red temp 241
+23:46:30.182 -> brown heating offff! 223
+23:46:30.216 -> Disable all heaters 
+23:46:30.216 -> checking disconnected?
+23:46:30.216 -> red heating OFF!! red temp 241
+23:46:30.250 -> brown heating offff! 223
+23:46:30.250 -> Disable all heaters 
+23:46:30.250 -> checking disconnected?
+23:46:30.250 -> red heating OFF!! red temp 241
+23:46:30.283 -> brown heating offff! 223
+23:46:30.283 -> Disable all heaters 
+23:46:30.316 -> checking disconnected?
+23:46:30.316 -> red heating OFF!! red temp 241
+23:46:30.350 -> brown heating offff! 223
+23:46:30.350 -> Disable all heaters 
+23:46:30.350 -> checking disconnected?
+23:46:30.385 -> red heating OFF!! red temp 241
+23:46:30.385 -> brown heating offff! 223
+23:46:30.418 -> Disable all heaters 
+23:46:30.418 -> checking disconnected?
+23:46:30.418 -> red heating OFF!! red temp 241
+23:46:30.452 -> brown heating offff! 223
+23:46:30.452 -> Disable all heaters 
+23:46:30.486 -> checking disconnected?
+23:46:30.486 -> red heating OFF!! red temp 241
+23:46:30.486 -> brown heating offff! 223
+23:46:30.520 -> Disable all heaters 
+23:46:30.520 -> checking disconnected?
+23:46:30.555 -> red heating OFF!! red temp 241
+23:46:30.555 -> brown heating offff! 223
+23:46:30.555 -> Disable all heaters 
+23:46:30.588 -> checking disconnected?
+23:46:30.588 -> red heating OFF!! red temp 241
+23:46:30.622 -> brown heating offff! 223
+23:46:30.622 -> Disable all heaters 
+23:46:30.622 -> checking disconnected?
+23:46:30.656 -> red heating OFF!! red temp 241
+23:46:30.656 -> brown heating offff! 223
+23:46:30.689 -> Disable all heaters 
+23:46:30.689 -> checking disconnected?
+23:46:30.689 -> red heating OFF!! red temp 241
+23:46:30.723 -> brown heating offff! 223
+23:46:30.723 -> Disable all heaters 
+23:46:30.757 -> checking disconnected?
+23:46:30.757 -> red heating OFF!! red temp 241
+23:46:30.791 -> brown heating offff! 223
+23:46:30.791 -> Disable all heaters 
+23:46:30.791 -> checking disconnected?
+23:46:30.824 -> red heating OFF!! red temp 241
+23:46:30.824 -> brown heating offff! 223
+23:46:30.858 -> Disable all heaters 
+23:46:30.858 -> checking disconnected?
+23:46:30.858 -> red heating OFF!! red temp 241
+23:46:30.891 -> brown heating offff! 223
+23:46:30.891 -> Disable all heaters 
+23:46:30.925 -> checking disconnected?
+23:46:30.925 -> red heating OFF!! red temp 241
+23:46:30.925 -> brown heating offff! 223
+23:46:30.958 -> Disable all heaters 
+23:46:30.958 -> checking disconnected?
+23:46:30.992 -> red heating OFF!! red temp 241
+23:46:30.992 -> brown heating offff! 223
+23:46:30.992 -> Disable all heaters 
+23:46:31.026 -> checking disconnected?
+23:46:31.026 -> red heating OFF!! red temp 241
+23:46:31.060 -> brown heating offff! 223
+23:46:31.060 -> Disable all heaters 
+23:46:31.060 -> checking disconnected?
+23:46:31.094 -> red heating OFF!! red temp 241
+23:46:31.094 -> brown heating offff! 223
+23:46:31.128 -> Disable all heaters 
+23:46:31.128 -> checking disconnected?
+23:46:31.128 -> red heating OFF!! red temp 241
+23:46:31.162 -> brown heating offff! 223
+23:46:31.162 -> Disable all heaters 
+23:46:31.197 -> checking disconnected?
+23:46:31.197 -> red heating OFF!! red temp 241
+23:46:31.197 -> brown heating offff! 223
+23:46:31.197 -> Disable all heaters 
+23:46:31.232 -> checking disconnected?
+23:46:31.232 -> red heating OFF!! red temp 241
+23:46:31.266 -> brown heating offff! 223
+23:46:31.266 -> Disable all heaters 
+23:46:31.266 -> checking disconnected?
+23:46:31.300 -> Disable all heaters 
+23:46:31.300 -> red heating OFF!! red temp 241
+23:46:31.334 -> brown heating offff! 223
+23:46:31.334 -> Disable all heaters 
+23:46:31.334 -> checking disconnected?
+23:46:31.368 -> red heating OFF!! red temp 241
+23:46:31.368 -> brown heating offff! 223
+23:46:31.402 -> Disable all heaters 
+23:46:31.402 -> checking disconnected?
+23:46:31.402 -> red heating OFF!! red temp 241
+23:46:31.435 -> brown heating offff! 223
+23:46:31.435 -> Disable all heaters 
+23:46:31.469 -> checking disconnected?
+23:46:31.469 -> red heating OFF!! red temp 241
+23:46:31.503 -> brown heating offff! 223
+23:46:31.503 -> Disable all heaters 
+23:46:31.503 -> checking disconnected?
+23:46:31.536 -> red heating OFF!! red temp 241
+23:46:31.536 -> brown heating offff! 223
+23:46:31.569 -> Disable all heaters 
+23:46:31.569 -> checking disconnected?
+23:46:31.569 -> red heating OFF!! red temp 241
+23:46:31.603 -> brown heating offff! 223
+23:46:31.603 -> Disable all heaters 
+23:46:31.636 -> checking disconnected?
+23:46:31.636 -> red heating OFF!! red temp 241
+23:46:31.636 -> brown heating offff! 223
+23:46:31.669 -> checking disconnected?
+23:46:31.669 -> checking disconnected?
+23:46:31.703 -> checking disconnected?
+23:46:31.703 -> checking disconnected?
+23:46:31.703 -> checking disconnected?
+23:46:31.737 -> checking disconnected?
+23:46:31.737 -> checking disconnected?
+23:46:31.737 -> checking disconnected?
+23:46:31.772 -> checking disconnected?
+23:46:31.772 -> checking disconnected?
+23:46:31.806 -> redTemp 139
+23:46:31.806 -> brownTemp 168
+23:46:31.806 -> checking disconnected?
+23:46:31.806 -> checking disconnected?
+23:46:31.840 -> checking disconnected?
+23:46:31.840 -> checking disconnected?
+23:46:31.874 -> checking disconnected?
+23:46:31.874 -> Disable all heaters 
+23:46:31.874 -> checking disconnected?
+23:46:31.908 -> checking disconnected?
+23:46:31.908 -> checking disconnected?
+23:46:31.908 -> checking disconnected?
+23:46:31.942 -> checking disconnected?
+23:46:31.942 -> checking disconnected?
+23:46:31.942 -> checking disconnected?
+23:46:31.976 -> checking disconnected?
+23:46:31.976 -> checking disconnected?
+23:46:32.009 -> checking disconnected?
+23:46:32.009 -> checking disconnected?
+23:46:32.009 -> checking disconnected?
+23:46:32.043 -> checking disconnected?
+23:46:32.043 -> checking disconnected?
+23:46:32.043 -> checking disconnected?
+23:46:32.076 -> redTemp 127
+23:46:32.076 -> brownTemp 166
+23:46:32.076 -> checking disconnected?
+23:46:32.111 -> checking disconnected?
+23:46:32.111 -> checking disconnected?
+23:46:32.111 -> checking disconnected?
+23:46:32.144 -> checking disconnected?
+23:46:32.144 -> checking disconnected?
+23:46:32.178 -> Disable all heaters 
+23:46:32.178 -> checking disconnected?
+23:46:32.178 -> checking disconnected?
+23:46:32.212 -> checking disconnected?
+23:46:32.212 -> checking disconnected?
+23:46:32.212 -> checking disconnected?
+23:46:32.212 -> checking disconnected?
+23:46:32.246 -> checking disconnected?
+23:46:32.246 -> checking disconnected?
+23:46:32.246 -> checking disconnected?
+23:46:32.279 -> checking disconnected?
+23:46:32.279 -> checking disconnected?
+23:46:32.312 -> checking disconnected?
+23:46:32.312 -> checking disconnected?
+23:46:32.312 -> checking disconnected?
+23:46:32.346 -> redTemp 130
+23:46:32.346 -> brownTemp 166
+23:46:32.346 -> checking disconnected?
+23:46:32.346 -> checking disconnected?
+23:46:32.379 -> checking disconnected?
+23:46:32.379 -> checking disconnected?
+23:46:32.412 -> checking disconnected?
+23:46:32.412 -> checking disconnected?
+23:46:32.412 -> checking disconnected?
+23:46:32.446 -> Disable all heaters 
+23:46:32.446 -> checking disconnected?
+23:46:32.446 -> checking disconnected?
+23:46:32.480 -> checking disconnected?
+23:46:32.480 -> checking disconnected?
+23:46:32.514 -> checking disconnected?
+23:46:32.514 -> checking disconnected?
+23:46:32.514 -> checking disconnected?
+23:46:32.547 -> checking disconnected?
+23:46:32.547 -> checking disconnected?
+23:46:32.547 -> checking disconnected?
+23:46:32.581 -> checking disconnected?
+23:46:32.581 -> checking disconnected?
+23:46:32.614 -> checking disconnected?
+23:46:32.614 -> redTemp 145
+23:46:32.614 -> brownTemp 162
+23:46:32.614 -> checking disconnected?
+23:46:32.647 -> checking disconnected?
+23:46:32.647 -> checking disconnected?
+23:46:32.647 -> checking disconnected?
+23:46:32.681 -> checking disconnected?
+23:46:32.681 -> checking disconnected?
+23:46:32.715 -> checking disconnected?
+23:46:32.715 -> checking disconnected?
+23:46:32.715 -> Disable all heaters 
+23:46:32.748 -> checking disconnected?
+23:46:32.748 -> checking disconnected?
+23:46:32.748 -> checking disconnected?
+23:46:32.782 -> checking disconnected?
+23:46:32.782 -> checking disconnected?
+23:46:32.817 -> checking disconnected?
+23:46:32.817 -> checking disconnected?
+23:46:32.817 -> checking disconnected?
+23:46:32.851 -> checking disconnected?
+23:46:32.851 -> checking disconnected?
+23:46:32.851 -> checking disconnected?
+23:46:32.886 -> checking disconnected?
+23:46:32.886 -> redTemp 141
+23:46:32.886 -> brownTemp 161
+23:46:32.919 -> checking disconnected?
+23:46:32.919 -> checking disconnected?
+23:46:32.919 -> checking disconnected?
+23:46:32.952 -> checking disconnected?
+23:46:32.952 -> checking disconnected?
+23:46:32.987 -> checking disconnected?
+23:46:32.987 -> checking disconnected?
+23:46:32.987 -> checking disconnected?
+23:46:33.020 -> checking disconnected?
+23:46:33.020 -> Disable all heaters 
+23:46:33.020 -> checking disconnected?
+23:46:33.054 -> checking disconnected?
+23:46:33.054 -> checking disconnected?
+23:46:33.054 -> checking disconnected?
+23:46:33.088 -> checking disconnected?
+23:46:33.088 -> checking disconnected?
+23:46:33.120 -> checking disconnected?
+23:46:33.120 -> checking disconnected?
+23:46:33.120 -> checking disconnected?
+23:46:33.154 -> checking disconnected?
+23:46:33.154 -> checking disconnected?
+23:46:33.154 -> redTemp 126
+23:46:33.188 -> brownTemp 164
+23:46:33.188 -> checking disconnected?
+23:46:33.188 -> checking disconnected?
+23:46:33.222 -> checking disconnected?
+23:46:33.222 -> checking disconnected?
+23:46:33.222 -> checking disconnected?
+23:46:33.257 -> checking disconnected?
+23:46:33.257 -> checking disconnected?
+23:46:33.290 -> checking disconnected?
+23:46:33.290 -> checking disconnected?
+23:46:33.290 -> checking disconnected?
+23:46:33.323 -> Disable all heaters 
+23:46:33.323 -> checking disconnected?
+23:46:33.323 -> checking disconnected?
+23:46:33.357 -> checking disconnected?
+23:46:33.357 -> checking disconnected?
+23:46:33.391 -> checking disconnected?
+23:46:33.391 -> checking disconnected?
+23:46:33.391 -> checking disconnected?
+23:46:33.424 -> checking disconnected?
+23:46:33.424 -> checking disconnected?
+23:46:33.424 -> checking disconnected?
+23:46:33.457 -> redTemp 129
+23:46:33.457 -> brownTemp 160
+23:46:33.457 -> checking disconnected?
+23:46:33.491 -> checking disconnected?
+23:46:33.491 -> checking disconnected?
+23:46:33.491 -> checking disconnected?
+23:46:33.525 -> checking disconnected?
+23:46:33.525 -> checking disconnected?
+23:46:33.525 -> checking disconnected?
+23:46:33.525 -> checking disconnected?
+23:46:33.559 -> Disable all heaters 
+23:46:33.559 -> checking disconnected?
+23:46:33.559 -> red heating on!!! red temp 129
+23:46:33.593 -> brown heating on! brown temp 160
+23:46:33.593 -> Disable all heaters 
+23:46:33.626 -> checking disconnected?
+23:46:33.626 -> red heating on!!! red temp 129
+23:46:33.659 -> brown heating on! brown temp 160
+23:46:33.659 -> Disable all heaters 
+23:46:33.693 -> checking disconnected?
+23:46:33.693 -> Disable all heaters 
+23:46:33.693 -> red heating on!!! red temp 129
+23:46:33.726 -> brown heating on! brown temp 160
+23:46:33.726 -> Disable all heaters 
+23:46:33.761 -> checking disconnected?
+23:46:33.761 -> red heating on!!! red temp 129
+23:46:33.794 -> brown heating on! brown temp 160
+23:46:33.794 -> Disable all heaters 
+23:46:33.794 -> checking disconnected?
+23:46:33.828 -> red heating on!!! red temp 129
+23:46:33.828 -> brown heating on! brown temp 160
+23:46:33.862 -> Disable all heaters 
+23:46:33.862 -> checking disconnected?
+23:46:33.895 -> red heating on!!! red temp 129
+23:46:33.895 -> brown heating on! brown temp 160
+23:46:33.929 -> Disable all heaters 
+23:46:33.929 -> checking disconnected?
+23:46:33.929 -> red heating on!!! red temp 129
+23:46:33.963 -> brown heating on! brown temp 160
+23:46:33.963 -> Disable all heaters 
+23:46:33.997 -> checking disconnected?
+23:46:33.997 -> red heating on!!! red temp 129
+23:46:34.030 -> brown heating on! brown temp 160
+23:46:34.030 -> Disable all heaters 
+23:46:34.030 -> checking disconnected?
+23:46:34.064 -> red heating on!!! red temp 129
+23:46:34.064 -> brown heating on! brown temp 160
+23:46:34.097 -> Disable all heaters 
+23:46:34.097 -> checking disconnected?
+23:46:34.131 -> red heating on!!! red temp 129
+23:46:34.131 -> brown heating on! brown temp 160
+23:46:34.164 -> Disable all heaters 
+23:46:34.164 -> checking disconnected?
+23:46:34.164 -> red heating on!!! red temp 129
+23:46:34.197 -> brown heating on! brown temp 160
+23:46:34.197 -> Disable all heaters 
+23:46:34.230 -> checking disconnected?
+23:46:34.230 -> red heating on!!! red temp 129
+23:46:34.265 -> brown heating on! brown temp 160
+23:46:34.265 -> Disable all heaters 
+23:46:34.265 -> redTemp 163
+23:46:34.298 -> brownTemp 170
+23:46:34.298 -> checking disconnected?
+23:46:34.298 -> red heating on!!! red temp 163
+23:46:34.332 -> brown heating on! brown temp 170
+23:46:34.332 -> Disable all heaters 
+23:46:34.366 -> checking disconnected?
+23:46:34.366 -> red heating on!!! red temp 163
+23:46:34.366 -> brown heating on! brown temp 170
+23:46:34.399 -> Disable all heaters 
+23:46:34.399 -> checking disconnected?
+23:46:34.433 -> red heating on!!! red temp 163
+23:46:34.433 -> brown heating on! brown temp 170
+23:46:34.466 -> Disable all heaters 
+23:46:34.466 -> checking disconnected?
+23:46:34.466 -> red heating on!!! red temp 163
+23:46:34.500 -> brown heating on! brown temp 170
+23:46:34.500 -> Disable all heaters 
+23:46:34.534 -> checking disconnected?
+23:46:34.534 -> red heating on!!! red temp 163
+23:46:34.568 -> brown heating on! brown temp 170
+23:46:34.568 -> Disable all heaters 
+23:46:34.602 -> checking disconnected?
+23:46:34.602 -> red heating on!!! red temp 163
+23:46:34.602 -> brown heating on! brown temp 170
+23:46:34.637 -> Disable all heaters 
+23:46:34.637 -> checking disconnected?
+23:46:34.672 -> red heating on!!! red temp 163
+23:46:34.672 -> brown heating on! brown temp 170
+23:46:34.706 -> Disable all heaters 
+23:46:34.706 -> checking disconnected?
+23:46:34.706 -> red heating on!!! red temp 163
+23:46:34.706 -> brown heating on! brown temp 170
+23:46:34.739 -> Disable all heaters 
+23:46:34.773 -> checking disconnected?
+23:46:34.773 -> red heating on!!! red temp 163
+23:46:34.773 -> brown heating on! brown temp 170
+23:46:34.807 -> Disable all heaters 
+23:46:34.807 -> checking disconnected?
+23:46:34.807 -> red heating on!!! red temp 163
+23:46:34.841 -> brown heating on! brown temp 170
+23:46:34.841 -> Disable all heaters 
+23:46:34.876 -> checking disconnected?
+23:46:34.876 -> red heating on!!! red temp 163
+23:46:34.910 -> brown heating on! brown temp 170
+23:46:34.910 -> Disable all heaters 
+23:46:34.944 -> checking disconnected?
+23:46:34.944 -> Disable all heaters 
+23:46:34.944 -> red heating on!!! red temp 163
+23:46:34.977 -> brown heating on! brown temp 170
+23:46:34.977 -> Disable all heaters 
+23:46:35.011 -> checking disconnected?
+23:46:35.011 -> red heating on!!! red temp 163
+23:46:35.045 -> brown heating on! brown temp 170
+23:46:35.045 -> Disable all heaters 
+23:46:35.045 -> checking disconnected?
+23:46:35.078 -> red heating on!!! red temp 163
+23:46:35.078 -> brown heating on! brown temp 170
+23:46:35.112 -> Disable all heaters 
+23:46:35.112 -> checking disconnected?
+23:46:35.145 -> red heating on!!! red temp 163
+23:46:35.145 -> brown heating on! brown temp 170
+23:46:35.178 -> Disable all heaters 
+23:46:35.178 -> checking disconnected?
+23:46:35.178 -> red heating on!!! red temp 163
+23:46:35.213 -> brown heating on! brown temp 170
+23:46:35.213 -> Disable all heaters 
+23:46:35.246 -> checking disconnected?
+23:46:35.246 -> red heating on!!! red temp 163
+23:46:35.279 -> brown heating on! brown temp 170
+23:46:35.279 -> Disable all heaters 
+23:46:35.279 -> checking disconnected?
+23:46:35.313 -> red heating on!!! red temp 163
+23:46:35.313 -> brown heating on! brown temp 170
+23:46:35.346 -> Disable all heaters 
+23:46:35.346 -> checking disconnected?
+23:46:35.379 -> red heating on!!! red temp 163
+23:46:35.379 -> brown heating on! brown temp 170
+23:46:35.414 -> Disable all heaters 
+23:46:35.414 -> checking disconnected?
+23:46:35.414 -> red heating on!!! red temp 163
+23:46:35.447 -> brown heating on! brown temp 170
+23:46:35.447 -> Disable all heaters 
+23:46:35.482 -> redTemp 220
+23:46:35.482 -> brownTemp 188
+23:46:35.482 -> checking disconnected?
+23:46:35.482 -> red heating on!!! red temp 220
+23:46:35.517 -> brown heating on! brown temp 188
+23:46:35.551 -> Disable all heaters 
+23:46:35.551 -> checking disconnected?
+23:46:35.551 -> red heating on!!! red temp 220
+23:46:35.584 -> brown heating on! brown temp 188
+23:46:35.584 -> Disable all heaters 
+23:46:35.617 -> checking disconnected?
+23:46:35.617 -> red heating on!!! red temp 220
+23:46:35.617 -> brown heating on! brown temp 188
+23:46:35.652 -> Disable all heaters 
+23:46:35.652 -> checking disconnected?
+23:46:35.685 -> red heating on!!! red temp 220
+23:46:35.685 -> brown heating on! brown temp 188
+23:46:35.718 -> Disable all heaters 
+23:46:35.718 -> checking disconnected?
+23:46:35.718 -> red heating on!!! red temp 220
+23:46:35.752 -> brown heating on! brown temp 188
+23:46:35.785 -> Disable all heaters 
+23:46:35.785 -> checking disconnected?
+23:46:35.785 -> red heating on!!! red temp 220
+23:46:35.819 -> brown heating on! brown temp 188
+23:46:35.819 -> Disable all heaters 
+23:46:35.853 -> checking disconnected?
+23:46:35.853 -> red heating on!!! red temp 220
+23:46:35.853 -> brown heating on! brown temp 188
+23:46:35.895 -> Disable all heaters 
+23:46:35.895 -> checking disconnected?
+23:46:35.895 -> red heating on!!! red temp 220
+23:46:35.923 -> brown heating on! brown temp 188
+23:46:35.923 -> Disable all heaters 
+23:46:35.958 -> checking disconnected?
+23:46:35.958 -> red heating on!!! red temp 220
+23:46:35.958 -> brown heating on! brown temp 188
+23:46:35.991 -> Disable all heaters 
+23:46:35.991 -> checking disconnected?
+23:46:36.024 -> red heating on!!! red temp 220
+23:46:36.024 -> brown heating on! brown temp 188
+23:46:36.057 -> Disable all heaters 
+23:46:36.057 -> checking disconnected?
+23:46:36.057 -> red heating on!!! red temp 220
+23:46:36.090 -> brown heating on! brown temp 188
+23:46:36.125 -> Disable all heaters 
+23:46:36.125 -> checking disconnected?
+23:46:36.125 -> red heating on!!! red temp 220
+23:46:36.160 -> brown heating on! brown temp 188
+23:46:36.160 -> Disable all heaters 
+23:46:36.194 -> checking disconnected?
+23:46:36.194 -> Disable all heaters 
+23:46:36.194 -> red heating on!!! red temp 220
+23:46:36.229 -> brown heating on! brown temp 188
+23:46:36.229 -> Disable all heaters 
+23:46:36.263 -> checking disconnected?
+23:46:36.263 -> red heating on!!! red temp 220
+23:46:36.296 -> brown heating on! brown temp 188
+23:46:36.296 -> Disable all heaters 
+23:46:36.296 -> checking disconnected?
+23:46:36.330 -> red heating on!!! red temp 220
+23:46:36.330 -> brown heating on! brown temp 188
+23:46:36.364 -> Disable all heaters 
+23:46:36.364 -> checking disconnected?
+23:46:36.397 -> red heating on!!! red temp 220
+23:46:36.397 -> brown heating on! brown temp 188
+23:46:36.430 -> Disable all heaters 
+23:46:36.430 -> checking disconnected?
+23:46:36.430 -> red heating on!!! red temp 220
+23:46:36.464 -> brown heating on! brown temp 188
+23:46:36.464 -> Disable all heaters 
+23:46:36.498 -> checking disconnected?
+23:46:36.498 -> red heating on!!! red temp 220
+23:46:36.532 -> brown heating on! brown temp 188
+23:46:36.532 -> Disable all heaters 
+23:46:36.532 -> checking disconnected?
+23:46:36.565 -> red heating on!!! red temp 220
+23:46:36.565 -> brown heating on! brown temp 188
+23:46:36.599 -> Disable all heaters 
+23:46:36.599 -> checking disconnected?
+23:46:36.633 -> red heating on!!! red temp 220
+23:46:36.633 -> brown heating on! brown temp 188
+23:46:36.666 -> Disable all heaters 
+23:46:36.666 -> redTemp 286
+23:46:36.666 -> brownTemp 201
+23:46:36.666 -> checking disconnected?
+23:46:36.700 -> red heating OFF!! red temp 286
+23:46:36.700 -> brown heating on! brown temp 201
+23:46:36.735 -> Disable all heaters 
+23:46:36.735 -> checking disconnected?
+23:46:36.735 -> red heating OFF!! red temp 286
+23:46:36.770 -> brown heating on! brown temp 201
+23:46:36.770 -> Disable all heaters 
+23:46:36.770 -> checking disconnected?
+23:46:36.804 -> red heating OFF!! red temp 286
+23:46:36.804 -> brown heating on! brown temp 201
+23:46:36.838 -> Disable all heaters 
+23:46:36.838 -> checking disconnected?
+23:46:36.872 -> red heating OFF!! red temp 286
+23:46:36.872 -> brown heating on! brown temp 201
+23:46:36.906 -> Disable all heaters 
+23:46:36.906 -> checking disconnected?
+23:46:36.906 -> red heating OFF!! red temp 286
+23:46:36.941 -> brown heating on! brown temp 201
+23:46:36.941 -> Disable all heaters 
+23:46:36.975 -> checking disconnected?
+23:46:36.975 -> red heating OFF!! red temp 286
+23:46:37.008 -> brown heating on! brown temp 201
+23:46:37.008 -> Disable all heaters 
+23:46:37.008 -> checking disconnected?
+23:46:37.043 -> red heating OFF!! red temp 286
+23:46:37.043 -> brown heating on! brown temp 201
+23:46:37.076 -> Disable all heaters 
+23:46:37.076 -> checking disconnected?
+23:46:37.110 -> red heating OFF!! red temp 286
+23:46:37.110 -> brown heating on! brown temp 201
+23:46:37.143 -> Disable all heaters 
+23:46:37.143 -> checking disconnected?
+23:46:37.143 -> red heating OFF!! red temp 286
+23:46:37.176 -> brown heating on! brown temp 201
+23:46:37.176 -> Disable all heaters 
+23:46:37.210 -> checking disconnected?
+23:46:37.210 -> red heating OFF!! red temp 286
+23:46:37.245 -> brown heating on! brown temp 201
+23:46:37.245 -> Disable all heaters 
+23:46:37.245 -> checking disconnected?
+23:46:37.278 -> red heating OFF!! red temp 286
+23:46:37.278 -> brown heating on! brown temp 201
+23:46:37.312 -> Disable all heaters 
+23:46:37.312 -> checking disconnected?
+23:46:37.346 -> red heating OFF!! red temp 286
+23:46:37.346 -> brown heating on! brown temp 201
+23:46:37.379 -> Disable all heaters 
+23:46:37.379 -> checking disconnected?
+23:46:37.379 -> red heating OFF!! red temp 286
+23:46:37.413 -> brown heating on! brown temp 201
+23:46:37.413 -> Disable all heaters 
+23:46:37.447 -> checking disconnected?
+23:46:37.447 -> Disable all heaters 
+23:46:37.447 -> red heating OFF!! red temp 286
+23:46:37.481 -> brown heating on! brown temp 201
+23:46:37.481 -> Disable all heaters 
+23:46:37.514 -> checking disconnected?
+23:46:37.514 -> red heating OFF!! red temp 286
+23:46:37.548 -> brown heating on! brown temp 201
+23:46:37.548 -> Disable all heaters 
+23:46:37.548 -> checking disconnected?
+23:46:37.582 -> red heating OFF!! red temp 286
+23:46:37.582 -> brown heating on! brown temp 201
+23:46:37.582 -> Disable all heaters 
+23:46:37.615 -> checking disconnected?
+23:46:37.648 -> red heating OFF!! red temp 286
+23:46:37.648 -> brown heating on! brown temp 201
+23:46:37.683 -> Disable all heaters 
+23:46:37.683 -> checking disconnected?
+23:46:37.683 -> red heating OFF!! red temp 286
+23:46:37.683 -> brown heating on! brown temp 201
+23:46:37.716 -> Disable all heaters 
+23:46:37.716 -> checking disconnected?
+23:46:37.749 -> red heating OFF!! red temp 286
+23:46:37.749 -> brown heating on! brown temp 201
+23:46:37.783 -> Disable all heaters 
+23:46:37.783 -> checking disconnected?
+23:46:37.783 -> red heating OFF!! red temp 286
+23:46:37.816 -> brown heating on! brown temp 201
+23:46:37.816 -> Disable all heaters 
+23:46:37.849 -> brownTemp 229
+23:46:37.849 -> checking disconnected?
+23:46:37.849 -> red heating OFF!! red temp 286
+23:46:37.882 -> brown heating offff! 229
+23:46:37.882 -> Disable all heaters 
+23:46:37.916 -> checking disconnected?
+23:46:37.916 -> red heating OFF!! red temp 286
+23:46:37.916 -> brown heating offff! 229
+23:46:37.949 -> Disable all heaters 
+23:46:37.949 -> checking disconnected?
+23:46:37.983 -> red heating OFF!! red temp 286
+23:46:37.983 -> brown heating offff! 229
+23:46:38.017 -> Disable all heaters 
+23:46:38.017 -> checking disconnected?
+23:46:38.017 -> red heating OFF!! red temp 286
+23:46:38.051 -> brown heating offff! 229
+23:46:38.051 -> Disable all heaters 
+23:46:38.051 -> checking disconnected?
+23:46:38.085 -> red heating OFF!! red temp 286
+23:46:38.085 -> brown heating offff! 229
+23:46:38.118 -> Disable all heaters 
+23:46:38.118 -> checking disconnected?
+23:46:38.118 -> red heating OFF!! red temp 286
+23:46:38.153 -> brown heating offff! 229
+23:46:38.153 -> Disable all heaters 
+23:46:38.186 -> checking disconnected?
+23:46:38.186 -> red heating OFF!! red temp 286
+23:46:38.219 -> brown heating offff! 229
+23:46:38.219 -> Disable all heaters 
+23:46:38.219 -> checking disconnected?
+23:46:38.253 -> red heating OFF!! red temp 286
+23:46:38.253 -> brown heating offff! 229
+23:46:38.288 -> Disable all heaters 
+23:46:38.288 -> checking disconnected?
+23:46:38.288 -> red heating OFF!! red temp 286
+23:46:38.323 -> brown heating offff! 229
+23:46:38.323 -> Disable all heaters 
+23:46:38.358 -> checking disconnected?
+23:46:38.358 -> red heating OFF!! red temp 286
+23:46:38.358 -> brown heating offff! 229
+23:46:38.392 -> Disable all heaters 
+23:46:38.392 -> checking disconnected?
+23:46:38.426 -> red heating OFF!! red temp 286
+23:46:38.426 -> brown heating offff! 229
+23:46:38.460 -> Disable all heaters 
+23:46:38.460 -> checking disconnected?
+23:46:38.460 -> red heating OFF!! red temp 286
+23:46:38.494 -> brown heating offff! 229
+23:46:38.494 -> Disable all heaters 
+23:46:38.494 -> checking disconnected?
+23:46:38.527 -> red heating OFF!! red temp 286
+23:46:38.527 -> brown heating offff! 229
+23:46:38.560 -> Disable all heaters 
+23:46:38.560 -> checking disconnected?
+23:46:38.560 -> red heating OFF!! red temp 286
+23:46:38.594 -> brown heating offff! 229
+23:46:38.594 -> Disable all heaters 
+23:46:38.627 -> checking disconnected?
+23:46:38.627 -> Disable all heaters 
+23:46:38.627 -> red heating OFF!! red temp 286
+23:46:38.662 -> brown heating offff! 229
+23:46:38.662 -> Disable all heaters 
+23:46:38.697 -> checking disconnected?
+23:46:38.697 -> red heating OFF!! red temp 286
+23:46:38.697 -> brown heating offff! 229
+23:46:38.697 -> Disable all heaters 
+23:46:38.732 -> checking disconnected?
+23:46:38.732 -> red heating OFF!! red temp 286
+23:46:38.766 -> brown heating offff! 229
+23:46:38.766 -> Disable all heaters 
+23:46:38.766 -> checking disconnected?
+23:46:38.799 -> red heating OFF!! red temp 286
+23:46:38.799 -> brown heating offff! 229
+23:46:38.834 -> Disable all heaters 
+23:46:38.834 -> checking disconnected?
+23:46:38.834 -> red heating OFF!! red temp 286
+23:46:38.867 -> brown heating offff! 229
+23:46:38.867 -> Disable all heaters 
+23:46:38.902 -> checking disconnected?
+23:46:38.902 -> red heating OFF!! red temp 286
+23:46:38.935 -> brown heating offff! 229
+23:46:38.935 -> Disable all heaters 
+23:46:38.935 -> checking disconnected?
+23:46:38.968 -> red heating OFF!! red temp 286
+23:46:38.968 -> brown heating offff! 229
+23:46:39.003 -> Disable all heaters 
+23:46:39.003 -> checking disconnected?
+23:46:39.003 -> red heating OFF!! red temp 286
+23:46:39.036 -> brown heating offff! 229
+23:46:39.036 -> Disable all heaters 
+23:46:39.069 -> checking disconnected?
+23:46:39.069 -> red heating OFF!! red temp 286
+23:46:39.069 -> brown heating offff! 229
+23:46:39.103 -> Disable all heaters 
+23:46:39.103 -> checking disconnected?
+23:46:39.136 -> red heating OFF!! red temp 286
+23:46:39.136 -> brown heating offff! 229
+23:46:39.136 -> Disable all heaters 
+23:46:39.169 -> checking disconnected?
+23:46:39.169 -> red heating OFF!! red temp 286
+23:46:39.203 -> brown heating offff! 229
+23:46:39.203 -> Disable all heaters 
+23:46:39.203 -> checking disconnected?
+23:46:39.236 -> red heating OFF!! red temp 286
+23:46:39.236 -> brown heating offff! 229
+23:46:39.269 -> Disable all heaters 
+23:46:39.269 -> checking disconnected?
+23:46:39.269 -> red heating OFF!! red temp 286
+23:46:39.303 -> brown heating offff! 229
+23:46:39.303 -> Disable all heaters 
+23:46:39.336 -> checking disconnected?
+23:46:39.336 -> red heating OFF!! red temp 286
+23:46:39.369 -> brown heating offff! 229
+23:46:39.369 -> Disable all heaters 
+23:46:39.369 -> checking disconnected?
+23:46:39.403 -> red heating OFF!! red temp 286
+23:46:39.403 -> brown heating offff! 229
+23:46:39.436 -> Disable all heaters 
+23:46:39.436 -> checking disconnected?
+23:46:39.436 -> red heating OFF!! red temp 286
+23:46:39.469 -> brown heating offff! 229
+23:46:39.469 -> Disable all heaters 
+23:46:39.502 -> checking disconnected?
+23:46:39.502 -> red heating OFF!! red temp 286
+23:46:39.502 -> brown heating offff! 229
+23:46:39.536 -> Disable all heaters 
+23:46:39.536 -> checking disconnected?
+23:46:39.569 -> red heating OFF!! red temp 286
+23:46:39.569 -> brown heating offff! 229
+23:46:39.569 -> Disable all heaters 
+23:46:39.603 -> checking disconnected?
+23:46:39.603 -> red heating OFF!! red temp 286
+23:46:39.637 -> brown heating offff! 229
+23:46:39.637 -> Disable all heaters 
+23:46:39.637 -> checking disconnected?
+23:46:39.670 -> red heating OFF!! red temp 286
+23:46:39.670 -> brown heating offff! 229
+23:46:39.704 -> Disable all heaters 
+23:46:39.704 -> checking disconnected?
+23:46:39.704 -> red heating OFF!! red temp 286
+23:46:39.738 -> brown heating offff! 229
+23:46:39.738 -> Disable all heaters 
+23:46:39.772 -> checking disconnected?
+23:46:39.772 -> Disable all heaters 
+23:46:39.772 -> red heating OFF!! red temp 286
+23:46:39.806 -> brown heating offff! 229
+23:46:39.806 -> Disable all heaters 
+23:46:39.839 -> checking disconnected?
+23:46:39.839 -> red heating OFF!! red temp 286
+23:46:39.873 -> brown heating offff! 229
+23:46:39.873 -> Disable all heaters 
+23:46:39.873 -> checking disconnected?
+23:46:39.908 -> red heating OFF!! red temp 286
+23:46:39.908 -> brown heating offff! 229
+23:46:39.943 -> Disable all heaters 
+23:46:39.943 -> checking disconnected?
+23:46:39.943 -> red heating OFF!! red temp 286
+23:46:39.943 -> brown heating offff! 229
+23:46:39.978 -> Disable all heaters 
+23:46:39.978 -> checking disconnected?
+23:46:39.978 -> red heating OFF!! red temp 286
+23:46:40.013 -> brown heating offff! 229
+23:46:40.013 -> Disable all heaters 
+23:46:40.047 -> checking disconnected?
+23:46:40.047 -> red heating OFF!! red temp 286
+23:46:40.080 -> brown heating offff! 229
+23:46:40.080 -> Disable all heaters 
+23:46:40.080 -> checking disconnected?
+23:46:40.113 -> red heating OFF!! red temp 286
+23:46:40.113 -> brown heating offff! 229
+23:46:40.146 -> Disable all heaters 
+23:46:40.146 -> checking disconnected?
+23:46:40.146 -> red heating OFF!! red temp 286
+23:46:40.180 -> brown heating offff! 229
+23:46:40.180 -> Disable all heaters 
+23:46:40.214 -> checking disconnected?
+23:46:40.214 -> red heating OFF!! red temp 286
+23:46:40.214 -> brown heating offff! 229
+23:46:40.248 -> Disable all heaters 
+23:46:40.248 -> checking disconnected?
+23:46:40.281 -> red heating OFF!! red temp 286
+23:46:40.281 -> brown heating offff! 229
+23:46:40.281 -> Disable all heaters 
+23:46:40.315 -> checking disconnected?
+23:46:40.315 -> red heating OFF!! red temp 286
+23:46:40.348 -> brown heating offff! 229
+23:46:40.348 -> Disable all heaters 
+23:46:40.348 -> checking disconnected?
+23:46:40.382 -> red heating OFF!! red temp 286
+23:46:40.382 -> brown heating offff! 229
+23:46:40.415 -> Disable all heaters 
+23:46:40.415 -> checking disconnected?
+23:46:40.415 -> red heating OFF!! red temp 286
+23:46:40.450 -> brown heating offff! 229
+23:46:40.450 -> Disable all heaters 
+23:46:40.484 -> checking disconnected?
+23:46:40.484 -> red heating OFF!! red temp 286
+23:46:40.518 -> brown heating offff! 229
+23:46:40.518 -> Disable all heaters 
+23:46:40.518 -> checking disconnected?
+23:46:40.553 -> red heating OFF!! red temp 286
+23:46:40.553 -> brown heating offff! 229
+23:46:40.586 -> Disable all heaters 
+23:46:40.586 -> checking disconnected?
+23:46:40.586 -> red heating OFF!! red temp 286
+23:46:40.619 -> brown heating offff! 229
+23:46:40.619 -> Disable all heaters 
+23:46:40.653 -> checking disconnected?
+23:46:40.653 -> red heating OFF!! red temp 286
+23:46:40.653 -> brown heating offff! 229
+23:46:40.686 -> Disable all heaters 
+23:46:40.686 -> checking disconnected?
+23:46:40.720 -> red heating OFF!! red temp 286
+23:46:40.720 -> brown heating offff! 229
+23:46:40.720 -> Disable all heaters 
+23:46:40.754 -> checking disconnected?
+23:46:40.754 -> red heating OFF!! red temp 286
+23:46:40.788 -> brown heating offff! 229
+23:46:40.788 -> Disable all heaters 
+23:46:40.788 -> checking disconnected?
+23:46:40.822 -> red heating OFF!! red temp 286
+23:46:40.822 -> brown heating offff! 229
+23:46:40.856 -> Disable all heaters 
+23:46:40.856 -> checking disconnected?
+23:46:40.856 -> red heating OFF!! red temp 286
+23:46:40.889 -> brown heating offff! 229
+23:46:40.889 -> Disable all heaters 
+23:46:40.923 -> checking disconnected?
+23:46:40.923 -> Disable all heaters 
+23:46:40.923 -> red heating OFF!! red temp 286
+23:46:40.956 -> brown heating offff! 229
+23:46:40.956 -> Disable all heaters 
+23:46:40.989 -> checking disconnected?
+23:46:40.989 -> red heating OFF!! red temp 286
+23:46:41.023 -> brown heating offff! 229
+23:46:41.023 -> Disable all heaters 
+23:46:41.023 -> checking disconnected?
+23:46:41.056 -> red heating OFF!! red temp 286
+23:46:41.056 -> brown heating offff! 229
+23:46:41.089 -> Disable all heaters 
+23:46:41.089 -> checking disconnected?
+23:46:41.089 -> red heating OFF!! red temp 286
+23:46:41.123 -> brown heating offff! 229
+23:46:41.123 -> Disable all heaters 
+23:46:41.156 -> checking disconnected?
+23:46:41.156 -> red heating OFF!! red temp 286
+23:46:41.156 -> brown heating offff! 229
+23:46:41.189 -> Disable all heaters 
+23:46:41.189 -> checking disconnected?
+23:46:41.223 -> red heating OFF!! red temp 286
+23:46:41.223 -> brown heating offff! 229
+23:46:41.223 -> Disable all heaters 
+23:46:41.256 -> checking disconnected?
+23:46:41.256 -> red heating OFF!! red temp 286
+23:46:41.290 -> brown heating offff! 229
+23:46:41.290 -> Disable all heaters 
+23:46:41.290 -> checking disconnected?
+23:46:41.290 -> red heating OFF!! red temp 286
+23:46:41.324 -> brown heating offff! 229
+23:46:41.324 -> Disable all heaters 
+23:46:41.358 -> checking disconnected?
+23:46:41.358 -> red heating OFF!! red temp 286
+23:46:41.358 -> brown heating offff! 229
+23:46:41.391 -> Disable all heaters 
+23:46:41.391 -> checking disconnected?
+23:46:41.424 -> red heating OFF!! red temp 286
+23:46:41.424 -> brown heating offff! 229
+23:46:41.424 -> Disable all heaters 
+23:46:41.458 -> checking disconnected?
+23:46:41.458 -> red heating OFF!! red temp 286
+23:46:41.492 -> brown heating offff! 229
+23:46:41.492 -> Disable all heaters 
+23:46:41.492 -> checking disconnected?
+23:46:41.526 -> red heating OFF!! red temp 286
+23:46:41.526 -> brown heating offff! 229
+23:46:41.559 -> Disable all heaters 
+23:46:41.559 -> checking disconnected?
+23:46:41.559 -> red heating OFF!! red temp 286
+23:46:41.592 -> brown heating offff! 229
+23:46:41.592 -> Disable all heaters 
+23:46:41.626 -> checking disconnected?
+23:46:41.626 -> red heating OFF!! red temp 286
+23:46:41.661 -> brown heating offff! 229
+23:46:41.661 -> Disable all heaters 
+23:46:41.661 -> checking disconnected?
+23:46:41.696 -> red heating OFF!! red temp 286
+23:46:41.696 -> brown heating offff! 229
+23:46:41.730 -> Disable all heaters 
+23:46:41.730 -> checking disconnected?
+23:46:41.730 -> red heating OFF!! red temp 286
+23:46:41.765 -> brown heating offff! 229
+23:46:41.765 -> Disable all heaters 
+23:46:41.798 -> checking disconnected?
+23:46:41.798 -> red heating OFF!! red temp 286
+23:46:41.798 -> brown heating offff! 229
+23:46:41.833 -> Disable all heaters 
+23:46:41.833 -> checking disconnected?
+23:46:41.867 -> red heating OFF!! red temp 286
+23:46:41.867 -> brown heating offff! 229
+23:46:41.867 -> Disable all heaters 
+23:46:41.900 -> checking disconnected?
+23:46:41.900 -> red heating OFF!! red temp 286
+23:46:41.934 -> brown heating offff! 229
+23:46:41.934 -> Disable all heaters 
+23:46:41.934 -> checking disconnected?
+23:46:41.969 -> red heating OFF!! red temp 286
+23:46:41.969 -> brown heating offff! 229
+23:46:42.003 -> Disable all heaters 
+23:46:42.003 -> checking disconnected?
+23:46:42.003 -> red heating OFF!! red temp 286
+23:46:42.036 -> brown heating offff! 229
+23:46:42.036 -> Disable all heaters 
+23:46:42.071 -> checking disconnected?
+23:46:42.071 -> Disable all heaters 
+23:46:42.071 -> red heating OFF!! red temp 286
+23:46:42.106 -> brown heating offff! 229
+23:46:42.106 -> Disable all heaters 
+23:46:42.106 -> checking disconnected?
+23:46:42.106 -> red heating OFF!! red temp 286
+23:46:42.139 -> brown heating offff! 229
+23:46:42.139 -> Disable all heaters 
+23:46:42.173 -> checking disconnected?
+23:46:42.173 -> red heating OFF!! red temp 286
+23:46:42.206 -> brown heating offff! 229
+23:46:42.206 -> Disable all heaters 
+23:46:42.206 -> checking disconnected?
+23:46:42.239 -> red heating OFF!! red temp 286
+23:46:42.239 -> brown heating offff! 229
+23:46:42.272 -> Disable all heaters 
+23:46:42.272 -> checking disconnected?
+23:46:42.272 -> red heating OFF!! red temp 286
+23:46:42.305 -> brown heating offff! 229
+23:46:42.305 -> Disable all heaters 
+23:46:42.338 -> checking disconnected?
+23:46:42.338 -> red heating OFF!! red temp 286
+23:46:42.338 -> brown heating offff! 229
+23:46:42.373 -> Disable all heaters 
+23:46:42.373 -> checking disconnected?
+23:46:42.406 -> red heating OFF!! red temp 286
+23:46:42.406 -> brown heating offff! 229
+23:46:42.439 -> Disable all heaters 
+23:46:42.439 -> checking disconnected?
+23:46:42.439 -> red heating OFF!! red temp 286
+23:46:42.473 -> brown heating offff! 229
+23:46:42.473 -> Disable all heaters 
+23:46:42.473 -> checking disconnected?
+23:46:42.507 -> red heating OFF!! red temp 286
+23:46:42.507 -> brown heating offff! 229
+23:46:42.540 -> Disable all heaters 
+23:46:42.540 -> checking disconnected?
+23:46:42.540 -> red heating OFF!! red temp 286
+23:46:42.574 -> brown heating offff! 229
+23:46:42.574 -> Disable all heaters 
+23:46:42.607 -> checking disconnected?
+23:46:42.607 -> red heating OFF!! red temp 286
+23:46:42.641 -> brown heating offff! 229
+23:46:42.641 -> Disable all heaters 
+23:46:42.641 -> checking disconnected?
+23:46:42.674 -> red heating OFF!! red temp 286
+23:46:42.674 -> brown heating offff! 229
+23:46:42.708 -> Disable all heaters 
+23:46:42.708 -> checking disconnected?
+23:46:42.708 -> red heating OFF!! red temp 286
+23:46:42.743 -> brown heating offff! 229
+23:46:42.743 -> Disable all heaters 
+23:46:42.776 -> checking disconnected?
+23:46:42.776 -> red heating OFF!! red temp 286
+23:46:42.776 -> brown heating offff! 229
+23:46:42.810 -> Disable all heaters 
+23:46:42.810 -> checking disconnected?
+23:46:42.844 -> red heating OFF!! red temp 286
+23:46:42.844 -> brown heating offff! 229
+23:46:42.879 -> Disable all heaters 
+23:46:42.879 -> checking disconnected?
+23:46:42.879 -> red heating OFF!! red temp 286
+23:46:42.913 -> brown heating offff! 229
+23:46:42.913 -> Disable all heaters 
+23:46:42.913 -> checking disconnected?
+23:46:42.948 -> red heating OFF!! red temp 286
+23:46:42.948 -> brown heating offff! 229
+23:46:42.982 -> Disable all heaters 
+23:46:42.982 -> checking disconnected?
+23:46:42.982 -> red heating OFF!! red temp 286
+23:46:43.017 -> brown heating offff! 229
+23:46:43.017 -> Disable all heaters 
+23:46:43.051 -> checking disconnected?
+23:46:43.051 -> red heating OFF!! red temp 286
+23:46:43.084 -> brown heating offff! 229
+23:46:43.084 -> Disable all heaters 
+23:46:43.084 -> checking disconnected?
+23:46:43.118 -> red heating OFF!! red temp 286
+23:46:43.118 -> brown heating offff! 229
+23:46:43.152 -> Disable all heaters 
+23:46:43.152 -> checking disconnected?
+23:46:43.152 -> red heating OFF!! red temp 286
+23:46:43.184 -> brown heating offff! 229
+23:46:43.184 -> Disable all heaters 
+23:46:43.218 -> checking disconnected?
+23:46:43.218 -> Disable all heaters 
+23:46:43.218 -> red heating OFF!! red temp 286
+23:46:43.251 -> brown heating offff! 229
+23:46:43.251 -> Disable all heaters 
+23:46:43.285 -> checking disconnected?
+23:46:43.285 -> red heating OFF!! red temp 286
+23:46:43.285 -> brown heating offff! 229
+23:46:43.319 -> Disable all heaters 
+23:46:43.319 -> checking disconnected?
+23:46:43.319 -> red heating OFF!! red temp 286
+23:46:43.352 -> brown heating offff! 229
+23:46:43.352 -> Disable all heaters 
+23:46:43.352 -> checking disconnected?
+23:46:43.387 -> red heating OFF!! red temp 286
+23:46:43.387 -> brown heating offff! 229
+23:46:43.420 -> Disable all heaters 
+23:46:43.420 -> checking disconnected?
+23:46:43.420 -> red heating OFF!! red temp 286
+23:46:43.454 -> brown heating offff! 229
+23:46:43.454 -> Disable all heaters 
+23:46:43.488 -> checking disconnected?
+23:46:43.488 -> red heating OFF!! red temp 286
+23:46:43.488 -> brown heating offff! 229
+23:46:43.522 -> Disable all heaters 
+23:46:43.522 -> checking disconnected?
+23:46:43.556 -> red heating OFF!! red temp 286
+23:46:43.556 -> brown heating offff! 229
+23:46:43.556 -> Disable all heaters 
+23:46:43.589 -> checking disconnected?
+23:46:43.589 -> red heating OFF!! red temp 286
+23:46:43.623 -> brown heating offff! 229
+23:46:43.623 -> Disable all heaters 
+23:46:43.623 -> checking disconnected?
+23:46:43.656 -> red heating OFF!! red temp 286
+23:46:43.656 -> brown heating offff! 229
+23:46:43.689 -> Disable all heaters 
+23:46:43.689 -> checking disconnected?
+23:46:43.689 -> red heating OFF!! red temp 286
+23:46:43.723 -> brown heating offff! 229
+23:46:43.723 -> Disable all heaters 
+23:46:43.756 -> checking disconnected?
+23:46:43.756 -> red heating OFF!! red temp 286
+23:46:43.789 -> brown heating offff! 229
+23:46:43.789 -> Disable all heaters 
+23:46:43.789 -> checking disconnected?
+23:46:43.822 -> red heating OFF!! red temp 286
+23:46:43.822 -> brown heating offff! 229
+23:46:43.856 -> Disable all heaters 
+23:46:43.856 -> checking disconnected?
+23:46:43.856 -> red heating OFF!! red temp 286
+23:46:43.889 -> brown heating offff! 229
+23:46:43.889 -> Disable all heaters 
+23:46:43.923 -> checking disconnected?
+23:46:43.923 -> red heating OFF!! red temp 286
+23:46:43.923 -> brown heating offff! 229
+23:46:43.956 -> Disable all heaters 
+23:46:43.956 -> checking disconnected?
+23:46:43.989 -> red heating OFF!! red temp 286
+23:46:43.989 -> brown heating offff! 229
+23:46:43.989 -> Disable all heaters 
+23:46:44.023 -> checking disconnected?
+23:46:44.023 -> red heating OFF!! red temp 286
+23:46:44.057 -> brown heating offff! 229
+23:46:44.057 -> Disable all heaters 
+23:46:44.057 -> checking disconnected?
+23:46:44.091 -> red heating OFF!! red temp 286
+23:46:44.091 -> brown heating offff! 229
+23:46:44.125 -> Disable all heaters 
+23:46:44.125 -> checking disconnected?
+23:46:44.125 -> red heating OFF!! red temp 286
+23:46:44.158 -> brown heating offff! 229
+23:46:44.158 -> Disable all heaters 
+23:46:44.192 -> checking disconnected?
+23:46:44.192 -> red heating OFF!! red temp 286
+23:46:44.225 -> brown heating offff! 229
+23:46:44.225 -> Disable all heaters 
+23:46:44.225 -> checking disconnected?
+23:46:44.259 -> red heating OFF!! red temp 286
+23:46:44.259 -> brown heating offff! 229
+23:46:44.294 -> Disable all heaters 
+23:46:44.294 -> checking disconnected?
+23:46:44.294 -> red heating OFF!! red temp 286
+23:46:44.327 -> brown heating offff! 229
+23:46:44.327 -> Disable all heaters 
+23:46:44.360 -> checking disconnected?
+23:46:44.360 -> Disable all heaters 
+23:46:44.360 -> red heating OFF!! red temp 286
+23:46:44.394 -> brown heating offff! 229
+23:46:44.394 -> Disable all heaters 
+23:46:44.428 -> checking disconnected?
+23:46:44.428 -> red heating OFF!! red temp 286
+23:46:44.428 -> brown heating offff! 229
+23:46:44.462 -> Disable all heaters 
+23:46:44.462 -> checking disconnected?
+23:46:44.496 -> red heating OFF!! red temp 286
+23:46:44.496 -> brown heating offff! 229
+23:46:44.496 -> Disable all heaters 
+23:46:44.530 -> checking disconnected?
+23:46:44.530 -> red heating OFF!! red temp 286
+23:46:44.563 -> brown heating offff! 229
+23:46:44.563 -> Disable all heaters 
+23:46:44.563 -> checking disconnected?
+23:46:44.596 -> red heating OFF!! red temp 286
+23:46:44.596 -> brown heating offff! 229
+23:46:44.630 -> Disable all heaters 
+23:46:44.630 -> checking disconnected?
+23:46:44.630 -> red heating OFF!! red temp 286
+23:46:44.665 -> brown heating offff! 229
+23:46:44.665 -> Disable all heaters 
+23:46:44.698 -> checking disconnected?
+23:46:44.698 -> red heating OFF!! red temp 286
+23:46:44.732 -> brown heating offff! 229
+23:46:44.732 -> Disable all heaters 
+23:46:44.732 -> checking disconnected?
+23:46:44.732 -> red heating OFF!! red temp 286
+23:46:44.767 -> brown heating offff! 229
+23:46:44.767 -> Disable all heaters 
+23:46:44.767 -> checking disconnected?
+23:46:44.801 -> red heating OFF!! red temp 286
+23:46:44.801 -> brown heating offff! 229
+23:46:44.835 -> Disable all heaters 
+23:46:44.835 -> checking disconnected?
+23:46:44.835 -> red heating OFF!! red temp 286
+23:46:44.869 -> brown heating offff! 229
+23:46:44.869 -> Disable all heaters 
+23:46:44.904 -> checking disconnected?
+23:46:44.904 -> red heating OFF!! red temp 286
+23:46:44.938 -> brown heating offff! 229
+23:46:44.938 -> Disable all heaters 
+23:46:44.938 -> checking disconnected?
+23:46:44.973 -> red heating OFF!! red temp 286
+23:46:44.973 -> brown heating offff! 229
+23:46:45.007 -> Disable all heaters 
+23:46:45.007 -> checking disconnected?
+23:46:45.007 -> red heating OFF!! red temp 286
+23:46:45.040 -> brown heating offff! 229
+23:46:45.040 -> Disable all heaters 
+23:46:45.073 -> checking disconnected?
+23:46:45.073 -> red heating OFF!! red temp 286
+23:46:45.073 -> brown heating offff! 229
+23:46:45.106 -> Disable all heaters 
+23:46:45.106 -> checking disconnected?
+23:46:45.139 -> red heating OFF!! red temp 286
+23:46:45.139 -> brown heating offff! 229
+23:46:45.139 -> Disable all heaters 
+23:46:45.174 -> checking disconnected?
+23:46:45.174 -> red heating OFF!! red temp 286
+23:46:45.207 -> brown heating offff! 229
+23:46:45.207 -> Disable all heaters 
+23:46:45.207 -> checking disconnected?
+23:46:45.240 -> red heating OFF!! red temp 286
+23:46:45.240 -> brown heating offff! 229
+23:46:45.274 -> Disable all heaters 
+23:46:45.274 -> checking disconnected?
+23:46:45.274 -> red heating OFF!! red temp 286
+23:46:45.307 -> brown heating offff! 229
+23:46:45.307 -> Disable all heaters 
+23:46:45.342 -> checking disconnected?
+23:46:45.342 -> red heating OFF!! red temp 286
+23:46:45.375 -> brown heating offff! 229
+23:46:45.375 -> Disable all heaters 
+23:46:45.375 -> checking disconnected?
+23:46:45.408 -> red heating OFF!! red temp 286
+23:46:45.408 -> brown heating offff! 229
+23:46:45.442 -> Disable all heaters 
+23:46:45.442 -> checking disconnected?
+23:46:45.442 -> red heating OFF!! red temp 286
+23:46:45.475 -> brown heating offff! 229
+23:46:45.475 -> Disable all heaters 
+23:46:45.509 -> checking disconnected?
+23:46:45.509 -> Disable all heaters 
+23:46:45.509 -> red heating OFF!! red temp 286
+23:46:45.543 -> brown heating offff! 229
+23:46:45.543 -> Disable all heaters 
+23:46:45.576 -> checking disconnected?
+23:46:45.576 -> red heating OFF!! red temp 286
+23:46:45.576 -> brown heating offff! 229
+23:46:45.611 -> Disable all heaters 
+23:46:45.611 -> checking disconnected?
+23:46:45.644 -> red heating OFF!! red temp 286
+23:46:45.644 -> brown heating offff! 229
+23:46:45.644 -> Disable all heaters 
+23:46:45.677 -> checking disconnected?
+23:46:45.677 -> red heating OFF!! red temp 286
+23:46:45.712 -> brown heating offff! 229
+23:46:45.712 -> Disable all heaters 
+23:46:45.712 -> checking disconnected?
+23:46:45.745 -> red heating OFF!! red temp 286
+23:46:45.745 -> brown heating offff! 229
+23:46:45.779 -> Disable all heaters 
+23:46:45.779 -> checking disconnected?
+23:46:45.779 -> red heating OFF!! red temp 286
+23:46:45.813 -> brown heating offff! 229
+23:46:45.813 -> Disable all heaters 
+23:46:45.813 -> checking disconnected?
+23:46:45.846 -> red heating OFF!! red temp 286
+23:46:45.879 -> brown heating offff! 229
+23:46:45.879 -> Disable all heaters 
+23:46:45.879 -> checking disconnected?
+23:46:45.912 -> red heating OFF!! red temp 286
+23:46:45.912 -> brown heating offff! 229
+23:46:45.945 -> Disable all heaters 
+23:46:45.945 -> checking disconnected?
+23:46:45.945 -> red heating OFF!! red temp 286
+23:46:45.980 -> brown heating offff! 229
+23:46:45.980 -> Disable all heaters 
+23:46:45.980 -> checking disconnected?
+23:46:45.980 -> red heating OFF!! red temp 286
+23:46:46.015 -> brown heating offff! 229
+23:46:46.015 -> Disable all heaters 
+23:46:46.049 -> checking disconnected?
+23:46:46.049 -> red heating OFF!! red temp 286
+23:46:46.084 -> brown heating offff! 229
+23:46:46.084 -> Disable all heaters 
+23:46:46.084 -> checking disconnected?
+23:46:46.117 -> red heating OFF!! red temp 286
+23:46:46.117 -> brown heating offff! 229
+23:46:46.151 -> Disable all heaters 
+23:46:46.151 -> checking disconnected?
+23:46:46.151 -> red heating OFF!! red temp 286
+23:46:46.184 -> brown heating offff! 229
+23:46:46.184 -> Disable all heaters 
+23:46:46.218 -> checking disconnected?
+23:46:46.218 -> red heating OFF!! red temp 286
+23:46:46.218 -> brown heating offff! 229
+23:46:46.252 -> Disable all heaters 
+23:46:46.252 -> checking disconnected?
+23:46:46.286 -> red heating OFF!! red temp 286
+23:46:46.286 -> brown heating offff! 229
+23:46:46.286 -> Disable all heaters 
+23:46:46.319 -> checking disconnected?
+23:46:46.319 -> red heating OFF!! red temp 286
+23:46:46.353 -> brown heating offff! 229
+23:46:46.353 -> Disable all heaters 
+23:46:46.353 -> checking disconnected?
+23:46:46.386 -> red heating OFF!! red temp 286
+23:46:46.386 -> brown heating offff! 229
+23:46:46.419 -> Disable all heaters 
+23:46:46.419 -> checking disconnected?
+23:46:46.419 -> red heating OFF!! red temp 286
+23:46:46.453 -> brown heating offff! 229
+23:46:46.453 -> Disable all heaters 
+23:46:46.486 -> checking disconnected?
+23:46:46.486 -> red heating OFF!! red temp 286
+23:46:46.521 -> brown heating offff! 229
+23:46:46.521 -> Disable all heaters 
+23:46:46.521 -> checking disconnected?
+23:46:46.554 -> red heating OFF!! red temp 286
+23:46:46.554 -> brown heating offff! 229
+23:46:46.588 -> Disable all heaters 
+23:46:46.588 -> checking disconnected?
+23:46:46.588 -> red heating OFF!! red temp 286
+23:46:46.623 -> brown heating offff! 229
+23:46:46.623 -> Disable all heaters 
+23:46:46.656 -> checking disconnected?
+23:46:46.656 -> Disable all heaters 
+23:46:46.656 -> red heating OFF!! red temp 286
+23:46:46.690 -> brown heating offff! 229
+23:46:46.690 -> Disable all heaters 
+23:46:46.690 -> checking disconnected?
+23:46:46.723 -> red heating OFF!! red temp 286
+23:46:46.723 -> brown heating offff! 229
+23:46:46.758 -> Disable all heaters 
+23:46:46.758 -> checking disconnected?
+23:46:46.758 -> red heating OFF!! red temp 286
+23:46:46.792 -> brown heating offff! 229
+23:46:46.792 -> Disable all heaters 
+23:46:46.827 -> checking disconnected?
+23:46:46.827 -> red heating OFF!! red temp 286
+23:46:46.827 -> brown heating offff! 229
+23:46:46.860 -> Disable all heaters 
+23:46:46.860 -> checking disconnected?
+23:46:46.860 -> red heating OFF!! red temp 286
+23:46:46.895 -> brown heating offff! 229
+23:46:46.895 -> Disable all heaters 
+23:46:46.895 -> checking disconnected?
+23:46:46.928 -> red heating OFF!! red temp 286
+23:46:46.928 -> brown heating offff! 229
+23:46:46.962 -> Disable all heaters 
+23:46:46.962 -> checking disconnected?
+23:46:46.962 -> red heating OFF!! red temp 286
+23:46:46.997 -> brown heating offff! 229
+23:46:46.997 -> Disable all heaters 
+23:46:47.030 -> checking disconnected?
+23:46:47.030 -> red heating OFF!! red temp 286
+23:46:47.064 -> brown heating offff! 229
+23:46:47.064 -> Disable all heaters 
+23:46:47.064 -> checking disconnected?
+23:46:47.097 -> red heating OFF!! red temp 286
+23:46:47.097 -> brown heating offff! 229
+23:46:47.130 -> Disable all heaters 
+23:46:47.130 -> checking disconnected?
+23:46:47.130 -> red heating OFF!! red temp 286
+23:46:47.164 -> brown heating offff! 229
+23:46:47.164 -> Disable all heaters 
+23:46:47.199 -> checking disconnected?
+23:46:47.199 -> red heating OFF!! red temp 286
+23:46:47.199 -> brown heating offff! 229
+23:46:47.234 -> Disable all heaters 
+23:46:47.234 -> checking disconnected?
+23:46:47.267 -> red heating OFF!! red temp 286
+23:46:47.267 -> brown heating offff! 229
+23:46:47.301 -> Disable all heaters 
+23:46:47.301 -> checking disconnected?
+23:46:47.301 -> red heating OFF!! red temp 286
+23:46:47.336 -> brown heating offff! 229
+23:46:47.336 -> Disable all heaters 
+23:46:47.336 -> checking disconnected?
+23:46:47.369 -> red heating OFF!! red temp 286
+23:46:47.369 -> brown heating offff! 229
+23:46:47.403 -> Disable all heaters 
+23:46:47.403 -> checking disconnected?
+23:46:47.403 -> red heating OFF!! red temp 286
+23:46:47.436 -> brown heating offff! 229
+23:46:47.436 -> Disable all heaters 
+23:46:47.471 -> checking disconnected?
+23:46:47.471 -> red heating OFF!! red temp 286
+23:46:47.504 -> brown heating offff! 229
+23:46:47.504 -> Disable all heaters 
+23:46:47.504 -> checking disconnected?
+23:46:47.537 -> red heating OFF!! red temp 286
+23:46:47.537 -> brown heating offff! 229
+23:46:47.570 -> Disable all heaters 
+23:46:47.570 -> checking disconnected?
+23:46:47.570 -> red heating OFF!! red temp 286
+23:46:47.604 -> brown heating offff! 229
+23:46:47.604 -> Disable all heaters 
+23:46:47.638 -> checking disconnected?
+23:46:47.638 -> red heating OFF!! red temp 286
+23:46:47.638 -> brown heating offff! 229
+23:46:47.673 -> Disable all heaters 
+23:46:47.673 -> checking disconnected?
+23:46:47.706 -> red heating OFF!! red temp 286
+23:46:47.706 -> brown heating offff! 229
+23:46:47.741 -> Disable all heaters 
+23:46:47.741 -> checking disconnected?
+23:46:47.741 -> red heating OFF!! red temp 286
+23:46:47.775 -> brown heating offff! 229
+23:46:47.775 -> Disable all heaters 
+23:46:47.775 -> checking disconnected?
+23:46:47.808 -> Disable all heaters 
+23:46:47.808 -> red heating OFF!! red temp 286
+23:46:47.842 -> brown heating offff! 229
+23:46:47.842 -> Disable all heaters 
+23:46:47.842 -> checking disconnected?
+23:46:47.842 -> red heating OFF!! red temp 286
+23:46:47.875 -> brown heating offff! 229
+23:46:47.875 -> Disable all heaters 
+23:46:47.910 -> checking disconnected?
+23:46:47.910 -> red heating OFF!! red temp 286
+23:46:47.910 -> brown heating offff! 229
+23:46:47.945 -> Disable all heaters 
+23:46:47.945 -> checking disconnected?
+23:46:47.980 -> red heating OFF!! red temp 286
+23:46:47.980 -> brown heating offff! 229
+23:46:47.980 -> Disable all heaters 
+23:46:48.014 -> checking disconnected?
+23:46:48.014 -> red heating OFF!! red temp 286
+23:46:48.047 -> brown heating offff! 229
+23:46:48.047 -> Disable all heaters 
+23:46:48.047 -> checking disconnected?
+23:46:48.080 -> red heating OFF!! red temp 286
+23:46:48.080 -> brown heating offff! 229
+23:46:48.113 -> Disable all heaters 
+23:46:48.113 -> checking disconnected?
+23:46:48.113 -> red heating OFF!! red temp 286
+23:46:48.147 -> brown heating offff! 229
+23:46:48.147 -> Disable all heaters 
+23:46:48.180 -> checking disconnected?
+23:46:48.180 -> red heating OFF!! red temp 286
+23:46:48.214 -> brown heating offff! 229
+23:46:48.214 -> Disable all heaters 
+23:46:48.214 -> checking disconnected?
+23:46:48.247 -> red heating OFF!! red temp 286
+23:46:48.247 -> brown heating offff! 229
+23:46:48.280 -> Disable all heaters 
+23:46:48.280 -> checking disconnected?
+23:46:48.280 -> red heating OFF!! red temp 286
+23:46:48.314 -> brown heating offff! 229
+23:46:48.314 -> Disable all heaters 
+23:46:48.348 -> checking disconnected?
+23:46:48.348 -> red heating OFF!! red temp 286
+23:46:48.348 -> brown heating offff! 229
+23:46:48.383 -> Disable all heaters 
+23:46:48.383 -> checking disconnected?
+23:46:48.416 -> red heating OFF!! red temp 286
+23:46:48.416 -> brown heating offff! 229
+23:46:48.416 -> Disable all heaters 
+23:46:48.450 -> checking disconnected?
+23:46:48.450 -> red heating OFF!! red temp 286
+23:46:48.484 -> brown heating offff! 229
+23:46:48.484 -> Disable all heaters 
+23:46:48.484 -> checking disconnected?
+23:46:48.517 -> red heating OFF!! red temp 286
+23:46:48.517 -> brown heating offff! 229
+23:46:48.550 -> Disable all heaters 
+23:46:48.550 -> checking disconnected?
+23:46:48.550 -> red heating OFF!! red temp 286
+23:46:48.584 -> brown heating offff! 229
+23:46:48.584 -> Disable all heaters 
+23:46:48.617 -> checking disconnected?
+23:46:48.617 -> red heating OFF!! red temp 286
+23:46:48.650 -> brown heating offff! 229
+23:46:48.650 -> Disable all heaters 
+23:46:48.650 -> checking disconnected?
+23:46:48.684 -> red heating OFF!! red temp 286
+23:46:48.684 -> brown heating offff! 229
+23:46:48.717 -> Disable all heaters 
+23:46:48.717 -> checking disconnected?
+23:46:48.717 -> red heating OFF!! red temp 286
+23:46:48.751 -> brown heating offff! 229
+23:46:48.751 -> Disable all heaters 
+23:46:48.786 -> checking disconnected?
+23:46:48.786 -> red heating OFF!! red temp 286
+23:46:48.786 -> brown heating offff! 229
+23:46:48.819 -> Disable all heaters 
+23:46:48.819 -> checking disconnected?
+23:46:48.853 -> red heating OFF!! red temp 286
+23:46:48.853 -> brown heating offff! 229
+23:46:48.853 -> Disable all heaters 
+23:46:48.887 -> checking disconnected?
+23:46:48.887 -> red heating OFF!! red temp 286
+23:46:48.920 -> brown heating offff! 229
+23:46:48.920 -> Disable all heaters 
+23:46:48.920 -> checking disconnected?
+23:46:48.955 -> Disable all heaters 
+23:46:48.955 -> red heating OFF!! red temp 286
+23:46:48.955 -> brown heating offff! 229
+23:46:48.988 -> Disable all heaters 
+23:46:48.988 -> checking disconnected?
+23:46:49.021 -> red heating OFF!! red temp 286
+23:46:49.021 -> brown heating offff! 229
+23:46:49.056 -> Disable all heaters 
+23:46:49.056 -> checking disconnected?
+23:46:49.056 -> red heating OFF!! red temp 286
+23:46:49.056 -> brown heating offff! 229
+23:46:49.091 -> Disable all heaters 
+23:46:49.091 -> checking disconnected?
+23:46:49.124 -> red heating OFF!! red temp 286
+23:46:49.124 -> brown heating offff! 229
+23:46:49.124 -> Disable all heaters 
+23:46:49.157 -> checking disconnected?
+23:46:49.157 -> red heating OFF!! red temp 286
+23:46:49.191 -> brown heating offff! 229
+23:46:49.191 -> Disable all heaters 
+23:46:49.191 -> checking disconnected?
+23:46:49.224 -> red heating OFF!! red temp 286
+23:46:49.224 -> brown heating offff! 229
+23:46:49.257 -> Disable all heaters 
+23:46:49.257 -> checking disconnected?
+23:46:49.257 -> red heating OFF!! red temp 286
+23:46:49.291 -> brown heating offff! 229
+23:46:49.291 -> Disable all heaters 
+23:46:49.324 -> checking disconnected?
+23:46:49.324 -> red heating OFF!! red temp 286
+23:46:49.357 -> brown heating offff! 229
+23:46:49.357 -> Disable all heaters 
+23:46:49.357 -> checking disconnected?
+23:46:49.390 -> red heating OFF!! red temp 286
+23:46:49.390 -> brown heating offff! 229
+23:46:49.425 -> Disable all heaters 
+23:46:49.425 -> checking disconnected?
+23:46:49.425 -> red heating OFF!! red temp 286
+23:46:49.459 -> brown heating offff! 229
+23:46:49.459 -> Disable all heaters 
+23:46:49.492 -> checking disconnected?
+23:46:49.492 -> red heating OFF!! red temp 286
+23:46:49.492 -> brown heating offff! 229
+23:46:49.525 -> Disable all heaters 
+23:46:49.525 -> checking disconnected?
+23:46:49.560 -> red heating OFF!! red temp 286
+23:46:49.560 -> brown heating offff! 229
+23:46:49.560 -> Disable all heaters 
+23:46:49.593 -> checking disconnected?
+23:46:49.593 -> red heating OFF!! red temp 286
+23:46:49.627 -> brown heating offff! 229
+23:46:49.627 -> Disable all heaters 
+23:46:49.627 -> checking disconnected?
+23:46:49.661 -> red heating OFF!! red temp 286
+23:46:49.661 -> brown heating offff! 229
+23:46:49.695 -> Disable all heaters 
+23:46:49.695 -> checking disconnected?
+23:46:49.695 -> red heating OFF!! red temp 286
+23:46:49.729 -> brown heating offff! 229
+23:46:49.729 -> Disable all heaters 
+23:46:49.763 -> checking disconnected?
+23:46:49.763 -> red heating OFF!! red temp 286
+23:46:49.797 -> brown heating offff! 229
+23:46:49.797 -> Disable all heaters 
+23:46:49.797 -> checking disconnected?
+23:46:49.831 -> red heating OFF!! red temp 286
+23:46:49.831 -> brown heating offff! 229
+23:46:49.864 -> Disable all heaters 
+23:46:49.864 -> checking disconnected?
+23:46:49.864 -> red heating OFF!! red temp 286
+23:46:49.899 -> brown heating offff! 229
+23:46:49.899 -> Disable all heaters 
+23:46:49.934 -> checking disconnected?
+23:46:49.934 -> red heating OFF!! red temp 286
+23:46:49.934 -> brown heating offff! 229
+23:46:49.969 -> Disable all heaters 
+23:46:49.969 -> checking disconnected?
+23:46:50.004 -> red heating OFF!! red temp 286
+23:46:50.004 -> brown heating offff! 229
+23:46:50.004 -> Disable all heaters 
+23:46:50.004 -> checking disconnected?
+23:46:50.037 -> red heating OFF!! red temp 286
+23:46:50.037 -> brown heating offff! 229
+23:46:50.072 -> Disable all heaters 
+23:46:50.072 -> checking disconnected?
+23:46:50.072 -> Disable all heaters 
+23:46:50.106 -> red heating OFF!! red temp 286
+23:46:50.106 -> brown heating offff! 229
+23:46:50.140 -> Disable all heaters 
+23:46:50.140 -> checking disconnected?
+23:46:50.140 -> red heating OFF!! red temp 286
+23:46:50.174 -> brown heating offff! 229
+23:46:50.174 -> Disable all heaters 
+23:46:50.207 -> checking disconnected?
+23:46:50.207 -> red heating OFF!! red temp 286
+23:46:50.207 -> brown heating offff! 229
+23:46:50.240 -> Disable all heaters 
+23:46:50.240 -> checking disconnected?
+23:46:50.274 -> red heating OFF!! red temp 286
+23:46:50.274 -> brown heating offff! 229
+23:46:50.274 -> Disable all heaters 
+23:46:50.307 -> checking disconnected?
+23:46:50.307 -> red heating OFF!! red temp 286
+23:46:50.342 -> brown heating offff! 229
+23:46:50.342 -> Disable all heaters 
+23:46:50.342 -> checking disconnected?
+23:46:50.375 -> red heating OFF!! red temp 286
+23:46:50.375 -> brown heating offff! 229
+23:46:50.409 -> Disable all heaters 
+23:46:50.409 -> checking disconnected?
+23:46:50.409 -> red heating OFF!! red temp 286
+23:46:50.443 -> brown heating offff! 229
+23:46:50.443 -> Disable all heaters 
+23:46:50.477 -> checking disconnected?
+23:46:50.477 -> red heating OFF!! red temp 286
+23:46:50.510 -> brown heating offff! 229
+23:46:50.510 -> Disable all heaters 
+23:46:50.510 -> checking disconnected?
+23:46:50.545 -> red heating OFF!! red temp 286
+23:46:50.545 -> brown heating offff! 229
+23:46:50.579 -> Disable all heaters 
+23:46:50.579 -> checking disconnected?
+23:46:50.579 -> red heating OFF!! red temp 286
+23:46:50.613 -> brown heating offff! 229
+23:46:50.613 -> Disable all heaters 
+23:46:50.646 -> checking disconnected?
+23:46:50.646 -> red heating OFF!! red temp 286
+23:46:50.646 -> brown heating offff! 229
+23:46:50.681 -> Disable all heaters 
+23:46:50.681 -> checking disconnected?
+23:46:50.715 -> red heating OFF!! red temp 286
+23:46:50.715 -> brown heating offff! 229
+23:46:50.715 -> Disable all heaters 
+23:46:50.748 -> checking disconnected?
+23:46:50.748 -> red heating OFF!! red temp 286
+23:46:50.781 -> brown heating offff! 229
+23:46:50.781 -> Disable all heaters 
+23:46:50.781 -> checking disconnected?
+23:46:50.815 -> red heating OFF!! red temp 286
+23:46:50.815 -> brown heating offff! 229
+23:46:50.848 -> Disable all heaters 
+23:46:50.848 -> checking disconnected?
+23:46:50.848 -> red heating OFF!! red temp 286
+23:46:50.882 -> brown heating offff! 229
+23:46:50.882 -> Disable all heaters 
+23:46:50.917 -> checking disconnected?
+23:46:50.917 -> red heating OFF!! red temp 286
+23:46:50.917 -> brown heating offff! 229
+23:46:50.917 -> Disable all heaters 
+23:46:50.952 -> checking disconnected?
+23:46:50.952 -> red heating OFF!! red temp 286
+23:46:50.987 -> brown heating offff! 229
+23:46:50.987 -> Disable all heaters 
+23:46:50.987 -> checking disconnected?
+23:46:51.020 -> red heating OFF!! red temp 286
+23:46:51.020 -> brown heating offff! 229
+23:46:51.055 -> Disable all heaters 
+23:46:51.055 -> checking disconnected?
+23:46:51.055 -> red heating OFF!! red temp 286
+23:46:51.089 -> brown heating offff! 229
+23:46:51.089 -> Disable all heaters 
+23:46:51.123 -> checking disconnected?
+23:46:51.123 -> red heating OFF!! red temp 286
+23:46:51.157 -> brown heating offff! 229
+23:46:51.157 -> Disable all heaters 
+23:46:51.157 -> checking disconnected?
+23:46:51.191 -> red heating OFF!! red temp 286
+23:46:51.191 -> brown heating offff! 229
+23:46:51.225 -> Disable all heaters 
+23:46:51.225 -> checking disconnected?
+23:46:51.225 -> Disable all heaters 
+23:46:51.259 -> red heating OFF!! red temp 286
+23:46:51.259 -> brown heating offff! 229
+23:46:51.293 -> Disable all heaters 
+23:46:51.293 -> checking disconnected?
+23:46:51.293 -> red heating OFF!! red temp 286
+23:46:51.327 -> brown heating offff! 229
+23:46:51.327 -> Disable all heaters 
+23:46:51.327 -> checking disconnected?
+23:46:51.362 -> red heating OFF!! red temp 286
+23:46:51.362 -> brown heating offff! 229
+23:46:51.395 -> Disable all heaters 
+23:46:51.395 -> checking disconnected?
+23:46:51.395 -> red heating OFF!! red temp 286
+23:46:51.428 -> brown heating offff! 229
+23:46:51.428 -> Disable all heaters 
+23:46:51.463 -> checking disconnected?
+23:46:51.463 -> red heating OFF!! red temp 286
+23:46:51.501 -> brown heating offff! 229
+23:46:51.501 -> Disable all heaters 
+23:46:51.501 -> checking disconnected?
+23:46:51.501 -> red heating OFF!! red temp 286
+23:46:51.530 -> brown heating offff! 229
+23:46:51.565 -> Disable all heaters 
+23:46:51.565 -> checking disconnected?
+23:46:51.565 -> red heating OFF!! red temp 286
+23:46:51.598 -> brown heating offff! 229
+23:46:51.598 -> Disable all heaters 
+23:46:51.632 -> checking disconnected?
+23:46:51.632 -> red heating OFF!! red temp 286
+23:46:51.632 -> brown heating offff! 229
+23:46:51.632 -> Disable all heaters 
+23:46:51.667 -> checking disconnected?
+23:46:51.667 -> red heating OFF!! red temp 286
+23:46:51.700 -> brown heating offff! 229
+23:46:51.700 -> Disable all heaters 
+23:46:51.700 -> checking disconnected?
+23:46:51.735 -> red heating OFF!! red temp 286
+23:46:51.735 -> brown heating offff! 229
+23:46:51.768 -> Disable all heaters 
+23:46:51.768 -> checking disconnected?
+23:46:51.768 -> red heating OFF!! red temp 286
+23:46:51.802 -> brown heating offff! 229
+23:46:51.802 -> Disable all heaters 
+23:46:51.835 -> checking disconnected?
+23:46:51.835 -> red heating OFF!! red temp 286
+23:46:51.835 -> brown heating offff! 229
+23:46:51.870 -> Disable all heaters 
+23:46:51.870 -> checking disconnected?
+23:46:51.903 -> red heating OFF!! red temp 286
+23:46:51.903 -> brown heating offff! 229
+23:46:51.938 -> Disable all heaters 
+23:46:51.938 -> checking disconnected?
+23:46:51.938 -> red heating OFF!! red temp 286
+23:46:51.972 -> brown heating offff! 229
+23:46:51.972 -> Disable all heaters 
+23:46:51.972 -> checking disconnected?
+23:46:52.005 -> red heating OFF!! red temp 286
+23:46:52.005 -> brown heating offff! 229
+23:46:52.039 -> Disable all heaters 
+23:46:52.039 -> checking disconnected?
+23:46:52.039 -> red heating OFF!! red temp 286
+23:46:52.073 -> brown heating offff! 229
+23:46:52.073 -> Disable all heaters 
+23:46:52.107 -> checking disconnected?
+23:46:52.107 -> red heating OFF!! red temp 286
+23:46:52.142 -> brown heating offff! 229
+23:46:52.142 -> Disable all heaters 
+23:46:52.142 -> checking disconnected?
+23:46:52.175 -> red heating OFF!! red temp 286
+23:46:52.175 -> brown heating offff! 229
+23:46:52.209 -> Disable all heaters 
+23:46:52.209 -> checking disconnected?
+23:46:52.209 -> red heating OFF!! red temp 286
+23:46:52.243 -> brown heating offff! 229
+23:46:52.243 -> Disable all heaters 
+23:46:52.277 -> checking disconnected?
+23:46:52.277 -> red heating OFF!! red temp 286
+23:46:52.277 -> brown heating offff! 229
+23:46:52.311 -> Disable all heaters 
+23:46:52.311 -> checking disconnected?
+23:46:52.345 -> red heating OFF!! red temp 286
+23:46:52.345 -> brown heating offff! 229
+23:46:52.380 -> Disable all heaters 
+23:46:52.380 -> checking disconnected?
+23:46:52.380 -> Disable all heaters 
+23:46:52.380 -> red heating OFF!! red temp 286
+23:46:52.414 -> brown heating offff! 229
+23:46:52.414 -> Disable all heaters 
+23:46:52.414 -> checking disconnected?
+23:46:52.448 -> red heating OFF!! red temp 286
+23:46:52.448 -> brown heating offff! 229
+23:46:52.484 -> Disable all heaters 
+23:46:52.484 -> checking disconnected?
+23:46:52.484 -> red heating OFF!! red temp 286
+23:46:52.517 -> brown heating offff! 229
+23:46:52.517 -> Disable all heaters 
+23:46:52.550 -> checking disconnected?
+23:46:52.550 -> red heating OFF!! red temp 286
+23:46:52.550 -> brown heating offff! 229
+23:46:52.584 -> Disable all heaters 
+23:46:52.584 -> checking disconnected?
+23:46:52.617 -> red heating OFF!! red temp 286
+23:46:52.617 -> brown heating offff! 229
+23:46:52.617 -> Disable all heaters 
+23:46:52.650 -> checking disconnected?
+23:46:52.650 -> red heating OFF!! red temp 286
+23:46:52.684 -> brown heating offff! 229
+23:46:52.684 -> Disable all heaters 
+23:46:52.684 -> checking disconnected?
+23:46:52.717 -> red heating OFF!! red temp 286
+23:46:52.717 -> brown heating offff! 229
+23:46:52.750 -> Disable all heaters 
+23:46:52.750 -> checking disconnected?
+23:46:52.750 -> red heating OFF!! red temp 286
+23:46:52.784 -> brown heating offff! 229
+23:46:52.784 -> Disable all heaters 
+23:46:52.818 -> checking disconnected?
+23:46:52.818 -> red heating OFF!! red temp 286
+23:46:52.853 -> brown heating offff! 229
+23:46:52.853 -> Disable all heaters 
+23:46:52.853 -> checking disconnected?
+23:46:52.886 -> red heating OFF!! red temp 286
+23:46:52.886 -> brown heating offff! 229
+23:46:52.919 -> Disable all heaters 
+23:46:52.919 -> checking disconnected?
+23:46:52.919 -> red heating OFF!! red temp 286
+23:46:52.953 -> brown heating offff! 229
+23:46:52.953 -> Disable all heaters 
+23:46:52.987 -> checking disconnected?
+23:46:52.987 -> red heating OFF!! red temp 286
+23:46:52.987 -> brown heating offff! 229
+23:46:53.020 -> Disable all heaters 
+23:46:53.020 -> checking disconnected?
+23:46:53.054 -> red heating OFF!! red temp 286
+23:46:53.054 -> brown heating offff! 229
+23:46:53.054 -> Disable all heaters 
+23:46:53.087 -> checking disconnected?
+23:46:53.087 -> red heating OFF!! red temp 286
+23:46:53.120 -> brown heating offff! 229
+23:46:53.120 -> Disable all heaters 
+23:46:53.120 -> checking disconnected?
+23:46:53.155 -> red heating OFF!! red temp 286
+23:46:53.155 -> brown heating offff! 229
+23:46:53.189 -> Disable all heaters 
+23:46:53.189 -> checking disconnected?
+23:46:53.189 -> red heating OFF!! red temp 286
+23:46:53.223 -> brown heating offff! 229
+23:46:53.223 -> Disable all heaters 
+23:46:53.256 -> checking disconnected?
+23:46:53.256 -> red heating OFF!! red temp 286
+23:46:53.289 -> brown heating offff! 229
+23:46:53.289 -> Disable all heaters 
+23:46:53.289 -> checking disconnected?
+23:46:53.323 -> red heating OFF!! red temp 286
+23:46:53.323 -> brown heating offff! 229
+23:46:53.357 -> Disable all heaters 
+23:46:53.357 -> checking disconnected?
+23:46:53.357 -> red heating OFF!! red temp 286
+23:46:53.390 -> brown heating offff! 229
+23:46:53.390 -> Disable all heaters 
+23:46:53.424 -> checking disconnected?
+23:46:53.424 -> red heating OFF!! red temp 286
+23:46:53.424 -> brown heating offff! 229
+23:46:53.458 -> Disable all heaters 
+23:46:53.458 -> checking disconnected?
+23:46:53.493 -> red heating OFF!! red temp 286
+23:46:53.493 -> brown heating offff! 229
+23:46:53.493 -> Disable all heaters 
+23:46:53.526 -> checking disconnected?
+23:46:53.526 -> Disable all heaters 
+23:46:53.560 -> red heating OFF!! red temp 286
+23:46:53.560 -> brown heating offff! 229
+23:46:53.560 -> Disable all heaters 
+23:46:53.594 -> checking disconnected?
+23:46:53.594 -> red heating OFF!! red temp 286
+23:46:53.627 -> brown heating offff! 229
+23:46:53.627 -> Disable all heaters 
+23:46:53.627 -> checking disconnected?
+23:46:53.661 -> red heating OFF!! red temp 286
+23:46:53.661 -> brown heating offff! 229
+23:46:53.661 -> Disable all heaters 
+23:46:53.694 -> checking disconnected?
+23:46:53.694 -> red heating OFF!! red temp 286
+23:46:53.728 -> brown heating offff! 229
+23:46:53.728 -> Disable all heaters 
+23:46:53.728 -> checking disconnected?
+23:46:53.763 -> red heating OFF!! red temp 286
+23:46:53.763 -> brown heating offff! 229
+23:46:53.763 -> Disable all heaters 
+23:46:53.797 -> checking disconnected?
+23:46:53.797 -> red heating OFF!! red temp 286
+23:46:53.831 -> brown heating offff! 229
+23:46:53.831 -> Disable all heaters 
+23:46:53.831 -> checking disconnected?
+23:46:53.864 -> red heating OFF!! red temp 286
+23:46:53.864 -> brown heating offff! 229
+23:46:53.898 -> Disable all heaters 
+23:46:53.898 -> checking disconnected?
+23:46:53.898 -> red heating OFF!! red temp 286
+23:46:53.933 -> brown heating offff! 229
+23:46:53.933 -> Disable all heaters 
+23:46:53.968 -> checking disconnected?
+23:46:53.968 -> red heating OFF!! red temp 286
+23:46:54.002 -> brown heating offff! 229
+23:46:54.002 -> Disable all heaters 
+23:46:54.002 -> checking disconnected?
+23:46:54.036 -> red heating OFF!! red temp 286
+23:46:54.036 -> brown heating offff! 229
+23:46:54.069 -> Disable all heaters 
+23:46:54.069 -> checking disconnected?
+23:46:54.069 -> red heating OFF!! red temp 286
+23:46:54.103 -> brown heating offff! 229
+23:46:54.103 -> Disable all heaters 
+23:46:54.137 -> checking disconnected?
+23:46:54.137 -> red heating OFF!! red temp 286
+23:46:54.137 -> brown heating offff! 229
+23:46:54.170 -> Disable all heaters 
+23:46:54.170 -> checking disconnected?
+23:46:54.204 -> red heating OFF!! red temp 286
+23:46:54.204 -> brown heating offff! 229
+23:46:54.204 -> Disable all heaters 
+23:46:54.237 -> checking disconnected?
+23:46:54.237 -> red heating OFF!! red temp 286
+23:46:54.272 -> brown heating offff! 229
+23:46:54.272 -> Disable all heaters 
+23:46:54.272 -> checking disconnected?
+23:46:54.307 -> red heating OFF!! red temp 286
+23:46:54.307 -> brown heating offff! 229
+23:46:54.342 -> Disable all heaters 
+23:46:54.342 -> checking disconnected?
+23:46:54.342 -> red heating OFF!! red temp 286
+23:46:54.375 -> brown heating offff! 229
+23:46:54.375 -> Disable all heaters 
+23:46:54.410 -> checking disconnected?
+23:46:54.410 -> red heating OFF!! red temp 286
+23:46:54.410 -> brown heating offff! 229
+23:46:54.410 -> Disable all heaters 
+23:46:54.444 -> checking disconnected?
+23:46:54.444 -> red heating OFF!! red temp 286
+23:46:54.478 -> brown heating offff! 229
+23:46:54.478 -> Disable all heaters 
+23:46:54.478 -> checking disconnected?
+23:46:54.513 -> red heating OFF!! red temp 286
+23:46:54.513 -> brown heating offff! 229
+23:46:54.547 -> Disable all heaters 
+23:46:54.547 -> checking disconnected?
+23:46:54.547 -> red heating OFF!! red temp 286
+23:46:54.581 -> brown heating offff! 229
+23:46:54.581 -> Disable all heaters 
+23:46:54.616 -> checking disconnected?
+23:46:54.616 -> red heating OFF!! red temp 286
+23:46:54.650 -> brown heating offff! 229
+23:46:54.650 -> Disable all heaters 
+23:46:54.650 -> checking disconnected?
+23:46:54.684 -> Disable all heaters 
+23:46:54.684 -> red heating OFF!! red temp 286
+23:46:54.718 -> brown heating offff! 229
+23:46:54.718 -> Disable all heaters 
+23:46:54.718 -> checking disconnected?
+23:46:54.752 -> red heating OFF!! red temp 286
+23:46:54.752 -> brown heating offff! 229
+23:46:54.786 -> Disable all heaters 
+23:46:54.786 -> checking disconnected?
+23:46:54.786 -> red heating OFF!! red temp 286
+23:46:54.819 -> brown heating offff! 229
+23:46:54.819 -> Disable all heaters 
+23:46:54.853 -> checking disconnected?
+23:46:54.853 -> red heating OFF!! red temp 286
+23:46:54.853 -> brown heating offff! 229
+23:46:54.888 -> Disable all heaters 
+23:46:54.888 -> checking disconnected?
+23:46:54.922 -> red heating OFF!! red temp 286
+23:46:54.922 -> brown heating offff! 229
+23:46:54.922 -> Disable all heaters 
+23:46:54.957 -> checking disconnected?
+23:46:54.957 -> red heating OFF!! red temp 286
+23:46:54.991 -> brown heating offff! 229
+23:46:54.991 -> Disable all heaters 
+23:46:54.991 -> checking disconnected?
+23:46:54.991 -> red heating OFF!! red temp 286
+23:46:55.025 -> brown heating offff! 229
+23:46:55.025 -> Disable all heaters 
+23:46:55.058 -> checking disconnected?
+23:46:55.058 -> red heating OFF!! red temp 286
+23:46:55.058 -> brown heating offff! 229
+23:46:55.092 -> Disable all heaters 
+23:46:55.092 -> checking disconnected?
+23:46:55.125 -> red heating OFF!! red temp 286
+23:46:55.125 -> brown heating offff! 229
+23:46:55.125 -> Disable all heaters 
+23:46:55.160 -> checking disconnected?
+23:46:55.160 -> red heating OFF!! red temp 286
+23:46:55.194 -> brown heating offff! 229
+23:46:55.194 -> Disable all heaters 
+23:46:55.194 -> checking disconnected?
+23:46:55.228 -> red heating OFF!! red temp 286
+23:46:55.228 -> brown heating offff! 229
+23:46:55.263 -> Disable all heaters 
+23:46:55.263 -> checking disconnected?
+23:46:55.263 -> red heating OFF!! red temp 286
+23:46:55.298 -> brown heating offff! 229
+23:46:55.298 -> Disable all heaters 
+23:46:55.332 -> checking disconnected?
+23:46:55.332 -> red heating OFF!! red temp 286
+23:46:55.366 -> brown heating offff! 229
+23:46:55.366 -> Disable all heaters 
+23:46:55.366 -> checking disconnected?
+23:46:55.399 -> red heating OFF!! red temp 286
+23:46:55.399 -> brown heating offff! 229
+23:46:55.434 -> Disable all heaters 
+23:46:55.434 -> checking disconnected?
+23:46:55.434 -> red heating OFF!! red temp 286
+23:46:55.468 -> brown heating offff! 229
+23:46:55.468 -> Disable all heaters 
+23:46:55.503 -> checking disconnected?
+23:46:55.503 -> red heating OFF!! red temp 286
+23:46:55.503 -> brown heating offff! 229
+23:46:55.536 -> Disable all heaters 
+23:46:55.536 -> checking disconnected?
+23:46:55.570 -> red heating OFF!! red temp 286
+23:46:55.570 -> brown heating offff! 229
+23:46:55.570 -> Disable all heaters 
+23:46:55.604 -> checking disconnected?
+23:46:55.604 -> red heating OFF!! red temp 286
+23:46:55.638 -> brown heating offff! 229
+23:46:55.638 -> Disable all heaters 
+23:46:55.638 -> checking disconnected?
+23:46:55.672 -> red heating OFF!! red temp 286
+23:46:55.672 -> brown heating offff! 229
+23:46:55.672 -> Disable all heaters 
+23:46:55.706 -> checking disconnected?
+23:46:55.706 -> red heating OFF!! red temp 286
+23:46:55.739 -> brown heating offff! 229
+23:46:55.739 -> Disable all heaters 
+23:46:55.773 -> checking disconnected?
+23:46:55.773 -> red heating OFF!! red temp 286
+23:46:55.773 -> brown heating offff! 229
+23:46:55.773 -> Disable all heaters 
+23:46:55.807 -> checking disconnected?
+23:46:55.807 -> Disable all heaters 
+23:46:55.807 -> red heating OFF!! red temp 286
+23:46:55.841 -> brown heating offff! 229
+23:46:55.841 -> Disable all heaters 
+23:46:55.875 -> checking disconnected?
+23:46:55.875 -> red heating OFF!! red temp 286
+23:46:55.908 -> brown heating offff! 229
+23:46:55.908 -> Disable all heaters 
+23:46:55.908 -> checking disconnected?
+23:46:55.943 -> red heating OFF!! red temp 286
+23:46:55.943 -> brown heating offff! 229
+23:46:55.976 -> Disable all heaters 
+23:46:55.976 -> checking disconnected?
+23:46:55.976 -> red heating OFF!! red temp 286
+23:46:56.010 -> brown heating offff! 229
+23:46:56.010 -> Disable all heaters 
+23:46:56.043 -> checking disconnected?
+23:46:56.043 -> red heating OFF!! red temp 286
+23:46:56.043 -> brown heating offff! 229
+23:46:56.078 -> Disable all heaters 
+23:46:56.078 -> checking disconnected?
+23:46:56.112 -> red heating OFF!! red temp 286
+23:46:56.112 -> brown heating offff! 229
+23:46:56.145 -> Disable all heaters 
+23:46:56.145 -> checking disconnected?
+23:46:56.145 -> red heating OFF!! red temp 286
+23:46:56.178 -> brown heating offff! 229
+23:46:56.178 -> Disable all heaters 
+23:46:56.178 -> checking disconnected?
+23:46:56.213 -> red heating OFF!! red temp 286
+23:46:56.213 -> brown heating offff! 229
+23:46:56.247 -> Disable all heaters 
+23:46:56.247 -> checking disconnected?
+23:46:56.247 -> red heating OFF!! red temp 286
+23:46:56.280 -> brown heating offff! 229
+23:46:56.280 -> Disable all heaters 
+23:46:56.313 -> checking disconnected?
+23:46:56.313 -> red heating OFF!! red temp 286
+23:46:56.346 -> brown heating offff! 229
+23:46:56.346 -> Disable all heaters 
+23:46:56.346 -> checking disconnected?
+23:46:56.379 -> red heating OFF!! red temp 286
+23:46:56.379 -> brown heating offff! 229
+23:46:56.413 -> Disable all heaters 
+23:46:56.413 -> checking disconnected?
+23:46:56.413 -> red heating OFF!! red temp 286
+23:46:56.448 -> brown heating offff! 229
+23:46:56.448 -> Disable all heaters 
+23:46:56.481 -> checking disconnected?
+23:46:56.481 -> red heating OFF!! red temp 286
+23:46:56.481 -> brown heating offff! 229
+23:46:56.514 -> Disable all heaters 
+23:46:56.514 -> checking disconnected?
+23:46:56.548 -> red heating OFF!! red temp 286
+23:46:56.548 -> brown heating offff! 229
+23:46:56.582 -> Disable all heaters 
+23:46:56.582 -> checking disconnected?
+23:46:56.582 -> red heating OFF!! red temp 286
+23:46:56.615 -> brown heating offff! 229
+23:46:56.615 -> Disable all heaters 
+23:46:56.615 -> checking disconnected?
+23:46:56.649 -> red heating OFF!! red temp 286
+23:46:56.649 -> brown heating offff! 229
+23:46:56.683 -> Disable all heaters 
+23:46:56.683 -> checking disconnected?
+23:46:56.683 -> red heating OFF!! red temp 286
+23:46:56.717 -> brown heating offff! 229
+23:46:56.717 -> Disable all heaters 
+23:46:56.751 -> checking disconnected?
+23:46:56.751 -> red heating OFF!! red temp 286
+23:46:56.784 -> brown heating offff! 229
+23:46:56.784 -> Disable all heaters 
+23:46:56.784 -> checking disconnected?
+23:46:56.817 -> red heating OFF!! red temp 286
+23:46:56.817 -> brown heating offff! 229
+23:46:56.852 -> Disable all heaters 
+23:46:56.852 -> checking disconnected?
+23:46:56.852 -> red heating OFF!! red temp 286
+23:46:56.885 -> brown heating offff! 229
+23:46:56.885 -> Disable all heaters 
+23:46:56.918 -> checking disconnected?
+23:46:56.918 -> red heating OFF!! red temp 286
+23:46:56.918 -> brown heating offff! 229
+23:46:56.953 -> Disable all heaters 
+23:46:56.953 -> checking disconnected?
+23:46:56.986 -> Disable all heaters 
+23:46:56.986 -> red heating OFF!! red temp 286
+23:46:56.986 -> brown heating offff! 229
+23:46:57.019 -> Disable all heaters 
+23:46:57.019 -> checking disconnected?
+23:46:57.054 -> red heating OFF!! red temp 286
+23:46:57.054 -> brown heating offff! 229
+23:46:57.054 -> Disable all heaters 
+23:46:57.054 -> checking disconnected?
+23:46:57.088 -> red heating OFF!! red temp 286
+23:46:57.088 -> brown heating offff! 229
+23:46:57.123 -> Disable all heaters 
+23:46:57.123 -> checking disconnected?
+23:46:57.123 -> red heating OFF!! red temp 286
+23:46:57.156 -> brown heating offff! 229
+23:46:57.156 -> Disable all heaters 
+23:46:57.189 -> checking disconnected?
+23:46:57.189 -> red heating OFF!! red temp 286
+23:46:57.189 -> brown heating offff! 229
+23:46:57.223 -> Disable all heaters 
+23:46:57.223 -> checking disconnected?
+23:46:57.256 -> red heating OFF!! red temp 286
+23:46:57.256 -> brown heating offff! 229
+23:46:57.256 -> Disable all heaters 
+23:46:57.290 -> checking disconnected?
+23:46:57.290 -> red heating OFF!! red temp 286
+23:46:57.325 -> brown heating offff! 229
+23:46:57.325 -> Disable all heaters 
+23:46:57.325 -> checking disconnected?
+23:46:57.358 -> red heating OFF!! red temp 286
+23:46:57.358 -> brown heating offff! 229
+23:46:57.392 -> Disable all heaters 
+23:46:57.392 -> checking disconnected?
+23:46:57.392 -> red heating OFF!! red temp 286
+23:46:57.426 -> brown heating offff! 229
+23:46:57.426 -> Disable all heaters 
+23:46:57.459 -> checking disconnected?
+23:46:57.459 -> red heating OFF!! red temp 286
+23:46:57.493 -> brown heating offff! 229
+23:46:57.493 -> Disable all heaters 
+23:46:57.493 -> checking disconnected?
+23:46:57.527 -> red heating OFF!! red temp 286
+23:46:57.527 -> brown heating offff! 229
+23:46:57.561 -> Disable all heaters 
+23:46:57.561 -> checking disconnected?
+23:46:57.561 -> red heating OFF!! red temp 286
+23:46:57.594 -> brown heating offff! 229
+23:46:57.594 -> Disable all heaters 
+23:46:57.627 -> checking disconnected?
+23:46:57.627 -> red heating OFF!! red temp 286
+23:46:57.627 -> brown heating offff! 229
+23:46:57.662 -> Disable all heaters 
+23:46:57.662 -> checking disconnected?
+23:46:57.696 -> red heating OFF!! red temp 286
+23:46:57.696 -> brown heating offff! 229
+23:46:57.696 -> Disable all heaters 
+23:46:57.729 -> checking disconnected?
+23:46:57.729 -> red heating OFF!! red temp 286
+23:46:57.763 -> brown heating offff! 229
+23:46:57.763 -> Disable all heaters 
+23:46:57.763 -> checking disconnected?
+23:46:57.796 -> red heating OFF!! red temp 286
+23:46:57.796 -> brown heating offff! 229
+23:46:57.829 -> Disable all heaters 
+23:46:57.829 -> checking disconnected?
+23:46:57.829 -> red heating OFF!! red temp 286
+23:46:57.863 -> brown heating offff! 229
+23:46:57.863 -> Disable all heaters 
+23:46:57.897 -> checking disconnected?
+23:46:57.897 -> red heating OFF!! red temp 286
+23:46:57.931 -> brown heating offff! 229
+23:46:57.931 -> Disable all heaters 
+23:46:57.931 -> checking disconnected?
+23:46:57.965 -> red heating OFF!! red temp 286
+23:46:57.965 -> brown heating offff! 229
+23:46:57.999 -> Disable all heaters 
+23:46:57.999 -> checking disconnected?
+23:46:57.999 -> red heating OFF!! red temp 286
+23:46:58.032 -> brown heating offff! 229
+23:46:58.032 -> Disable all heaters 
+23:46:58.067 -> checking disconnected?
+23:46:58.067 -> red heating OFF!! red temp 286
+23:46:58.067 -> brown heating offff! 229
+23:46:58.100 -> Disable all heaters 
+23:46:58.100 -> checking disconnected?
+23:46:58.100 -> Disable all heaters 
+23:46:58.100 -> red heating OFF!! red temp 286
+23:46:58.134 -> brown heating offff! 229
+23:46:58.134 -> Disable all heaters 
+23:46:58.168 -> checking disconnected?
+23:46:58.168 -> red heating OFF!! red temp 286
+23:46:58.201 -> brown heating offff! 229
+23:46:58.201 -> Disable all heaters 
+23:46:58.201 -> checking disconnected?
+23:46:58.234 -> red heating OFF!! red temp 286
+23:46:58.234 -> brown heating offff! 229
+23:46:58.268 -> Disable all heaters 
+23:46:58.268 -> checking disconnected?
+23:46:58.268 -> red heating OFF!! red temp 286
+23:46:58.302 -> brown heating offff! 229
+23:46:58.302 -> Disable all heaters 
+23:46:58.336 -> checking disconnected?
+23:46:58.336 -> red heating OFF!! red temp 286
+23:46:58.336 -> brown heating offff! 229
+23:46:58.369 -> Disable all heaters 
+23:46:58.369 -> checking disconnected?
+23:46:58.403 -> red heating OFF!! red temp 286
+23:46:58.403 -> brown heating offff! 229
+23:46:58.403 -> Disable all heaters 
+23:46:58.436 -> checking disconnected?
+23:46:58.436 -> red heating OFF!! red temp 286
+23:46:58.469 -> brown heating offff! 229
+23:46:58.469 -> Disable all heaters 
+23:46:58.469 -> checking disconnected?
+23:46:58.503 -> red heating OFF!! red temp 286
+23:46:58.503 -> brown heating offff! 229
+23:46:58.537 -> Disable all heaters 
+23:46:58.537 -> checking disconnected?
+23:46:58.537 -> red heating OFF!! red temp 286
+23:46:58.570 -> brown heating offff! 229
+23:46:58.570 -> Disable all heaters 
+23:46:58.604 -> checking disconnected?
+23:46:58.604 -> red heating OFF!! red temp 286
+23:46:58.638 -> brown heating offff! 229
+23:46:58.638 -> Disable all heaters 
+23:46:58.638 -> checking disconnected?
+23:46:58.672 -> red heating OFF!! red temp 286
+23:46:58.672 -> brown heating offff! 229
+23:46:58.705 -> Disable all heaters 
+23:46:58.705 -> checking disconnected?
+23:46:58.705 -> red heating OFF!! red temp 286
+23:46:58.739 -> brown heating offff! 229
+23:46:58.739 -> Disable all heaters 
+23:46:58.773 -> checking disconnected?
+23:46:58.773 -> red heating OFF!! red temp 286
+23:46:58.773 -> brown heating offff! 229
+23:46:58.806 -> Disable all heaters 
+23:46:58.806 -> checking disconnected?
+23:46:58.839 -> red heating OFF!! red temp 286
+23:46:58.839 -> brown heating offff! 229
+23:46:58.839 -> Disable all heaters 
+23:46:58.873 -> checking disconnected?
+23:46:58.873 -> red heating OFF!! red temp 286
+23:46:58.907 -> brown heating offff! 229
+23:46:58.907 -> Disable all heaters 
+23:46:58.907 -> checking disconnected?
+23:46:58.940 -> red heating OFF!! red temp 286
+23:46:58.940 -> brown heating offff! 229
+23:46:58.974 -> Disable all heaters 
+23:46:58.974 -> checking disconnected?
+23:46:58.974 -> red heating OFF!! red temp 286
+23:46:59.008 -> brown heating offff! 229
+23:46:59.008 -> Disable all heaters 
+23:46:59.043 -> checking disconnected?
+23:46:59.043 -> red heating OFF!! red temp 286
+23:46:59.076 -> brown heating offff! 229
+23:46:59.076 -> Disable all heaters 
+23:46:59.076 -> checking disconnected?
+23:46:59.110 -> red heating OFF!! red temp 286
+23:46:59.110 -> brown heating offff! 229
+23:46:59.145 -> Disable all heaters 
+23:46:59.145 -> checking disconnected?
+23:46:59.145 -> red heating OFF!! red temp 286
+23:46:59.178 -> brown heating offff! 229
+23:46:59.178 -> Disable all heaters 
+23:46:59.212 -> checking disconnected?
+23:46:59.212 -> red heating OFF!! red temp 286
+23:46:59.212 -> brown heating offff! 229
+23:46:59.246 -> Disable all heaters 
+23:46:59.246 -> checking disconnected?
+23:46:59.279 -> Disable all heaters 
+23:46:59.279 -> red heating OFF!! red temp 286
+23:46:59.279 -> brown heating offff! 229
+23:46:59.314 -> Disable all heaters 
+23:46:59.314 -> checking disconnected?
+23:46:59.314 -> red heating OFF!! red temp 286
+23:46:59.348 -> brown heating offff! 229
+23:46:59.348 -> Disable all heaters 
+23:46:59.348 -> checking disconnected?
+23:46:59.381 -> red heating OFF!! red temp 286
+23:46:59.381 -> brown heating offff! 229
+23:46:59.416 -> Disable all heaters 
+23:46:59.416 -> checking disconnected?
+23:46:59.416 -> red heating OFF!! red temp 286
+23:46:59.449 -> brown heating offff! 229
+23:46:59.449 -> Disable all heaters 
+23:46:59.483 -> checking disconnected?
+23:46:59.483 -> red heating OFF!! red temp 286
+23:46:59.483 -> brown heating offff! 229
+23:46:59.517 -> Disable all heaters 
+23:46:59.517 -> checking disconnected?
+23:46:59.551 -> red heating OFF!! red temp 286
+23:46:59.551 -> brown heating offff! 229
+23:46:59.551 -> Disable all heaters 
+23:46:59.584 -> checking disconnected?
+23:46:59.584 -> red heating OFF!! red temp 286
+23:46:59.617 -> brown heating offff! 229
+23:46:59.617 -> Disable all heaters 
+23:46:59.617 -> checking disconnected?
+23:46:59.652 -> red heating OFF!! red temp 286
+23:46:59.652 -> brown heating offff! 229
+23:46:59.686 -> Disable all heaters 
+23:46:59.686 -> checking disconnected?
+23:46:59.686 -> red heating OFF!! red temp 286
+23:46:59.720 -> brown heating offff! 229
+23:46:59.720 -> Disable all heaters 
+23:46:59.754 -> checking disconnected?
+23:46:59.754 -> red heating OFF!! red temp 286
+23:46:59.789 -> brown heating offff! 229
+23:46:59.789 -> Disable all heaters 
+23:46:59.789 -> checking disconnected?
+23:46:59.822 -> red heating OFF!! red temp 286
+23:46:59.822 -> brown heating offff! 229
+23:46:59.856 -> Disable all heaters 
+23:46:59.856 -> checking disconnected?
+23:46:59.856 -> red heating OFF!! red temp 286
+23:46:59.889 -> brown heating offff! 229
+23:46:59.889 -> Disable all heaters 
+23:46:59.923 -> checking disconnected?
+23:46:59.923 -> red heating OFF!! red temp 286
+23:46:59.923 -> brown heating offff! 229
+23:46:59.958 -> Disable all heaters 
+23:46:59.958 -> checking disconnected?
+23:46:59.993 -> red heating OFF!! red temp 286
+23:46:59.993 -> brown heating offff! 229
+23:46:59.993 -> Disable all heaters 
+23:47:00.026 -> checking disconnected?
+23:47:00.026 -> red heating OFF!! red temp 286
+23:47:00.061 -> brown heating offff! 229
+23:47:00.061 -> Disable all heaters 
+23:47:00.061 -> checking disconnected?
+23:47:00.094 -> red heating OFF!! red temp 286
+23:47:00.094 -> brown heating offff! 229
+23:47:00.129 -> Disable all heaters 
+23:47:00.129 -> checking disconnected?
+23:47:00.129 -> red heating OFF!! red temp 286
+23:47:00.129 -> brown heating offff! 229
+23:47:00.163 -> Disable all heaters 
+23:47:00.163 -> checking disconnected?
+23:47:00.197 -> red heating OFF!! red temp 286
+23:47:00.197 -> brown heating offff! 229
+23:47:00.197 -> Disable all heaters 
+23:47:00.232 -> checking disconnected?
+23:47:00.232 -> red heating OFF!! red temp 286
+23:47:00.265 -> brown heating offff! 229
+23:47:00.265 -> Disable all heaters 
+23:47:00.265 -> checking disconnected?
+23:47:00.300 -> red heating OFF!! red temp 286
+23:47:00.300 -> brown heating offff! 229
+23:47:00.334 -> Disable all heaters 
+23:47:00.334 -> checking disconnected?
+23:47:00.334 -> red heating OFF!! red temp 286
+23:47:00.368 -> brown heating offff! 229
+23:47:00.368 -> Disable all heaters 
+23:47:00.403 -> checking disconnected?
+23:47:00.403 -> Disable all heaters 
+23:47:00.403 -> red heating OFF!! red temp 286
+23:47:00.436 -> brown heating offff! 229
+23:47:00.436 -> Disable all heaters 
+23:47:00.470 -> checking disconnected?
+23:47:00.470 -> red heating OFF!! red temp 286
+23:47:00.470 -> brown heating offff! 229
+23:47:00.503 -> Disable all heaters 
+23:47:00.503 -> checking disconnected?
+23:47:00.537 -> red heating OFF!! red temp 286
+23:47:00.537 -> brown heating offff! 229
+23:47:00.571 -> Disable all heaters 
+23:47:00.571 -> checking disconnected?
+23:47:00.571 -> red heating OFF!! red temp 286
+23:47:00.604 -> brown heating offff! 229
+23:47:00.604 -> Disable all heaters 
+23:47:00.604 -> checking disconnected?
+23:47:00.639 -> red heating OFF!! red temp 286
+23:47:00.639 -> brown heating offff! 229
+23:47:00.674 -> Disable all heaters 
+23:47:00.674 -> checking disconnected?
+23:47:00.674 -> red heating OFF!! red temp 286
+23:47:00.708 -> brown heating offff! 229
+23:47:00.708 -> Disable all heaters 
+23:47:00.743 -> checking disconnected?
+23:47:00.743 -> red heating OFF!! red temp 286
+23:47:00.776 -> brown heating offff! 229
+23:47:00.776 -> Disable all heaters 
+23:47:00.776 -> checking disconnected?
+23:47:00.809 -> red heating OFF!! red temp 286
+23:47:00.809 -> brown heating offff! 229
+23:47:00.843 -> Disable all heaters 
+23:47:00.843 -> checking disconnected?
+23:47:00.843 -> red heating OFF!! red temp 286
+23:47:00.876 -> brown heating offff! 229
+23:47:00.876 -> Disable all heaters 
+23:47:00.909 -> checking disconnected?
+23:47:00.909 -> red heating OFF!! red temp 286
+23:47:00.909 -> brown heating offff! 229
+23:47:00.943 -> Disable all heaters 
+23:47:00.943 -> checking disconnected?
+23:47:00.976 -> red heating OFF!! red temp 286
+23:47:00.976 -> brown heating offff! 229
+23:47:01.009 -> Disable all heaters 
+23:47:01.009 -> checking disconnected?
+23:47:01.009 -> red heating OFF!! red temp 286
+23:47:01.043 -> brown heating offff! 229
+23:47:01.043 -> Disable all heaters 
+23:47:01.043 -> checking disconnected?
+23:47:01.076 -> red heating OFF!! red temp 286
+23:47:01.076 -> brown heating offff! 229
+23:47:01.076 -> Disable all heaters 
+23:47:01.111 -> checking disconnected?
+23:47:01.111 -> red heating OFF!! red temp 286
+23:47:01.111 -> brown heating offff! 229
+23:47:01.145 -> Disable all heaters 
+23:47:01.145 -> checking disconnected?
+23:47:01.179 -> red heating OFF!! red temp 286
+23:47:01.179 -> brown heating offff! 229
+23:47:01.214 -> Disable all heaters 
+23:47:01.214 -> checking disconnected?
+23:47:01.214 -> red heating OFF!! red temp 286
+23:47:01.248 -> brown heating offff! 229
+23:47:01.248 -> Disable all heaters 
+23:47:01.248 -> checking disconnected?
+23:47:01.282 -> red heating OFF!! red temp 286
+23:47:01.282 -> brown heating offff! 229
+23:47:01.315 -> Disable all heaters 
+23:47:01.315 -> checking disconnected?
+23:47:01.315 -> red heating OFF!! red temp 286
+23:47:01.349 -> brown heating offff! 229
+23:47:01.349 -> Disable all heaters 
+23:47:01.383 -> checking disconnected?
+23:47:01.383 -> red heating OFF!! red temp 286
+23:47:01.417 -> brown heating offff! 229
+23:47:01.417 -> Disable all heaters 
+23:47:01.417 -> checking disconnected?
+23:47:01.450 -> red heating OFF!! red temp 286
+23:47:01.450 -> brown heating offff! 229
+23:47:01.485 -> Disable all heaters 
+23:47:01.485 -> checking disconnected?
+23:47:01.485 -> red heating OFF!! red temp 286
+23:47:01.519 -> brown heating offff! 229
+23:47:01.519 -> Disable all heaters 
+23:47:01.554 -> checking disconnected?
+23:47:01.554 -> Disable all heaters 
+23:47:01.554 -> red heating OFF!! red temp 286
+23:47:01.587 -> brown heating offff! 229
+23:47:01.587 -> Disable all heaters 
+23:47:01.620 -> checking disconnected?
+23:47:01.620 -> red heating OFF!! red temp 286
+23:47:01.620 -> brown heating offff! 229
+23:47:01.654 -> Disable all heaters 
+23:47:01.654 -> checking disconnected?
+23:47:01.688 -> red heating OFF!! red temp 286
+23:47:01.688 -> brown heating offff! 229
+23:47:01.688 -> Disable all heaters 
+23:47:01.722 -> checking disconnected?
+23:47:01.722 -> red heating OFF!! red temp 286
+23:47:01.755 -> brown heating offff! 229
+23:47:01.755 -> Disable all heaters 
+23:47:01.755 -> checking disconnected?
+23:47:01.789 -> red heating OFF!! red temp 286
+23:47:01.789 -> brown heating offff! 229
+23:47:01.823 -> Disable all heaters 
+23:47:01.823 -> checking disconnected?
+23:47:01.823 -> red heating OFF!! red temp 286
+23:47:01.856 -> brown heating offff! 229
+23:47:01.856 -> Disable all heaters 
+23:47:01.890 -> checking disconnected?
+23:47:01.890 -> red heating OFF!! red temp 286
+23:47:01.924 -> brown heating offff! 229
+23:47:01.924 -> Disable all heaters 
+23:47:01.924 -> checking disconnected?
+23:47:01.957 -> red heating OFF!! red temp 286
+23:47:01.957 -> brown heating offff! 229
+23:47:01.990 -> Disable all heaters 
+23:47:01.990 -> checking disconnected?
+23:47:01.990 -> red heating OFF!! red temp 286
+23:47:02.023 -> brown heating offff! 229
+23:47:02.023 -> Disable all heaters 
+23:47:02.057 -> checking disconnected?
+23:47:02.057 -> red heating OFF!! red temp 286
+23:47:02.057 -> brown heating offff! 229
+23:47:02.057 -> Disable all heaters 
+23:47:02.091 -> checking disconnected?
+23:47:02.091 -> red heating OFF!! red temp 286
+23:47:02.125 -> brown heating offff! 229
+23:47:02.125 -> Disable all heaters 
+23:47:02.125 -> checking disconnected?
+23:47:02.158 -> red heating OFF!! red temp 286
+23:47:02.158 -> brown heating offff! 229
+23:47:02.192 -> Disable all heaters 
+23:47:02.192 -> checking disconnected?
+23:47:02.192 -> red heating OFF!! red temp 286
+23:47:02.226 -> brown heating offff! 229
+23:47:02.226 -> Disable all heaters 
+23:47:02.259 -> checking disconnected?
+23:47:02.259 -> red heating OFF!! red temp 286
+23:47:02.259 -> brown heating offff! 229
+23:47:02.294 -> Disable all heaters 
+23:47:02.294 -> checking disconnected?
+23:47:02.328 -> red heating OFF!! red temp 286
+23:47:02.328 -> brown heating offff! 229
+23:47:02.328 -> Disable all heaters 
+23:47:02.362 -> checking disconnected?
+23:47:02.362 -> red heating OFF!! red temp 286
+23:47:02.396 -> brown heating offff! 229
+23:47:02.396 -> Disable all heaters 
+23:47:02.396 -> checking disconnected?
+23:47:02.430 -> red heating OFF!! red temp 286
+23:47:02.430 -> brown heating offff! 229
+23:47:02.465 -> Disable all heaters 
+23:47:02.465 -> checking disconnected?
+23:47:02.465 -> red heating OFF!! red temp 286
+23:47:02.499 -> brown heating offff! 229
+23:47:02.499 -> Disable all heaters 
+23:47:02.534 -> checking disconnected?
+23:47:02.534 -> red heating OFF!! red temp 286
+23:47:02.568 -> brown heating offff! 229
+23:47:02.568 -> Disable all heaters 
+23:47:02.568 -> checking disconnected?
+23:47:02.602 -> red heating OFF!! red temp 286
+23:47:02.602 -> brown heating offff! 229
+23:47:02.636 -> Disable all heaters 
+23:47:02.636 -> checking disconnected?
+23:47:02.636 -> red heating OFF!! red temp 286
+23:47:02.671 -> brown heating offff! 229
+23:47:02.671 -> Disable all heaters 
+23:47:02.704 -> checking disconnected?
+23:47:02.704 -> Disable all heaters 
+23:47:02.704 -> red heating OFF!! red temp 286
+23:47:02.737 -> brown heating offff! 229
+23:47:02.737 -> Disable all heaters 
+23:47:02.772 -> checking disconnected?
+23:47:02.772 -> red heating OFF!! red temp 286
+23:47:02.772 -> brown heating offff! 229
+23:47:02.805 -> Disable all heaters 
+23:47:02.805 -> checking disconnected?
+23:47:02.838 -> red heating OFF!! red temp 286
+23:47:02.838 -> brown heating offff! 229
+23:47:02.838 -> Disable all heaters 
+23:47:02.873 -> checking disconnected?
+23:47:02.873 -> red heating OFF!! red temp 286
+23:47:02.873 -> brown heating offff! 229
+23:47:02.907 -> Disable all heaters 
+23:47:02.907 -> checking disconnected?
+23:47:02.907 -> red heating OFF!! red temp 286
+23:47:02.941 -> brown heating offff! 229
+23:47:02.941 -> Disable all heaters 
+23:47:02.975 -> checking disconnected?
+23:47:02.975 -> red heating OFF!! red temp 286
+23:47:02.975 -> brown heating offff! 229
+23:47:03.010 -> Disable all heaters 
+23:47:03.010 -> checking disconnected?
+23:47:03.043 -> red heating OFF!! red temp 286
+23:47:03.043 -> brown heating offff! 229
+23:47:03.043 -> Disable all heaters 
+23:47:03.076 -> checking disconnected?
+23:47:03.076 -> red heating OFF!! red temp 286
+23:47:03.110 -> brown heating offff! 229
+23:47:03.110 -> Disable all heaters 
+23:47:03.110 -> checking disconnected?
+23:47:03.144 -> red heating OFF!! red temp 286
+23:47:03.144 -> brown heating offff! 229
+23:47:03.177 -> Disable all heaters 
+23:47:03.177 -> checking disconnected?
+23:47:03.177 -> red heating OFF!! red temp 286
+23:47:03.211 -> brown heating offff! 229
+23:47:03.211 -> Disable all heaters 
+23:47:03.246 -> checking disconnected?
+23:47:03.246 -> red heating OFF!! red temp 286
+23:47:03.279 -> brown heating offff! 229
+23:47:03.279 -> Disable all heaters 
+23:47:03.279 -> checking disconnected?
+23:47:03.312 -> red heating OFF!! red temp 286
+23:47:03.312 -> brown heating offff! 229
+23:47:03.346 -> Disable all heaters 
+23:47:03.346 -> checking disconnected?
+23:47:03.346 -> red heating OFF!! red temp 286
+23:47:03.379 -> brown heating offff! 229
+23:47:03.379 -> Disable all heaters 
+23:47:03.413 -> checking disconnected?
+23:47:03.413 -> red heating OFF!! red temp 286
+23:47:03.413 -> brown heating offff! 229
+23:47:03.446 -> Disable all heaters 
+23:47:03.446 -> checking disconnected?
+23:47:03.479 -> red heating OFF!! red temp 286
+23:47:03.479 -> brown heating offff! 229
+23:47:03.479 -> Disable all heaters 
+23:47:03.513 -> checking disconnected?
+23:47:03.513 -> red heating OFF!! red temp 286
+23:47:03.546 -> brown heating offff! 229
+23:47:03.546 -> Disable all heaters 
+23:47:03.546 -> checking disconnected?
+23:47:03.580 -> red heating OFF!! red temp 286
+23:47:03.580 -> brown heating offff! 229
+23:47:03.614 -> Disable all heaters 
+23:47:03.614 -> checking disconnected?
+23:47:03.614 -> red heating OFF!! red temp 286
+23:47:03.649 -> brown heating offff! 229
+23:47:03.649 -> Disable all heaters 
+23:47:03.684 -> checking disconnected?
+23:47:03.684 -> red heating OFF!! red temp 286
+23:47:03.718 -> brown heating offff! 229
+23:47:03.718 -> Disable all heaters 
+23:47:03.718 -> checking disconnected?
+23:47:03.752 -> red heating OFF!! red temp 286
+23:47:03.752 -> brown heating offff! 229
+23:47:03.785 -> Disable all heaters 
+23:47:03.785 -> checking disconnected?
+23:47:03.785 -> red heating OFF!! red temp 286
+23:47:03.819 -> brown heating offff! 229
+23:47:03.819 -> Disable all heaters 
+23:47:03.853 -> checking disconnected?
+23:47:03.853 -> Disable all heaters 
+23:47:03.853 -> red heating OFF!! red temp 286
+23:47:03.887 -> brown heating offff! 229
+23:47:03.887 -> Disable all heaters 
+23:47:03.887 -> checking disconnected?
+23:47:03.887 -> red heating OFF!! red temp 286
+23:47:03.921 -> brown heating offff! 229
+23:47:03.921 -> Disable all heaters 
+23:47:03.955 -> checking disconnected?
+23:47:03.955 -> red heating OFF!! red temp 286
+23:47:03.988 -> brown heating offff! 229
+23:47:03.988 -> Disable all heaters 
+23:47:03.988 -> checking disconnected?
+23:47:04.022 -> red heating OFF!! red temp 286
+23:47:04.022 -> brown heating offff! 229
+23:47:04.056 -> Disable all heaters 
+23:47:04.056 -> checking disconnected?
+23:47:04.056 -> red heating OFF!! red temp 286
+23:47:04.090 -> brown heating offff! 229
+23:47:04.090 -> Disable all heaters 
+23:47:04.123 -> checking disconnected?
+23:47:04.123 -> red heating OFF!! red temp 286
+23:47:04.123 -> brown heating offff! 229
+23:47:04.157 -> Disable all heaters 
+23:47:04.157 -> checking disconnected?
+23:47:04.190 -> red heating OFF!! red temp 286
+23:47:04.190 -> brown heating offff! 229
+23:47:04.190 -> Disable all heaters 
+23:47:04.223 -> checking disconnected?
+23:47:04.223 -> red heating OFF!! red temp 286
+23:47:04.256 -> brown heating offff! 229
+23:47:04.256 -> Disable all heaters 
+23:47:04.256 -> checking disconnected?
+23:47:04.291 -> red heating OFF!! red temp 286
+23:47:04.291 -> brown heating offff! 229
+23:47:04.325 -> Disable all heaters 
+23:47:04.325 -> checking disconnected?
+23:47:04.325 -> red heating OFF!! red temp 286
+23:47:04.359 -> brown heating offff! 229
+23:47:04.359 -> Disable all heaters 
+23:47:04.393 -> checking disconnected?
+23:47:04.393 -> red heating OFF!! red temp 286
+23:47:04.426 -> brown heating offff! 229
+23:47:04.426 -> Disable all heaters 
+23:47:04.426 -> checking disconnected?
+23:47:04.461 -> red heating OFF!! red temp 286
+23:47:04.461 -> brown heating offff! 229
+23:47:04.494 -> Disable all heaters 
+23:47:04.494 -> checking disconnected?
+23:47:04.494 -> red heating OFF!! red temp 286
+23:47:04.527 -> brown heating offff! 229
+23:47:04.527 -> Disable all heaters 
+23:47:04.560 -> checking disconnected?
+23:47:04.560 -> red heating OFF!! red temp 286
+23:47:04.560 -> brown heating offff! 229
+23:47:04.593 -> Disable all heaters 
+23:47:04.593 -> checking disconnected?
+23:47:04.626 -> red heating OFF!! red temp 286
+23:47:04.626 -> brown heating offff! 229
+23:47:04.626 -> Disable all heaters 
+23:47:04.660 -> checking disconnected?
+23:47:04.660 -> red heating OFF!! red temp 286
+23:47:04.693 -> brown heating offff! 229
+23:47:04.693 -> Disable all heaters 
+23:47:04.693 -> checking disconnected?
+23:47:04.727 -> red heating OFF!! red temp 286
+23:47:04.727 -> brown heating offff! 229
+23:47:04.761 -> Disable all heaters 
+23:47:04.761 -> checking disconnected?
+23:47:04.761 -> red heating OFF!! red temp 286
+23:47:04.794 -> brown heating offff! 229
+23:47:04.794 -> Disable all heaters 
+23:47:04.828 -> checking disconnected?
+23:47:04.828 -> red heating OFF!! red temp 286
+23:47:04.863 -> brown heating offff! 229
+23:47:04.863 -> Disable all heaters 
+23:47:04.863 -> checking disconnected?
+23:47:04.897 -> red heating OFF!! red temp 286
+23:47:04.897 -> brown heating offff! 229
+23:47:04.931 -> Disable all heaters 
+23:47:04.931 -> checking disconnected?
+23:47:04.931 -> red heating OFF!! red temp 286
+23:47:04.965 -> brown heating offff! 229
+23:47:04.965 -> Disable all heaters 
+23:47:04.999 -> checking disconnected?
+23:47:04.999 -> Disable all heaters 
+23:47:04.999 -> red heating OFF!! red temp 286
+23:47:05.034 -> brown heating offff! 229
+23:47:05.034 -> Disable all heaters 
+23:47:05.034 -> checking disconnected?
+23:47:05.067 -> red heating OFF!! red temp 286
+23:47:05.067 -> brown heating offff! 229
+23:47:05.067 -> Disable all heaters 
+23:47:05.102 -> checking disconnected?
+23:47:05.102 -> red heating OFF!! red temp 286
+23:47:05.102 -> brown heating offff! 229
+23:47:05.136 -> Disable all heaters 
+23:47:05.136 -> checking disconnected?
+23:47:05.170 -> red heating OFF!! red temp 286
+23:47:05.170 -> brown heating offff! 229
+23:47:05.203 -> Disable all heaters 
+23:47:05.203 -> checking disconnected?
+23:47:05.203 -> red heating OFF!! red temp 286
+23:47:05.237 -> brown heating offff! 229
+23:47:05.237 -> Disable all heaters 
+23:47:05.237 -> checking disconnected?
+23:47:05.271 -> red heating OFF!! red temp 286
+23:47:05.271 -> brown heating offff! 229
+23:47:05.306 -> Disable all heaters 
+23:47:05.306 -> checking disconnected?
+23:47:05.306 -> red heating OFF!! red temp 286
+23:47:05.339 -> brown heating offff! 229
+23:47:05.339 -> Disable all heaters 
+23:47:05.373 -> checking disconnected?
+23:47:05.373 -> red heating OFF!! red temp 286
+23:47:05.407 -> brown heating offff! 229
+23:47:05.407 -> Disable all heaters 
+23:47:05.407 -> checking disconnected?
+23:47:05.440 -> red heating OFF!! red temp 286
+23:47:05.440 -> brown heating offff! 229
+23:47:05.473 -> Disable all heaters 
+23:47:05.473 -> checking disconnected?
+23:47:05.473 -> red heating OFF!! red temp 286
+23:47:05.507 -> brown heating offff! 229
+23:47:05.507 -> Disable all heaters 
+23:47:05.541 -> checking disconnected?
+23:47:05.541 -> red heating OFF!! red temp 286
+23:47:05.541 -> brown heating offff! 229
+23:47:05.574 -> Disable all heaters 
+23:47:05.574 -> checking disconnected?
+23:47:05.608 -> red heating OFF!! red temp 286
+23:47:05.608 -> brown heating offff! 229
+23:47:05.641 -> Disable all heaters 
+23:47:05.641 -> checking disconnected?
+23:47:05.641 -> red heating OFF!! red temp 286
+23:47:05.675 -> brown heating offff! 229
+23:47:05.675 -> Disable all heaters 
+23:47:05.675 -> checking disconnected?
+23:47:05.709 -> red heating OFF!! red temp 286
+23:47:05.709 -> brown heating offff! 229
+23:47:05.743 -> Disable all heaters 
+23:47:05.743 -> checking disconnected?
+23:47:05.743 -> red heating OFF!! red temp 286
+23:47:05.776 -> brown heating offff! 229
+23:47:05.776 -> Disable all heaters 
+23:47:05.811 -> checking disconnected?
+23:47:05.811 -> red heating OFF!! red temp 286
+23:47:05.845 -> brown heating offff! 229
+23:47:05.845 -> Disable all heaters 
+23:47:05.845 -> checking disconnected?
+23:47:05.878 -> red heating OFF!! red temp 286
+23:47:05.878 -> brown heating offff! 229
+23:47:05.913 -> Disable all heaters 
+23:47:05.913 -> checking disconnected?
+23:47:05.913 -> red heating OFF!! red temp 286
+23:47:05.946 -> brown heating offff! 229
+23:47:05.946 -> Disable all heaters 
+23:47:05.979 -> checking disconnected?
+23:47:05.979 -> red heating OFF!! red temp 286
+23:47:05.979 -> brown heating offff! 229
+23:47:06.013 -> Disable all heaters 
+23:47:06.013 -> checking disconnected?
+23:47:06.046 -> red heating OFF!! red temp 286
+23:47:06.046 -> brown heating offff! 229
+23:47:06.081 -> Disable all heaters 
+23:47:06.081 -> checking disconnected?
+23:47:06.081 -> red heating OFF!! red temp 286
+23:47:06.114 -> brown heating offff! 229
+23:47:06.114 -> Disable all heaters 
+23:47:06.114 -> checking disconnected?
+23:47:06.114 -> Disable all heaters 
+23:47:06.148 -> red heating OFF!! red temp 286
+23:47:06.183 -> brown heating offff! 229
+23:47:06.183 -> Disable all heaters 
+23:47:06.183 -> checking disconnected?
+23:47:06.183 -> red heating OFF!! red temp 286
+23:47:06.216 -> brown heating offff! 229
+23:47:06.216 -> Disable all heaters 
+23:47:06.249 -> checking disconnected?
+23:47:06.249 -> red heating OFF!! red temp 286
+23:47:06.249 -> brown heating offff! 229
+23:47:06.283 -> Disable all heaters 
+23:47:06.283 -> checking disconnected?
+23:47:06.316 -> red heating OFF!! red temp 286
+23:47:06.316 -> brown heating offff! 229
+23:47:06.316 -> Disable all heaters 
+23:47:06.349 -> checking disconnected?
+23:47:06.349 -> red heating OFF!! red temp 286
+23:47:06.383 -> brown heating offff! 229
+23:47:06.383 -> Disable all heaters 
+23:47:06.383 -> checking disconnected?
+23:47:06.417 -> red heating OFF!! red temp 286
+23:47:06.417 -> brown heating offff! 229
+23:47:06.450 -> Disable all heaters 
+23:47:06.450 -> checking disconnected?
+23:47:06.450 -> red heating OFF!! red temp 286
+23:47:06.484 -> brown heating offff! 229
+23:47:06.484 -> Disable all heaters 
+23:47:06.518 -> checking disconnected?
+23:47:06.518 -> red heating OFF!! red temp 286
+23:47:06.552 -> brown heating offff! 229
+23:47:06.552 -> Disable all heaters 
+23:47:06.552 -> checking disconnected?
+23:47:06.585 -> red heating OFF!! red temp 286
+23:47:06.585 -> brown heating offff! 229
+23:47:06.619 -> Disable all heaters 
+23:47:06.619 -> checking disconnected?
+23:47:06.619 -> red heating OFF!! red temp 286
+23:47:06.654 -> brown heating offff! 229
+23:47:06.654 -> Disable all heaters 
+23:47:06.688 -> checking disconnected?
+23:47:06.688 -> red heating OFF!! red temp 286
+23:47:06.688 -> brown heating offff! 229
+23:47:06.722 -> Disable all heaters 
+23:47:06.722 -> checking disconnected?
+23:47:06.757 -> red heating OFF!! red temp 286
+23:47:06.757 -> brown heating offff! 229
+23:47:06.757 -> Disable all heaters 
+23:47:06.791 -> checking disconnected?
+23:47:06.791 -> red heating OFF!! red temp 286
+23:47:06.827 -> brown heating offff! 229
+23:47:06.827 -> Disable all heaters 
+23:47:06.827 -> checking disconnected?
+23:47:06.861 -> red heating OFF!! red temp 286
+23:47:06.861 -> brown heating offff! 229
+23:47:06.895 -> Disable all heaters 
+23:47:06.895 -> checking disconnected?
+23:47:06.895 -> red heating OFF!! red temp 286
+23:47:06.928 -> brown heating offff! 229
+23:47:06.928 -> Disable all heaters 
+23:47:06.962 -> checking disconnected?
+23:47:06.962 -> red heating OFF!! red temp 286
+23:47:06.962 -> brown heating offff! 229
+23:47:06.962 -> Disable all heaters 
+23:47:06.996 -> checking disconnected?
+23:47:06.996 -> red heating OFF!! red temp 286
+23:47:07.029 -> brown heating offff! 229
+23:47:07.063 -> Disable all heaters 
+23:47:07.063 -> checking disconnected?
+23:47:07.063 -> red heating OFF!! red temp 286
+23:47:07.063 -> brown heating offff! 229
+23:47:07.097 -> Disable all heaters 
+23:47:07.097 -> checking disconnected?
+23:47:07.097 -> red heating OFF!! red temp 286
+23:47:07.131 -> brown heating offff! 229
+23:47:07.131 -> Disable all heaters 
+23:47:07.164 -> checking disconnected?
+23:47:07.164 -> red heating OFF!! red temp 286
+23:47:07.198 -> brown heating offff! 229
+23:47:07.198 -> Disable all heaters 
+23:47:07.198 -> checking disconnected?
+23:47:07.232 -> red heating OFF!! red temp 286
+23:47:07.232 -> brown heating offff! 229
+23:47:07.267 -> Disable all heaters 
+23:47:07.267 -> checking disconnected?
+23:47:07.267 -> Disable all heaters 
+23:47:07.300 -> red heating OFF!! red temp 286
+23:47:07.300 -> brown heating offff! 229
+23:47:07.334 -> Disable all heaters 
+23:47:07.334 -> checking disconnected?
+23:47:07.334 -> red heating OFF!! red temp 286
+23:47:07.368 -> brown heating offff! 229
+23:47:07.368 -> Disable all heaters 
+23:47:07.403 -> checking disconnected?
+23:47:07.403 -> red heating OFF!! red temp 286
+23:47:07.403 -> brown heating offff! 229
+23:47:07.438 -> Disable all heaters 
+23:47:07.438 -> checking disconnected?
+23:47:07.472 -> red heating OFF!! red temp 286
+23:47:07.472 -> brown heating offff! 229
+23:47:07.472 -> Disable all heaters 
+23:47:07.508 -> checking disconnected?
+23:47:07.508 -> red heating OFF!! red temp 286
+23:47:07.542 -> brown heating offff! 229
+23:47:07.542 -> Disable all heaters 
+23:47:07.542 -> checking disconnected?
+23:47:07.576 -> red heating OFF!! red temp 286
+23:47:07.576 -> brown heating offff! 229
+23:47:07.610 -> Disable all heaters 
+23:47:07.610 -> checking disconnected?
+23:47:07.610 -> red heating OFF!! red temp 286
+23:47:07.645 -> brown heating offff! 229
+23:47:07.645 -> Disable all heaters 
+23:47:07.645 -> checking disconnected?
+23:47:07.678 -> red heating OFF!! red temp 286
+23:47:07.678 -> brown heating offff! 229
+23:47:07.678 -> Disable all heaters 
+23:47:07.713 -> checking disconnected?
+23:47:07.713 -> red heating OFF!! red temp 286
+23:47:07.746 -> brown heating offff! 229
+23:47:07.746 -> Disable all heaters 
+23:47:07.746 -> checking disconnected?
+23:47:07.780 -> red heating OFF!! red temp 286
+23:47:07.780 -> brown heating offff! 229
+23:47:07.813 -> Disable all heaters 
+23:47:07.813 -> checking disconnected?
+23:47:07.813 -> red heating OFF!! red temp 286
+23:47:07.847 -> brown heating offff! 229
+23:47:07.847 -> Disable all heaters 
+23:47:07.881 -> checking disconnected?
+23:47:07.881 -> red heating OFF!! red temp 286
+23:47:07.915 -> brown heating offff! 229
+23:47:07.915 -> Disable all heaters 
+23:47:07.915 -> checking disconnected?
+23:47:07.950 -> red heating OFF!! red temp 286
+23:47:07.950 -> brown heating offff! 229
+23:47:07.984 -> Disable all heaters 
+23:47:07.984 -> checking disconnected?
+23:47:07.984 -> red heating OFF!! red temp 286
+23:47:08.017 -> brown heating offff! 229
+23:47:08.017 -> Disable all heaters 
+23:47:08.051 -> checking disconnected?
+23:47:08.051 -> red heating OFF!! red temp 286
+23:47:08.051 -> brown heating offff! 229
+23:47:08.085 -> Disable all heaters 
+23:47:08.085 -> checking disconnected?
+23:47:08.120 -> red heating OFF!! red temp 286
+23:47:08.120 -> brown heating offff! 229
+23:47:08.120 -> Disable all heaters 
+23:47:08.154 -> checking disconnected?
+23:47:08.154 -> red heating OFF!! red temp 286
+23:47:08.188 -> brown heating offff! 229
+23:47:08.188 -> Disable all heaters 
+23:47:08.188 -> checking disconnected?
+23:47:08.222 -> red heating OFF!! red temp 286
+23:47:08.222 -> brown heating offff! 229
+23:47:08.255 -> Disable all heaters 
+23:47:08.255 -> checking disconnected?
+23:47:08.255 -> red heating OFF!! red temp 286
+23:47:08.290 -> brown heating offff! 229
+23:47:08.290 -> Disable all heaters 
+23:47:08.324 -> checking disconnected?
+23:47:08.324 -> red heating OFF!! red temp 286
+23:47:08.357 -> brown heating offff! 229
+23:47:08.357 -> Disable all heaters 
+23:47:08.357 -> checking disconnected?
+23:47:08.392 -> red heating OFF!! red temp 286
+23:47:08.392 -> brown heating offff! 229
+23:47:08.425 -> Disable all heaters 
+23:47:08.425 -> checking disconnected?
+23:47:08.425 -> Disable all heaters 
+23:47:08.459 -> red heating OFF!! red temp 286
+23:47:08.459 -> brown heating offff! 229
+23:47:08.459 -> Disable all heaters 
+23:47:08.459 -> checking disconnected?
+23:47:08.494 -> red heating OFF!! red temp 286
+23:47:08.494 -> brown heating offff! 229
+23:47:08.528 -> Disable all heaters 
+23:47:08.528 -> checking disconnected?
+23:47:08.528 -> red heating OFF!! red temp 286
+23:47:08.562 -> brown heating offff! 229
+23:47:08.562 -> Disable all heaters 
+23:47:08.595 -> checking disconnected?
+23:47:08.595 -> red heating OFF!! red temp 286
+23:47:08.630 -> brown heating offff! 229
+23:47:08.630 -> Disable all heaters 
+23:47:08.630 -> checking disconnected?
+23:47:08.665 -> red heating OFF!! red temp 286
+23:47:08.665 -> brown heating offff! 229
+23:47:08.699 -> Disable all heaters 
+23:47:08.699 -> checking disconnected?
+23:47:08.699 -> red heating OFF!! red temp 286
+23:47:08.733 -> brown heating offff! 229
+23:47:08.733 -> Disable all heaters 
+23:47:08.767 -> checking disconnected?
+23:47:08.767 -> red heating OFF!! red temp 286
+23:47:08.767 -> brown heating offff! 229
+23:47:08.802 -> Disable all heaters 
+23:47:08.802 -> checking disconnected?
+23:47:08.835 -> red heating OFF!! red temp 286
+23:47:08.835 -> brown heating offff! 229
+23:47:08.835 -> Disable all heaters 
+23:47:08.868 -> checking disconnected?
+23:47:08.868 -> red heating OFF!! red temp 286
+23:47:08.902 -> brown heating offff! 229
+23:47:08.902 -> Disable all heaters 
+23:47:08.902 -> checking disconnected?
+23:47:08.936 -> red heating OFF!! red temp 286
+23:47:08.936 -> brown heating offff! 229
+23:47:08.971 -> Disable all heaters 
+23:47:08.971 -> checking disconnected?
+23:47:08.971 -> red heating OFF!! red temp 286
+23:47:09.004 -> brown heating offff! 229
+23:47:09.004 -> Disable all heaters 
+23:47:09.038 -> checking disconnected?
+23:47:09.038 -> red heating OFF!! red temp 286
+23:47:09.072 -> brown heating offff! 229
+23:47:09.072 -> Disable all heaters 
+23:47:09.072 -> checking disconnected?
+23:47:09.107 -> red heating OFF!! red temp 286
+23:47:09.107 -> brown heating offff! 229
+23:47:09.140 -> Disable all heaters 
+23:47:09.140 -> checking disconnected?
+23:47:09.140 -> red heating OFF!! red temp 286
+23:47:09.174 -> brown heating offff! 229
+23:47:09.174 -> Disable all heaters 
+23:47:09.174 -> checking disconnected?
+23:47:09.174 -> red heating OFF!! red temp 286
+23:47:09.208 -> brown heating offff! 229
+23:47:09.208 -> Disable all heaters 
+23:47:09.242 -> checking disconnected?
+23:47:09.242 -> red heating OFF!! red temp 286
+23:47:09.275 -> brown heating offff! 229
+23:47:09.275 -> Disable all heaters 
+23:47:09.275 -> checking disconnected?
+23:47:09.308 -> red heating OFF!! red temp 286
+23:47:09.308 -> brown heating offff! 229
+23:47:09.341 -> Disable all heaters 
+23:47:09.341 -> checking disconnected?
+23:47:09.341 -> red heating OFF!! red temp 286
+23:47:09.376 -> brown heating offff! 229
+23:47:09.376 -> Disable all heaters 
+23:47:09.410 -> checking disconnected?
+23:47:09.410 -> red heating OFF!! red temp 286
+23:47:09.410 -> brown heating offff! 229
+23:47:09.445 -> Disable all heaters 
+23:47:09.445 -> checking disconnected?
+23:47:09.478 -> red heating OFF!! red temp 286
+23:47:09.478 -> brown heating offff! 229
+23:47:09.478 -> Disable all heaters 
+23:47:09.512 -> checking disconnected?
+23:47:09.512 -> red heating OFF!! red temp 286
+23:47:09.549 -> brown heating offff! 229
+23:47:09.549 -> Disable all heaters 
+23:47:09.549 -> checking disconnected?
+23:47:09.582 -> Disable all heaters 
+23:47:09.582 -> red heating OFF!! red temp 286
+23:47:09.615 -> brown heating offff! 229
+23:47:09.615 -> Disable all heaters 
+23:47:09.615 -> checking disconnected?
+23:47:09.649 -> red heating OFF!! red temp 286
+23:47:09.649 -> brown heating offff! 229
+23:47:09.683 -> Disable all heaters 
+23:47:09.683 -> checking disconnected?
+23:47:09.683 -> red heating OFF!! red temp 286
+23:47:09.717 -> brown heating offff! 229
+23:47:09.717 -> Disable all heaters 
+23:47:09.750 -> checking disconnected?
+23:47:09.750 -> red heating OFF!! red temp 286
+23:47:09.750 -> brown heating offff! 229
+23:47:09.783 -> Disable all heaters 
+23:47:09.783 -> checking disconnected?
+23:47:09.816 -> red heating OFF!! red temp 286
+23:47:09.816 -> brown heating offff! 229
+23:47:09.849 -> Disable all heaters 
+23:47:09.849 -> checking disconnected?
+23:47:09.849 -> red heating OFF!! red temp 286
+23:47:09.884 -> brown heating offff! 229
+23:47:09.884 -> Disable all heaters 
+23:47:09.884 -> checking disconnected?
+23:47:09.917 -> red heating OFF!! red temp 286
+23:47:09.917 -> brown heating offff! 229
+23:47:09.951 -> Disable all heaters 
+23:47:09.951 -> checking disconnected?
+23:47:09.951 -> red heating OFF!! red temp 286
+23:47:09.986 -> brown heating offff! 229
+23:47:09.986 -> Disable all heaters 
+23:47:10.019 -> checking disconnected?
+23:47:10.019 -> red heating OFF!! red temp 286
+23:47:10.052 -> brown heating offff! 229
+23:47:10.052 -> Disable all heaters 
+23:47:10.052 -> checking disconnected?
+23:47:10.086 -> red heating OFF!! red temp 286
+23:47:10.086 -> brown heating offff! 229
+23:47:10.119 -> Disable all heaters 
+23:47:10.119 -> checking disconnected?
+23:47:10.119 -> red heating OFF!! red temp 286
+23:47:10.153 -> brown heating offff! 229
+23:47:10.153 -> Disable all heaters 
+23:47:10.186 -> checking disconnected?
+23:47:10.186 -> red heating OFF!! red temp 286
+23:47:10.186 -> brown heating offff! 229
+23:47:10.219 -> Disable all heaters 
+23:47:10.219 -> checking disconnected?
+23:47:10.253 -> red heating OFF!! red temp 286
+23:47:10.253 -> brown heating offff! 229
+23:47:10.286 -> Disable all heaters 
+23:47:10.286 -> checking disconnected?
+23:47:10.286 -> red heating OFF!! red temp 286
+23:47:10.321 -> brown heating offff! 229
+23:47:10.321 -> Disable all heaters 
+23:47:10.321 -> checking disconnected?
+23:47:10.354 -> red heating OFF!! red temp 286
+23:47:10.354 -> brown heating offff! 229
+23:47:10.387 -> Disable all heaters 
+23:47:10.387 -> checking disconnected?
+23:47:10.387 -> red heating OFF!! red temp 286
+23:47:10.421 -> brown heating offff! 229
+23:47:10.421 -> Disable all heaters 
+23:47:10.421 -> checking disconnec

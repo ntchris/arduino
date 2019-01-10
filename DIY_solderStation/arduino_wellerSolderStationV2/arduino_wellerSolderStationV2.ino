@@ -49,13 +49,13 @@ const float OpampGain = OpampGainPurple;
 const int TCuVPerC = 12;  //41uV per C  thermal couple type K.
 
 const int MIN_TARGET_TEMP = 35;
-const int Default_Target_Temp = 220;
+const int Default_Target_Temp = 50;
 
 // adjust the reading to make two heating element about the same temperature
 const int DeltaAnalogReadIntDeltaForPurple = 0;
 const int DeltaAnalogReadIntDeltaForBlack = 0;
 const int DeltaTempForPurple = 0;
-const int DeltaTempForBrown = 0;
+const int DeltaTempForBrown = 13;
 //===============================================================================
 // ****************  For display TM1637 and seven segment digitube  *****************
 const int InstallDigits = 3;
@@ -97,6 +97,8 @@ SuperRotaryEncoder rotEncoder(RotaryPinA, RotaryPinB);
 class WellerSolderControllerStatus
 {
    public:
+      bool isHeaterRedEnabled;
+      bool isHeaterBrownEnabled;
       int purpleInt;
       int redTemp;
 
@@ -134,7 +136,7 @@ int getAnalogAvgReadingInt(int analogReadPin, int avgCount)
    for (i = 0; i < avgCount; i++)
    {
       opampValInt += analogRead(analogReadPin);
-      delayMicroseconds(600);
+      delayMicroseconds(700);
    }
    opampValInt = opampValInt / avgCount;
    return opampValInt;
@@ -165,23 +167,57 @@ void displayInit()
    myTM1637.display("S.t.b.");
 }
 
-void enableHeater(int heaterpin)
+
+void enableHeaterRed()
 {
+   myWellerSolderController.isHeaterRedEnabled = true;
+   digitalWrite(HeaterEnableRed, HIGH);
+
+}
+
+
+void enableHeaterBrown()
+{
+   myWellerSolderController.isHeaterBrownEnabled = true;
+   digitalWrite(HeaterEnableBrown, HIGH);
+
+}
+
+
+void disableHeaterRed()
+{
+   private_disableHeater(HeaterEnableRed);
+   myWellerSolderController.isHeaterRedEnabled = false;
+
+}
+
+
+void disableHeaterBrown()
+{
+   private_disableHeater(HeaterEnableBrown);
+   myWellerSolderController.isHeaterBrownEnabled = false;
+
+}
+
+
+void private_enableHeater(int heaterpin)
+{
+
    digitalWrite(heaterpin, HIGH);
 
 }
 
-void disableHeater(int heaterpin)
+void private_disableHeater(int heaterpin)
 {
+
    digitalWrite(heaterpin, LOW);
 }
 
 void disableAllHeaters()
 {
    Serial.println("Disable all heaters " );
-
-   disableHeater(HeaterEnableBrown);
-   disableHeater(HeaterEnableRed);
+   disableHeaterRed();
+   disableHeaterBrown();
 
 }
 
@@ -270,9 +306,11 @@ void setup()
 
 int getPurpleOpAmpOutputInt()
 {
-   disableHeater(HeaterEnableRed);
-   delay(4);
-   int purpleInt = getAnalogAvgReadingInt(OpampOutput1ForPurplePin, 3);
+   if (myWellerSolderController.isHeaterRedEnabled )
+   {  disableHeaterRed( );
+      delay(4);
+   }
+   int purpleInt = getAnalogAvgReadingInt(OpampOutput1ForPurplePin, 4);
    //Serial.println( "purpleInt before:"+String(purpleInt));
    purpleInt = purpleInt + DeltaAnalogReadIntDeltaForPurple;
    //Serial.println( "purpleInt after:"+String(purpleInt));
@@ -281,9 +319,13 @@ int getPurpleOpAmpOutputInt()
 
 int getBlackOpAmpOutputInt()
 {
-   disableHeater(HeaterEnableBrown);
-   delay(4);
-   int blackInt = getAnalogAvgReadingInt(OpampOutput2ForBlackPin, 3);
+   if (myWellerSolderController.isHeaterBrownEnabled)
+   {
+      disableHeaterBrown( );
+
+      delay(4);
+   }
+   int blackInt = getAnalogAvgReadingInt(OpampOutput2ForBlackPin, 4);
    blackInt = blackInt + DeltaAnalogReadIntDeltaForBlack;
    //Serial.println( "blackInt after:"+String(blackInt));
 
@@ -388,9 +430,9 @@ void refreshDisplayFlashing(int digit)
 
 }
 
-bool checkButton()
+bool checkButton( )
 {
-   static bool toggle = false;
+   static bool toggle = true;
    static int oldState = HIGH;
 
    int state = digitalRead(RotaryButtonPin);
@@ -413,7 +455,7 @@ bool checkButton()
 
 bool checkIsDisconnected()
 {
-   Serial.println("checking disconnected?");
+   //Serial.println("checking disconnected?");
    if (!myWellerSolderController.isPurpleConnected
          && !myWellerSolderController.isBlackConnected)
    {
@@ -441,7 +483,7 @@ void updateHeaterRedTemp()
       myWellerSolderController.redTemp = getOpampOutputIntToTemperature(
                                             myWellerSolderController.purpleInt) + DeltaTempForPurple;
    }
-   Serial.println("redTemp " + String(myWellerSolderController.redTemp ));
+   Serial.println("update, checking redTemp " + String(myWellerSolderController.redTemp ));
 
 }
 
@@ -455,42 +497,37 @@ void updateHeaterBrownTemp()
    {
       myWellerSolderController.brownTemp = getOpampOutputIntToTemperature(myWellerSolderController.blackInt) + DeltaTempForBrown;
    }
-   Serial.println("brownTemp " + String(myWellerSolderController.brownTemp  ));
+   Serial.println("update checking brownTemp " + String(myWellerSolderController.brownTemp  ));
 
 }
 
 
 void loop()
 {
-   const int CheckTempMax = 20; // 100   10.348--> 11.068  ;  50  45.8 --> 46.4
+   const int CheckTempMax = 10; // 100   10.348--> 11.068  ;  50  45.8 --> 46.4
 
    static unsigned int redCheckCounter = CheckTempMax;
    static unsigned int brownCheckCounter = CheckTempMax;
 
    static bool shouldTurnOff = true; // for rotary button
 
-   if (  checkButton())
-   {
-      shouldTurnOff = ! shouldTurnOff ;
+   // only check button when it's connected
+   // so , when disconnected, pressing button doesn't change the button state
+   if (myWellerSolderController.isConnected)
+   {  shouldTurnOff = checkButton();
    }
 
    Serial.println("should turn off  " + String(shouldTurnOff ));
+   //myTM1637.display("OFF");
 
 
-
-   if ( shouldTurnOff)
-   {
-      disableAllHeaters();
-      myTM1637.display("OFF");
-      return;
-   }
 
    static bool checkRedTemperature = true;
 
    int targetTemp = getTargetTemperature(); //from rotary encoder
 
    // put your main code here, to run repeatedly:
-
+   Serial.println("redCheckCounter " + String(redCheckCounter));
    if ( redCheckCounter <= 0 )
    {
       redCheckCounter =  CheckTempMax;
@@ -513,8 +550,8 @@ void loop()
    }
 
    myWellerSolderController.isConnected = checkIsDisconnected();
-
-   if (myWellerSolderController.isConnected)
+   // check if pen on rest ?
+   if (myWellerSolderController.isConnected  )
    {
       const int CheckOnRest = 20;
 
@@ -528,41 +565,59 @@ void loop()
          myWellerSolderController.isOnRest = isPenPutOnRest();
          if (myWellerSolderController.isOnRest)
          {
+            shouldTurnOff = true; // the same as button is pressed
             //already disbled ??
             disableAllHeaters();
             myTM1637.display("OFF");
+
             return;
          }
       }
    }
-   else
-   {
+   else {
       myTM1637.display("dsc");
       return;
    }
 
-   if (!shouldTurnOff && myWellerSolderController.isConnected
+   if ( shouldTurnOff && myWellerSolderController.isConnected   )
+   {
+      disableAllHeaters();
+      myTM1637.display("OFF");
+
+   } else
+   {
+      Serial.println("should NOT turn OFF!!");
+   }
+
+   if ( myWellerSolderController.isConnected
          && !myWellerSolderController.isOnRest)
    {
       bool is_too_high_red;
+      Serial.println(" red temp " + String(myWellerSolderController.redTemp) );
+      Serial.println(" brown temp " + String(myWellerSolderController.brownTemp) );
 
       //  ==================   check Red   ===================
 
-      is_too_high_red = myWellerSolderController.redTemp > targetTemp;
-      if (is_too_high_red)
+      int delta =  myWellerSolderController.redTemp - targetTemp;
+      if (delta>0)
       {
          // turning off
          // but should have been disabled at this point in the get temp function
-         Serial.println("red heating OFF!! red temp " + String(myWellerSolderController.redTemp) );
-         disableHeater(HeaterEnableRed);
-         redCheckCounter = CheckTempMax / 2;
+         Serial.println("too high, red heating OFF!!");
+         disableHeaterRed( );
+         if (!shouldTurnOff )
+         {  redCheckCounter = CheckTempMax  ;
+         }
       }
       else
       {
-         // not too high, still need heating , turn on heater
-         Serial.println("red heating on!!! red temp " + String(myWellerSolderController.redTemp) );
-         enableHeater(HeaterEnableRed);
-
+         if ( !shouldTurnOff )
+         {
+          redCheckCounter = delta  CheckTempMax;
+            // not too high, still need heating , turn on heater
+            Serial.println("heating, red heating ON!!");
+            enableHeaterRed( );
+         }
       }
 
       //  ==================   check brown   ===================
@@ -573,41 +628,45 @@ void loop()
       {
          // turning off
          // but should have been disabled at this point in the get temp function
-         Serial.println("brown heating offff! " + String(myWellerSolderController.brownTemp));
-         disableHeater(HeaterEnableBrown);
-         brownCheckCounter = CheckTempMax / 2;
-
+         Serial.println("too high, brown heating offff! " );
+         disableHeaterBrown();
+         if (!shouldTurnOff )
+         {  brownCheckCounter = CheckTempMax  ;
+         }
       }
       else
       {
          // not too high, still need heating , turn on heater
-         Serial.println("brown heating on! brown temp " + String(myWellerSolderController.brownTemp));
-         enableHeater(HeaterEnableBrown);
+         if ( !shouldTurnOff )
+         {  Serial.println("brown heating on! brown temp "  );
+            enableHeaterBrown(  );
+         }
+
       }
 
-      if (is_too_high_red && is_too_high_brown)
-      {
-         // both temperature is good now.
-         myTM1637.display(String(targetTemp));
-      }
-      else
-      {
-         //still heating , show flashing point
-         //Serial.println("flashing!");
-         int displayTemp;
-         if (myWellerSolderController.redTemp < myWellerSolderController.brownTemp)
+      if (!shouldTurnOff)
+      {  if (is_too_high_red && is_too_high_brown)
          {
-            displayTemp =  myWellerSolderController.redTemp;
+            // both temperature is good now.
+            myTM1637.display(String(targetTemp));
          }
          else
          {
-            displayTemp = myWellerSolderController.brownTemp;
+            //still heating , show flashing point
+            //Serial.println("flashing!");
+            int displayTemp;
+            if (myWellerSolderController.redTemp < myWellerSolderController.brownTemp)
+            {
+               displayTemp =  myWellerSolderController.redTemp;
+            }
+            else
+            {
+               displayTemp = myWellerSolderController.brownTemp;
+            }
+            refreshDisplayFlashing(targetTemp);
+
          }
-         //refreshDisplayFlashing(displayTemp);
-         refreshDisplayFlashing( targetTemp);
-
       }
-
    }
 
    //delay(1);
