@@ -49,13 +49,13 @@ const float OpampGain = OpampGainPurple;
 const int TCuVPerC = 12;  //41uV per C  thermal couple type K.
 
 const int MIN_TARGET_TEMP = 40;
-const int Default_Target_Temp = 80;
+const int Default_Target_Temp = 200;
 
 // adjust the reading to make two heating element about the same temperature
 const int DeltaAnalogReadIntDeltaForPurple = 0;
 const int DeltaAnalogReadIntDeltaForBlack = 0;
 const int DeltaTempForPurple = 0;
-const int DeltaTempForBrown = 13;
+const int DeltaTempForBrown = 0;
 //===============================================================================
 // ****************  For display TM1637 and seven segment digitube  *****************
 const int InstallDigits = 3;
@@ -186,6 +186,8 @@ void enableHeaterBrown()
 
 void disableHeaterRed()
 {
+   Serial.println("Disable RED heaters " );
+
    private_disableHeater(HeaterEnableRed);
    myWellerSolderController.isHeaterRedEnabled = false;
 
@@ -194,6 +196,7 @@ void disableHeaterRed()
 
 void disableHeaterBrown()
 {
+  Serial.println("Disable BROWN heaters " );
    private_disableHeater(HeaterEnableBrown);
    myWellerSolderController.isHeaterBrownEnabled = false;
 
@@ -308,7 +311,7 @@ int getPurpleOpAmpOutputInt()
 {
    if (myWellerSolderController.isHeaterRedEnabled )
    {  disableHeaterRed( );
-      delay(4);
+      delay(6);
    }
    int purpleInt = getAnalogAvgReadingInt(OpampOutput1ForPurplePin, 3);
    //Serial.println( "purpleInt before:"+String(purpleInt));
@@ -323,7 +326,7 @@ int getBlackOpAmpOutputInt()
    {
       disableHeaterBrown( );
 
-      delay(4);
+      delay(6);
    }
    int blackInt = getAnalogAvgReadingInt(OpampOutput2ForBlackPin, 3);
    blackInt = blackInt + DeltaAnalogReadIntDeltaForBlack;
@@ -456,16 +459,16 @@ bool checkButton( )
 bool checkIsDisconnected()
 {
 
-   if (!myWellerSolderController.isPurpleConnected
-         && !myWellerSolderController.isBlackConnected)
+   if ( myWellerSolderController.isPurpleConnected
+         ||  myWellerSolderController.isBlackConnected)
    {
-
-      return false;
+      Serial.println("is connected");
+      return true;
    }
    else
    {
-      Serial.println("is connected ");
-      return true;
+      Serial.println("not connected ");
+      return false;
    }
 
 
@@ -519,7 +522,7 @@ void updateHeaterBrownTemp()
 void loop()
 {
    const int CheckTempMax = 10; // 100   10.348--> 11.068  ;  50  45.8 --> 46.4
-   const int loopUnit = 3;
+   const int loopUnit = 4;
    static unsigned int redCheckCounter = CheckTempMax;
    static unsigned int brownCheckCounter = CheckTempMax;
 
@@ -542,7 +545,7 @@ void loop()
    if ( redCheckCounter <= 0 )
    {
       updateHeaterRedTemp();
-      if (myWellerSolderController.isPurpleConnected )
+      if (myWellerSolderController.isConnected )
       {
          //  ==================   check Red   ===================
 
@@ -577,7 +580,7 @@ void loop()
    {
       updateHeaterBrownTemp();
 
-      if (myWellerSolderController.isBlackConnected)
+      if (myWellerSolderController.isConnected)
       {
          //  ==================   check brown   ===================
 
@@ -626,7 +629,7 @@ void loop()
    // check if pen on rest ?
    if (myWellerSolderController.isConnected  )
    {
-      const int CheckOnRest = 120;
+      const int CheckOnRest = 220;
 
       static int checkOnRestCounter = 0;
       checkOnRestCounter++;

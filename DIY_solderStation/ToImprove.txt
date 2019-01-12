@@ -2,6 +2,8 @@
 2. should use interrupt to read rotary
 3. add safty check, at least 1 second should check temp and turn off heater if over heat
 4. detect 12V volt, if not, do not power on heater (Don't use USB 5V to power on heater)
+5. detect 12V Volt, show indicator....if not , some LED is not ON.
+
 
 
 
