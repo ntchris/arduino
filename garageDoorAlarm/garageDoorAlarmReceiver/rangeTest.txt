@@ -1,0 +1,29 @@
+
+sender in         antena                     db
+garage             roll upward       -42 to -45 dbfs snr   16 -17db
+garage             roll forward       -47 to -49 dbfs snr   13 -14db
+
+  best:
+garage             straight upward       -41 to -42 dbfs snr   15 -17db
+
+
+kitchen            straight upward        -34 to -36     21db
+
+
+
+
+
+-29 -30dbfs
+snr 26 27 28db
+
+cut 
+-29 -30
+snr 27 - 29 db
+
+cut
+-29  -33
+snr 27 - 30db
+
+
+long -25dbfs
+29--31db
