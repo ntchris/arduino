@@ -1,16 +1,31 @@
 #include "superRotaryEncoder.hpp"
 
 
-static int SuperRotaryEncoder::_rotaryEncoderA,  SuperRotaryEncoder::_rotaryEncoderB;
-static bool SuperRotaryEncoder::debug = true;
-static int SuperRotaryEncoder::encoderValue = 100;
+//int SuperRotaryEncoder::_rotaryEncoderPinA,  SuperRotaryEncoder::_rotaryEncoderPinB;
+bool SuperRotaryEncoder::debug = false;
+SuperRotaryEncoder *SuperRotaryEncoder::encoderInstance = NULL;
 
-ISR (PCINT0_vect) // handle pin change interrupt for D8 to D13 here
+//int SuperRotaryEncoder::encoderValue = 100;
+//int SuperRotaryEncoder::valueA = HIGH, SuperRotaryEncoder::valueB = HIGH;
+
+
+ISR(PCINT0_vect) // handle pin change interrupt for D8 to D13 here
 {
-  //digitalWrite(13,digitalRead(8) and digitalRead(9));
-  SuperRotaryEncoder::processEncoderInterrupt();
-  //Serial.println("!!!");
+
+  //SuperRotaryEncoder::processEncoderInterrupt();
+  SuperRotaryEncoder::staticEncoderInterrupt();
 }
+
+
+ISR (PCINT1_vect)
+{
+  // handle pin change interrupt for A0 to A5 here
+}  // end of PCINT1_vect
+
+ISR (PCINT2_vect)
+{
+  // handle pin change interrupt for D0 to D7 here
+}  // end of PCINT2_vect
 
 void pciSetup(byte pin)
 {
@@ -20,6 +35,20 @@ void pciSetup(byte pin)
 }
 
 
+void SuperRotaryEncoder::staticEncoderInterrupt()
+{
+  if ( encoderInstance )
+  {
+    encoderInstance->processEncoderInterrupt();
+  } else
+  {
+    if (debug)
+    {
+      Serial.println("null pointer encoder no instance");
+    }
+  }
+}
+
 int SuperRotaryEncoder::getValue()
 {
   return encoderValue;
@@ -27,16 +56,30 @@ int SuperRotaryEncoder::getValue()
 
 SuperRotaryEncoder::SuperRotaryEncoder(int pinA, int pinB)
 {
-  _rotaryEncoderA = pinA;
-  _rotaryEncoderB = pinB;
+  _rotaryEncoderPinA = pinA;
+  _rotaryEncoderPinB = pinB;
   pinMode(pinA, INPUT_PULLUP);
   pinMode(pinB, INPUT_PULLUP);
+  encoderValue = 100;
+  encStep = 1;
 
+  //setup interrupt
   pciSetup(pinA);
-  // only necessary to active pin A interrupt ??!
-  //pciSetup(pinB);
+
+  encoderInstance = this;
+  // pciSetup(pinB);  B interrupt is NOT needed.
 }
 
+
+void SuperRotaryEncoder::setEncoderValue(int value)
+{
+  encoderValue = value;
+}
+
+void SuperRotaryEncoder::setEncoderStep(int encstep)
+{
+  encStep = encstep;
+}
 unsigned long SuperRotaryEncoder::getTimeStamp()
 {
   unsigned long  ts = micros();
@@ -73,8 +116,8 @@ bool SuperRotaryEncoder::checkIfDebouncePass(int valueA, int valueB)
 
   // debounce 100 OK
   sleepMicroSec(80);
-  int valueADeb = digitalRead( _rotaryEncoderA );
-  int valueBDeb = digitalRead( _rotaryEncoderB );
+  int valueADeb = digitalRead( _rotaryEncoderPinA );
+  int valueBDeb = digitalRead( _rotaryEncoderPinB );
   if (  valueADeb == valueA && valueBDeb == valueB )
   {
     //Serial.println("pass debounce");
@@ -95,39 +138,22 @@ void SuperRotaryEncoder::processEncoderInterrupt()
 {
   //store the valueA B from last time
 
-  int valueA = LOW;
-  int valueB = LOW;
   static int lastValueA = LOW;
   static int lastValueB = LOW;
   static int dir = 0; // >0 : Right,   <0 : Left
-  valueA = digitalRead( _rotaryEncoderA );
-  valueB = digitalRead( _rotaryEncoderB );
+  int valueA = digitalRead( _rotaryEncoderPinA );
+  int valueB = digitalRead( _rotaryEncoderPinB );
 
-  bool pass = checkIfDebouncePass(valueA, valueB);
-  if (!pass)
-  {
+  /*bool pass = checkIfDebouncePass(valueA, valueB);
+    if (!pass)
+    {
     //fail debounce check
     return;
-  }
-  /*
-    if (valueA == lastValueA)
-    {
-    if (SuperRotaryEncoder::debug)
-    {
-      Serial.print("valueA ");
-      Serial.println(valueA);
-      Serial.println("thisA == lastA");
-      Serial.print("thisB ");
-      Serial.println(valueB);
-      Serial.print("lastB ");
-      Serial.println(lastValueB);
     }
-    //why are we here ?
-    // only assummmeee this is rising
-
-    return;
-    }
+    to debounce, add capacitor from pin A to Gnd, and from pin B to Gnd
+    value from 20nf to 60nf should work well.
   */
+
   if (lastValueA == LOW && valueA == HIGH )
   {
     //A is rising
@@ -136,64 +162,80 @@ void SuperRotaryEncoder::processEncoderInterrupt()
       Serial.println("A rising");
     }
 
-    if (lastValueB == HIGH && valueB == HIGH)
+    if (lastValueB == HIGH )
     {
-      Serial.println("dir++");
+      if (debug) {
+        Serial.println("dir++");
+      }
       dir++;
     }
-    else if (lastValueB == LOW && valueB == LOW)
+    else if (lastValueB == LOW )
     {
-      Serial.println("dir--");
+      if (debug) {
+        Serial.println("dir--");
+      }
       // ==================== check for left =======================
       dir--;
-    } else if (valueB == HIGH)
-    {
-      Serial.println("dir++");
-      dir++;
-
-      /*Serial.print("lastB ");
-        Serial.print(lastValueB);
-        Serial.print(" B ");
-        Serial.println(valueB);
-      */
-
     }
+
   } else if (lastValueA == HIGH && valueA == LOW )
   { // A is falling
-    Serial.println("A falling");
-    if ( valueB == LOW)
+    if (debug) {
+      Serial.println("A falling");
+    }
+    if ( valueB == HIGH )
     {
-      Serial.println("dir++");
+      if (debug) {
+        Serial.println("dir++");
+      }
 
       dir++;
-    } else
+    } else if ( valueB == LOW )
     {
-      Serial.println("dir--");
+      if (debug) {
+        Serial.println("dir--");
+      }
       dir--;
     }
-  } else if (lastValueA == HIGH && valueA == HIGH)
+  } else
   {
+    if (debug)
+    { Serial.print("Interrupt but A no change???");
+      Serial.print("lastA ");
+      Serial.print(lastValueA);
+      Serial.print(" A ");
+      Serial.println(valueA);
+    }
+  }
+  /*else if (lastValueB == LOW && valueA == HIGH)
+    {
+    // B is rising
     if (SuperRotaryEncoder::debug)
     {
       Serial.println("what to do for A H H?");
     }
-  } else if (lastValueA == LOW && valueA == LOW)
-  {
+    } else if (lastValueB == HIGH && valueB == LOW)
+    {
+    // B is falling
     if (SuperRotaryEncoder::debug)
     {
       Serial.println("what to do for A L L?");
     }
-  }
+    }*/
 
   if (dir >= 2)
   {
-    Serial.println("++ and set lastDir is 0");
-    encoderValue ++;
+    if (debug) {
+      Serial.println("++ and set lastDir is 0");
+    }
+    encoderValue +=encStep;
     dir = 0;
   } else if (dir <= -2)
   {
-    Serial.println("-- and set lastDir is 0");
-    encoderValue --;
+    if (debug) {
+      Serial.println("-- and set lastDir is 0");
+    }
+    encoderValue -=encStep;
     dir = 0;
   }
   lastValueA = valueA;
@@ -419,8 +461,8 @@ void SuperRotaryEncoder::processEncoderInterrupt()
 
 void SuperRotaryEncoder::displayValues()
 {
-  int valueA = digitalRead( _rotaryEncoderA   );
-  int valueB = digitalRead( _rotaryEncoderB   );
+  int valueA = digitalRead( _rotaryEncoderPinA   );
+  int valueB = digitalRead( _rotaryEncoderPinB   );
 
   if ((valueA == HIGH) && (valueB == HIGH))
   {

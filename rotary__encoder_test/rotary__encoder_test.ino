@@ -4,13 +4,11 @@
 
 // built in LED
 const int LedPin = 13;
-const int RotaryEncoderA = 10;
-const int RotaryEncoderB = 11;
+const int RotaryEncoderA = 11;
+const int RotaryEncoderB = 10;
 const int RotaryEncoderPush = 12;
 
 SuperRotaryEncoder rotEncoder(RotaryEncoderA, RotaryEncoderB);
-
-
 // Connect pin C to GND
 // HOW to determine which PIN is A, which is B, but it deosn't really matter.
 // Using  displayValues() function, check serial output window
@@ -18,7 +16,7 @@ SuperRotaryEncoder rotEncoder(RotaryEncoderA, RotaryEncoderB);
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.print("Setup \n");
 
   pinMode(LedPin, OUTPUT);
@@ -26,9 +24,11 @@ void setup() {
 
   //pinMode(RotaryEncoderA, INPUT_PULLUP);
   //pinMode(RotaryEncoderB, INPUT_PULLUP);
-
+  
   digitalWrite(LedPin, LOW);
   //rotEncoder.debug = true;
+  rotEncoder.setEncoderValue(150);
+  rotEncoder.setEncoderStep(2);
 }
 
 
@@ -284,38 +284,7 @@ int getEncoderValueAccel()
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 

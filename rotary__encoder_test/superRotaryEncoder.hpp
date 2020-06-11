@@ -13,28 +13,34 @@
 
 #include "Arduino.h"
 
-class SuperRotaryEncoder {
+
+class SuperRotaryEncoder{
+    static SuperRotaryEncoder *encoderInstance;
     static const int IntUnknown = 0, IntA = 1, IntPush = 2, DirUnknown = 0, DirRight = 1, DirLeft = 2;
 
-    static int encoderValue;
+    int encoderValue;
+    int encStep;
+    int valueA, valueB;
   public:
-    static int _rotaryEncoderA,  _rotaryEncoderB;
+    int _rotaryEncoderPinA,  _rotaryEncoderPinB;
     static bool debug;
+    static void staticEncoderInterrupt();
     SuperRotaryEncoder(int pinA, int pinB);
+    void setEncoderValue(int value);
+    void setEncoderStep(int encstep);
 
     static void sleepMicroSec(unsigned long microsec);
-    static bool checkIfDebouncePass(int a, int b);
+    bool checkIfDebouncePass(int a, int b);
 
 
     static unsigned long getTimeStamp();
 
     void displayValues();
 
-    static int getEncoderValueSumAccel();
-
-    static void processEncoderInterrupt();
+    void processEncoderInterrupt();
     int getValue();
     void selftest ();
+
 };
 
 
