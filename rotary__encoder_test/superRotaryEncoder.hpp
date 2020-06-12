@@ -1,5 +1,8 @@
 // arduino class /library for rotary encoder.
 // auther   ntchris@hotmail.com   Feb 2018
+//           using interrupt June 12 2020
+
+// To do: to use bigger step when rotate fast
 
 // pin definition: pinA: pinB:  rotary encoder pin A or pin B.
 // if swap A B , turn CW or CCW trigger ++ or --.

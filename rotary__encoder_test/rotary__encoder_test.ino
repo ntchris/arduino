@@ -10,9 +10,7 @@ const int RotaryEncoderPush = 12;
 
 static SuperRotaryEncoder rotEncoder(RotaryEncoderA, RotaryEncoderB, RotaryEncoderPush );
 // Connect pin C to GND
-// HOW to determine which PIN is A, which is B, but it deosn't really matter.
-// Using  displayValues() function, check serial output window
-// rotate left, the pin always first turn to 0 from 1, is A.  the other pin is B.
+
 
 void setup() {
   // put your setup code here, to run once:
