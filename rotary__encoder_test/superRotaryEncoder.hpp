@@ -3,10 +3,10 @@
 
 // pin definition: pinA: pinB:  rotary encoder pin A or pin B.
 // if swap A B , turn CW or CCW trigger ++ or --.
-// pinD , pin E  push button....so far this class doesn't handle the push button.
-// just a push button.
-// pin C and pin E connect GND
 
+// to easily handle debounce, add capacitor from pin A to Gnd, 
+// and from pin B to Gnd, pinButton to Gnd.
+//  value from 20nf to 100nf should work well.
 
 #ifndef SuperRotaryEncoder_h
 #define SuperRotaryEncoder_h
@@ -14,32 +14,37 @@
 #include "Arduino.h"
 
 
-class SuperRotaryEncoder{
+class SuperRotaryEncoder {
+    //static const ButtonHoldTimeSec 
     static SuperRotaryEncoder *encoderInstance;
-    static const int IntUnknown = 0, IntA = 1, IntPush = 2, DirUnknown = 0, DirRight = 1, DirLeft = 2;
 
-    int encoderValue;
+    volatile int encoderValue;
     int encStep;
     int valueA, valueB;
+    volatile int buttonStatus; // LOW: push down, HIGH: released
+    volatile int isButtonClicked;
   public:
-    int _rotaryEncoderPinA,  _rotaryEncoderPinB;
+    
+    int _rotaryEncoderPinA,  _rotaryEncoderPinB, _rotaryEncoderPinButton;
     static bool debug;
-    static void staticEncoderInterrupt();
-    SuperRotaryEncoder(int pinA, int pinB);
+
+    // for atmega328 3 PORTs, different pins use different port to trigger pin change interrupt
+    static void staticEncoderInterruptPortB();
+    static void staticEncoderInterruptPortC();
+    static void staticEncoderInterruptPortD();
+    
+    SuperRotaryEncoder(int pinA, int pinB, int pinPush);
     void setEncoderValue(int value);
     void setEncoderStep(int encstep);
 
     static void sleepMicroSec(unsigned long microsec);
     bool checkIfDebouncePass(int a, int b);
 
-
-    static unsigned long getTimeStamp();
-
-    void displayValues();
-
-    void processEncoderInterrupt();
+    void processEncoderInterrupt(int portValues);
+    
     int getValue();
-    void selftest ();
+    int getButtonStat();
+    int getButtonClicked();
 
 };
 
