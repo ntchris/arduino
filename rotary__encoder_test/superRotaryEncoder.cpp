@@ -98,7 +98,7 @@ void SuperRotaryEncoder::staticEncoderInterruptPortD()
   }
 }
 
-
+// constructor
 SuperRotaryEncoder::SuperRotaryEncoder(int pinA, int pinB, int pinButton)
 {
   _rotaryEncoderPinA = pinA;
@@ -109,6 +109,8 @@ SuperRotaryEncoder::SuperRotaryEncoder(int pinA, int pinB, int pinButton)
   pinMode(pinButton, INPUT_PULLUP);
   encoderValue = 100;
   encStep = 1;
+  // the default min and max value
+  minValue = 0, maxValue = 200;
   buttonStatus = HIGH;
 
   //setup interrupt
@@ -153,6 +155,17 @@ void SuperRotaryEncoder::setEncoderStep(int encstep)
   encStep = encstep;
 }
 
+void SuperRotaryEncoder::setMinMaxValue(int min, int max)
+{
+	if( min >= max)
+	{
+	   Serial.print("Error min >= max");	
+	}
+	
+	minValue = min;
+	maxValue = max;
+	
+}
 
 void SuperRotaryEncoder::processEncoderInterrupt(int portValues)
 {
@@ -259,13 +272,24 @@ void SuperRotaryEncoder::processEncoderInterrupt(int portValues)
       Serial.println("++ and set lastDir is 0");
     }
     encoderValue += encStep;
+	if( encoderValue > maxValue )
+	{
+		encoderValue = maxValue;
+	}
+
     dir = 0;
+	
   } else if (dir <= -2)
   {
     if (debug) {
       Serial.println("-- and set lastDir is 0");
     }
     encoderValue -= encStep;
+	if( encoderValue < minValue)
+	{
+		encoderValue = minValue;
+	}
+
     dir = 0;
   }
   lastValueA = valueA;
