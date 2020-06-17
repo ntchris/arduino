@@ -13,7 +13,7 @@
 #include "DiyWellerSolderStation.hpp"
 
 
-
+const bool debug = false;
 
 
 // ******************    Pin definition   ******************
@@ -118,15 +118,18 @@ void setup()
   Serial.println("Starting");
   solderStationInit();
 
+  myTM1637.display("OFF");
+
 }
 
 
 int getTargetTemperature()
 {
   int rotaryValue = rotEncoder.getValue();
-
-  Serial.println("targetTemperature: " + String(rotaryValue) );
-
+  if (  debug )
+  {
+    Serial.println("targetTemperature: " + String(rotaryValue) );
+  }
   return rotaryValue;
 }
 
@@ -161,15 +164,14 @@ void refreshDisplayFlashing(int digit)
 
 void loop()
 {
-  unsigned long lastStartTimeStampMilliSec = 0;
-  static unsigned long startTimeStamp = 0;
+  unsigned long startTimeStamp = 0;
   // store the last start time stamp
-  lastStartTimeStampMilliSec = startTimeStamp;
+
   startTimeStamp = millis();
 
-  Serial.println("one loop time ms:" + String(startTimeStamp - lastStartTimeStampMilliSec));
 
-  Serial.println("============ loop starts ===============");
+
+  //Serial.println("============ loop starts ===============");
 
   if (station.checkIsFatalError())
   {
@@ -185,19 +187,21 @@ void loop()
     Serial.println("button clicked");
 
     station.myWellerState.workStatus = !station.myWellerState.workStatus;
+
   }
 
   // solder station initial state is OFF
   if ( station.myWellerState.workStatus == WellerSolderControllerStatus::OFF)
   {
+    if ( debug )
+    {
     Serial.println("Station is OFF");
-
-    myTM1637.display("OFF");
+    }
+    // myTM1637.display("OFF");
     station.disableAllHeaters();
-  }else
+  } else
   {
-     Serial.println("Station is ON");
-
+    Serial.println("Station is ON");
   }
 
   static int targetTemp = 0;
@@ -208,37 +212,77 @@ void loop()
     // connected, not on rest
     //  station.enableHeaterRedPmw(1);
     if ( station.myWellerState.workStatus == WellerSolderControllerStatus::ON )
-    { myTM1637.display(String(newTargetTemp ));
+    {
+
       targetTempChanged = true;
       targetTemp = newTargetTemp;
     }
   }
 
   // should we process pwm yet ?
-  //const int tempCheckTimeMs = 1000.0/60.0;
-  //if( targetTempChanged &&  tempCheckTimeMs  )
-
   station.processWellerHandleTemp(targetTemp);
 
   if (station.myWellerState.isConnected )
   {
+    static int stateBeforeStandby  = WellerSolderControllerStatus::UnknownState;;
     // check if magnet on stand
     station.myWellerState.isOnRest = station.isPenPutOnRest();
     if (station.myWellerState.isOnRest )
     {
+      if ( stateBeforeStandby == WellerSolderControllerStatus::UnknownState)
+      {
+        Serial.println("saving old state: " + String(station.myWellerState.workStatus ));
+        stateBeforeStandby = station.myWellerState.workStatus;
+      }
       station.myWellerState.workStatus = WellerSolderControllerStatus::STANDBY;
       // deal with standby later
       station.myWellerState.workStatus == WellerSolderControllerStatus::OFF;
       station.disableAllHeaters();
 
-      myTM1637.display("S.T.Y");
+      myTM1637.display("S.b.y");
       return;
+    } else  // not on rest
+    { // restore the state before entering standby
+      Serial.println("connected");
+
+      if (stateBeforeStandby != WellerSolderControllerStatus::UnknownState)
+      {
+        Serial.println("restore old state: " + String(stateBeforeStandby));
+        station.myWellerState.workStatus = stateBeforeStandby;
+        stateBeforeStandby = WellerSolderControllerStatus::UnknownState;
+      }
     }
 
-  } // end off if ( station.myWellerState.workStatus == WellerSolderControllerStatus::OFF)
+  } else
+  { // handle is disconnected ??
+    //disconnect is always off
+    station.myWellerState.workStatus = WellerSolderControllerStatus::OFF;
+    myTM1637.display("DSC");
+    Serial.println("disconnected");
+    return;
+  } // end of if ( station.myWellerState.isConnected)
 
-
+  // update display
+  if (station.myWellerState.workStatus == WellerSolderControllerStatus::OFF )
+  {
+    myTM1637.display("OFF");
+  } else if (station.myWellerState.workStatus == WellerSolderControllerStatus::ON)
+  {
+    myTM1637.display(String(newTargetTemp ));
+  }
   //delay();
   //Serial.println("============ loop end ===============\n");
+
+
+
+  unsigned long endTimeStamp = millis();
+  unsigned long timeUsedMs = endTimeStamp - startTimeStamp ;
+  const int ShouldDelayms = 1000 / FreqHz;
+  long int delta = ShouldDelayms  - timeUsedMs;
+  if (delta > 0)
+  {
+    Serial.println("timeUsedMs: " + String(timeUsedMs) + " sleep for " + String(delta));
+    delay(delta);
+  }
 
 }

@@ -4,11 +4,9 @@
 
 //===============================================================================
 // https://github.com/mike-matera/FastPID
-const float Kp = 7.58, Ki = 0.050, Kd = 0.86, freqHz = 25;
-const bool Sign = false;
-const int Bits = 8;
-FastPID tempPidRed(Kp, Ki, Kd, freqHz, Bits, Sign);
-FastPID tempPidBrown(Kp, Ki, Kd, freqHz, Bits, Sign);
+
+FastPID tempPidRed(Kp, Ki, Kd, FreqHz, Bits, Sign);
+FastPID tempPidBrown(Kp, Ki, Kd, FreqHz, Bits, Sign);
 //===============================================================================
 
 
@@ -69,8 +67,10 @@ void DiyWellerSolderStation::disableHeater(int heaterEnablePin)
 
 void DiyWellerSolderStation::disableHeaterRed()
 {
-  Serial.println("Disable RED heaters " );
-
+  if (debug)
+  {
+    Serial.println("Disable RED heaters " );
+  }
   disableHeater(heaterRedEnablePin);
   //myWellerState.isHeaterRedEnabled = false;
 
@@ -79,7 +79,9 @@ void DiyWellerSolderStation::disableHeaterRed()
 
 void DiyWellerSolderStation::disableHeaterBrown()
 {
-  Serial.println("Disable BROWN heaters " );
+  if (debug)
+  { Serial.println("Disable BROWN heaters " );
+  }
   disableHeater(heaterBrownEnablePin);
   //myWellerState.isHeaterBrownEnabled = false;
 
@@ -95,12 +97,19 @@ bool DiyWellerSolderStation::checkIsHandleDisconnected()
   if ( myWellerState.isPurpleConnected
        ||  myWellerState.isBlackConnected)
   {
-    Serial.println("is connected");
+    if ( DiyWellerSolderStation:: debug )
+    {
+      Serial.println("is connected");
+    }
+
     return true;
   }
   else
   {
-    Serial.println("not connected ");
+    if ( DiyWellerSolderStation:: debug )
+    {
+      Serial.println("not connected ");
+    }
     return false;
   }
 }
@@ -114,10 +123,10 @@ int DiyWellerSolderStation::getAnalogAvgReadingInt(int analogReadPin, int avgCou
   for (i = 0; i < avgCount; i++)
   {
     int val;
-    delayMicroseconds(400);
+    delayMicroseconds(200);
 
     val = analogRead(analogReadPin);
-    Serial.println( val);
+    //Serial.println( val);
     opampValInt += val;
   }
   opampValInt = opampValInt / avgCount;
@@ -130,8 +139,10 @@ int DiyWellerSolderStation::getPurpleOpAmpOutputInt()
 
   int purpleInt =  getAnalogAvgReadingInt(purpleOpAmpReadPin);
 
-  Serial.println( "getPurpleOpAmpOutputInt: " + String(purpleInt) + " red temp");
-
+  if ( DiyWellerSolderStation:: debug )
+  {
+    Serial.println( "Red getPurpleOpAmpOutputInt(adjusted): " + String(purpleInt));
+  }
   return purpleInt;
 }
 
@@ -141,8 +152,12 @@ int DiyWellerSolderStation::getBlackOpAmpOutputInt()
   //const int ReadTcDelayMilliSec = 1;
 
   int blackInt = getAnalogAvgReadingInt(blackOpAmpReadPin );
-  Serial.println( "getBlackOpAmpOutputInt: " + String(blackInt) + " brown temp");
 
+
+  if ( DiyWellerSolderStation:: debug )
+  {
+    Serial.println( "Brown getBlackOpAmpOutputInt: " + String(blackInt));
+  }
   return blackInt;
 }
 
@@ -153,7 +168,7 @@ bool DiyWellerSolderStation::opampReadIntToIsConnected(int opampValInt)
 
   // Opamp reading if > this, meaning handle is disconnected.
   // ADC, if 5.0v then it's 1023
-  int NotConnectedVoltageInt = 999;
+  const int NotConnectedVoltageInt = 980;
   //if not connected, the opamp output is high 5.0V
   if (opampValInt >= NotConnectedVoltageInt)
   {
@@ -167,29 +182,37 @@ bool DiyWellerSolderStation::opampReadIntToIsConnected(int opampValInt)
 
 void DiyWellerSolderStation::updateHeaterRedTemp()
 {
-  // for some reason, red purple int adc is always higher ??
-  // use alcohol to wash all pcb and parts including the one inside handle
-  //const int RedIntAdjust = 22;
-  // stop heater inside:
-  myWellerState.purpleInt = getPurpleOpAmpOutputInt();
-  Serial.println("purpleInt " + String(myWellerState.purpleInt ));
-
-  //myWellerState.purpleInt = myWellerState.purpleInt - RedIntAdjust;
-
-  Serial.println("adjusted purpleInt " + String(myWellerState.purpleInt ));
+  int readInt = getPurpleOpAmpOutputInt();
 
   myWellerState.isPurpleConnected = opampReadIntToIsConnected(myWellerState.purpleInt);
 
   if (myWellerState.isPurpleConnected)
   {
+    // for some reason, red purple int adc is always higher ??
+    // use alcohol to wash all pcb and parts including the one inside handle
+    const int RedIntAdjust = 22;
+
+    myWellerState.purpleInt = readInt - RedIntAdjust;
+    if (myWellerState.purpleInt < 0)
+    {
+      myWellerState.purpleInt = 0;
+    }
+
     myWellerState.redTemp = getOpampOutputIntToTemperature(
                               myWellerState.purpleInt) ;
-    Serial.println("update, checking redTemp " + String(myWellerState.redTemp ));
-
+    if( DiyWellerSolderStation::debug )
+    {
+      Serial.println("red int: " + String(readInt) + "adjusted int: "+ String(myWellerState.purpleInt)
+      + " temp: " + String(myWellerState.redTemp ));
+    }
   } else
   {
-    //myWellerSolderController.redTemp = 0;
-    Serial.println("red Disconnected??? " + String(myWellerState.purpleInt ));
+    //myWellerSolderController.redTemp = 0; ??
+
+    if ( DiyWellerSolderStation:: debug )
+    {
+      Serial.println("red Disconnected??? " + String(myWellerState.purpleInt ));
+    }
   }
 
 }
@@ -204,14 +227,20 @@ void DiyWellerSolderStation::updateHeaterBrownTemp()
                                      myWellerState.blackInt);
   if (myWellerState.isBlackConnected)
   {
-    myWellerState.brownTemp = getOpampOutputIntToTemperature(myWellerState.blackInt)  ;
-    Serial.println("update checking brownTemp " + String(myWellerState.brownTemp  ));
-
+    myWellerState.brownTemp = getOpampOutputIntToTemperature(myWellerState.blackInt);
+    if( DiyWellerSolderStation::debug )
+    {
+      Serial.println("brownInt: "+ String(myWellerState.blackInt) + " brownTemp:" + String(myWellerState.brownTemp  ));
+    }
+    
   } else
   {
     // myWellerState.brownTemp = 0;
-    Serial.println("brown Disconnected??? " + String(myWellerState.blackInt  ));
 
+    if ( DiyWellerSolderStation:: debug )
+    {
+      Serial.println("brown Disconnected??? " + String(myWellerState.blackInt  ));
+    }
   }
 }
 
@@ -245,10 +274,16 @@ int DiyWellerSolderStation::getOpampOutputIntToTemperature(int analogReadingInt)
   //Serial.println("opAmp votage: " + String(adcVoltage));
 
   measured_temp = convertAdcIntToTemperature(analogReadingInt);
-  Serial.println("temp " + String(measured_temp ));
+  if ( DiyWellerSolderStation:: debug )
+  {
+    Serial.println("temp " + String(measured_temp ));
+  }
   int adjustedTemp = 0;
   adjustedTemp = measured_temp + getEnvTemperature();
-  Serial.println("tc + env temp " + String( adjustedTemp ));
+  if ( DiyWellerSolderStation:: debug )
+  {
+    Serial.println("tc + env temp " + String( adjustedTemp ));
+  }
   return adjustedTemp;
 }
 int DiyWellerSolderStation::getEnvTemperature()
@@ -262,22 +297,6 @@ bool DiyWellerSolderStation::checkIsFatalError()
 {
   return myWellerState.fatalError;
 }
-
-/*
-  void DiyWellerSolderStation::updateHandleState()
-  {
-
-
-
-  else
-  {
-    // not connected
-    myWellerState.workStatus = WellerSolderControllerStatus::OFF;
-    disableAllHeaters();
-  }
-
-  }
-*/
 
 bool DiyWellerSolderStation::isPenPutOnRest()
 {
@@ -295,7 +314,7 @@ bool DiyWellerSolderStation::isPenPutOnRest()
   int magnetReadInt = analogRead(magnetDetectPin);
   bool isOnRest = (magnetReadInt < MagnetDetectValue);
 
-  if ( WellerSolderControllerStatus:: debug )
+  if ( DiyWellerSolderStation:: debug )
   {
     float vol = adcIntToVoltage(magnetReadInt);
     Serial.println("magnet pin int: " + String(magnetReadInt) + " " + vol + " onRest:" + String(isOnRest));
@@ -353,7 +372,7 @@ bool DiyWellerSolderStation::selfTestConvertAdcIntToTemperature()
   {
     int adc = adcInt[i];
     int temp = convertAdcIntToTemperature(adc);
-    if ( WellerSolderControllerStatus::debug)
+    if ( DiyWellerSolderStation::debug)
     {
       Serial.println(String(adc) + " : " + String(temp));
 
@@ -365,7 +384,7 @@ bool DiyWellerSolderStation::selfTestConvertAdcIntToTemperature()
       myWellerState.fatalError  = true;
     }
   }
-  if ( WellerSolderControllerStatus::debug)
+  if ( DiyWellerSolderStation::debug)
   { if ( !myWellerState.fatalError )
     {
       Serial.println("adc to temperature lookup and search algorithm self test passed");
@@ -433,19 +452,27 @@ void DiyWellerSolderStation::processWellerHandleTemp(int targettemp)
   delay(ReadTcDelayMilliSec);
 
   int redTemp = getHeaterRedTemp();
-  Serial.println("targettemp: " + String(targettemp) + ", redTemp: " + String(redTemp));
+
   int brownTemp = getHeaterBrownTemp();
 
+  if ( DiyWellerSolderStation:: debug )
+  {
+    Serial.println("targettemp: " + String(targettemp) +
+                   ", redTemp: " + String(redTemp) + ", brown: " + String(brownTemp ) );
+  }
   myWellerState.isConnected = checkIsHandleDisconnected();
 
   if ( myWellerState.workStatus == WellerSolderControllerStatus::ON)
   {
     byte outputPwm = tempPidRed.step(targettemp, redTemp);
-    Serial.println("pwm: " + String(outputPwm));
+    if ( DiyWellerSolderStation:: debug )
+    {
+      Serial.println("pwm: " + String(outputPwm));
+    }
     setHeaterRedPmw(outputPwm);
     //enableHeaterRedPmw(1);
     outputPwm = tempPidBrown.step(targettemp, brownTemp);
-    //setHeaterBrownPmw(outputPwm);
+    setHeaterBrownPmw(outputPwm);
     //enableHeaterBrownPmw(1);
   }
 }

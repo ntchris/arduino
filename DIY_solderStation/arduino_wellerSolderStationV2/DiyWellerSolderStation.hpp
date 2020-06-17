@@ -18,6 +18,10 @@ const float OpampGain = OpAmpRopamp2A / OpAmpR2Purple + 1.0; // 515.63
 
 const byte ReadTcDelayMilliSec = 2;
 
+const float Kp = 7.58, Ki = 0.050, Kd = 0.86, FreqHz = 20;
+const bool Sign = false;
+const int Bits = 8;
+
 /*
   // copied from weller_driver_v0901.c  http://kair.us/projects/weller/index.html
   // AdcInt List for TC temp:
@@ -55,16 +59,15 @@ class WellerSolderControllerStatus
 {
 
   public:
-    static const bool debug = false;
 
-    static const byte OFF = 0, ON = 1, STANDBY = 2;
+    static const byte OFF = 0, ON = 1, STANDBY = 2, UnknownState=3;
 
   //  bool isHeaterRedEnabled;
   //  bool isHeaterBrownEnabled;
-    unsigned int purpleInt;
+    int purpleInt;
     int redTemp;
 
-    unsigned int blackInt;
+    int blackInt;
     int brownTemp;
 
     bool isPurpleConnected;
@@ -79,6 +82,8 @@ class WellerSolderControllerStatus
 
 class DiyWellerSolderStation
 {
+    static const bool debug = true;
+
     int heaterRedEnablePin = 0;
     int heaterBrownEnablePin = 0;
     // purple wire( heater red temp thermal couple wire) to oamp and to arduino
