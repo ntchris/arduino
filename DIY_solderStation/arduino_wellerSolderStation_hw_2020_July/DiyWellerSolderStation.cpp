@@ -51,6 +51,7 @@ void DiyWellerSolderStation::disableAllHeaters()
   // Serial.println("Disable all heaters " );
   DiyWellerSolderStation::disableHeaterRed();
   DiyWellerSolderStation::disableHeaterBrown();
+  
 
 }
 
@@ -72,6 +73,7 @@ void DiyWellerSolderStation::disableHeaterRed()
     Serial.println("Dis RED ht" );
   }
   disableHeater(heaterRedEnablePin);
+  myWellerState.redPwm = 0;
   //myWellerState.isHeaterRedEnabled = false;
 
 }
@@ -83,6 +85,7 @@ void DiyWellerSolderStation::disableHeaterBrown()
   { Serial.println("Dis BR ht" );
   }
   disableHeater(heaterBrownEnablePin);
+  myWellerState.brownPwm = 0;
   //myWellerState.isHeaterBrownEnabled = false;
 
 }
@@ -128,7 +131,7 @@ int DiyWellerSolderStation::getAnalogAvgReadingInt(int analogReadPin, int avgCou
     //Serial.println( val);
     opampValInt += val;
   }
-  opampValInt = opampValInt / avgCount;
+  opampValInt = round(opampValInt / (avgCount*1.0));
   return opampValInt;
 }
 
@@ -148,8 +151,6 @@ int DiyWellerSolderStation::getPurpleOpAmpOutputInt()
 
 int DiyWellerSolderStation::getBlackOpAmpOutputInt()
 {
-  //const int ReadTcDelayMilliSec = 1;
-
   int blackInt = getAnalogAvgReadingInt(blackOpAmpReadPin );
 
   if ( DiyWellerSolderStation:: debug )
@@ -222,7 +223,8 @@ int DiyWellerSolderStation::getHeaterBrownTemp()
 
 float DiyWellerSolderStation::adcIntToVoltage(int adcInt)
 {
-  float vol = VCC5 * adcInt / ADC1024;
+  float adcIntF = adcInt*1.0;
+  float vol = VCC5 * adcIntF / ADC1023;
   // Serial.println("my cal " + String(vol));
   /*
     const int  ADCMAPMAX1023 = 1023;
@@ -259,8 +261,8 @@ int DiyWellerSolderStation::getOpampOutputIntToTemperature(int analogReadingInt)
 int DiyWellerSolderStation::getEnvTemperature()
 {
   // maybe in feature, use KTY reading.
-  int envTemp = 18;
-  return envTemp;
+  //Serial.println("getEnvTemperature temp " + String(myWellerState.evnTemp ));
+  return myWellerState.evnTemp;
 }
 
 bool DiyWellerSolderStation::checkIsFatalError()
@@ -275,8 +277,8 @@ bool DiyWellerSolderStation::isPenPutOnRest()
   //  when on use, magnet connect to pull up 10K and with 2K then to ground, reading should be about
   //  5V(4.95) / (10K+2K) * 2K= 0.8V , adc int = 170, we use 165.
 
-  //station.disableAllHeaters();
-  //delayMicroseconds(500);
+  disableAllHeaters();
+  delay(1);
   pinMode(magnetEnablePin, OUTPUT); // when output conflict with opamp pin7 output
 
   digitalWrite(magnetEnablePin, HIGH);
@@ -293,6 +295,8 @@ bool DiyWellerSolderStation::isPenPutOnRest()
 
 
   // done, cancel the magnet enable pin pullup
+  digitalWrite(magnetEnablePin, LOW);
+
   pinMode(magnetEnablePin, INPUT);
 
   return myWellerState.isOnRest;
@@ -412,6 +416,7 @@ void DiyWellerSolderStation::checkHandleTemp()
   myWellerState.isConnected = checkIsHandleDisconnected();
   if(myWellerState.isConnected )
   {
+    //
     myWellerState.redTemp = redTemp;
     myWellerState.brownTemp = brownTemp;
   }
@@ -432,15 +437,15 @@ void DiyWellerSolderStation::processWellerHandleTemp(int targettemp)
 
   if ( myWellerState.workStatus == WellerSolderControllerStatus::ON)
   {
-    byte outputPwm = tempPidRed.step(targettemp, myWellerState.redTemp);
+    myWellerState.redPwm = tempPidRed.step(targettemp, myWellerState.redTemp);
+    setHeaterRedPmw(myWellerState.redPwm);
+
+    myWellerState.brownPwm = tempPidBrown.step(targettemp, myWellerState.brownTemp);
+    setHeaterBrownPmw(myWellerState.brownPwm);
+    //enableHeaterBrownPmw(1);
     if ( DiyWellerSolderStation:: debug )
     {
-      Serial.println("pwm: " + String(outputPwm));
+      Serial.println("red pwm: " + String(myWellerState.redPwm ) + " brown pwm: "+ String(myWellerState.brownPwm));
     }
-    setHeaterRedPmw(outputPwm);
-    //enableHeaterRedPmw(1);
-    outputPwm = tempPidBrown.step(targettemp, myWellerState.brownTemp);
-    setHeaterBrownPmw(outputPwm);
-    //enableHeaterBrownPmw(1);
   }
 }

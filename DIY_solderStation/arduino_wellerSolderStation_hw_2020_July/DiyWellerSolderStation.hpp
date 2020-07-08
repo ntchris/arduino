@@ -6,8 +6,12 @@
 
 // DiyWellerSolderStation
 
-const float VCC5 = 4.94; // if you change this, must change the excel file as well, column G calculate
-const float ADC1024 = 1024.0;
+// 12V 4.963--4.965V
+// no 12V , only usb: 4.605V
+// 12V and USB 4.967V
+// using only 12V 5V value for calculation
+const float VCC5 = 4.963; // if you change this, must change the excel file as well, column G calculate
+const float ADC1023 = 1023.0;
 //const float OpAmpR1Black = 0.991;  //1 KOhm
 const float OpAmpR2Purple = 0.991; //  1 KOhm
 const float OpAmpRopamp2A = 510.0;  //TC Black  // 510K , R 514
@@ -16,7 +20,7 @@ const float OpAmpRopamp2A = 510.0;  //TC Black  // 510K , R 514
 //const float OpampGain = OpampGainPurple;
 const float OpampGain = OpAmpRopamp2A / OpAmpR2Purple + 1.0; // 515.63
 
-const byte ReadTcDelayMilliSec = 3;
+const byte ReadTcDelayMilliSec = 5;
 
 const float Kp = 7.58, Ki = 0.050, Kd = 0.86, FreqHz = 20;
 const bool Sign = false;
@@ -41,12 +45,19 @@ const uint8_t TempCPerIndex = 10;
 // AdcInt List for TC temp:
 // opAmpOutput Voltage = tcMv * opAmpGain /1000
 // AdcInt = (opAmpOutput Voltage )/Vcc X 1023
-
+/*
 static int TCAdcIntLookupTable[] =
 {
   0, 14, 28, 43, 57,   72, 88, 103, 119, 135,   151, 168, 184, 201, 218,  235, 253, 270, 288, 305,
   323, 341, 359, 378, 396,   414, 433, 451, 470, 488,   507, 525, 544, 563, 581,  600, 618, 637, 655, 673,
   692, 710, 728, 746, 764,   782, 800, 817, 834, 852,    869
+};
+*/
+//using 4.963 as Vref
+static int TCAdcIntLookupTable[] =
+{ 0,14,28,42,57,   72,87,103,118,134,   150,167,183,200,217,   234,251,269,286,304,   322,340,358,376,394,
+  412,431,449,467,486,   504,523,541,560,578,  597,615,634,652,670,   689,707,725,743,761,
+  778,796,813,831,848,  865
 };
 
 const int TcTableSize = sizeof(TCAdcIntLookupTable) / sizeof(TCAdcIntLookupTable[0]);
@@ -75,7 +86,10 @@ class WellerSolderControllerStatus
     bool isConnected;
     bool isOnRest;
     int workStatus;
-    bool fatalError ;
+    bool fatalError;
+    byte redPwm;
+    byte brownPwm;
+    int evnTemp = 18;
 
 };
 
@@ -95,11 +109,13 @@ class DiyWellerSolderStation
     // don't check red and brown everytime,
     // check one each time, check the other next time.
     bool opampReadIntToIsConnected(int opampValInt);
-    float adcIntToVoltage(int adcInt);
+
     void processRedHeaterTemp();
     void processBrownHeaterTemp();
     
   public:
+    float adcIntToVoltage(int adcInt);
+
     DiyWellerSolderStation(int redEnPin, int brownEnPin,
                            int purpleOpAmOutPin, int blackOpAmOutPin,
                            int magnetEn, int magnetDetect);
