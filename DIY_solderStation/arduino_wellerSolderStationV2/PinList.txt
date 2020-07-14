@@ -1,0 +1,29 @@
+Pin List for Arduino pro Mini:
+ 
+A4 Display SDA  (hard to use)
+A5 Display SCL  (hard to use)
+
+===========================================================
+
+Pin List for Arduino Nano
+SDA  A4 screen Arduino Nano PC4
+SCL  A5 screen Arduino Nano PC5
+Heater enable 1   D3  PWM
+Heater enable 2   D9  PWM
+12V power detect A3 ( or other A#s )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

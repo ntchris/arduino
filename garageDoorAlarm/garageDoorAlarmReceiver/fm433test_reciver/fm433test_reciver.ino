@@ -191,5 +191,5 @@ void loop()
   // 8S
   LowPower.powerDown( DeepSleepReceiveNothingDeepSleepPeriod, ADC_OFF, BOD_OFF);
   // 8S
-  LowPower.powerDown( DeepSleepReceiveNothingDeepSleepPeriod, ADC_OFF, BOD_OFF);
+  LowPower.powerDown( SLEEP_2S, ADC_OFF, BOD_OFF);
 }

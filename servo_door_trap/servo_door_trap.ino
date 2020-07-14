@@ -7,6 +7,9 @@ const int MotionDetectPin = A4;
 const int servoMid = 90;
 const int servoTrigger = 130;
 
+
+const int CapturedAlarmTimerSec = 120000;
+
 Servo servo;
 
 int angle = 0;   // servo position in degrees
@@ -134,11 +137,11 @@ void loop()
    // once detected ,always detected
   if(detected)
   {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(1000);
-    digitalWrite(LED_BUILTIN, LOW);
+    //digitalWrite(LED_BUILTIN, HIGH);
+    
+    //digitalWrite(LED_BUILTIN, LOW);
     soundAlarm();
-    delay(10000);
+    delay(CapturedAlarmTimerSec);
   }
   
   delay(200);

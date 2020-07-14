@@ -82,7 +82,7 @@ class WellerSolderControllerStatus
 
 class DiyWellerSolderStation
 {
-    static const bool debug = true;
+    static const bool debug = false;
 
     int heaterRedEnablePin = 0;
     int heaterBrownEnablePin = 0;

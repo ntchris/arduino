@@ -57,7 +57,7 @@ const int MIN_TARGET_TEMP = 54;
 const int MAX_TARGET_TEMP = 360;
 //#define  MAX_TARGET_TEMP  380
 
-const unsigned int MaxPowerOnSec =180;
+const unsigned int MaxPowerOnSec = 180;
 unsigned int g_heaterStartTimerSec = 0;
 
 // ****************  For LCD display **********************
@@ -215,12 +215,12 @@ bool checkIs12VPowerConnected()
   if ((ts - lastTs) > Delta)
   {
     bool newval = digitalRead(Power12VDetect);
-    if(lastvalue != newval )
+    if (lastvalue != newval )
     {
       lastvalue = newval;
       shortBeep();
     }
-    
+
     lastTs = ts;
   }
   return lastvalue;
@@ -263,39 +263,39 @@ void displayTargetTemp(int targettemp)
 
 void displayHandleConnectState()
 {
-  
+
   static bool oldIsConnected = true;
 
   if ( oldIsConnected == station.myWellerState.isConnected)
   {
-     return;
+    return;
   }
   Serial.println("displayHandleConnectState");
   oldIsConnected = station.myWellerState.isConnected;
   String statusText;
-  if( station.myWellerState.isConnected)
+  if ( station.myWellerState.isConnected)
   {
-     statusText = "             ";
-  }else
+    statusText = "             ";
+  } else
   {
-     statusText = "  handle disc?   ";
-     const int x = 0, y = 1;
-  lcd.setCursor(x, y);
-  lcd.print(statusText);
+    statusText = "  handle disc?   ";
+    const int x = 0, y = 1;
+    lcd.setCursor(x, y);
+    lcd.print(statusText);
   }
-  
+
 }
 
 
 void turnSolderStationOff()
 {
-    station.disableAllHeaters();
-    g_heaterStartTimerSec = 0;
-    station.myWellerState.workStatus = WellerSolderControllerStatus::OFF;
-    if ( debug )
-    {
-      Serial.println("Station is OFF");
-    }
+  station.disableAllHeaters();
+  g_heaterStartTimerSec = 0;
+  station.myWellerState.workStatus = WellerSolderControllerStatus::OFF;
+  if ( debug )
+  {
+    Serial.println("Station is OFF");
+  }
 }
 
 void displayOnOffState()
@@ -343,26 +343,26 @@ void display12VPower(bool power)
   lcd.setCursor(x, y);
   lcd.print(statusText);
   oldstatusText = statusText;
-  if(!power)
+  if (!power)
   {
-     //no power, long beep warning
-     longBeep();
+    //no power, long beep warning
+    longBeep();
   }
 }
 
 
 void displayOnRestState(bool isonrest)
 {
-  
+
   /*if (isonrest == oldIsOnRest)
-  {
+    {
     //same value, no need to display again.
     Serial.println("same onrest quit");
 
     return;
-  }*/
+    }*/
 
-  
+
   //oldIsOnRest = isonrest;
   if (!isonrest)
   {
@@ -374,72 +374,72 @@ void displayOnRestState(bool isonrest)
   static bool oldIsOnRest = false;
 
   /*
-   * static unsigned long lastTs = 0;
-  unsigned long nowTs = millis();
-  const unsigned long Delta = 1000;
-  if (( lastTs + Delta )> nowTs )
-  {
-     return;  
-  }
-  
-  lastTs = nowTs;
+     static unsigned long lastTs = 0;
+    unsigned long nowTs = millis();
+    const unsigned long Delta = 1000;
+    if (( lastTs + Delta )> nowTs )
+    {
+     return;
+    }
+
+    lastTs = nowTs;
   */
-  String text1 = "  on ";   
+  String text1 = "  on ";
   String text2 = " rest";
-  const int x1 = 0, x2=8;
+  const int x1 = 0, x2 = 8;
   lcd.setCursor(x1, 1);
   lcd.print(text1);
   lcd.setCursor(x2, 1);
   lcd.print(text2);
   Serial.println("display on rest !!");
- 
+
 }
 
 // pwm value from 0 to 255
 String getPwmBarFromPwmValue(byte pwm)
 {
   // limit by the lcd screen space
-  const int MaxBarTypeCount = 5, MaxPWM=255; 
+  const int MaxBarTypeCount = 5, MaxPWM = 255;
   const String emptyBar = "     ";
   //const int NoShow=5;
-  if(pwm == 0)
+  if (pwm == 0)
   {
     return emptyBar;
   }
-  
+
   //int index = round((1.0*pwm)/MaxPWM * (MaxBarTypeCount-1));
-  int index= map(pwm, 0, MaxPWM, 0, MaxBarTypeCount-1); 
+  int index = map(pwm, 0, MaxPWM, 0, MaxBarTypeCount - 1);
   // should not use empty bar as first item, because no matter how small the pwm is, it need to be shown
-  static const String BarString[]={">    ",">>   ",">>>  ",">>>> ",">>>>>"};
+  static const String BarString[] = {">    ", ">>   ", ">>>  ", ">>>> ", ">>>>>"};
   return BarString[index];
-  
+
 }
 void showHeaterPwmBar()
 {
   static unsigned long lastTs = 0;
   unsigned long nowTs = millis();
   const unsigned long Delta = 500;
-  if(( nowTs -lastTs ) <Delta )
+  if (( nowTs - lastTs ) < Delta )
   {
     return;
   }
   Serial.println("showHeaterPwmBar");
 
   lastTs = nowTs;
-  const int xpwmbrown=0, xpwmred=8;
+  const int xpwmbrown = 0, xpwmred = 8;
   lcd.setCursor(xpwmbrown, 1);
   String bar;
   bar = getPwmBarFromPwmValue(station.myWellerState.brownPwm);
   // for  test bar = getPwmBarFromPwmValue(255);
-  lcd.print(bar);  
-  Serial.println("pwm:"+ bar + String(station.myWellerState.brownPwm));
-  
+  lcd.print(bar);
+  Serial.println("pwm:" + bar + String(station.myWellerState.brownPwm));
+
   bar = getPwmBarFromPwmValue(station.myWellerState.redPwm);
   // for test  bar = getPwmBarFromPwmValue(255);
   lcd.setCursor(xpwmred, 1);
   lcd.print(bar);
-  Serial.println("pwm:"+ bar+ String(station.myWellerState.redPwm));
-  
+  Serial.println("pwm:" + bar + String(station.myWellerState.redPwm));
+
 }
 
 
@@ -459,105 +459,105 @@ void showTweezerTemp()
   last_ts = nowts;
   String tweezerTemps = "";
   String red = String(station.myWellerState.redTemp);
-  
+
   String brown = String(station.myWellerState.brownTemp);
   if (station.myWellerState.brownTemp < 100)
   {
-    brown = " "+brown;
+    brown = " " + brown;
   }
 
   if (station.myWellerState.redTemp < 100)
   {
-    red = " "+red;
+    red = " " + red;
   }
-  
+
   //tweezerTemps = String(station.myWellerState.brownPwm)+"  "+brown +  "   " + String(station.myWellerState.redPwm)+ "  "+red;
-  const int xbrown=5, xred=13;
-  lcd.setCursor(xbrown, 1);  
+  const int xbrown = 5, xred = 13;
+  lcd.setCursor(xbrown, 1);
   lcd.print(brown);
   lcd.setCursor(xred, 1);
   lcd.print(red);
-  
+
 }
 
 
 void measureEnvTemp()
 {
-   //Serial.println( "env temp entering");
-   static unsigned int lastTsSec = 0;
-   unsigned int nowTsSec = millis()/1000;
-   const unsigned int DeltaSec = 30;
-   if (( lastTsSec+DeltaSec ) < nowTsSec )
-   {
-      //Serial.println( "env temp early quiting");
-      return;
-   }
-   //Serial.println( "getting env temp");
-   lastTsSec = nowTsSec;
-   station.disableAllHeaters();
-   delay(2);
-   
-   pinMode(KtyEnablePin, OUTPUT);
-   digitalWrite(KtyEnablePin, HIGH);
-   
-   // when we don't have 12V power , only USB, have to delay longer.
-   delay(2);
-   int ktyInt = station.getAnalogAvgReadingInt(TcInputBlackKty, 3);
-   // int ktyInt= analogRead(TcInputBlackKty);
-   digitalWrite(KtyEnablePin, LOW);
-   // very important, must disable pin high before we leave, or will have wrong adc value for heater temp.
-   pinMode(KtyEnablePin, INPUT);
-   //Serial.println( "kty int " + String(ktyInt));
+  //Serial.println( "env temp entering");
+  static unsigned int lastTsSec = 0;
+  unsigned int nowTsSec = millis() / 1000;
+  const unsigned int DeltaSec = 30;
+  if (( lastTsSec + DeltaSec ) < nowTsSec )
+  {
+    //Serial.println( "env temp early quiting");
+    return;
+  }
+  //Serial.println( "getting env temp");
+  lastTsSec = nowTsSec;
+  station.disableAllHeaters();
+  delay(2);
+
+  pinMode(KtyEnablePin, OUTPUT);
+  digitalWrite(KtyEnablePin, HIGH);
+
+  // when we don't have 12V power , only USB, have to delay longer.
+  delay(2);
+  int ktyInt = station.getAnalogAvgReadingInt(TcInputBlackKty, 3);
+  // int ktyInt= analogRead(TcInputBlackKty);
+  digitalWrite(KtyEnablePin, LOW);
+  // very important, must disable pin high before we leave, or will have wrong adc value for heater temp.
+  pinMode(KtyEnablePin, INPUT);
+  //Serial.println( "kty int " + String(ktyInt));
 
 
-   // float vkty = map(ktyInt, 0, 1023, 0, VCC5 );
-   double vkty = station.adcIntToVoltage(ktyInt);
-   // must not use map, because it returns integer.
-   // vkty = map(ktyInt, 0, 1023, 0, VCC5 );
-   
-   //Serial.println( "vkty  " + String(vkty));
-   double r1k = 991.0; // measure the actual value of the pullup 1k resistor
-   float rkty;
-   
-   // VCC5 /(rkty+r1k ) *rkty = vkty
-   // VCC5 *rkty = vkty *(rkty+r1k)
-   // VCC5*rkty = vkty * rkty + vkty *r1k
-   // VCC5*rkty - vkty*rkty = vkty*r1k
-   // (VCC5-vkty)*rkty = vkty*r1k
-   rkty = vkty*r1k/ ( VCC5-vkty);   
-   //Serial.println("rkty is "+ String(rkty));
-   
-   // https://www.nxp.com/docs/en/data-sheet/KTY82_SER.pdf
-   // Kty82/110,  assuming 80 Ohm per 10C (approximately), so 8 ohm per 1c
-   station.myWellerState.evnTemp = getTempFromKty82_110Resist(rkty);
-   
+  // float vkty = map(ktyInt, 0, 1023, 0, VCC5 );
+  double vkty = station.adcIntToVoltage(ktyInt);
+  // must not use map, because it returns integer.
+  // vkty = map(ktyInt, 0, 1023, 0, VCC5 );
+
+  //Serial.println( "vkty  " + String(vkty));
+  double r1k = 991.0; // measure the actual value of the pullup 1k resistor
+  float rkty;
+
+  // VCC5 /(rkty+r1k ) *rkty = vkty
+  // VCC5 *rkty = vkty *(rkty+r1k)
+  // VCC5*rkty = vkty * rkty + vkty *r1k
+  // VCC5*rkty - vkty*rkty = vkty*r1k
+  // (VCC5-vkty)*rkty = vkty*r1k
+  rkty = vkty * r1k / ( VCC5 - vkty);
+  //Serial.println("rkty is "+ String(rkty));
+
+  // https://www.nxp.com/docs/en/data-sheet/KTY82_SER.pdf
+  // Kty82/110,  assuming 80 Ohm per 10C (approximately), so 8 ohm per 1c
+  station.myWellerState.evnTemp = getTempFromKty82_110Resist(rkty);
+
 }
 
 int getTempFromKty82_110Resist(float rkty)
 {
-  const int Rtemp_sub20=684, Rtemp_sub10=747, Rtemp_0=815, Rtemp_10=886, Rtemp_20= 961, 
-            Rtemp_25=1000, Rtemp_30=1040, Rtemp_40=1122;
+  const int Rtemp_sub20 = 684, Rtemp_sub10 = 747, Rtemp_0 = 815, Rtemp_10 = 886, Rtemp_20 = 961,
+            Rtemp_25 = 1000, Rtemp_30 = 1040, Rtemp_40 = 1122;
   float temp;
   // simple solution, <10 and >10 two range
-  if ( rkty< Rtemp_10)
+  if ( rkty < Rtemp_10)
   {
     // 5 Ohm per C
     float deltaOhm = Rtemp_10 - rkty;
-    temp = 10.0- ( deltaOhm/7.1);
-    
-  }else if (rkty<Rtemp_20)
-  { // 10>= C < 20, 
+    temp = 10.0 - ( deltaOhm / 7.1);
+
+  } else if (rkty < Rtemp_20)
+  { // 10>= C < 20,
     float deltaOhm = rkty - Rtemp_10;
-    temp = round(10.0 + deltaOhm/7.5);
-  }else if (rkty<Rtemp_30)
+    temp = round(10.0 + deltaOhm / 7.5);
+  } else if (rkty < Rtemp_30)
   {
-     //c>=20
-     float deltaOhm = rkty - Rtemp_20;
-     temp = round(20.0 + deltaOhm/7.9);
-  }else
-  {  // c > 30
-     float deltaOhm = rkty - Rtemp_30;
-     temp = round(30.0 + deltaOhm/8.2);
+    //c>=20
+    float deltaOhm = rkty - Rtemp_20;
+    temp = round(20.0 + deltaOhm / 7.9);
+  } else
+  { // c > 30
+    float deltaOhm = rkty - Rtemp_30;
+    temp = round(30.0 + deltaOhm / 8.2);
   }
   // "better" solution binary search.
   return temp;
@@ -568,17 +568,20 @@ void setup()
 {
   pinMode(BuzzerEnablePin, OUTPUT);
   pinMode( TcInputBlackKty , INPUT);
-  
-  beepStart();
+
   displayInit();
+
   // put your setup code here, to run once:
   Serial.begin(115200);
   Serial.println("Starting");
   showTitle();
-  beepEnd();
-  //delay(1000);
+  beepStart();
+  delay(2000);
+
   solderStationInit();
   lcd.clear();
+  beepEnd();
+
 
 }
 
@@ -592,21 +595,21 @@ bool checkIsHandleOnRest()
   Serial.println(" checkIsHandleOnRest");
 
   if ( oldOnRest )
-  { 
+  {
     Serial.println(" if oldOnRest");
     // if previous state is on rest, delay checking again too soon
     if (( lastCheckOnRestTs + delta) > onrest_nowts)
     {
-       // just return the previous value.
-       Serial.println(" quick return");
-       return oldOnRest;
+      // just return the previous value.
+      Serial.println(" quick return");
+      return oldOnRest;
     }
   }
   Serial.println(" finding out magnet");
 
   newOnRest = station.isPenPutOnRest();
   lastCheckOnRestTs = onrest_nowts;
-      
+
   if ( oldOnRest != newOnRest)
   {
     shortBeep();
@@ -623,13 +626,13 @@ void loop()
   startTimeStamp = millis();
   measureEnvTemp();
   bool power12v = checkIs12VPowerConnected();
-  if(!power12v)
+  if (!power12v)
   {
-     //turn off, so maybe we can use a 12V power supply with less wattage output???
-     station.disableAllHeaters();
+    //turn off, so maybe we can use a 12V power supply with less wattage output???
+    station.disableAllHeaters();
   }
   display12VPower(power12v);
-  
+
   if (debug)
   {
     if (power12v)
@@ -671,26 +674,29 @@ void loop()
   // solder station initial state is OFF
   if ( station.myWellerState.workStatus == WellerSolderControllerStatus::OFF)
   {
-    turnSolderStationOff(); 
+    turnSolderStationOff();
   } else
   { // it's ON
-    unsigned int nowTsSec = millis()/1000;
-    if( g_heaterStartTimerSec == 0)
+    unsigned int nowTsSec = millis() / 1000;
+    if ( g_heaterStartTimerSec == 0)
     {
       //not started
       g_heaterStartTimerSec = nowTsSec;
-    }else
+    } else
     {
       //already started, check Max timeout
       if (  nowTsSec > ( g_heaterStartTimerSec + MaxPowerOnSec ))
       {
-        Serial.println("time out" + String(g_heaterStartTimerSec) + " " +String(nowTsSec) );
-        turnSolderStationOff(); 
+        if (debug)
+        {
+          Serial.println("time out" + String(g_heaterStartTimerSec) + " " + String(nowTsSec) );
+        }
+        turnSolderStationOff();
         longBeep();
-       }
+      }
     }
     if ( debug )
-    { 
+    {
       Serial.println("Station is ON");
     }
 
@@ -709,40 +715,39 @@ void loop()
 
     //displayHandleState();
     bool isOnRest = checkIsHandleOnRest();
-    Serial.println("isOnRest " + String( isOnRest));
+    if (debug)
+    {
+      Serial.println("isOnRest " + String( isOnRest));
+    }
     if (isOnRest)
     {
       // !!! can be revised later, on rest can be in standby mode, 150C maybe.
-      // turnSolderStationOff(); 
+      // turnSolderStationOff();
       // do not set the state off.
       station.disableAllHeaters();
       g_heaterStartTimerSec = 0;
       displayOnRestState(isOnRest);
-      
+
 
     } else // not on rest
     {
-      if( power12v)
+      if ( power12v)
       {
-         // only turn on heat when we have 12V power
-         station.processWellerHandleTemp(targetTemp);
+        // only turn on heat when we have 12V power
+        station.processWellerHandleTemp(targetTemp);
       }
-      showHeaterPwmBar(); 
+      showHeaterPwmBar();
 
     }
   } else
   { // handle is NOT connected
-    //disconnect is always off
+
     turnSolderStationOff();
-    // myTM1637.display("DSC");
-    // displayStationState( );
-    //displayHandleState();
-    // Serial.println("disconnected");
 
   } // end of if ( station.myWellerState.isConnected)
   displayOnOffState( );
   displayHandleConnectState();
-  
+
   /*
     // update display
     if (station.myWellerState.workStatus == WellerSolderControllerStatus::OFF )
@@ -764,11 +769,17 @@ void loop()
 
   if (delta > 0)
   {
-    Serial.println("timeUsedMs: " + String(timeUsedMs) + " sleep for " + String(delta));
+    if (debug)
+    {
+      Serial.println("timeUsedMs: " + String(timeUsedMs) + " sleep for " + String(delta));
+    }
     delay(delta);
-  }else
+  } else
   {
-     Serial.println("timeUsedMs: " + String(timeUsedMs) + " " + String(delta)+ " no sleep");
+    if (debug)
+    {
+      Serial.println("timeUsedMs: " + String(timeUsedMs) + " " + String(delta) + " no sleep");
+    }
   }
 
 }

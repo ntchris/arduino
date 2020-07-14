@@ -98,6 +98,7 @@ void encoderInit()
   rotEncoder.setEncoderValue(MIN_TARGET_TEMP);
   rotEncoder.setEncoderStep(2);
   rotEncoder.setMinMaxValue( MIN_TARGET_TEMP, MAX_TARGET_TEMP );
+  rotEncoder.debug = true; 
 }
 
 void solderStationInit()
@@ -243,7 +244,7 @@ void loop()
       return;
     } else  // not on rest
     { // restore the state before entering standby
-      Serial.println("connected");
+      //Serial.println("connected");
 
       if (stateBeforeStandby != WellerSolderControllerStatus::UnknownState)
       {
@@ -281,7 +282,7 @@ void loop()
   long int delta = ShouldDelayms  - timeUsedMs;
   if (delta > 0)
   {
-    Serial.println("timeUsedMs: " + String(timeUsedMs) + " sleep for " + String(delta));
+    //Serial.println("timeUsedMs: " + String(timeUsedMs) + " sleep for " + String(delta));
     delay(delta);
   }
 
