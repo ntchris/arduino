@@ -10,12 +10,22 @@ FastPID tempPidBrown(Kp, Ki, Kd, FreqHz, Bits, Sign);
 //===============================================================================
 
 
+
+static unsigned int DiyWellerSolderStation::TCAdcIntLookupTable[] =
+{ 0, 14, 28, 42, 57,   72, 87, 103, 118, 134,   150, 167, 183, 200, 217,   234, 251, 269, 286, 304,   322, 340, 358, 376, 394,
+  412, 431, 449, 467, 486,   504, 523, 541, 560, 578,  597, 615, 634, 652, 670,   689, 707, 725, 743, 761,
+  778, 796, 813, 831, 848,  865
+};
+const unsigned char  DiyWellerSolderStation::TcTableSize  = 
+        sizeof(DiyWellerSolderStation::TCAdcIntLookupTable) / sizeof(DiyWellerSolderStation::TCAdcIntLookupTable[0]);
+
+
 DiyWellerSolderStation::DiyWellerSolderStation(int redEnPin, int brownEnPin,
     int purpleOpAmOutPin, int blackOpAmOutPin,
-    int magnetEn, int magnetDetect):
+    int magnetEnPin, int magnetDetectPin):
   heaterRedEnablePin(redEnPin), heaterBrownEnablePin(brownEnPin),
   purpleOpAmpReadPin(purpleOpAmOutPin), blackOpAmpReadPin(blackOpAmOutPin),
-  magnetEnablePin(magnetEn), magnetDetectPin(magnetDetect)
+  _magnetEnablePin(magnetEnPin), _magnetDetectPin(magnetDetectPin)
 {
   // constructor
 
@@ -51,7 +61,7 @@ void DiyWellerSolderStation::disableAllHeaters()
   // Serial.println("Disable all heaters " );
   DiyWellerSolderStation::disableHeaterRed();
   DiyWellerSolderStation::disableHeaterBrown();
-  
+
 
 }
 
@@ -102,13 +112,13 @@ bool DiyWellerSolderStation::checkIsHandleDisconnected()
   {
     if ( DiyWellerSolderStation::debug )
     {
-      Serial.println("is connected");
+      //Serial.println("is connected");
     }
     return true;
   }
   else
   {
-    if ( DiyWellerSolderStation:: debug )
+    if ( DiyWellerSolderStation::debug )
     {
       Serial.println("not connected");
     }
@@ -118,7 +128,7 @@ bool DiyWellerSolderStation::checkIsHandleDisconnected()
 
 
 
-int DiyWellerSolderStation::getAnalogAvgReadingInt(int analogReadPin, int avgCount = 5)
+int DiyWellerSolderStation::getAnalogAvgReadingInt(byte analogReadPin, byte avgCount = 5)
 {
 
   int i, opampValInt = 0;
@@ -131,7 +141,7 @@ int DiyWellerSolderStation::getAnalogAvgReadingInt(int analogReadPin, int avgCou
     //Serial.println( val);
     opampValInt += val;
   }
-  opampValInt = round(opampValInt / (avgCount*1.0));
+  opampValInt = round(opampValInt / (avgCount * 1.0));
   return opampValInt;
 }
 
@@ -185,15 +195,15 @@ int DiyWellerSolderStation::getHeaterRedTemp()
   if (DiyWellerSolderStation::debug)
   { Serial.println("readInt: " + String(readInt));
   }
-  
+
   myWellerState.isPurpleConnected = opampReadIntToIsConnected(readInt);
   int redtemp = 0;
   if (myWellerState.isPurpleConnected)
   {
-    myWellerState.purpleInt = readInt;
+    //myWellerState.purpleInt = readInt;
 
-    redtemp = getOpampOutputIntToTemperature(
-                              myWellerState.purpleInt) ;
+    //redtemp = getOpampOutputIntToTemperature(myWellerState.purpleInt);
+    redtemp = getOpampOutputIntToTemperature(readInt);
   }
   return redtemp;
 }
@@ -201,21 +211,20 @@ int DiyWellerSolderStation::getHeaterRedTemp()
 
 int DiyWellerSolderStation::getHeaterBrownTemp()
 {
-  myWellerState.blackInt = getBlackOpAmpOutputInt();
+  int blackInt = getBlackOpAmpOutputInt();
   // Serial.println("update checking blackInt " + String(myWellerSolderController.blackInt  ));
 
-  myWellerState.isBlackConnected = opampReadIntToIsConnected(
-                                     myWellerState.blackInt);
+  myWellerState.isBlackConnected = opampReadIntToIsConnected(blackInt);
   int brownTemp = 0;
   if (myWellerState.isBlackConnected)
   {
-    brownTemp = getOpampOutputIntToTemperature(myWellerState.blackInt);
+    brownTemp = getOpampOutputIntToTemperature(blackInt);
     if ( DiyWellerSolderStation::debug )
     {
-      Serial.println("brownInt: " + String(myWellerState.blackInt) + " brownTemp(compened):" + String(myWellerState.brownTemp  ));
+      Serial.println("brownInt: " + String( blackInt) + " brownTemp(compened):" + String(myWellerState.brownTemp  ));
     }
 
-  } 
+  }
   return brownTemp;
 }
 
@@ -223,7 +232,7 @@ int DiyWellerSolderStation::getHeaterBrownTemp()
 
 float DiyWellerSolderStation::adcIntToVoltage(int adcInt)
 {
-  float adcIntF = adcInt*1.0;
+  float adcIntF = adcInt * 1.0;
   float vol = VCC5 * adcIntF / ADC1023;
   // Serial.println("my cal " + String(vol));
   /*
@@ -260,44 +269,46 @@ int DiyWellerSolderStation::getOpampOutputIntToTemperature(int analogReadingInt)
 }
 int DiyWellerSolderStation::getEnvTemperature()
 {
-  // maybe in feature, use KTY reading.
-  //Serial.println("getEnvTemperature temp " + String(myWellerState.evnTemp ));
+  // in main file  void measureEnvTemp()
+
   return myWellerState.evnTemp;
 }
 
-bool DiyWellerSolderStation::checkIsFatalError()
-{
+/*
+  bool DiyWellerSolderStation::checkIsFatalError()
+  {
   return myWellerState.fatalError;
-}
-
+  }
+*/
 bool DiyWellerSolderStation::isPenPutOnRest()
 {
   const int MagnetDetectValue = 100;
   //  when on rest, magnet connect to ground, reading should be low , very close to 0.
   //  when on use, magnet connect to pull up 10K and with 2K then to ground, reading should be about
   //  5V(4.95) / (10K+2K) * 2K= 0.8V , adc int = 170, we use 165.
-
+  const int DelayMicroSec = 300; 
   disableAllHeaters();
-  delay(1);
-  pinMode(magnetEnablePin, OUTPUT); // when output conflict with opamp pin7 output
-
-  digitalWrite(magnetEnablePin, HIGH);
-  delayMicroseconds(1000);
-  int magnetReadInt = analogRead(magnetDetectPin);
+  delayMicroseconds(DelayMicroSec);
+  
+  // maybe use input pull up mode
+  pinMode(_magnetEnablePin, OUTPUT); // when output conflict with opamp pin7 output
+  digitalWrite(_magnetEnablePin, HIGH);
+  //pinMode(_magnetEnablePin, INPUT_PULLUP); // when output conflict with opamp pin7 output
+  delayMicroseconds(DelayMicroSec);
+  int magnetReadInt = analogRead(_magnetDetectPin);
   myWellerState.isOnRest = (magnetReadInt < MagnetDetectValue);
 
   if ( DiyWellerSolderStation:: debug )
   {
     float vol = adcIntToVoltage(magnetReadInt);
-    Serial.println("magnet pin int: " + String(magnetReadInt) + " " + vol + " onRest:" + String(myWellerState.isOnRest));
+    Serial.println("magnetInt: " + String(magnetReadInt) + " " + vol + " onRest:" + String(myWellerState.isOnRest));
   }
   //when magnet switch is close, magnet detect pin connects to gnd, so it's low
 
 
   // done, cancel the magnet enable pin pullup
-  digitalWrite(magnetEnablePin, LOW);
-
-  pinMode(magnetEnablePin, INPUT);
+  digitalWrite(_magnetEnablePin, LOW);
+  pinMode(_magnetEnablePin, INPUT);
 
   return myWellerState.isOnRest;
 }
@@ -307,7 +318,7 @@ bool DiyWellerSolderStation::isPenPutOnRest()
 // table values must be in small to large order
 // if value is too large, return last index.
 // if value is too small, return first index.
-int valueToLookupTableIndex(int value, int startindex, int endindex)
+int DiyWellerSolderStation::valueToLookupTableIndex(int value, int startindex, int endindex)
 {
   int index;
   if ( ( endindex - startindex ) <= 1)
@@ -316,7 +327,7 @@ int valueToLookupTableIndex(int value, int startindex, int endindex)
     return startindex;
   }
 
-  if (value <= TCAdcIntLookupTable[startindex])
+  if (value <= DiyWellerSolderStation::TCAdcIntLookupTable[startindex])
   {
     return startindex;
   } else if ( value >= TCAdcIntLookupTable[endindex] )
@@ -325,20 +336,21 @@ int valueToLookupTableIndex(int value, int startindex, int endindex)
   }
 
   int midindex = (startindex + endindex) / 2;
-  int midValue = TCAdcIntLookupTable[midindex];
+  int midValue = DiyWellerSolderStation::TCAdcIntLookupTable[midindex];
   if ( value <= midValue )
   {
     index = valueToLookupTableIndex(value, startindex, midindex);
   } else // value > midValue
   {
-    index = valueToLookupTableIndex(value,  midindex, endindex);
+    index = DiyWellerSolderStation::valueToLookupTableIndex(value,  midindex, endindex);
   }
 
   return index;
 }
 
-bool DiyWellerSolderStation::selfTestConvertAdcIntToTemperature()
-{
+/*
+  bool DiyWellerSolderStation::selfTestConvertAdcIntToTemperature()
+  {
   const int adcInt[] =           {0,  72, 110, 150,  195, 235, 270, 370, 414,   488, 550, 581, 600, 650,  690, 728, 764, 800, 867, 900};
   const int correctResultTempC[] = {0,  50, 74, 99,  126, 150, 170, 225, 250,   290, 323, 340, 350, 377,  398, 420, 440, 460, 498, 500};
   int MAX = sizeof(adcInt) / sizeof(adcInt[0]);
@@ -365,7 +377,9 @@ bool DiyWellerSolderStation::selfTestConvertAdcIntToTemperature()
     }
   }
   return myWellerState.fatalError;
-}
+  }
+*/
+
 
 // using lookup table TCAdcIntLookupTable
 int DiyWellerSolderStation::convertAdcIntToTemperature(int adcInt)
@@ -402,9 +416,9 @@ void DiyWellerSolderStation::setHeaterBrownPmw(int pwm)
   analogWrite( heaterBrownEnablePin, pwm);
 
 }
- 
 
- 
+
+
 
 
 void DiyWellerSolderStation::checkHandleTemp()
@@ -414,7 +428,7 @@ void DiyWellerSolderStation::checkHandleTemp()
   int redTemp = getHeaterRedTemp();
   int brownTemp = getHeaterBrownTemp();
   myWellerState.isConnected = checkIsHandleDisconnected();
-  if(myWellerState.isConnected )
+  if (myWellerState.isConnected )
   {
     //
     myWellerState.redTemp = redTemp;
@@ -445,7 +459,7 @@ void DiyWellerSolderStation::processWellerHandleTemp(int targettemp)
     //enableHeaterBrownPmw(1);
     if ( DiyWellerSolderStation:: debug )
     {
-      Serial.println("red pwm: " + String(myWellerState.redPwm ) + " brown pwm: "+ String(myWellerState.brownPwm));
+      Serial.println("red pwm: " + String(myWellerState.redPwm ) + " brown pwm: " + String(myWellerState.brownPwm));
     }
   }
 }

@@ -1,0 +1,17 @@
+V5 change list
+1. 12V power detect change to D2
+buzzer enable change to D6
+reason: 12V power doesn't need A pin
+
+D2 has external interrupt, so we may 
+implement power loss interrupt to disable all heaters
+
+
+
+2. more  cap for 12V Vin 
+3. same resistors values
+4. cap for LCD
+5. 3 diodes for vin
+6. remove cref because nano has it already
+7. remove 12v jack, use V396 plug
+8, remove switch

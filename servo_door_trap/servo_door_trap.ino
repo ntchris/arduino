@@ -8,7 +8,7 @@ const int servoMid = 90;
 const int servoTrigger = 130;
 
 
-const int CapturedAlarmTimerSec = 120000;
+const int CapturedAlarmTimerSec = 180000;
 
 Servo servo;
 
@@ -52,9 +52,9 @@ void setup()
 void longBeep()
 {
   digitalWrite(AlarmPin, HIGH);
-  delay(800);
+  delay(600);
   digitalWrite(AlarmPin, LOW);
-  delay(800);
+  delay(600);
 
 
 }
@@ -62,7 +62,7 @@ void longBeep()
 void shortBeep()
 {
   digitalWrite(AlarmPin, HIGH);
-  delay(100);
+  delay(50);
   digitalWrite(AlarmPin, LOW);
   delay(500);
 }
@@ -87,7 +87,7 @@ void servoTest()
 void shutDoorAction()
 {
   trigger();
-  delay(1200);
+  delay(1000);
   closeAndLock();
 
 }

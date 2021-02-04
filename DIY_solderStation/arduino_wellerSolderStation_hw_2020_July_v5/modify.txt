@@ -1,0 +1,10 @@
+1  zener can be removed since it's not likely 12V power loss pin can be higher than 5V, ( 75k/22k) (make sure 22k R is solder correctly to ground )
+2  10V (after 3 diode) titanium capacitor 330uf not enough, maybe use other type. my 100uf -330uf is not 12V tolerant
+3  Add more capacitor for 5V
+4  consider add external pull up for A7 and A6(not necessary if don't care)
+   (red temp purple to OpAmp to Arduino, because no internal pullup for it. (same for A6)
+5  ground thermal rel made better
+6 don't use arduino nano, use atmega ic and crystal. (or arduino pro mini ? )
+7 dual channel PMos ?      10 smaller plane for PMos , not needed
+8 other smaller OpAmp ?
+9 remove all opAmp input and output Caps , tested not required.
