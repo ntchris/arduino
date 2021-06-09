@@ -44,7 +44,7 @@
 
 #include <string.h>
 #include "Arduino.h"
-#include "SuperI2CDriver.hpp"
+#include "SuperTMI2CDriver.hpp"
 
 class Super_TM1637_Arduino
 {
@@ -76,20 +76,22 @@ class Super_TM1637_Arduino
         //otherwise, if usr input "-1234" , a 4 digits digitube display 1234, then it's very misleading.
         int m_maxDisplayDigits;
         static const uint8_t MaxDigitCount = 6;  // TM1637 supports 6 digits
-        SuperI2CDriver *i2cDriver_p;
+        SuperTMI2CDriver *tmi2cDriver_p;
         // TM1637 supports 6 digit-seven-segments display, but you will probably just use a 4 digit tube
 
 
         // contains all the bitmaps for 0 1 2 ... F
         static const uint8_t DigitBitmapArray[];
         
-        static const uint8_t DigitBitmapArrayLetterS;//  = 0b01101101;
-        static const uint8_t DigitBitmapArrayLetters;//  = 0b01101101;
+        static const uint8_t DigitBitmapArrayLetterL;//   
 
+        static const uint8_t DigitBitmapArrayLetterS;//  = 0b01101101;
+        static const uint8_t DigitBitmapArrayLetters;// this is small s
         static const uint8_t DigitBitmapArrayLettert;//  = 0b00111001;    // t
         static const uint8_t DigitBitmapArrayLetterT;//  = 0b00111001;    // t
         static const uint8_t DigitBitmapArrayLettery;
         static const uint8_t DigitBitmapArrayLetterY;
+        static const uint8_t DigitBitmapArrayLettero;
         static const uint8_t DigitBitmapArrayLetterO;
 
         const uint8_t Index_Empty_Bitmap = 16; //this need to be removed

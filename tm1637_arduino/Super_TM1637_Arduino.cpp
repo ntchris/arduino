@@ -23,13 +23,15 @@ const uint8_t Super_TM1637_Arduino::DigitBitmapArray[]  = {
 };
 
 
-
+                                                // bit: dp,g, f, e, d c, b, a
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterL = 0b00111000;  //fed
 const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterS = 0b01101101;
 const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetters = 0b01101101;
 const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettert = 0b01111000;    // t
 const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterT = 0b00111001;    // t
 const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettery = 0b01100110;    // y  same as Y
 const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterY = 0b01100110;    // Y  same as y
+const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLettero = 0b01011100;
 const uint8_t Super_TM1637_Arduino::DigitBitmapArrayLetterO = 0b00111111;    // same as 0
 
 Super_TM1637_Arduino::Super_TM1637_Arduino(uint8_t pinClk, uint8_t pinDio, uint8_t digitubeDigits)
@@ -42,15 +44,15 @@ Super_TM1637_Arduino::Super_TM1637_Arduino(uint8_t pinClk, uint8_t pinDio, uint8
 
     m_maxDisplayDigits = digitubeDigits;
     uint8_t displaySetting = Command_SetDisplayBrightness | m_displayBrightness | m_currentDisplayOnOffBit ;
-    i2cDriver_p = new SuperI2CDriver(m_pin_Clk, m_pin_Dio );
-    //i2cDriver_p->m_debugPrint = m_debugPrint ;
+    tmi2cDriver_p = new SuperTMI2CDriver(m_pin_Clk, m_pin_Dio );
+    //tmi2cDriver_p->m_debugPrint = m_debugPrint ;
 
-    i2cDriver_p->startCommand(displaySetting);
+    tmi2cDriver_p->startCommand(displaySetting);
 }
 
 Super_TM1637_Arduino:: ~Super_TM1637_Arduino()
 {
-    delete i2cDriver_p;
+    delete tmi2cDriver_p;
 }
 
 
@@ -124,7 +126,11 @@ uint8_t Super_TM1637_Arduino::charToBitMap(char numberChar)
     {
         bitmap = BitMapMinus;
 
-    } else if (numberChar == 's' || numberChar == 'S')
+    } else if (numberChar == 'L' || numberChar == 'l')
+    {
+        bitmap = DigitBitmapArrayLetterL;
+    }
+    else if (numberChar == 's' || numberChar == 'S')
     {   // the same as 5
         bitmap = DigitBitmapArrayLetters;
     
@@ -135,7 +141,11 @@ uint8_t Super_TM1637_Arduino::charToBitMap(char numberChar)
     {    
         bitmap = DigitBitmapArrayLettery;
     }
-    else if (numberChar == 'o' || numberChar == 'O' )
+    else if (numberChar == 'o')
+    {
+        bitmap= DigitBitmapArrayLettero;
+    }
+    else if (numberChar == 'O' )
     {    
         bitmap = DigitBitmapArrayLetterO;
     } 
@@ -252,9 +262,9 @@ void Super_TM1637_Arduino:: displayOverflow()
     }
 
 
-    i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
-    i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
-    i2cDriver_p->startCommand(0x8f);
+    tmi2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
+    tmi2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
+    tmi2cDriver_p->startCommand(0x8f);
 
 
 
@@ -344,9 +354,9 @@ void Super_TM1637_Arduino:: displayOverflow()
     }
     }
 
-    i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
-    i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
-    i2cDriver_p->startCommand(0x8f);
+    tmi2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
+    tmi2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
+    tmi2cDriver_p->startCommand(0x8f);
 
     }
 
@@ -359,7 +369,7 @@ void Super_TM1637_Arduino:: displayOverflow()
 uint8_t Super_TM1637_Arduino:: readKey( )
 {
 
-    uint8_t key = i2cDriver_p->startCommandAndReadOneByte( Command_SetReadKey);
+    uint8_t key = tmi2cDriver_p->startCommandAndReadOneByte( Command_SetReadKey);
     if (m_debugPrint) 
     {  debugPrint("read key is ", key);
     }
@@ -373,10 +383,10 @@ void Super_TM1637_Arduino:: setDisplayBuffer(uint8_t *bitmapArray, uint8_t array
 
     bool success = true;
     int retryCount = 0;
-    i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
+    tmi2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
 
 
-    i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
+    tmi2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
 
 }
 
@@ -462,10 +472,10 @@ void Super_TM1637_Arduino:: display_from_end(String str)
         }
     }
     debugPrint("starting i2c\n");
-    //i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
-    //i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
+    //tmi2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
+    //tmi2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
     setDisplayBuffer(bitmapArray, MaxDigitCount);
-    //i2cDriver_p->startCommand(m_currentDisplaySetting);
+    //tmi2cDriver_p->startCommand(m_currentDisplaySetting);
 
 }
 
@@ -569,10 +579,10 @@ void Super_TM1637_Arduino:: display(String str)
     }
 
     debugPrint("starting i2c\n");
-    //i2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
-    //i2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
+    //tmi2cDriver_p->startCommand(Command_Data_Setting_Write_Data_To_Display_Register);
+    //tmi2cDriver_p->startCommandData( TM1637_Starting_Address, bitmapArray, MaxDigitCount);
     setDisplayBuffer(bitmapArray, MaxDigitCount);
-    //i2cDriver_p->startCommand(m_currentDisplaySetting);
+    //tmi2cDriver_p->startCommand(m_currentDisplaySetting);
 
 }
 
@@ -670,7 +680,7 @@ void Super_TM1637_Arduino::switchOnOff(bool on)
         displaySetting = Command_SetDisplayBrightness | DisplayOffBit | m_displayBrightness  ;
     }
     debugPrint("onOff command is ", displaySetting );
-    i2cDriver_p->startCommand( displaySetting );
+    tmi2cDriver_p->startCommand( displaySetting );
     delay(1000);
 
 
@@ -686,7 +696,7 @@ void Super_TM1637_Arduino::setBrightness(uint8_t level)
     m_displayBrightness = level;
     uint8_t commd = Command_SetDisplayBrightness | m_currentDisplayOnOffBit | m_displayBrightness;
     debugPrint("brightness   is ", m_displayBrightness);
-    i2cDriver_p->startCommand( commd );
+    tmi2cDriver_p->startCommand( commd );
 
 
 }

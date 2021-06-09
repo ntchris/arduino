@@ -1,18 +1,18 @@
 #include <stdint.h>
 #include <arduino.h>
 
-#ifndef __SuperI2CDriver__
-#define __SuperI2CDriver__
+#ifndef __SuperTMI2CDriver__
+#define __SuperTMI2CDriver__
 
 #ifndef null
 #define null 0
 #endif
-class SuperI2CDriver
+class SuperTMI2CDriver
 {
     //Arduino pins for clk and dio
     uint8_t m_pin_Clk, m_pin_Dio;
     const uint8_t BitsPerByte =8;
-    SuperI2CDriver();
+    SuperTMI2CDriver();
     void i2cWriteByte(unsigned char oneByte);
     void i2cStart();
     void i2cStop();
@@ -27,7 +27,7 @@ class SuperI2CDriver
   public:
     bool m_debugPrint;
 
-    SuperI2CDriver(uint8_t pinClk, uint8_t pinDio );
+    SuperTMI2CDriver(uint8_t pinClk, uint8_t pinDio );
     // send a command with start to i2c, wait for ack and stop
     void startCommand(unsigned char command);
 
@@ -42,4 +42,4 @@ class SuperI2CDriver
 };
 
 
-#endif  // __SuperI2CDriver__
+#endif  // __SuperTMI2CDriver__

@@ -1,9 +1,9 @@
 
 
-#include "SuperI2CDriver.hpp"
+#include "SuperTMI2CDriver.hpp"
  
 
-SuperI2CDriver::SuperI2CDriver(uint8_t pinClk, uint8_t pinDio )
+SuperTMI2CDriver::SuperTMI2CDriver(uint8_t pinClk, uint8_t pinDio )
 {
   m_pin_Clk = pinClk;
   m_pin_Dio = pinDio;
@@ -16,14 +16,14 @@ SuperI2CDriver::SuperI2CDriver(uint8_t pinClk, uint8_t pinDio )
 }
 
 
-void SuperI2CDriver::debugPrint(const char * str)
+void SuperTMI2CDriver::debugPrint(const char * str)
 {
   if (m_debugPrint)
   {
     Serial.print(str);
   }
 }
-void SuperI2CDriver::debugPrint(int i)
+void SuperTMI2CDriver::debugPrint(int i)
 {
   if (m_debugPrint)
   {
@@ -31,7 +31,7 @@ void SuperI2CDriver::debugPrint(int i)
   }
 
 }
-void SuperI2CDriver::i2cStart()
+void SuperTMI2CDriver::i2cStart()
 {
   //debugPrint("i2cStart begin\n");
   digitalWrite(m_pin_Dio, HIGH);
@@ -44,7 +44,7 @@ void SuperI2CDriver::i2cStart()
 
 }
 
-void SuperI2CDriver::i2cStop()
+void SuperTMI2CDriver::i2cStop()
 {
   //debugPrint("stop begin\n");
   digitalWrite(m_pin_Clk, LOW);
@@ -59,7 +59,7 @@ void SuperI2CDriver::i2cStop()
 
 }
 
-bool SuperI2CDriver::i2cWaitForAck()
+bool SuperTMI2CDriver::i2cWaitForAck()
 {
   //debugPrint("ack begin\n");
   //digitalWrite(LED_BUILTIN, LOW);
@@ -95,7 +95,7 @@ bool SuperI2CDriver::i2cWaitForAck()
 }
 
 
-void SuperI2CDriver::i2cWriteByte(unsigned char oneByte)
+void SuperTMI2CDriver::i2cWriteByte(unsigned char oneByte)
 {
   const uint8_t BitsPerByte = 8; //always 8, dont' change it
   uint8_t i = 0;
@@ -120,12 +120,12 @@ void SuperI2CDriver::i2cWriteByte(unsigned char oneByte)
   //debugPrint("write byte done\n");
 }
 
-void SuperI2CDriver::i2cDelayMicroSecond(unsigned long int microSec  )
+void SuperTMI2CDriver::i2cDelayMicroSecond(unsigned long int microSec  )
 {
   delayMicroseconds(microSec);
 }
 
-bool SuperI2CDriver:: i2cWriteByteArray(const unsigned char * array_p, uint8_t arraySize)
+bool SuperTMI2CDriver:: i2cWriteByteArray(const unsigned char * array_p, uint8_t arraySize)
 {
     bool success = true;
 
@@ -147,7 +147,7 @@ bool SuperI2CDriver:: i2cWriteByteArray(const unsigned char * array_p, uint8_t a
   }
   return success;
 }
-void SuperI2CDriver:: startCommand(unsigned char commandByte)
+void SuperTMI2CDriver:: startCommand(unsigned char commandByte)
 {
   pinMode(m_pin_Dio, OUTPUT);
 
@@ -165,7 +165,7 @@ void SuperI2CDriver:: startCommand(unsigned char commandByte)
   i2cStop();
 }
 
-void SuperI2CDriver::startCommandData(unsigned char commandByte, const unsigned char * dataArray_p, uint8_t arraySize)
+void SuperTMI2CDriver::startCommandData(unsigned char commandByte, const unsigned char * dataArray_p, uint8_t arraySize)
 {
   bool success = true;
   do
@@ -195,7 +195,7 @@ void SuperI2CDriver::startCommandData(unsigned char commandByte, const unsigned 
 }
 
 
-uint8_t SuperI2CDriver:: startCommandAndReadOneByte(unsigned char commandByte)
+uint8_t SuperTMI2CDriver:: startCommandAndReadOneByte(unsigned char commandByte)
 { 
   bool success = true;
   do {
