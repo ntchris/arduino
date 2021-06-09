@@ -1,0 +1,858 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date "sam. 04 avril 2015"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Label 10350 1500 1    60   ~ 0
+RAW
+$Comp
+L power:GND #PWR015
+U 1 1 56D756B8
+P 9150 2200
+F 0 "#PWR015" H 9150 1950 50  0001 C CNN
+F 1 "GND" H 9150 2050 50  0000 C CNN
+F 2 "" H 9150 2200 50  0000 C CNN
+F 3 "" H 9150 2200 50  0000 C CNN
+	1    9150 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR017
+U 1 1 56D75A03
+P 10600 2050
+F 0 "#PWR017" H 10600 1800 50  0001 C CNN
+F 1 "GND" H 10600 1900 50  0000 C CNN
+F 2 "" H 10600 2050 50  0000 C CNN
+F 3 "" H 10600 2050 50  0000 C CNN
+	1    10600 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10450 1900 10450 1500
+$Comp
+L power:VCC #PWR016
+U 1 1 56D75A9D
+P 10450 1500
+F 0 "#PWR016" H 10450 1350 50  0001 C CNN
+F 1 "VCC" H 10450 1650 50  0000 C CNN
+F 2 "" H 10450 1500 50  0000 C CNN
+F 3 "" H 10450 1500 50  0000 C CNN
+	1    10450 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10250 2100 10500 2100
+Wire Wire Line
+	10500 2400 10250 2400
+$Comp
+L Connector:Conn_01x04_Male J2
+U 1 1 60B2C282
+P 7550 2450
+F 0 "J2" H 7658 2731 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 7150 2650 50  0000 C CNN
+F 2 "myFootPrintLibs:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 7550 2450 50  0001 C CNN
+F 3 "~" H 7550 2450 50  0001 C CNN
+	1    7550 2450
+	1    0    0    -1  
+$EndComp
+Text Label 7500 2200 3    50   ~ 0
+5V_GND_DIO_CLK
+Wire Wire Line
+	7750 2550 8600 2550
+$Comp
+L Regulator_Linear:AMS1117-5.0 U2
+U 1 1 60B3937F
+P 6000 1250
+F 0 "U2" H 6000 1492 50  0000 C CNN
+F 1 "AMS1117-5.0" H 6000 1401 50  0000 C CNN
+F 2 "myFootPrintLibs:SOT-223-3_TabPin2" H 6000 1450 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 6100 1000 50  0001 C CNN
+	1    6000 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 60B3E39F
+P 6000 1750
+F 0 "#PWR06" H 6000 1500 50  0001 C CNN
+F 1 "GND" H 6005 1577 50  0000 C CNN
+F 2 "" H 6000 1750 50  0001 C CNN
+F 3 "" H 6000 1750 50  0001 C CNN
+	1    6000 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 1550 6000 1650
+$Comp
+L power:+5V #PWR08
+U 1 1 60B4339F
+P 6500 950
+F 0 "#PWR08" H 6500 800 50  0001 C CNN
+F 1 "+5V" H 6515 1123 50  0000 C CNN
+F 2 "" H 6500 950 50  0001 C CNN
+F 3 "" H 6500 950 50  0001 C CNN
+	1    6500 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 950  6500 1100
+Wire Wire Line
+	6500 1250 6300 1250
+$Comp
+L power:+5V #PWR018
+U 1 1 60B44CDA
+P 10700 1500
+F 0 "#PWR018" H 10700 1350 50  0001 C CNN
+F 1 "+5V" H 10715 1673 50  0000 C CNN
+F 2 "" H 10700 1500 50  0001 C CNN
+F 3 "" H 10700 1500 50  0001 C CNN
+	1    10700 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10700 1500 10700 1550
+$Comp
+L mySymbolLibrary:chargeBoostBoard U1
+U 1 1 60B473CF
+P 5200 2050
+F 0 "U1" H 5225 2125 50  0000 C CNN
+F 1 "chargeBoostBoard" H 5225 2034 50  0000 C CNN
+F 2 "myFootPrintLibs:TC4056ChargeBoostBoard" H 5200 2050 50  0001 C CNN
+F 3 "" H 5200 2050 50  0001 C CNN
+	1    5200 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 2200 4800 2000
+Wire Wire Line
+	4800 1250 5250 1250
+$Comp
+L power:GND #PWR02
+U 1 1 60B49040
+P 4700 3050
+F 0 "#PWR02" H 4700 2800 50  0001 C CNN
+F 1 "GND" H 4705 2877 50  0000 C CNN
+F 2 "" H 4700 3050 50  0001 C CNN
+F 3 "" H 4700 3050 50  0001 C CNN
+	1    4700 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 3050 4700 2900
+Wire Wire Line
+	4700 2900 4800 2900
+$Comp
+L power:GND #PWR01
+U 1 1 60B4A79D
+P 4700 2450
+F 0 "#PWR01" H 4700 2200 50  0001 C CNN
+F 1 "GND" H 4705 2277 50  0000 C CNN
+F 2 "" H 4700 2450 50  0001 C CNN
+F 3 "" H 4700 2450 50  0001 C CNN
+	1    4700 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 2450 4700 2400
+Wire Wire Line
+	4700 2400 4800 2400
+$Comp
+L power:GND #PWR04
+U 1 1 60B4C10F
+P 5750 2900
+F 0 "#PWR04" H 5750 2650 50  0001 C CNN
+F 1 "GND" H 5755 2727 50  0000 C CNN
+F 2 "" H 5750 2900 50  0001 C CNN
+F 3 "" H 5750 2900 50  0001 C CNN
+	1    5750 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 2900 5750 2800
+Wire Wire Line
+	5750 2800 5650 2800
+$Comp
+L Connector:Conn_01x02_Female J1
+U 1 1 60B50165
+P 6750 2500
+F 0 "J1" H 6778 2476 50  0000 L CNN
+F 1 "Batt" H 6778 2385 50  0000 L CNN
+F 2 "myFootPrintLibs:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 6750 2500 50  0001 C CNN
+F 3 "~" H 6750 2500 50  0001 C CNN
+	1    6750 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 60B5255B
+P 5900 2700
+F 0 "#PWR05" H 5900 2450 50  0001 C CNN
+F 1 "GND" H 5905 2527 50  0000 C CNN
+F 2 "" H 5900 2700 50  0001 C CNN
+F 3 "" H 5900 2700 50  0001 C CNN
+	1    5900 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 2700 5900 2600
+Wire Wire Line
+	5900 2600 6100 2600
+$Comp
+L power:+5V #PWR014
+U 1 1 60B54F08
+P 8100 2800
+F 0 "#PWR014" H 8100 2650 50  0001 C CNN
+F 1 "+5V" H 8115 2973 50  0000 C CNN
+F 2 "" H 8100 2800 50  0001 C CNN
+F 3 "" H 8100 2800 50  0001 C CNN
+	1    8100 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 2800 8000 2800
+Wire Wire Line
+	7750 2800 7750 2650
+$Comp
+L mySymbolLibrary:SWITCH-PUSH_LOCK-PTH-8.5mm S2
+U 1 1 60B5DE71
+P 6350 2050
+F 0 "S2" V 6191 2226 45  0000 L CNN
+F 1 "SWITCH-SPDT-PTH-11.6X4.0MM-KIT" V 6275 2226 45  0000 L CNN
+F 2 "myFootPrintLibs:SW_PUSH_LOCK__8.5mm_H8.5mm" H 6350 2300 20  0001 C CNN
+F 3 "" H 6350 2050 50  0001 C CNN
+F 4 "SWCH-08261" V 6370 2226 60  0000 L CNN "Field4"
+	1    6350 2050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6450 2250 6450 2300
+Wire Wire Line
+	6450 2300 6100 2300
+Wire Wire Line
+	5650 2300 5650 2650
+Wire Wire Line
+	6550 1950 6350 1950
+Wire Wire Line
+	6550 1950 6550 2500
+$Comp
+L alarmSimple-rescue:AO3402_N_Mosfet-mySymbolLibrary Q1
+U 1 1 60B8ED0B
+P 7350 4400
+F 0 "Q1" H 7555 4446 50  0000 L CNN
+F 1 "AO3402_N_Mosfet" H 7555 4355 50  0000 L CNN
+F 2 "myFootPrintLibs:SOT-23_PMOSFET" H 7550 4325 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 7350 4400 50  0001 L CNN
+	1    7350 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR010
+U 1 1 60B9533A
+P 7450 4700
+F 0 "#PWR010" H 7450 4450 50  0001 C CNN
+F 1 "GND" H 7455 4527 50  0000 C CNN
+F 2 "" H 7450 4700 50  0001 C CNN
+F 3 "" H 7450 4700 50  0001 C CNN
+	1    7450 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 4700 7450 4600
+$Comp
+L SparkFun-Resistors:RESISTOR0805 R3
+U 1 1 60B97BFA
+P 6750 4450
+F 0 "R3" H 6750 4700 45  0000 C CNN
+F 1 "100R" H 6750 4600 45  0000 C CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 6750 4600 20  0001 C CNN
+F 3 "" H 6750 4450 60  0001 C CNN
+F 4 " " H 6750 4571 60  0000 C CNN "Field4"
+	1    6750 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 4450 7200 4450
+Text GLabel 6550 4300 0    50   Input ~ 0
+buzz_en
+Wire Wire Line
+	6550 4300 6550 4450
+Text GLabel 9050 2550 0    50   Input ~ 0
+buzz_en
+$Comp
+L Device:Buzzer BZ1
+U 1 1 60BA1994
+P 7600 3850
+F 0 "BZ1" H 7752 3879 50  0000 L CNN
+F 1 "Buzzer" H 7752 3788 50  0000 L CNN
+F 2 "myFootPrintLibs:Buzzer_12x9.5RM7.6" V 7575 3950 50  0001 C CNN
+F 3 "~" V 7575 3950 50  0001 C CNN
+	1    7600 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 3950 7450 3950
+Wire Wire Line
+	7450 3950 7450 4100
+$Comp
+L power:+5V #PWR011
+U 1 1 60BA6B49
+P 7500 3500
+F 0 "#PWR011" H 7500 3350 50  0001 C CNN
+F 1 "+5V" H 7515 3673 50  0000 C CNN
+F 2 "" H 7500 3500 50  0001 C CNN
+F 3 "" H 7500 3500 50  0001 C CNN
+	1    7500 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Capacitors:10UF-0805-10V-10% C7
+U 1 1 60BA92F0
+P 6500 1450
+F 0 "C7" H 6608 1595 45  0000 L CNN
+F 1 "10UF-0805-10V-10%" H 6150 1350 45  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 6500 1700 20  0001 C CNN
+F 3 "" H 6500 1450 50  0001 C CNN
+F 4 "capacitor" H 6608 1416 60  0000 L CNN "Field4"
+	1    6500 1450
+	1    0    0    -1  
+$EndComp
+Connection ~ 6500 1250
+$Comp
+L power:GND #PWR09
+U 1 1 60BAA24A
+P 6500 1600
+F 0 "#PWR09" H 6500 1350 50  0001 C CNN
+F 1 "GND" H 6505 1427 50  0000 C CNN
+F 2 "" H 6500 1600 50  0001 C CNN
+F 3 "" H 6500 1600 50  0001 C CNN
+	1    6500 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 1600 6500 1550
+$Comp
+L SparkFun-Capacitors:10UF-0805-10V-10% C2
+U 1 1 60BACE65
+P 5250 1450
+F 0 "C2" H 5358 1595 45  0000 L CNN
+F 1 "10UF-0805-10V-10%" H 5358 1511 45  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 5250 1700 20  0001 C CNN
+F 3 "" H 5250 1450 50  0001 C CNN
+F 4 "capacitor" H 5358 1416 60  0000 L CNN "Field4"
+	1    5250 1450
+	1    0    0    -1  
+$EndComp
+Connection ~ 5250 1250
+Wire Wire Line
+	5250 1250 5700 1250
+Wire Wire Line
+	5250 1550 5250 1650
+Wire Wire Line
+	5250 1650 6000 1650
+Connection ~ 6000 1650
+Wire Wire Line
+	6000 1650 6000 1750
+$Comp
+L SparkFun-Capacitors:10UF-0805-10V-10% C1
+U 1 1 60BAFD0E
+P 4600 2200
+F 0 "C1" H 4708 2345 45  0000 L CNN
+F 1 "20UF-0805-10V-10%" H 3950 2100 45  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 4600 2450 20  0001 C CNN
+F 3 "" H 4600 2200 50  0001 C CNN
+F 4 "capacitor" H 4708 2166 60  0000 L CNN "Field4"
+	1    4600 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 2000 4800 2000
+Connection ~ 4800 2000
+Wire Wire Line
+	4800 2000 4800 1250
+Wire Wire Line
+	4600 2300 4600 2400
+Wire Wire Line
+	4600 2400 4700 2400
+Connection ~ 4700 2400
+$Comp
+L SparkFun-Capacitors:100UF-POLAR-EIA7343-10V-10%_TANT_ C4
+U 1 1 60BB5D43
+P 5900 2400
+F 0 "C4" H 5750 2250 45  0000 L CNN
+F 1 "220uf_227A" H 5700 2600 45  0000 L CNN
+F 2 "myFootPrintLibs:CP_EIA-7343-20_Kemet-V_Pad2.25x2.55mm_HandSolder" H 5900 2650 20  0001 C CNN
+F 3 "" H 5900 2400 50  0001 C CNN
+F 4 "" H 6028 2266 60  0000 L CNN "Field4"
+	1    5900 2400
+	1    0    0    -1  
+$EndComp
+Connection ~ 5900 2300
+Wire Wire Line
+	5900 2300 5650 2300
+Connection ~ 5900 2600
+$Comp
+L SparkFun-Capacitors:10UF-0805-10V-10% C8
+U 1 1 60BB940B
+P 6850 1450
+F 0 "C8" H 6958 1595 45  0000 L CNN
+F 1 "10UF-0805-10V-10%" H 6900 1650 45  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 6850 1700 20  0001 C CNN
+F 3 "" H 6850 1450 50  0001 C CNN
+F 4 "capacitor" H 6958 1416 60  0000 L CNN "Field4"
+	1    6850 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 1600 6850 1600
+Wire Wire Line
+	6850 1600 6850 1550
+Connection ~ 6500 1600
+Wire Wire Line
+	6850 1250 6850 1100
+Wire Wire Line
+	6850 1100 6500 1100
+Connection ~ 6500 1100
+Wire Wire Line
+	6500 1100 6500 1250
+$Comp
+L SparkFun-Capacitors:10UF-0805-10V-10% C10
+U 1 1 60BBEDB7
+P 8000 3000
+F 0 "C10" H 8108 3145 45  0000 L CNN
+F 1 "10UF-0805-10V-10%" H 8108 3061 45  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 8000 3250 20  0001 C CNN
+F 3 "" H 8000 3000 50  0001 C CNN
+F 4 "capacitor" H 8108 2966 60  0000 L CNN "Field4"
+	1    8000 3000
+	1    0    0    -1  
+$EndComp
+Connection ~ 8000 2800
+Wire Wire Line
+	8000 2800 7750 2800
+$Comp
+L power:GND #PWR013
+U 1 1 60BBFE88
+P 8000 3150
+F 0 "#PWR013" H 8000 2900 50  0001 C CNN
+F 1 "GND" H 8005 2977 50  0000 C CNN
+F 2 "" H 8000 3150 50  0001 C CNN
+F 3 "" H 8000 3150 50  0001 C CNN
+	1    8000 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 3150 8000 3100
+$Comp
+L SparkFun-Capacitors:10UF-0805-10V-10% C11
+U 1 1 60BC3319
+P 10950 1750
+F 0 "C11" H 11058 1895 45  0000 L CNN
+F 1 "10UF-0805-10V-10%" H 10750 2000 45  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 10950 2000 20  0001 C CNN
+F 3 "" H 10950 1750 50  0001 C CNN
+F 4 "capacitor" H 10800 1700 60  0000 L CNN "Field4"
+	1    10950 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR019
+U 1 1 60BC4B0D
+P 10950 1900
+F 0 "#PWR019" H 10950 1650 50  0001 C CNN
+F 1 "GND" H 11050 1900 50  0000 C CNN
+F 2 "" H 10950 1900 50  0001 C CNN
+F 3 "" H 10950 1900 50  0001 C CNN
+	1    10950 1900
+	1    0    0    -1  
+$EndComp
+Text GLabel 5450 4750 0    50   Input ~ 0
+button_plus
+Text GLabel 6400 4750 0    50   Input ~ 0
+button_minus
+Text GLabel 8850 2100 0    50   Input ~ 0
+button_plus
+Text GLabel 8950 2000 0    50   Input ~ 0
+button_minus
+Text Notes 9150 3850 0    50   ~ 0
+PB0 PB1 PB2\n8      9     10
+$Comp
+L mySymbolLibrary:MOMENTARY-SWITCH-SPST-PTH-6.0MM S1
+U 1 1 60B419C6
+P 5450 5700
+F 0 "S1" V 5355 5778 45  0000 L CNN
+F 1 "MOMENTARY-SWITCH-SPST-PTH-6.0MM" V 5100 4900 45  0000 L CNN
+F 2 "myFootPrintLibs:Switch_Tactile_THT_6x6mm" H 5450 5900 20  0001 C CNN
+F 3 "" H 5450 5700 50  0001 C CNN
+F 4 "button" V 5534 5778 60  0000 L CNN "Field4"
+	1    5450 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 60B41D9A
+P 5450 6300
+F 0 "#PWR03" H 5450 6050 50  0001 C CNN
+F 1 "GND" H 5455 6127 50  0000 C CNN
+F 2 "" H 5450 6300 50  0001 C CNN
+F 3 "" H 5450 6300 50  0001 C CNN
+	1    5450 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0805 R1
+U 1 1 60B41DA5
+P 5450 5150
+F 0 "R1" H 5400 4900 45  0000 C CNN
+F 1 "6.4k" H 5400 5000 45  0000 C CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 5450 5300 20  0001 C CNN
+F 3 "" H 5450 5150 60  0001 C CNN
+F 4 " " H 5450 5271 60  0000 C CNN "Field4"
+	1    5450 5150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5450 4750 5450 4950
+$Comp
+L SparkFun-Capacitors:10UF-0805-10V-10% C3
+U 1 1 60B41DB1
+P 5250 5700
+F 0 "C3" H 5000 5850 45  0000 L CNN
+F 1 "100nf" H 4950 5950 45  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 5250 5950 20  0001 C CNN
+F 3 "" H 5250 5700 50  0001 C CNN
+F 4 "capacitor" H 5000 5450 60  0000 L CNN "Field4"
+	1    5250 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 5350 5450 5400
+Wire Wire Line
+	5250 5800 5250 5950
+Wire Wire Line
+	5250 5950 5450 5950
+Wire Wire Line
+	5450 5950 5450 6300
+Wire Wire Line
+	5450 5900 5450 5950
+Connection ~ 5450 5950
+Wire Wire Line
+	5250 5500 5250 5400
+Wire Wire Line
+	5250 5400 5450 5400
+Connection ~ 5450 5400
+Wire Wire Line
+	5450 5400 5450 5500
+$Comp
+L mySymbolLibrary:MOMENTARY-SWITCH-SPST-PTH-6.0MM S3
+U 1 1 60B48A85
+P 6400 5700
+F 0 "S3" V 6305 5778 45  0000 L CNN
+F 1 "MOMENTARY-SWITCH-SPST-PTH-6.0MM" V 6389 5778 45  0000 L CNN
+F 2 "myFootPrintLibs:Switch_Tactile_THT_6x6mm" H 6400 5900 20  0001 C CNN
+F 3 "" H 6400 5700 50  0001 C CNN
+F 4 "button" V 6484 5778 60  0000 L CNN "Field4"
+	1    6400 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 60B48EB1
+P 6400 6300
+F 0 "#PWR07" H 6400 6050 50  0001 C CNN
+F 1 "GND" H 6405 6127 50  0000 C CNN
+F 2 "" H 6400 6300 50  0001 C CNN
+F 3 "" H 6400 6300 50  0001 C CNN
+	1    6400 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0805 R2
+U 1 1 60B48EBC
+P 6400 5150
+F 0 "R2" H 6350 4900 45  0000 C CNN
+F 1 "6.4k" H 6350 5000 45  0000 C CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 6400 5300 20  0001 C CNN
+F 3 "" H 6400 5150 60  0001 C CNN
+F 4 " " H 6400 5271 60  0000 C CNN "Field4"
+	1    6400 5150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6400 4750 6400 4950
+$Comp
+L SparkFun-Capacitors:10UF-0805-10V-10% C6
+U 1 1 60B48EC8
+P 6200 5700
+F 0 "C6" H 5950 5850 45  0000 L CNN
+F 1 "100nf" H 5900 5950 45  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 6200 5950 20  0001 C CNN
+F 3 "" H 6200 5700 50  0001 C CNN
+F 4 "capacitor" H 5950 5450 60  0000 L CNN "Field4"
+	1    6200 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 5350 6400 5400
+Wire Wire Line
+	6200 5800 6200 5950
+Wire Wire Line
+	6200 5950 6400 5950
+Wire Wire Line
+	6400 5950 6400 6300
+Wire Wire Line
+	6400 5900 6400 5950
+Connection ~ 6400 5950
+Wire Wire Line
+	6200 5500 6200 5400
+Wire Wire Line
+	6200 5400 6400 5400
+Connection ~ 6400 5400
+Wire Wire Line
+	6400 5400 6400 5500
+$Comp
+L SparkFun-Capacitors:100UF-POLAR-EIA7343-10V-10%_TANT_ C9
+U 1 1 60B50D99
+P 7750 2900
+F 0 "C9" H 7600 2750 45  0000 L CNN
+F 1 "220uf_227A" H 7550 3100 45  0000 L CNN
+F 2 "myFootPrintLibs:CP_EIA-7343-20_Kemet-V_Pad2.25x2.55mm_HandSolder" H 7750 3150 20  0001 C CNN
+F 3 "" H 7750 2900 50  0001 C CNN
+F 4 "" H 7878 2766 60  0000 L CNN "Field4"
+	1    7750 2900
+	1    0    0    -1  
+$EndComp
+Connection ~ 7750 2800
+$Comp
+L power:GND #PWR012
+U 1 1 60B5F059
+P 7750 3150
+F 0 "#PWR012" H 7750 2900 50  0001 C CNN
+F 1 "GND" H 7755 2977 50  0000 C CNN
+F 2 "" H 7750 3150 50  0001 C CNN
+F 3 "" H 7750 3150 50  0001 C CNN
+	1    7750 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 3150 7750 3100
+Text GLabel 10700 2600 2    50   Input ~ 0
+VBattCheck
+Text GLabel 5900 2000 0    50   Input ~ 0
+VBattCheck
+Wire Wire Line
+	5900 2000 5900 2300
+$Comp
+L SparkFun-Capacitors:10UF-0805-10V-10% C5
+U 1 1 60B69B9B
+P 6100 2500
+F 0 "C5" H 6208 2645 45  0000 L CNN
+F 1 "10UF-0805-10V-10%" H 6050 2300 45  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 6100 2750 20  0001 C CNN
+F 3 "" H 6100 2500 50  0001 C CNN
+F 4 "capacitor" H 6208 2466 60  0000 L CNN "Field4"
+	1    6100 2500
+	1    0    0    -1  
+$EndComp
+Connection ~ 6100 2300
+Wire Wire Line
+	6100 2300 5900 2300
+Connection ~ 6100 2600
+Wire Wire Line
+	6100 2600 6550 2600
+Wire Wire Line
+	10950 1900 10950 1850
+Wire Wire Line
+	10950 1550 10700 1550
+Connection ~ 10700 1550
+Wire Wire Line
+	10700 1550 10700 1900
+$Comp
+L mySymbolLibrary:LED D1
+U 1 1 60B941A7
+P 8600 4250
+F 0 "D1" H 8678 4295 45  0000 L CNN
+F 1 "LED3MM" H 8678 4211 45  0000 L CNN
+F 2 "myFootPrintLibs:LED_D3.0mm" V 8400 4250 20  0001 C CNN
+F 3 "" H 8600 4250 50  0001 C CNN
+F 4 "XXX-00000" H 8678 4116 60  0000 L CNN "Field4"
+	1    8600 4250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SparkFun-Resistors:RESISTOR0805 R4
+U 1 1 60B96A96
+P 8600 3900
+F 0 "R4" H 8550 3650 45  0000 C CNN
+F 1 "600R" H 8550 3750 45  0000 C CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 8600 4050 20  0001 C CNN
+F 3 "" H 8600 3900 60  0001 C CNN
+F 4 " " H 8600 4021 60  0000 C CNN "Field4"
+	1    8600 3900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8600 3700 7500 3700
+Wire Wire Line
+	7500 3500 7500 3700
+Connection ~ 7500 3700
+Wire Wire Line
+	7500 3700 7500 3750
+Wire Wire Line
+	8600 4100 8600 4150
+Wire Wire Line
+	8600 4600 8100 4600
+Wire Wire Line
+	8100 4600 8100 4100
+Wire Wire Line
+	8100 4100 7450 4100
+Connection ~ 7450 4100
+Wire Wire Line
+	7450 4100 7450 4200
+$Comp
+L mySymbolLibrary:ARDUINO_PRO_MINI B1
+U 1 1 60B67C5A
+P 9800 2600
+F 0 "B1" H 9800 3660 45  0000 C CNN
+F 1 "ARDUINO_PRO_MINI" H 9800 3576 45  0000 C CNN
+F 2 "myFootPrintLibs:arduino_pro_mini" H 9800 3550 20  0001 C CNN
+F 3 "" H 9800 2600 50  0001 C CNN
+F 4 "XXX-00000" H 9800 3481 60  0000 C CNN "Field4"
+	1    9800 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8600 2200 9150 2200
+Connection ~ 9150 2200
+Wire Wire Line
+	9150 2200 9350 2200
+Wire Wire Line
+	10600 2050 10600 2000
+Wire Wire Line
+	10250 2000 10600 2000
+Wire Wire Line
+	10450 1900 10700 1900
+Wire Wire Line
+	10700 2200 10700 1900
+Wire Wire Line
+	10250 2200 10700 2200
+Connection ~ 10700 1900
+Wire Wire Line
+	10250 2600 10700 2600
+Wire Wire Line
+	8600 2550 8600 2200
+Wire Wire Line
+	9050 2550 9050 2700
+Wire Wire Line
+	9050 2700 9350 2700
+Connection ~ 8600 4100
+Wire Wire Line
+	8600 4400 8600 4600
+$Comp
+L SparkFun-Capacitors:100UF-POLAR-EIA7343-10V-10%_TANT_ C12
+U 1 1 60CB8DE5
+P 7200 1350
+F 0 "C12" H 7050 1200 45  0000 L CNN
+F 1 "220uf_227A" H 7000 1550 45  0000 L CNN
+F 2 "myFootPrintLibs:CP_EIA-7343-20_Kemet-V_Pad2.25x2.55mm_HandSolder" H 7200 1600 20  0001 C CNN
+F 3 "" H 7200 1350 50  0001 C CNN
+F 4 "" H 7328 1216 60  0000 L CNN "Field4"
+	1    7200 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 1250 7200 1100
+Wire Wire Line
+	7200 1100 6850 1100
+Connection ~ 6850 1100
+Wire Wire Line
+	7200 1550 7200 1600
+Wire Wire Line
+	7200 1600 6850 1600
+Connection ~ 6850 1600
+Wire Wire Line
+	7750 2350 8450 2350
+Wire Wire Line
+	8450 2350 8450 3500
+Wire Wire Line
+	8450 3500 10400 3500
+Wire Wire Line
+	10400 3500 10400 3000
+Wire Wire Line
+	10400 3000 10250 3000
+Wire Wire Line
+	7750 2450 8400 2450
+Wire Wire Line
+	8400 2450 8400 3550
+Wire Wire Line
+	8400 3550 10450 3550
+Wire Wire Line
+	10450 3550 10450 2900
+Wire Wire Line
+	10450 2900 10250 2900
+Wire Wire Line
+	8950 2000 8950 2300
+Wire Wire Line
+	8950 2300 9350 2300
+Wire Wire Line
+	8850 2100 8850 2400
+Wire Wire Line
+	8850 2400 9350 2400
+Text Label 4800 1900 0    50   ~ 0
+Out5.8V
+$Comp
+L SparkFun-Capacitors:100UF-POLAR-EIA7343-10V-10%_TANT_ C13
+U 1 1 60B7C21C
+P 4350 2100
+F 0 "C13" H 4200 1950 45  0000 L CNN
+F 1 "220uf_227A" H 4150 2300 45  0000 L CNN
+F 2 "myFootPrintLibs:CP_EIA-7343-20_Kemet-V_Pad2.25x2.55mm_HandSolder" H 4350 2350 20  0001 C CNN
+F 3 "" H 4350 2100 50  0001 C CNN
+F 4 "" H 4478 1966 60  0000 L CNN "Field4"
+	1    4350 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 2000 4600 2000
+Connection ~ 4600 2000
+Wire Wire Line
+	4350 2300 4350 2400
+Wire Wire Line
+	4350 2400 4600 2400
+Connection ~ 4600 2400
+$Comp
+L SparkFun-Resistors:RESISTOR0805 R?
+U 1 1 60BEE372
+P 6550 4700
+F 0 "R?" H 6550 4950 45  0000 C CNN
+F 1 "10kR" H 6550 4850 45  0000 C CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad_HandSolder" H 6550 4850 20  0001 C CNN
+F 3 "" H 6550 4700 60  0001 C CNN
+F 4 " " H 6550 4821 60  0000 C CNN "Field4"
+	1    6550 4700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 4500 6550 4450
+Connection ~ 6550 4450
+$Comp
+L power:GND #PWR?
+U 1 1 60BFAA32
+P 6550 4900
+F 0 "#PWR?" H 6550 4650 50  0001 C CNN
+F 1 "GND" H 6555 4727 50  0000 C CNN
+F 2 "" H 6550 4900 50  0001 C CNN
+F 3 "" H 6550 4900 50  0001 C CNN
+	1    6550 4900
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
