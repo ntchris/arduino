@@ -5,14 +5,15 @@
 #include <TimerOne.h>
 #include <EEPROM.h>
 
+const int MaxSaveMinute = 60;
 const unsigned long  MAXALARMSEC = 60 * 60; // max alarm timer is 60 minutes, or 3600 sec
 const bool Debug = true;
-const float LOWVBAT = 3.58;
+const float LOWVBAT = 3.55;
 const int BattCheckPin = A0;
 //  handle pin change interrupt for D0 to D7 here, PIND (PortD)
 //  PCINT2_vect
-const int Button1_PIN = 3;
-const int Button2_PIN = 2;
+const int Button1_PIN = 2;
+const int Button2_PIN = 3;
 
 
 const int BUZZER_PIN = 6;
@@ -29,7 +30,8 @@ const int ShortBeepEachNSecond = 5;
 const unsigned long HalfSecond_MicroSec =  500000;
 const unsigned long TwoSecond_MicroSec =  2000000;
 
-volatile long alarm_timer_sec = 5; // so it's 20 minutes, or 1200 sec )
+const int DefaultAlarmMin = 20;
+volatile long alarm_timer_sec = DefaultAlarmMin * 60; // so it's 20 minutes, or 1200 sec )
 
 const String FinalStringZero = "0:00";
 
@@ -99,37 +101,51 @@ void saveAlarmSetting()
   // EEPROM.write(0,alarm_timer_sec );
   if ( saveSettingEnabled)
   {
-    int saveMin = alarm_timer_sec/60;
-    if ( alarm_timer_sec%60 !=0)
+    int saveMin = alarm_timer_sec / 60;
+    if ( alarm_timer_sec % 60 != 0)
     {
       // if 1:01 to 1:59, save as 2.
-      saveMin +=1;
+      saveMin += 1;
     }
-    if ( saveMin <=0)
+    if ( saveMin <= 0)
     {
       // min save value, 1 minute
       saveMin = 1;
     }
     Serial.print("eeprom save");
     Serial.println(saveMin);
-    EEPROM.put(0, saveMin  );
+    //EEPROM.put(0, saveMin  );
+    EEPROM.write(0, saveMin);
+    buzzOn();
+    delay(buz_short_time_ms);
+    buzzOff();
+
   }
 
 }
 void loadAlarmSetting()
 {
   // load alarm_timer_sec
-  int loadMin=0;
-  EEPROM.get(0, loadMin );
-  alarm_timer_sec= loadMin * 60;
-  if( alarm_timer_sec >= MAXALARMSEC )
+  int loadMin = 0;
+  //EEPROM.get(0, loadMin );
+  loadMin = EEPROM.read( 0 );
+  if (loadMin <= 0)
+  {
+    loadMin = 1;
+  } else if (loadMin >= 255)
+  {
+    loadMin = DefaultAlarmMin;
+  }
+
+  alarm_timer_sec = loadMin * 60;
+  if ( alarm_timer_sec >= MAXALARMSEC )
   {
     alarm_timer_sec = MAXALARMSEC ;
   }
   if (Debug)
   {
-    Serial.print("eeprom read");
-    Serial.println(alarm_timer_sec);
+    Serial.print("eeprom read minutes ");
+    Serial.println(loadMin);
   }
 
 }
@@ -143,6 +159,8 @@ void alarmTimerIncr()
   }
 
   alarmIsFired = false;
+  //buzzOff();
+
 }
 
 void alarmTimerDecr()
@@ -175,7 +193,7 @@ static void button2Pressed()
     Serial.println("Button2");
   }
   alarmTimerDecr();
- }
+}
 
 
 void displayHumanTimeFlashingColon(unsigned long second, bool showColon = true)
@@ -196,7 +214,7 @@ static void staticButtonInterruptPortD()
   int value1 = digitalRead( Button1_PIN );
   int value2 = digitalRead( Button2_PIN );
   bool buttonPressed = false;
-  
+
   if (value1 != lastValue1 )
   {
     lastValue1 = value1;
@@ -224,10 +242,10 @@ static void staticButtonInterruptPortD()
     }
   }
 
-  if( buttonPressed)
+  if ( buttonPressed)
   {
-      saveAlarmSetting();
-      displayHumanTimeFlashingColon(alarm_timer_sec);
+    saveAlarmSetting();
+    displayHumanTimeFlashingColon(alarm_timer_sec);
   }
 
 
@@ -241,10 +259,24 @@ ISR(PCINT2_vect)
 
 
 void fireAlarm()
-{
-  //buzzOn();
-  myTM1637.display(FinalStringZero);
-
+{ 
+  const int ONOFFPWM=3; // 1,2,3:ON  , 4:OFF 
+  static int counter = 0;
+  int alarmOn = counter%ONOFFPWM ;
+  
+  if( alarmOn)
+  {
+     buzzOn();
+  }else
+  {
+    buzzOff();
+  }
+  
+  if( counter%2)
+  { 
+    myTM1637.display(FinalStringZero);
+  }
+  counter ++;
 }
 
 
@@ -258,7 +290,7 @@ void alarmCountingInterrupt()
     // now init the buzzer timer.
     alarmIsFired = true;
 
-    fireAlarm();
+    
   } else
   {
 
@@ -284,25 +316,15 @@ void alarmCountingInterrupt()
 
   }
 }
-
-void timeOutAlarmInterrupt()
-{
-
-}
+ 
 
 // before alarm is fired, timer is counting
 void alarmTimerInterrupt()          // timer compare interrupt service routine
 {
 
-  if (Debug)
-  { Serial.print("in int");
-  }
   if ( !alarmIsFired )
   {
     alarmCountingInterrupt();
-  } else
-  {
-    timeOutAlarmInterrupt();
   }
 
 }
@@ -352,7 +374,7 @@ void setup() {
   pciSetup(Button1_PIN);
   pciSetup(Button2_PIN);
 
-  myTM1637.setBrightness(buz_short_time_ms);
+  myTM1637.setBrightness(2);
   loadAlarmSetting();
   displayHumanTimeFlashingColon( alarm_timer_sec );
 
@@ -364,18 +386,53 @@ void setup() {
 
 }
 
+void lowBattWarning(float vbat)
+{
+  const String LowVBatMsg = "LoBA";
+
+  int Loop = 3;
+  for (int i = 0; i < Loop; i++)
+  {
+    buzzOn();
+    myTM1637.display(LowVBatMsg);
+    delay(1000);
+    myTM1637.display(vbat);
+    buzzOff();
+    delay(800);
+
+  }
+}
+
+
+int analogReadAvgVBatt()
+{
+   const int AvgMax = 6;
+   int batReadInt = 0;
+   for(int i=0;i< AvgMax;i++)
+   {
+      delay(20);
+      batReadInt = batReadInt + analogRead(BattCheckPin);
+   }
+   batReadInt /= AvgMax;
+   return batReadInt;
+}
+
 void checkVBatt()
 {
-  int batRead = analogRead(BattCheckPin);
-  const int VCC5 = 5;
+  // just in case.
+  buzzOff();
+  delay(50);
+  int vbatInt = analogReadAvgVBatt();
+  
+  const float VCC5 = 4.94f;
   const int ADCMAPMAX1023 = 1023;
   if (Debug)
   {
-    Serial.print("batRead");
-    Serial.println(batRead);
+    Serial.print("batRead voltage: ");
+    Serial.println(vbatInt);
   }
   //cannot use map, it's for int.
-  float vbat =   batRead * 1.0f * VCC5 / ADCMAPMAX1023;
+  float vbat =   vbatInt * 1.0f * VCC5 / ADCMAPMAX1023;
 
   if (Debug)
   {
@@ -383,20 +440,12 @@ void checkVBatt()
     Serial.println(vbat );
   }
 
-  const String LowVBatMsg = "LoBA";
+  
+
+
   if (vbat < LOWVBAT)
   {
-    buzzOn();
-    myTM1637.display(LowVBatMsg);
-    delay(1500);
-    buzzOff();
-    myTM1637.display("");
-    delay(500);
-    myTM1637.display(LowVBatMsg);
-    delay(500);
-    buzzOn();
-    delay(1500);
-    buzzOff();
+    lowBattWarning(vbat);
   }
 
 }
@@ -404,13 +453,13 @@ void checkVBatt()
 
 void displayFlashAlarmSetting()
 {
-  int showAlarmSettingForNSec = StartTimerAfterNSecond;
-  for (int i = 0; i < showAlarmSettingForNSec; i++)
+  // show Alarm Setting For N Sec: StartTimerAfterNSecond
+  for (int i = 0; i < StartTimerAfterNSecond; i++)
   {
     displayHumanTimeFlashingColon(alarm_timer_sec);
-    delay(700);
+    delay(800);
     myTM1637.display("");
-    delay(300);
+    delay(200);
   }
 }
 
@@ -421,8 +470,8 @@ void beforeTimerStart()
     Serial.println("delay " + String(StartTimerAfterNSecond) + "sec"  );
   }
   delay(300);
-  //checkVBatt();
-  
+  checkVBatt();
+
   displayFlashAlarmSetting();
 
   buzzOn();
@@ -432,53 +481,44 @@ void beforeTimerStart()
 }
 
 
-void loopzzz()
-{
-  static int loopCount = 0;
-  loopCount ++;
-  if (Debug)
-  {
-    Serial.println("alarm_timer_sec " + String(alarm_timer_sec ) );
-  }
-  delay(2000);
-}
-
 void loop()
 {
-
+  const int LoopInterval = 500;
+  //before timer /alarm started
   if ( !timerIsStarted )
   {
-
     if (Debug)
     {
       Serial.println("=============== start ===============   " );
     }
     beforeTimerStart();
   }
-
-  if (timerIsStarted)
-  {
+  else
+  { 
+    // alarm is still counting
     if (!alarmIsFired)
     {
-      int testShortBeep = alarm_timer_sec % ShortBeepEachNSecond ;
+      int doShortBeep = !(alarm_timer_sec % ShortBeepEachNSecond );
       if (Debug)
       {
         Serial.print("short beep:");
-        Serial.println(testShortBeep);
+        Serial.println(doShortBeep);
       }
 
-      if ( testShortBeep == 0 )
+      if ( doShortBeep )
       {
-        digitalWrite(BUZZER_PIN , HIGH);
-        delay(buz_short_time_ms);
-        digitalWrite(BUZZER_PIN , LOW);
+        buzzOn();
+        delay(buz_short_time_ms);        
+        buzzOff();
+        delay(LoopInterval);
       }
-
+      
+      // before N second, change of the alarm timer is saved in eeprom.
       static int saveEnableCount = 0;
       if (saveSettingEnabled)
       {
         saveEnableCount++;
-        if ( saveEnableCount >= AllowSaveWithinNSec )
+        if ( saveEnableCount >= AllowSaveWithinNSec*1.0f*1000/LoopInterval) 
         {
           saveSettingEnabled = false;
         }
@@ -487,11 +527,12 @@ void loop()
     } else
     {
       // alarm is fired already
-
+      fireAlarm();
+      
     }
   }
 
   //displayHumanTimeFlashingColon(alarm_timer_sec);
-  delay(1000);
+  delay(LoopInterval);
 
 }
