@@ -3,12 +3,15 @@
 
 const int ServoPin =  3;
 const int AlarmPin = 9;
-const int MotionDetectPin = A4;
+//const int MotionDetectPin = A4;
+const int MotionDetectPin = 2; //  D2 pin supports external interrupt 0
 
 const int servoMid = 90;
 const int servoTrigger = 130;
 
 const unsigned long CapturedAlarmTimerSec = 30 * 60 * 1000l;
+
+
 
 Servo servo;
 
@@ -31,22 +34,6 @@ void waitForSensorStable()
   } while (det);
 }
 
-void setup()
-{
-  pinMode(MotionDetectPin, INPUT);
-  pinMode(AlarmPin, OUTPUT);
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, LOW);
-  longBeep();
-  servoTest();
-
-  //let motin sensor be stable
-  waitForSensorStable();
-  // meaning we are starting:
-  longBeep();
-  longBeep();
-  longBeep();
-}
 
 void longBeep()
 {
@@ -71,7 +58,7 @@ void soundAlarm()
 {
 
   shortBeep();
-  delay(2000);
+  delay(800);
   shortBeep();
 
 
@@ -83,9 +70,9 @@ void servoTest()
   servo.attach(ServoPin);
   delay(200);
   servo.write(servoMid + 8);
-  delay(1500);
+  delay(1200);
   servo.write(servoMid);
-  delay(2000);
+  delay(1200);
   disableServo();
 }
 
@@ -99,7 +86,7 @@ void disableServo()
 
 void shutDoorAction()
 {
-
+  
   servo.attach(ServoPin);
   delay(200);
   trigger();
@@ -107,7 +94,6 @@ void shutDoorAction()
   closeAndLock();
   delay(500);
   disableServo();
-
 
 }
 
@@ -142,10 +128,34 @@ void deepSleep60sec()
 
 }
 
+void wakeup()
+{
+  
+}
+
+void setup()
+{
+  pinMode(MotionDetectPin, INPUT);
+  pinMode(AlarmPin, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);
+  longBeep();
+  servoTest();
+
+  //let motin sensor be stable
+  waitForSensorStable();
+  // meaning we are starting:
+  longBeep();
+  longBeep();
+   
+
+ 
+}
 void loop()
 {
-  static bool detected = false;
+  
   static bool doorIsShut = false;
+  static bool detected = false;
   if (!detected )
   {
     // consider pin change interrupt
@@ -158,6 +168,7 @@ void loop()
     
     shutDoorAction();
     doorIsShut = true;
+
     shortBeep();
     delay(1000);
     shortBeep();
@@ -167,34 +178,40 @@ void loop()
     shortBeep();
     delay(1000);
     longBeep();
-    delay(1000);
-    shortBeep();
-    delay(1000);
-    shortBeep();
+     
     
     //delay(5000);
     disableServo();
   }
-
+  
   // once detected ,always detected
   if (doorIsShut)
   {
     // don't sound alarm too many times, only per 30min
     static int capturedNotification = 0;
-    if ( capturedNotification > 30)
+    if ( capturedNotification > 60)
     {
       soundAlarm();
       capturedNotification = 0;
 
     }
     capturedNotification++;
-    deepSleep60sec();
+    //deepSleep60sec();
+    detachInterrupt(0 );
+    LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF); 
+
+
   }
   else
   {
-     LowPower.powerDown( SLEEP_1S, ADC_OFF, BOD_OFF);
-  }
+     //LowPower.powerDown( SLEEP_2S, ADC_OFF, BOD_OFF);
+     // D2 pin supports external interrupt 0
+     attachInterrupt(0, wakeup, HIGH);
+     delay(100);
+     LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF); 
+     
 
+  }
 
 
 }
