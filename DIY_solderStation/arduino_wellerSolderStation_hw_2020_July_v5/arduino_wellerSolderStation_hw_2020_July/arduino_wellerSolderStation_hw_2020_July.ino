@@ -5,6 +5,10 @@
 // kty cold temp compensation is included.
 // DIY_weller_solderStationV5.ms14
 
+
+#include <EEPROM.h>   // eeprom read write
+
+
 #include <LiquidCrystal_I2C.h>
 // set the LCD address to 0x27 for a 16 chars and 2 line display
 #define LCDADDRESS 0x3F //0x27 //0x3F
@@ -53,14 +57,15 @@ const float NotConnectedVoltage = 4.9;
 // For simplicity, assume opamp gain for input purple and input black are the same,
 
 
-const int MIN_TARGET_TEMP = 54;
-//#define  MIN_TARGET_TEMP  54
+const int MIN_TARGET_TEMP = 50;
+
 const int MAX_TARGET_TEMP = 400;
-//#define  MAX_TARGET_TEMP  380
+
 
 const unsigned int MaxPowerOnSec = 180;
 unsigned int g_heaterStartTimerSec = 0;
 
+int savedTargetTemp = 0 ;
 // ****************  For LCD display **********************
 // I2C_SDA = A4;  // A4, for LCD display SDA
 // I2C_SCL = A5;  // A5, for LCD display SCL
@@ -159,9 +164,9 @@ void findI2CAddress()
 }
 */
 
-void encoderInit()
+void encoderInit( int value)
 {
-  rotEncoder.setEncoderValue(MIN_TARGET_TEMP);
+  rotEncoder.setEncoderValue(value);
   rotEncoder.setEncoderStep(2);
   rotEncoder.setMinMaxValue( MIN_TARGET_TEMP, MAX_TARGET_TEMP );
   rotEncoder.debug = false;
@@ -170,8 +175,16 @@ void encoderInit()
 
 void solderStationInit()
 {
+  
   pinInit();
-  encoderInit();
+
+  savedTargetTemp = EEPROM.read( 0 );
+  if( savedTargetTemp < MIN_TARGET_TEMP || savedTargetTemp>MAX_TARGET_TEMP )
+  {
+     savedTargetTemp = MIN_TARGET_TEMP;
+  }
+
+  encoderInit(savedTargetTemp);
   // station.initTcAdcIntLookupTable();
   //station.selfTestConvertAdcIntToTemperature();
 }
@@ -606,6 +619,7 @@ void setup()
   //delay(1000);
   solderStationInit();
   lcd.clear();
+  
 
 }
 
@@ -707,6 +721,20 @@ void loop()
       delay(200);
       shortBeep();
     }
+
+  
+
+    if (station.myWellerState.workStatus == WellerSolderControllerStatus::ON  )
+    { 
+      //only save new target temp when button click and it's ON. 
+      int targetTemp = getTargetTemperature(); 
+      if( savedTargetTemp != targetTemp )
+      {
+         EEPROM.write(0, targetTemp);
+         savedTargetTemp = targetTemp;
+      }
+
+    }
   }
 
   // solder station initial state is OFF
@@ -715,6 +743,9 @@ void loop()
     turnSolderStationOff();
   } else
   { // it's ON
+
+
+    
     unsigned int nowTsSec = millis() / 1000;
     if ( g_heaterStartTimerSec == 0)
     {
@@ -739,7 +770,7 @@ void loop()
     }
 
   }
-  int targetTemp = getTargetTemperature();
+  int targetTemp = getTargetTemperature(); 
   displayTargetTemp(targetTemp);
    // have to check temp first to know if it's connected.
   station.checkHandleTemp();
