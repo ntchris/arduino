@@ -166,6 +166,8 @@ void findI2CAddress()
 
 void encoderInit( int value)
 {
+  Serial.print("encoder init ");
+  Serial.println(value);
   rotEncoder.setEncoderValue(value);
   rotEncoder.setEncoderStep(2);
   rotEncoder.setMinMaxValue( MIN_TARGET_TEMP, MAX_TARGET_TEMP );
@@ -175,18 +177,25 @@ void encoderInit( int value)
 
 void solderStationInit()
 {
-  
   pinInit();
+  // cannot use EEPROM.read() and EEPROM.write(), 
+  // those are for one byte only, less than 255. not enough!
+  EEPROM.get(0, savedTargetTemp );
+  Serial.print("eeprom read ");
+  Serial.println (savedTargetTemp);
 
-  savedTargetTemp = EEPROM.read( 0 );
-  if( savedTargetTemp < MIN_TARGET_TEMP || savedTargetTemp>MAX_TARGET_TEMP )
+  if( (savedTargetTemp < MIN_TARGET_TEMP) || ( savedTargetTemp > MAX_TARGET_TEMP ))
   {
+     Serial.println("invalid, set min");
      savedTargetTemp = MIN_TARGET_TEMP;
   }
 
   encoderInit(savedTargetTemp);
+
+  //============================
+  // testing
   // station.initTcAdcIntLookupTable();
-  //station.selfTestConvertAdcIntToTemperature();
+  // station.selfTestConvertAdcIntToTemperature();
 }
 
 void beepStart()
@@ -730,7 +739,11 @@ void loop()
       int targetTemp = getTargetTemperature(); 
       if( savedTargetTemp != targetTemp )
       {
-         EEPROM.write(0, targetTemp);
+         Serial.print("eeprom saving ");
+         Serial.println(targetTemp);
+         // cannot use EEPROM.read() and EEPROM.write(), 
+         // those are for one byte only, less than 255. not enough!
+         EEPROM.put(0, targetTemp);
          savedTargetTemp = targetTemp;
       }
 
