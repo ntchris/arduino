@@ -1,0 +1,23 @@
+ULTIBOARD DRILL REPORT
+
+Design: DIY_weller_solderStationV5
+
+DRILL FILE SETTINGS
+Excellon 2, Absolute, Metric, 3.3 
+
+
+DEFINITION COPPER LAYERS
+Copper Top
+Copper Bottom
+
+
+--------------------------------------------------------------------
+
+DRILLFILE                                                   LAMINATION
+DIY_weller_solderStationV5 - Copper Top-Copper Bottom.drl   Copper Top .. Copper Bottom
+
+TOOL     SIZE   TYPE  COUNT
+   1    0.900    PTH     68
+   2    0.600    PTH     40
+   3    1.500    PTH      2
+   4    3.000    PTH      4

@@ -8,3 +8,6 @@
 7 dual channel PMos ?      10 smaller plane for PMos , not needed
 8 other smaller OpAmp ?
 9 remove all opAmp input and output Caps , tested not required.
+10 H3.96 header hole diameter 1.5mm is a little too small. should be 1.6mm+
+11 H3.96 header is too large, not necessary, should use regular JST/H254 plug header
+
