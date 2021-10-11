@@ -1,0 +1,426 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Module:Arduino_Nano_v2.x A1
+U 1 1 615E789E
+P 7500 3250
+F 0 "A1" H 7500 2161 50  0000 C CNN
+F 1 "Arduino_Nano_v2.x" H 7500 2070 50  0000 C CNN
+F 2 "myFootPrintLibs:Arduino_Nano" H 7500 3250 50  0001 C CIN
+F 3 "https://www.arduino.cc/en/uploads/Main/ArduinoNanoManual23.pdf" H 7500 3250 50  0001 C CNN
+	1    7500 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L mySymbolLibrary:AO3401_PMosfet Q1
+U 1 1 61619C21
+P 5900 3650
+F 0 "Q1" H 6055 3696 50  0000 L CNN
+F 1 "AO3401_PMosfet" H 6055 3605 50  0000 L CNN
+F 2 "myFootPrintLibs:SOT-23_PMOSFET" H 6050 3725 50  0001 L CIN
+F 3 "www.aosmd.com/pdfs/datasheet/AO3401.pdf" H 5850 3650 50  0001 L CNN
+	1    5900 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 6161B408
+P 5450 3600
+F 0 "R3" V 5243 3600 50  0000 C CNN
+F 1 "100" V 5334 3600 50  0000 C CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad1.20x1.50mm_HandSolder" V 5380 3600 50  0001 C CNN
+F 3 "~" H 5450 3600 50  0001 C CNN
+	1    5450 3600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5250 3600 5300 3600
+$Comp
+L Device:R R2
+U 1 1 6161E179
+P 5250 3900
+F 0 "R2" H 5320 3946 50  0000 L CNN
+F 1 "10k" H 5320 3855 50  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad1.20x1.50mm_HandSolder" V 5180 3900 50  0001 C CNN
+F 3 "~" H 5250 3900 50  0001 C CNN
+	1    5250 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 6161F208
+P 5250 4500
+F 0 "#PWR02" H 5250 4250 50  0001 C CNN
+F 1 "GND" H 5255 4327 50  0000 C CNN
+F 2 "" H 5250 4500 50  0001 C CNN
+F 3 "" H 5250 4500 50  0001 C CNN
+	1    5250 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 4050 5250 4450
+Wire Wire Line
+	5250 3750 5250 3600
+Connection ~ 5250 3600
+Wire Wire Line
+	4550 3100 3900 3100
+$Comp
+L power:+5VD #PWR03
+U 1 1 616245AD
+P 5950 3350
+F 0 "#PWR03" H 5950 3200 50  0001 C CNN
+F 1 "+5VD" H 5965 3523 50  0000 C CNN
+F 2 "" H 5950 3350 50  0001 C CNN
+F 3 "" H 5950 3350 50  0001 C CNN
+	1    5950 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 3350 5950 3450
+Wire Wire Line
+	4550 3100 4550 4800
+Wire Wire Line
+	4550 4800 5950 4800
+Wire Wire Line
+	5950 4800 5950 3850
+$Comp
+L power:GND #PWR01
+U 1 1 61626449
+P 3600 3900
+F 0 "#PWR01" H 3600 3650 50  0001 C CNN
+F 1 "GND" H 3605 3727 50  0000 C CNN
+F 2 "" H 3600 3900 50  0001 C CNN
+F 3 "" H 3600 3900 50  0001 C CNN
+	1    3600 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 3900 3600 3800
+Wire Wire Line
+	3500 3700 3500 3800
+Wire Wire Line
+	3500 3800 3600 3800
+Connection ~ 3600 3800
+Wire Wire Line
+	3600 3800 3600 3700
+$Comp
+L power:GND #PWR06
+U 1 1 6162BD35
+P 10000 2900
+F 0 "#PWR06" H 10000 2650 50  0001 C CNN
+F 1 "GND" V 10005 2772 50  0000 R CNN
+F 2 "" H 10000 2900 50  0001 C CNN
+F 3 "" H 10000 2900 50  0001 C CNN
+	1    10000 2900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4050 3450 3900 3450
+Wire Wire Line
+	3900 3450 3900 3400
+Wire Wire Line
+	10700 3250 10550 3250
+Wire Wire Line
+	10550 3250 10550 3200
+Text Notes 9100 2600 0    118  ~ 0
+PC to Usb Power
+Text Notes 2900 2650 0    118  ~ 0
+USBPower_To_Device
+Text Notes 2650 4400 0    118  ~ 0
+Big Usb A Receptacle
+Text Notes 8400 4650 0    118  ~ 0
+consider usb micro receptacle, \nor big USB receptacle
+Text Notes 5650 4150 0    50   ~ 0
+pull down to keep it always on
+Wire Wire Line
+	5600 3600 5700 3600
+$Comp
+L Device:C C1
+U 1 1 616482DB
+P 4900 3800
+F 0 "C1" H 5015 3846 50  0000 L CNN
+F 1 "200nf" H 4800 4100 50  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad1.20x1.50mm_HandSolder" H 4938 3650 50  0001 C CNN
+F 3 "~" H 4900 3800 50  0001 C CNN
+	1    4900 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3950 4900 4050
+Wire Wire Line
+	4900 4450 5250 4450
+Connection ~ 5250 4450
+Wire Wire Line
+	5250 4450 5250 4500
+Wire Wire Line
+	4900 3650 4900 3600
+Wire Wire Line
+	4900 3600 5250 3600
+$Comp
+L Device:R R1
+U 1 1 6164F3F1
+P 4900 4200
+F 0 "R1" H 4970 4246 50  0000 L CNN
+F 1 "20k" H 4970 4155 50  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad1.20x1.50mm_HandSolder" V 4830 4200 50  0001 C CNN
+F 3 "~" H 4900 4200 50  0001 C CNN
+	1    4900 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 4350 4900 4450
+$Comp
+L power:+5VD #PWR07
+U 1 1 61650AD7
+P 10350 3400
+F 0 "#PWR07" H 10350 3250 50  0001 C CNN
+F 1 "+5VD" H 10365 3573 50  0000 C CNN
+F 2 "" H 10350 3400 50  0001 C CNN
+F 3 "" H 10350 3400 50  0001 C CNN
+	1    10350 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5VD #PWR05
+U 1 1 61652915
+P 7700 1350
+F 0 "#PWR05" H 7700 1200 50  0001 C CNN
+F 1 "+5VD" H 7715 1523 50  0000 C CNN
+F 2 "" H 7700 1350 50  0001 C CNN
+F 3 "" H 7700 1350 50  0001 C CNN
+	1    7700 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 1350 7700 1800
+$Comp
+L power:GND #PWR04
+U 1 1 61654D82
+P 7600 4500
+F 0 "#PWR04" H 7600 4250 50  0001 C CNN
+F 1 "GND" H 7605 4327 50  0000 C CNN
+F 2 "" H 7600 4500 50  0001 C CNN
+F 3 "" H 7600 4500 50  0001 C CNN
+	1    7600 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 4250 7600 4300
+Wire Wire Line
+	7500 4250 7500 4300
+Wire Wire Line
+	7500 4300 7600 4300
+Connection ~ 7600 4300
+Wire Wire Line
+	7600 4300 7600 4500
+NoConn ~ 7000 2650
+NoConn ~ 7000 2750
+NoConn ~ 7000 2850
+NoConn ~ 7000 2950
+NoConn ~ 7000 3150
+NoConn ~ 7000 3250
+NoConn ~ 7000 3350
+NoConn ~ 7000 3450
+NoConn ~ 7000 3550
+NoConn ~ 7000 3650
+NoConn ~ 7000 3750
+NoConn ~ 7000 3850
+NoConn ~ 7000 3950
+NoConn ~ 8000 3950
+NoConn ~ 8000 3850
+NoConn ~ 8000 3750
+NoConn ~ 8000 3650
+NoConn ~ 8000 3450
+NoConn ~ 8000 3350
+NoConn ~ 8000 3250
+NoConn ~ 8000 3050
+NoConn ~ 8000 2650
+NoConn ~ 7600 2250
+NoConn ~ 7400 2250
+$Comp
+L SparkFun-Connectors:USB_MINI-B_SMT J2
+U 1 1 616698AD
+P 9600 3200
+F 0 "J2" H 9600 2640 45  0000 C CNN
+F 1 "USB_MINI-B_SMT" H 9600 2724 45  0000 C CNN
+F 2 "myFootPrintLibs:USB_Mini-B_Wuerth_65100516121_Horizontal" H 9600 3650 20  0001 C CNN
+F 3 "" H 9600 3200 50  0001 C CNN
+F 4 "CONN-08193" H 9600 2819 60  0000 C CNN "Field4"
+	1    9600 3200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9850 3400 10350 3400
+Wire Wire Line
+	10050 3100 10050 3200
+Wire Wire Line
+	10050 3200 9850 3200
+Wire Wire Line
+	10550 3200 10150 3200
+Wire Wire Line
+	10150 3200 10150 3300
+Wire Wire Line
+	10150 3300 9850 3300
+NoConn ~ 9850 3100
+Wire Wire Line
+	10000 2900 10000 3000
+Wire Wire Line
+	10000 3000 9900 3000
+Wire Wire Line
+	9350 2950 9350 2850
+Wire Wire Line
+	9350 2850 9900 2850
+Wire Wire Line
+	9900 2850 9900 3000
+Connection ~ 9900 3000
+Wire Wire Line
+	9900 3000 9850 3000
+Text Label 10750 3050 0    50   ~ 0
+D+
+Wire Wire Line
+	10750 3050 10750 3100
+Wire Wire Line
+	10050 3100 10750 3100
+Text Label 10700 3250 0    50   ~ 0
+D-
+Wire Wire Line
+	4100 3250 4100 3300
+Wire Wire Line
+	3900 3300 4100 3300
+NoConn ~ 8000 2750
+Text Label 4100 3250 0    50   ~ 0
+D+
+Text Label 4050 3450 0    50   ~ 0
+D-
+Wire Wire Line
+	8000 3550 8450 3550
+Wire Wire Line
+	8450 3550 8450 1700
+Wire Wire Line
+	8450 1700 6350 1700
+Wire Wire Line
+	5250 1700 5250 2300
+NoConn ~ 7000 3050
+$Comp
+L mySymbolLibrary:USB_A J1
+U 1 1 61644F62
+P 3600 3300
+F 0 "J1" H 3657 3767 50  0000 C CNN
+F 1 "USB_A" H 3657 3676 50  0000 C CNN
+F 2 "myFootPrintLibs:SAMTEC_USB-A-S-X-X-SM2" H 3750 3250 50  0001 C CNN
+F 3 " ~" H 3750 3250 50  0001 C CNN
+	1    3600 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L mySymbolLibrary:LED D1
+U 1 1 6161E91D
+P 4550 5150
+F 0 "D1" V 4589 5032 50  0000 R CNN
+F 1 "LED" V 4498 5032 50  0000 R CNN
+F 2 "myFootPrintLibs:LED_D3.0mm" H 4550 5150 50  0001 C CNN
+F 3 "~" H 4550 5150 50  0001 C CNN
+	1    4550 5150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 61620B10
+P 4550 5900
+F 0 "#PWR0101" H 4550 5650 50  0001 C CNN
+F 1 "GND" H 4555 5727 50  0000 C CNN
+F 2 "" H 4550 5900 50  0001 C CNN
+F 3 "" H 4550 5900 50  0001 C CNN
+	1    4550 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 61621A0E
+P 4550 5550
+F 0 "R4" H 4620 5596 50  0000 L CNN
+F 1 "2k" H 4620 5505 50  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad1.20x1.50mm_HandSolder" V 4480 5550 50  0001 C CNN
+F 3 "~" H 4550 5550 50  0001 C CNN
+	1    4550 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 5300 4550 5400
+Wire Wire Line
+	4550 5700 4550 5900
+Wire Wire Line
+	4550 5000 4550 4800
+Connection ~ 4550 4800
+$Comp
+L mySymbolLibrary:MOMENTARY-SWITCH-SPST-PTH-6.0MM S1
+U 1 1 61624BD7
+P 4850 2300
+F 0 "S1" H 4850 2610 45  0000 C CNN
+F 1 "MOMENTARY-SWITCH-SPST-PTH-6.0MM" H 4850 2526 45  0000 C CNN
+F 2 "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm" H 4850 2500 20  0001 C CNN
+F 3 "" H 4850 2300 50  0001 C CNN
+F 4 " SWCH-08441" H 4850 2431 60  0000 C CNN "Field4"
+	1    4850 2300
+	1    0    0    -1  
+$EndComp
+Connection ~ 5250 2300
+Wire Wire Line
+	5250 2300 5250 3600
+$Comp
+L power:+5VD #PWR0102
+U 1 1 61626F0C
+P 4200 2050
+F 0 "#PWR0102" H 4200 1900 50  0001 C CNN
+F 1 "+5VD" H 4215 2223 50  0000 C CNN
+F 2 "" H 4200 2050 50  0001 C CNN
+F 3 "" H 4200 2050 50  0001 C CNN
+	1    4200 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2050 4200 2300
+Wire Wire Line
+	4200 2300 4650 2300
+Wire Wire Line
+	5050 2300 5250 2300
+$Comp
+L Diode:1N4007 D2
+U 1 1 61632E88
+P 6200 1700
+F 0 "D2" H 6200 1917 50  0000 C CNN
+F 1 "1N4007" H 6200 1826 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" H 6200 1525 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 6200 1700 50  0001 C CNN
+	1    6200 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 1700 5250 1700
+$Comp
+L Device:R R5
+U 1 1 616220FD
+P 7700 1950
+F 0 "R5" H 7770 1996 50  0000 L CNN
+F 1 "0R" H 7770 1905 50  0000 L CNN
+F 2 "myFootPrintLibs:R_C_0805_2012Metric_Pad1.20x1.50mm_HandSolder" V 7630 1950 50  0001 C CNN
+F 3 "~" H 7700 1950 50  0001 C CNN
+	1    7700 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 2100 7700 2250
+$EndSCHEMATC
