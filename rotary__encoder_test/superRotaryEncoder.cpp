@@ -2,6 +2,9 @@
 
 
 bool SuperRotaryEncoder::debug = false;
+
+int SuperRotaryEncoder::_fastRotateMs = 50;
+
 SuperRotaryEncoder *SuperRotaryEncoder::encoderInstance = NULL;
 
 
@@ -120,6 +123,9 @@ SuperRotaryEncoder::SuperRotaryEncoder(int pinA, int pinB, int pinButton)
 
   encoderInstance = this;
   //pciSetup(pinB);  // B interrupt is NOT needed.
+
+  // faster than 300ms is fast.
+  _fastRotateMs = 50;
 }
 
 
@@ -157,15 +163,22 @@ void SuperRotaryEncoder::setEncoderStep(int encstep)
 
 void SuperRotaryEncoder::setMinMaxValue(int min, int max)
 {
-	if( min >= max)
-	{
-	   Serial.print("Error min >= max");	
-	}
-	
-	minValue = min;
-	maxValue = max;
-	
+  if ( min >= max)
+  {
+    Serial.print("Error min >= max");
+  }
+
+  minValue = min;
+  maxValue = max;
+
 }
+
+void SuperRotaryEncoder::setEncoderFastRotateTimeMs(int fastTimeMs)
+{
+  _fastRotateMs = fastTimeMs;
+}
+
+
 
 void SuperRotaryEncoder::processEncoderInterrupt(int portValues)
 {
@@ -266,35 +279,68 @@ void SuperRotaryEncoder::processEncoderInterrupt(int portValues)
     }
     }*/
 
+  static unsigned long lastTs = 0;
+  unsigned long nowTs = 1000;
+  unsigned long deltaMs ;
+  if ( dir >= 2 || dir <= -2)
+  {
+    nowTs = millis();
+    deltaMs =  nowTs - lastTs;
+    lastTs = nowTs;
+  }
   if (dir >= 2)
   {
     if (debug) {
       Serial.println("++ and set lastDir is 0");
     }
-    encoderValue += encStep;
-	if( encoderValue > maxValue )
-	{
-		encoderValue = maxValue;
-	}
+    if ( deltaMs <  _fastRotateMs)
+    {
+      //very fast
+      Serial.println("fast!!++" + String(deltaMs));
+
+      encoderValue += encStep * FastStepFactor;
+
+    } else
+    {
+      // normal speed rotation
+      encoderValue += encStep;
+    }
+    if ( encoderValue > maxValue )
+    {
+      encoderValue = maxValue;
+    }
 
     dir = 0;
-	
+
   } else if (dir <= -2)
   {
     if (debug) {
       Serial.println("-- and set lastDir is 0");
     }
-    encoderValue -= encStep;
-	if( encoderValue < minValue)
-	{
-		encoderValue = minValue;
-	}
+
+    if ( deltaMs <  _fastRotateMs)
+    {
+      //very fast
+      Serial.println("fast!!--" + String(deltaMs));
+
+      encoderValue -= encStep * FastStepFactor;
+
+    } else
+    {
+      // normal speed rotation
+      encoderValue -= encStep;
+    }
+
+    if ( encoderValue < minValue)
+    {
+      encoderValue = minValue;
+    }
 
     dir = 0;
   }
   lastValueA = valueA;
   lastValueB = valueB;
-
+ 
   return;
 
 }

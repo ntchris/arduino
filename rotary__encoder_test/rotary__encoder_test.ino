@@ -4,9 +4,9 @@
 
 // built in LED
 const int LedPin = 13;
-const int RotaryEncoderA = 11;
-const int RotaryEncoderB = 10;
-const int RotaryEncoderPush = 12;
+const int RotaryEncoderA = 9;
+const int RotaryEncoderB = 8;
+const int RotaryEncoderPush = 7;
 
 static SuperRotaryEncoder rotEncoder(RotaryEncoderA, RotaryEncoderB, RotaryEncoderPush );
 // Connect pin C to GND
@@ -17,14 +17,14 @@ void setup() {
   Serial.begin(115200);
   Serial.print("Setup \n");
 
-  pinMode(LedPin, OUTPUT);
+  //pinMode(LedPin, OUTPUT);
 
 
 
-  digitalWrite(LedPin, LOW);
+  //digitalWrite(LedPin, LOW);
   //rotEncoder.debug = true;
-  rotEncoder.setEncoderValue(150);
-  rotEncoder.setEncoderStep(2);
+  rotEncoder.setEncoderValue(100);
+  rotEncoder.setEncoderStep(1);
 }
 
 
@@ -58,7 +58,7 @@ void loop() {
     Serial.println("clicked");
   }
 
-  delay(100);
+  delay(20);
 
 
 }
