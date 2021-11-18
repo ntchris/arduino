@@ -20,7 +20,9 @@
 
 
 const bool debug = true;
-
+const bool DebugTimer = false;
+const bool DebugPwm  = true;
+const bool DebugSleep = false;
 
 // ==========  MCU Pin def  ==============
 
@@ -82,7 +84,7 @@ SmtTempProfile *g_activeProfile;
 static const String BarString[] = {">    ", ">>   ", ">>>  ", ">>>> ", ">>>>>"};
 
 
-int g_heaterPwm = 0;
+byte g_heaterPwm = 0;
 
 int g_workStateOn = false;
 
@@ -90,7 +92,7 @@ unsigned long g_heaterStartTimeStampSec = 0;
 
 unsigned long g_ReachTempStageTimeStampSec = 0;
 
-const int MIN_TARGET_TEMP = 18;
+const int MIN_TARGET_TEMP = 15;
 
 const int MAX_TARGET_TEMP = 350;
 
@@ -98,15 +100,33 @@ const int MAX_TARGET_TEMP = 350;
 
 
 // safety feature
-const unsigned int MaxPowerOnSec = 300;
+const unsigned int MaxPowerOnSec = 20 * 60;
 
 
-//const float Kp = 7.58, Ki = 0.050, Kd = 0.86, FreqHz = 20;
-const float Kp = 20, Ki = 1, Kd = 1, FreqHz = 20;
+//const float Kp = 7.58, Ki = 0.050, Kd = 0.86, FreqHz = 20;  // for weller tweezers  , a bit weak.
+//const float Kp = 3, Ki = 2, Kd = 2, FreqHz = 20;
+// const float Kp = 0.2, Ki = 1, Kd = 2, FreqHz = 20;  set 160 rush to 180
+//const float Kp = 0.6, Ki = 0.6, Kd = 2, FreqHz = 20;
+//const float Kp = 0.2, Ki = 0.2, Kd = 0.6, FreqHz = 20;    // set 100, jump to 160
+//const float Kp =0.2, Ki = 0.2, Kd =3, FreqHz = 20;   184-->215
+
+// const float Kp =0.8, Ki = 0.08, Kd =0.8, FreqHz = 20;   // if Ki = 0.06, temp up is too slow, 25W, pwm=40
+
+//const float Kp = 1.05, Ki = 0.07, Kd = 0.8, FreqHz = 20; // if Ki = 0.06, temp up is too slow, 25W, pwm=40
+
+//const float Kp = 1.05, Ki = 0.1, Kd = 0.2, FreqHz = 20; // bascially OK , very slow
+//const float Kp = 1.05, Ki = 0.1, Kd = 1, FreqHz = 20; // bascially OK, a little slow
+//const float Kp = 1.05, Ki = 0.1, Kd = 5, FreqHz = 20; //  faster response
+//const float Kp = 1.00, Ki = 0.1, Kd = 5, FreqHz = 20; // 
+//const float Kp = 1.00, Ki = 0.1, Kd = 10, FreqHz = 20; // fast
+const float FreqHz = 20;
+const float Kp = 0.8, Ki = 0.1, Kd = 12.70; // fast  // Kd must < 255/Hz = 12.75
+
+ 
 
 const bool Sign = false;
 const int Bits = 8;
-FastPID tempPid(Kp, Ki, Kd, FreqHz, Bits, Sign);
+FastPID g_tempPid(Kp, Ki, Kd, FreqHz, Bits, Sign);
 
 
 int g_thermoTempC = 0;
@@ -114,15 +134,40 @@ int g_targetTemp = 0;
 int g_stageTimeLengthSec = 0;
 
 
+byte myPwmContoller(int targetTemp, int currentTemp)
+{
+  int pwm = 0;
+  int delta = targetTemp - currentTemp;
+
+  const int MinPwm = 20;
+  const int MaxPwm = 255;
+  const int MidPwm = 150;
+  const int Factor = 30;
+  if ( delta > 0 )
+  {
+    // temp too low
+    pwm = MidPwm + delta * Factor;
+    if (pwm > MaxPwm )
+    {
+      pwm = MaxPwm;
+    }
+
+  } else if  ( delta = 0 )
+  {
+    pwm = MinPwm;
+  } else
+  {
+    // too high
+    pwm = 0;
+  }
+
+  return pwm;
+}
 
 int getEncoderReading()
 {
   int rotaryValue = rotEncoder.getValue();
-  if (debug )
-  {
 
-    Serial.println("getEncoderReading:" + String(rotaryValue) );
-  }
   return rotaryValue;
 }
 
@@ -131,7 +176,7 @@ int getEncoderReading()
 class Gui_Options
 {
     int _gui_option_index = Gui_Loc_Temp_Profile ;
-    bool isChangeSetting = false;
+    bool _isChangeSetting = false;
 
   public:
     static const int Gui_Loc_Temp_Profile = 0;
@@ -148,12 +193,12 @@ class Gui_Options
 
     bool getIsChangeSetting()
     {
-      return isChangeSetting;
+      return _isChangeSetting;
     }
     void toggleIsChangeSetting()
     {
-      Serial.println("isChangeSetting " + String(isChangeSetting));
-      isChangeSetting = !isChangeSetting;
+      Serial.println("_isChangeSetting " + String(_isChangeSetting));
+      _isChangeSetting = !_isChangeSetting;
     }
 
 
@@ -200,7 +245,7 @@ class Gui_Options
         lcd.setCursor(X_time, Y4);
       }
 
-      Serial.println(">!!!" + String(_gui_option_index  ) + " " + String(getIsChangeSetting()));
+      //Serial.println(">!" + String(_gui_option_index  ) + " " + String(getIsChangeSetting()));
       if (  ( ( _gui_option_index  == Gui_Loc_TimeSec)  || (_gui_option_index  == Gui_Loc_Temp)) && getIsChangeSetting())
       {
         // if we are changing temp /time setting
@@ -302,14 +347,14 @@ bool checkIs20VOK()
 }
 
 
-void setHeaterPwm(int pwm)
+void setHeaterPwm(byte pwm)
 {
   analogWrite(HeaterPwmPin, pwm);
 }
 
 void disableHeater()
 {
-  digitalWrite(HeaterPwmPin, LOW);
+  setHeaterPwm(0);
 }
 
 
@@ -358,7 +403,7 @@ int getThermocoupleTemp()
   // why?
   disableHeater();
   // must delay more than 60microseconds to get an accurate reading from the opamp
-  delayMicroseconds(100);
+  delayMicroseconds(120);
 
   float adc = adcReadAverage(HeatingPlateThermocoupleAdcPin);
   setHeaterPwm(g_heaterPwm );
@@ -480,7 +525,7 @@ void showHeaterWorkStatePwmBar( )
     //OFF
 
     lcd.setCursor(xoff, 0);
-    lcd.print("OFF      ");
+    lcd.print("OFF     ");
   }
   else
   {
@@ -514,8 +559,8 @@ void turnHeaterOn()
   Serial.println("turnHeaterOn()");
   if ( g_heaterStartTimeStampSec == 0  )
   {
-     // if it was OFF, now we are turning it ON
- 
+    // if it was OFF, now we are turning it ON
+
     g_heaterStartTimeStampSec = millis() / 1000ul;
 
     Serial.println("g_heaterStartTimeStampSec " + String(g_heaterStartTimeStampSec ));
@@ -539,10 +584,11 @@ void turnHeaterOff()
   g_workStateOn = false;
   g_heaterStartTimeStampSec = 0;
   g_ReachTempStageTimeStampSec = 0;
-  g_activeProfile->changeActiveStage(0);
+  // g_activeProfile->changeActiveStage(0);
+  // cannot do this in here,
   if ( debug )
   {
-    Serial.println("turnHeaterOff");
+    //Serial.println("turnHeaterOff");
   }
 }
 
@@ -559,8 +605,8 @@ void encoderInitForMainMenu( int value = 0)
 
 void encoderInitForTempChange( int value = 0)
 {
-  Serial.print("encoderInitForTempChange");
-  Serial.println(value);
+
+  Serial.print("encoderInitForTimeChange" + String(g_activeProfile->getCurrentStage()->getName()));
   rotEncoder.setEncoderValue( g_activeProfile->getCurrentStageTemp());
   rotEncoder.setEncoderStep(2);
   rotEncoder.setMinMaxValue( MIN_TARGET_TEMP  , MAX_TARGET_TEMP   );
@@ -578,22 +624,53 @@ void encoderInitForTimeChange( int value = 0 )
   //rotEncoder.debug = false;
 
 }
- 
+
 // for main loop.
 void processHeaterTemp(int targettemp, int currentTemp)
 {
-
-  if (debug )
-  {
-    Serial.println("g_workStateOn:" + String(g_workStateOn) + ", targettemp: " + String(targettemp) + ", heater temp: " + String(currentTemp)   );
+  bool printPWM = false;
+  if (DebugPwm )
+  { static unsigned long last_printms = 0;
+    unsigned long now = millis();
+    if ((now - last_printms) > 1000)
+    {
+      printPWM = true;
+      Serial.println("g_workStateOn:" + String(g_workStateOn) + ", targettemp: " + String(targettemp) + ", heater temp: " + String(currentTemp));
+      last_printms = now;
+    }
   }
 
   if ( g_workStateOn )
   {
-    g_heaterPwm  = tempPid.step(targettemp, currentTemp );
+    g_heaterPwm  = g_tempPid.step(targettemp, currentTemp );
+    // sometimes even when currentTemp > target, but the output pwm is stil large like 255...filter it
+    const byte FilterMinPwm = 10;
+    const int TooHigh = 1;
+    if( currentTemp >= (targettemp + TooHigh ))
+    {
+      g_heaterPwm = 0;
+      Serial.println("Tooo high, set pwm 0");
+      // tooo tooo high
+      
+            
+    }else if ( currentTemp > targettemp )
+    { 
+      // just a little bit too high
+      if( g_heaterPwm > FilterMinPwm )
+      {
+
+         Serial.print("filtered wrong pwm " + String(g_heaterPwm) );
+         g_heaterPwm = FilterMinPwm; 
+         Serial.println(", now is " + String(g_heaterPwm));
+      }
+      
+    }
+    
+    //g_heaterPwm  = (targettemp, currentTemp );
+
     setHeaterPwm(g_heaterPwm  );
 
-    if (  debug )
+    if ( printPWM)
     {
       Serial.println("heater pwm: " + String(g_heaterPwm ) );
     }
@@ -605,7 +682,7 @@ void checkSafetyTimer(unsigned long nowTsSec )
 
   if ( !g_workStateOn )
   {
-    Serial.println("g_workStateOn is off");
+    //Serial.println("g_workStateOn is off");
     return;
   }
 
@@ -613,7 +690,8 @@ void checkSafetyTimer(unsigned long nowTsSec )
   //already started, check Max timeout
   if (  nowTsSec > ( g_heaterStartTimeStampSec + MaxPowerOnSec ))
   {
-    if (debug)
+
+    if (DebugTimer)
     {
       Serial.println("nowTsSec:" + String(nowTsSec) + ",  g_heaterStartTimeStampSec:"
                      + String(g_heaterStartTimeStampSec) );
@@ -634,7 +712,7 @@ void initTempProfile()
 
   g_smtprofile1.loadProfile();
   String s_name = g_smtprofile1.getCurrentStage()->getName() ;
-  Serial.println("end getName");
+  //Serial.println("end getName");
 
   if ( s_name != "S1")
   {
@@ -643,13 +721,13 @@ void initTempProfile()
     //eeprom is not inited.
     // this is for smt, 2 stages temp, ramp up and soak, spike, and cool
     g_smtprofile1.setTempStage(0, 24, 5); // 24C, soak for 5 seconds
-    Serial.println("end setTempStage 0");
+    //Serial.println("end setTempStage 0");
 
     g_smtprofile1.setTempStage(1, 26, 3); // 26C, spike for 3 seconds
-    Serial.println("end setTempStage 1");
+    //Serial.println("end setTempStage 1");
 
   }
-  Serial.println("end g_smtprofile1");
+  //Serial.println("end g_smtprofile1");
 
   g_smtprofile2.loadProfile();
   s_name = g_smtprofile2.getCurrentStage()->getName();
@@ -664,7 +742,7 @@ void initTempProfile()
   }
   g_activeProfile = &g_smtprofile1;
 
-  Serial.println("end initTempProfile()");
+  //Serial.println("end initTempProfile()");
 
 }
 
@@ -743,14 +821,18 @@ void processEncoderButtonClick(int guiIndex)
   {
     // * pointing to ON/OFF click button to switch on/off work mode
     g_workStateOn = !g_workStateOn;
-    if( g_workStateOn )
+    if ( g_workStateOn )
     {
       turnHeaterOn();
+    } else
+    {
+      g_tempPid.clear();
     }
 
   } else if (guiIndex == Gui_Options::Gui_Loc_Stage)
   {
     g_activeProfile->changeActiveStage();
+    Serial.println("stage is now:" + String(g_activeProfile->getCurrentStage()->getName() ));
 
     displayTempProfile();
     //g_targetTemp = g_activeProfile->getCurrentStageTemp();
@@ -772,6 +854,12 @@ void processEncoderButtonClick(int guiIndex)
     {
       encoderInitForMainMenu();
       g_activeProfile->saveProfile();
+      // user just changed target temp, reset the target temp timer if new target temp is higher than current temp
+      g_targetTemp = g_activeProfile->getCurrentStageTemp();
+      if ( g_targetTemp > g_thermoTempC)
+      {
+        g_ReachTempStageTimeStampSec = 0;
+      }
     }
 
   } else if ( guiIndex == Gui_Options::Gui_Loc_TimeSec )
@@ -792,6 +880,8 @@ void processEncoderButtonClick(int guiIndex)
   }
   g_targetTemp = g_activeProfile->getCurrentStageTemp();
   g_stageTimeLengthSec = g_activeProfile->getCurrentStageTimeSec();
+  Serial.println("g_targetTemp: " + String(g_targetTemp ));
+  Serial.println("g_stageTimeLengthSec : " + String(g_stageTimeLengthSec ));
 
   gui_options.displayGuiIndicator();
 
@@ -857,9 +947,9 @@ bool processEncoderRotationInput()
 
 void checkStageTimer(unsigned long nowSec)
 {
-  Serial.println( "checkStageTimer()");
-  Serial.println("g_stageTimeLengthSec: " + String(g_stageTimeLengthSec) + ", g_ReachTempStageTimeStampSec: " + String(g_ReachTempStageTimeStampSec));
-  Serial.println("now " + String(nowSec));
+  //Serial.println( "checkStageTimer()");
+  //Serial.println("g_stageTimeLengthSec: " + String(g_stageTimeLengthSec) + ", g_ReachTempStageTimeStampSec: " + String(g_ReachTempStageTimeStampSec));
+  //Serial.println("now " + String(nowSec));
 
   // check stage time
   if ( nowSec > (g_stageTimeLengthSec + g_ReachTempStageTimeStampSec) )
@@ -873,7 +963,7 @@ void checkStageTimer(unsigned long nowSec)
     {
       g_targetTemp = g_activeProfile->getCurrentStageTemp();
       g_stageTimeLengthSec = g_activeProfile->getCurrentStageTimeSec();
-      // must reset the reach temp timestamp since it's a new stage 
+      // must reset the reach temp timestamp since it's a new stage
       g_ReachTempStageTimeStampSec = 0;
       // must display the new stage,otherwise still the old stage.
     } else
@@ -882,6 +972,7 @@ void checkStageTimer(unsigned long nowSec)
       Serial.println("no next stage, all off");
       g_workStateOn = false;
       turnHeaterOff();
+      g_activeProfile->changeActiveStage(0);
       longBeep();
     }
     displayTempProfile();
@@ -928,7 +1019,7 @@ void setup() {
   //Serial.print("displayTempProfile!");
   displayTempProfile();
   gui_options.displayGuiIndicator();
-  Serial.println("end of setup");
+  //Serial.println("end of setup");
 }
 
 
@@ -937,6 +1028,11 @@ void setup() {
 
 void loop() {
 
+  bool error = g_tempPid.err();
+  if(error)
+  {
+     Serial.println("error in config");
+  }
   unsigned long startTimeStamp = 0;
   // store the last start time stamp
 
@@ -952,12 +1048,12 @@ void loop() {
     //Serial.println("20V disconnected, disable heater.");
     turnHeaterOff();
   }
-/*
-  if ( g_workStateOn )
-  {
-    turnHeaterOn();
-  }
-*/
+  /*
+    if ( g_workStateOn )
+    {
+      turnHeaterOn();
+    }
+  */
   showHeaterWorkStatePwmBar();
   //int guiIndex = gui_options.getGuiIndex();
 
@@ -967,12 +1063,13 @@ void loop() {
   g_thermoTempC = getThermocoupleTemp();
 
 
-  Serial.println("g_thermoTempC:" + String(g_thermoTempC) + ", g_targetTemp:" + String(g_targetTemp) +
+  /*Serial.println("g_thermoTempC:" + String(g_thermoTempC) + ", g_targetTemp:" + String(g_targetTemp) +
                  ", g_ReachTempStageTimeStampSec:" + String(g_ReachTempStageTimeStampSec) );
+  */
   // check reaching stage temp time
   if (g_workStateOn && (g_thermoTempC >= g_targetTemp) && (g_ReachTempStageTimeStampSec == 0 ))
   {
-    Serial.println("reaching target temp ");
+    //Serial.println("reaching target temp ");
 
     //now we are entering stage temp, save the timestamp now.
     g_ReachTempStageTimeStampSec = millis() / 1000ul;
@@ -993,9 +1090,9 @@ void loop() {
 
   if ( (( now  - prev_checkRoomTempTimeStamp ) / 1000)  > CheckRoomTempIntervalSec )
   {
-    Serial.print("checking room temp...");
+    //Serial.print("checking room temp...");
     g_room_temp = detectNTCTemp();
-    Serial.println(String(g_room_temp) + "C");
+    //Serial.println(String(g_room_temp) + "C");
     prev_checkRoomTempTimeStamp = now;
   }
   //Serial.println("Room temp:" + String(room_temp)+"C");
@@ -1009,35 +1106,38 @@ void loop() {
     unsigned long nowsec = millis() / 1000ul;
     // it's ON
     checkSafetyTimer(nowsec);
-    
-    if( g_ReachTempStageTimeStampSec >0 )
-    {  
+
+    if ( g_ReachTempStageTimeStampSec > 0 )
+    {
       // dont do this when temp has not reached target temp.
-      // check stage timer only after it reaches target temp. 
+      // check stage timer only after it reaches target temp.
       checkStageTimer(nowsec);
     }
 
+    // checking for sleep for how long ?
     unsigned long endTimeStamp = millis();
     unsigned long timeUsedMs = endTimeStamp - startTimeStamp ;
-    const int ShouldDelayms = 1000 / FreqHz;
-    long int delta = ShouldDelayms  - timeUsedMs;
-
-    Serial.println("g_workStateOn " + String(g_workStateOn) + " thermo:" + String(g_thermoTempC) +
-                   " heater pwm:" + String(g_heaterPwm ));
+    const unsigned long ShouldDelayms = round(1000.0 / FreqHz);
 
 
-    if (delta > 0)
+    //Serial.println("g_workStateOn " + String(g_workStateOn) + " thermo:" + String(g_thermoTempC) +
+    //               " heater pwm:" + String(g_heaterPwm ));
+
+
+    if (ShouldDelayms > timeUsedMs)
     {
-      if (debug)
+      unsigned long deltaMs = ShouldDelayms  - timeUsedMs;
+
+      if (DebugSleep)
       {
-        Serial.println("timeUsedMs: " + String(timeUsedMs) + " sleep for " + String(delta));
+        Serial.println("timeUsedMs: " + String(timeUsedMs) + " sleep for " + String(deltaMs));
       }
-      delay(delta);
+      delay(deltaMs);
     } else
     {
-      if (debug)
+      if (DebugSleep)
       {
-        Serial.println("timeUsedMs: " + String(timeUsedMs) + " " + String(delta) + " no sleep");
+        //Serial.println("timeUsedMs: " + String(timeUsedMs) + " " + String(delta) + " no sleep");
       }
     }
 

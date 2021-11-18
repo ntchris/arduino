@@ -1,7 +1,7 @@
 #include "superRotaryEncoder.hpp"
 
 
-bool SuperRotaryEncoder::debug = false;
+bool SuperRotaryEncoder::debug = true;
 
 int SuperRotaryEncoder::_fastRotateMs = 50;
 
