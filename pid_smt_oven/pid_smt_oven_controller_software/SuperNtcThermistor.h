@@ -20,7 +20,6 @@ class SuperNtcThermistor
    float _lowResist  ;
    float _max_adc  ; // arduino is 1023, stm32 is not.
    int _adcpin  ;
-   float _max_v_ref = 5.0;
    
    private: SuperNtcThermistor()
    {
@@ -28,9 +27,9 @@ class SuperNtcThermistor
    }
    
    public:
-    SuperNtcThermistor(int adcpin, int lowSideResistor, float room_temp_c , float roomtempNtcResist, float beta = 3950, int max_adc =1023, int max_v_ref=5 )
+    SuperNtcThermistor(int adcpin, int lowSideResistor, float room_temp_c , float roomtempNtcResist, float beta = 3950, int max_adc =1023  )
                   :_adcpin(adcpin), _lowResist(lowSideResistor), _ntc_room_temp_resistor(roomtempNtcResist),  
-				  _ntc_beta( beta), _max_adc(max_adc) , _max_v_ref(max_v_ref)
+				  _ntc_beta( beta), _max_adc(max_adc) 
    {
 	  _room_temp_kv = room_temp_c + Temp_Kv_To_C_Delta;
    }
@@ -67,7 +66,6 @@ class SuperNtcThermistor
     //const float BETA = 3974;
     //const float RESISTOR_ROOM_TEMP = 10*1000;
     //const float BALANCE_RESISTOR = 10000;
-    const float MAX_ADC = 1023.0f;
 
     float adcAvg = adcReadAverage(_adcpin);
     //Serial.print("ntc temp adc:");
@@ -83,8 +81,7 @@ class SuperNtcThermistor
   Serial.print("ntc avg adc int ");
   Serial.print(adcAvg );
 	Serial.print(", voltage is ");
-	Serial.print(adcAvg/_max_adc*_max_v_ref);
-	Serial.print(". ntc thermistor resistance:");
+ 	Serial.print(". ntc thermistor resistance:");
   Serial.print(rThermistor/1000 );
 	Serial.print("k. ");
 	Serial.println(ntctemp);

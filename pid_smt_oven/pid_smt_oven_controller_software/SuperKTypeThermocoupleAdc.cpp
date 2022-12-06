@@ -93,10 +93,10 @@ float SuperKTypeThermocoupleAdc::convertAdcIntToVoltage( unsigned int adcInt)
   }
   float adcVoltage = 1.0f * _adcRef * (adcInt - 1)  / _adcIntMax + _adcMinMv / 1000.0;
 
-  float adcVoltageAdj = adcVoltage - (OpAmpMinOutputMv / 1000.0f);
+  float adcVoltageAdj = adcVoltage - (_opAmpMinOutputMv / 1000.0f);
 #ifdef DebugThermo
   Serial.println( "adcVoltage V before adjust for min opamp output: "   + String(adcVoltage, 3) );
-  Serial.println( "adcVoltage V after adjust min output: "   + String(adcVoltage, 3) );
+  Serial.println( "adcVoltage V after adjust min output: "   + String(adcVoltageAdj, 3) );
 #endif
   if (adcVoltageAdj < 0)
   {

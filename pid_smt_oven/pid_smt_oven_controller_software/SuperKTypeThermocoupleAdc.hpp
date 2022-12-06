@@ -9,8 +9,9 @@
 
 //adc step = 5/1023 = 0.004886
 // arduino ADC, minimum ADC input is 20.6mV, 20.6mV : ADC= 1 , 25.1mv : ADC = 2
-const float ArduiniAdcMinMv = 20.6;
-const float OpAmpMinOutputMv = 132.0;
+const float ArduinoAdcMinMv = 20.6;
+//const float OpAmpMinOutputMv = 132.0;
+//const float OpAmpMinOutputMv = 159.0;
 
 
 
@@ -50,13 +51,13 @@ private:
   int _adcIntMax;
 
   // when adc has input smaller than this mv, arduino ADC cannot detect it.
-  float _adcMinMv = ArduiniAdcMinMv;
+  float _adcMinMv = ArduinoAdcMinMv;
   
     float convertAdcIntToVoltage( unsigned int adcInt);
   
 public:
   
-    SuperKTypeThermocoupleAdc(float opampGain, float opAmpMinOutputMv=0, float adcRef=5.0, int adcIntMax=1023, float adcMinMv=ArduiniAdcMinMv):
+    SuperKTypeThermocoupleAdc(float opampGain, float opAmpMinOutputMv , float adcRef=5.0, int adcIntMax=1023, float adcMinMv=ArduinoAdcMinMv):
     _opampGain(opampGain), _opAmpMinOutputMv(opAmpMinOutputMv), _adcRef(adcRef), _adcIntMax(adcIntMax), _adcMinMv(adcMinMv)
     {
        

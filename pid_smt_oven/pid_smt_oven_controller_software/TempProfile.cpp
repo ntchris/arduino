@@ -8,19 +8,18 @@ static const int OneTempStage::_stage_size = sizeof(OneTempStage);
 
 void OneTempStage::fixName()
 {
-  //char *p = _stageName.c_str();
-  //p[NameSize - 1] = 0;
+  
+    _stageName[NameSize-1]=0;
 }
 
 OneTempStage::OneTempStage()
 {
-  //memset(_stageName.c_str(), 0, NameSize);
-  _stageName = 0;
+   
 }
 
-void OneTempStage::setName(char stgname)
+void OneTempStage::setName(String stgname)
 {
-  _stageName = stgname;
+   strcpy( _stageName, stgname.c_str());
   if (DebugProfile)
   {
     Serial.println("_stageName " + String(_stageName ));
@@ -30,9 +29,10 @@ void OneTempStage::setName(char stgname)
 
 String OneTempStage::getName()
 {
-  String strname = "S ";
-  strname[1] = _stageName;
-  return strname;
+  //String strname = "Stg ";
+  //strname[1] = _stageName;
+  String stg_name = _stageName;
+  return stg_name;
 }
 
 int OneTempStage::getTemp()
@@ -46,15 +46,61 @@ int OneTempStage::getTimeSec()
 
 void OneTempStage::setTemp(int temp )
 {
-  _temp = temp;
+  if (temp > MAX_TEMP_C )
+  {
+     
+     _temp = MAX_TEMP_C;
+  }else
+  {
+    _temp = temp;
+  }
 }
 
 void OneTempStage::setTimeSec(int sec)
 {
-  _timeSec = sec;
+  if ( sec > MAX_TIME_SEC )
+  { 
+    _timeSec = MAX_TIME_SEC;
+  }
+  else
+  {
+    _timeSec = sec;
+  }
+}
+
+void OneTempStage::fixWrongValue()
+{
+  if ( _timeSec > MAX_TIME_SEC )
+  { 
+    _timeSec = MAX_TIME_SEC;
+  }
+  
+  if (_temp > MAX_TEMP_C )
+  {
+     _temp = MAX_TEMP_C;
+  }
 }
 
 
+String OneTempStage::getStageTimeSecPaddedText(   )
+{
+
+  int timesec = this->getTimeSec();;
+  String sectext =  intToStringPadding(timesec);
+  return sectext + String("S");
+}
+
+
+// return string but pad to has 3 chars
+String OneTempStage::getStageTempPaddedText(  )
+{
+ 
+  
+  int temp = this->getTemp();
+  String temptext = intToStringPadding(temp);
+  return temptext + String("C");
+
+}
 
 
 
@@ -80,8 +126,9 @@ SmtTempProfile::SmtTempProfile(String profile_name)
 void SmtTempProfile::setTempStage(int index,  int temp, int timeSec )
 {
   OneTempStage *stage = &_stages[index ];
-
-  stage->setName('31' + index);
+  String name_index= "Stg"+String(index+1);
+  
+  stage->setName( name_index );
   stage->_temp = temp;
   stage->_timeSec = timeSec;
 
@@ -121,6 +168,8 @@ OneTempStage * SmtTempProfile::getStage(int index)
 }
 
 
+
+
 String intToStringPadding(int i)
 {
   String  text = String(i);
@@ -153,23 +202,6 @@ String intToStringPadding(int i)
   return text;
   }
 */
-
-// return string but pad to has 3 chars
-String SmtTempProfile::getStageTempPaddedText(  )
-{
-  int temp =  getCurrentStageTemp();
-  String temptext = intToStringPadding(temp);
-  return temptext + "C";
-
-}
-
-String SmtTempProfile::getStageTimeSecPaddedText(   )
-{
-
-  int timesec = getCurrentStageTimeSec();
-  String sectext =  intToStringPadding(timesec);
-  return sectext + "S";
-}
 
 
 void SmtTempProfile::changeActiveStage()

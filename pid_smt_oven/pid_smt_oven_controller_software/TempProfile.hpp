@@ -5,24 +5,26 @@
 const bool DebugProfile = false;
 String intToStringPadding(int i);
 
+#define MAX_TIME_SEC 999
+#define MAX_TEMP_C 450
 
 class OneTempStage
 {
 
   public:
-    static const int NameSize = 3;
+    static const int NameSize = 4+1; // stg1\0
   private:
-    char _stageName;
+    char _stageName[NameSize]={"Stg"};
   public:
 
     int _temp = 0;
     int _timeSec = 0;
     // constructor
     void fixName();
-    
+    void fixWrongValue();
     OneTempStage();
     
-    void setName(char stgname);
+    void setName(String stgname);
     
     String getName();
     
@@ -35,6 +37,9 @@ class OneTempStage
     void setTimeSec(int sec);
     
     static const int _stage_size ;
+    String getStageTimeSecPaddedText(  );
+    String OneTempStage::getStageTempPaddedText(  );
+
 };
 
 
