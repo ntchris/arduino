@@ -23,6 +23,14 @@ const bool DebugTimer = false;
 const bool DebugPwm  = true;
 const bool DebugSleep = false;
 
+
+// if use PTC resistor plate/module, must reduce power when in low temp and provide full power when it's high temp
+#define USE_PTC 1
+#define PTC_LOW_TEMP   100
+#define PTC_LOW_TEMP_MAX_PWM   140 // PWM=100
+#define PTC_MID_TEMP   190
+#define PTC_MID_TEMP_MAX_PWM   180
+
 // ==========  MCU Pin def  ==============
 
 // for NTC
@@ -68,7 +76,8 @@ float g_room_temp = 19;
 #define OpAmpGain 243.2f
 //#define OpAmpMinOutputMv 135
 //#define OpAmpMinOutputMv 165
-#define OpAmpMinOutputMv 161
+//#define OpAmpMinOutputMv 161
+#define OpAmpMinOutputMv 1
 
 #define Vref 4.683
 SuperKTypeThermocoupleAdc kTypeThermocoupleAdc(OpAmpGain, OpAmpMinOutputMv, Vref );
@@ -85,7 +94,7 @@ SmtTempProfile *g_activeProfile;
 
 // pwm value from 0 to 255
 #define MaxBarTypeCount 8
-static const String BarString[MaxBarTypeCount] = {">       ", ">>      ", ">>>     ", ">>>>    ", ">>>>>   ", ">>>>>>  ", ">>>>>>> ", ">>>>>>>>"};
+static const String BarString[MaxBarTypeCount] = {"       >", "      >>", "     >>>", "    >>>>", "   >>>>>", "  >>>>>>", " >>>>>>>", ">>>>>>>>"};
 
 
 int g_workStateOn = false;
@@ -102,7 +111,7 @@ const int MAX_TARGET_TEMP = 350;
 
 
 // safety feature
-const unsigned int MaxPowerOnSec = 20 * 60;
+const unsigned int MaxPowerOnSec = 30 * 60;
 
 /*
 
@@ -147,8 +156,33 @@ PID g_tempPid(&g_thermoTempC, &g_heaterPwm, &g_pid_targetTemp, Kp, Ki, Kd, DIREC
 byte pid_compute(  )
 {
 
+  //   g_tempPid.SetOutputLimits(0, MAXPWM );
   g_tempPid.Compute();
   //Serial.println(String(g_thermoTempC) + " " + String(g_heaterPwm) + " "+ String(g_pid_targetTemp));
+
+ 
+
+  uint8_t ptc_pwm = 0;
+  if ( USE_PTC )
+  {
+    if (g_thermoTempC<PTC_LOW_TEMP)
+    {
+       ptc_pwm = map(g_heaterPwm,0,255,0,PTC_LOW_TEMP_MAX_PWM);
+       Serial.println("low temp pwm "+String(g_heaterPwm) + " to " + String(ptc_pwm));
+
+    }else if (g_thermoTempC<PTC_MID_TEMP)
+    {
+       ptc_pwm = map(g_heaterPwm,0,255,0,PTC_MID_TEMP_MAX_PWM);
+       Serial.println("mid temp pwm "+String(g_heaterPwm) + " to " + String(ptc_pwm));
+
+    }else
+    {
+       ptc_pwm = g_heaterPwm;
+       Serial.println("high temp pwm "+String(g_heaterPwm));
+
+    }
+  }
+  g_heaterPwm = ptc_pwm;
   return g_heaterPwm;
 }
 
@@ -168,15 +202,57 @@ int getEncoderReading()
 
 
 
+const uint8_t lcd_chardata_bedTemp[8] = {
+  B00000,
+  B11111,
+  B10101,
+  B10001,
+  B10101,
+  B11111,
+  B00000,
+  B00000
+};
+
+
+const uint8_t lcd_chardata_degree[8] = {
+  B01100,
+  B10010,
+  B10010,
+  B01100,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+
+const uint8_t lcd_chardata_temp[8] = {
+  B00100,
+  B01010,
+  B01010,
+  B01010,
+  B01010,
+  B10001,
+  B10001,
+  B01110
+};
+
+
+void init_lcd_special_chars()
+{
+  lcd.createChar(0, lcd_chardata_temp);
+}
+
+
 class Gui_Options
 {
 
     const int X_Profile = 0, Y_Profile = 0  ;
-    const int X_OnOff = 8, Y_OnOff = 0 ;
+    const int X_OnOff = 7, Y_OnOff = 0 , X_Reached_Timer = 15;
     const int X_Stage_Name = 2, X_Stage_Temp = 9, X_Stage_Time = 15 ;
     const int Y_Stage1 = 1, Y_Stage2 = 2;
-    const int Plate_Temp_X = 16, Plate_Temp_Y = 0;
+    const int X_Plate_Temp = 11, Y_Plate_Temp = 3;
     const int X_MESSAGE = 0, Y_MESSAGE = 3 ;
+    const int X_PWM = 0, Y_PWM = 3 ;
 
 
     int _gui_option_index = Gui_Loc_Temp_Profile ;
@@ -229,6 +305,9 @@ class Gui_Options
       lcd.print(" ");
       lcd.setCursor(X_Stage_Time - 1, Y_Stage2);
       lcd.print(" ");
+
+      lcd.setCursor(X_Reached_Timer, Y_OnOff);
+      lcd.print("    ");
 
       if ( _gui_option_index == Gui_Loc_Temp_Profile)
       {
@@ -318,12 +397,6 @@ class Gui_Options
 
     }
 
-    void show_heat_plate_temp(String temp)
-    {
-      lcd.setCursor(Plate_Temp_X, Plate_Temp_Y);
-      lcd.print(temp);
-    }
-
 
 
     void displayTempStage(OneTempStage *stage, int y)
@@ -372,9 +445,10 @@ class Gui_Options
       static int old_message_len = 0;
 
       lcd.setCursor(X_MESSAGE, Y_MESSAGE);
-      lcd.print("                    ");
+      lcd.print("          ");
       lcd.setCursor(X_MESSAGE, Y_MESSAGE);
       lcd.print(message);
+      Serial.println(message);
       /*
             if (old_message_len>message.length())
             {
@@ -404,7 +478,6 @@ class Gui_Options
       if ( force && (( nowTs - lastTs ) < Delta ))
       {
 
-
         return;
       }
 
@@ -415,22 +488,21 @@ class Gui_Options
       if ( !g_workStateOn )
       {
         //OFF
-
-
         lcd.setCursor(X_OnOff, Y_OnOff);
-        lcd.print("OFF     ");
+        lcd.print("OFF");
 
       }
       else
       {
         lcd.setCursor(X_OnOff , Y_OnOff);
+        lcd.print(" ON");
+
+
         // show ON or Stage time left
-        if ( g_ReachTempStageTimeStampSec == 0)
+        if ( g_ReachTempStageTimeStampSec > 0)
         {
-          //stage temp has not reached, just show ON
-          lcd.print(" ON");
-        } else
-        {
+          lcd.setCursor(X_Reached_Timer, Y_OnOff);
+
           // stage timer has not reached yet
           // show timer counting
           unsigned long counting = millis() / 1000ul - g_ReachTempStageTimeStampSec;
@@ -440,18 +512,37 @@ class Gui_Options
 
 
       }
-      lcd.setCursor(X_MESSAGE, Y_MESSAGE);
+      lcd.setCursor(X_PWM, Y_PWM);
 
-      static String old_bar = "";
+
       String bar = getPwmBarFromPwmValue(g_heaterPwm );
-      Serial.println("new bar " + bar);
+      //Serial.println("new bar " + bar);
 
-      if (old_bar != bar)
+      lcd.print(bar);
+
+
+    }
+
+    void show_heat_plate_temp(int temp, int target_temp = 0)
+    {
+      lcd.setCursor(X_Plate_Temp, Y_Plate_Temp);
+      // temp icon
+      lcd.write(byte(0));
+      String temp_str(temp);
+      if (temp_str.length() == 1)
       {
-        this->show_message(bar);
-        old_bar = bar;
+        temp_str = "  " + temp_str;
+      } else if (temp_str.length() == 2)
+      {
+        temp_str = " " + temp_str;
       }
 
+      lcd.print(temp_str);
+      if (target_temp)
+      {
+        lcd.print(String("/") + target_temp);
+      }
+      lcd.print('C');
     }
 
 
@@ -529,7 +620,7 @@ bool checkIs20VOK()
     {
       //Serial.println("lcd print 20V OK!");
 
-      gui_options.show_message("20V OK");
+      //gui_options.show_message("20V OK");
       showed_ok = true;
       showed_disc = false;
     }
@@ -539,7 +630,7 @@ bool checkIs20VOK()
     //Serial.println("20V disc!");
     if (!showed_disc)
     {
-      gui_options.show_message("20V disconnected");
+      gui_options.show_message("20V disc");
       showed_disc = true;
       showed_ok = false;
     }
@@ -665,7 +756,7 @@ void displayInit()
 
 
 
-void showHeaterTemp(int temp)
+void showHeaterTemp(int temp, int target_temp)
 {
   static int pre_temp = 0;
   if (pre_temp == temp)
@@ -684,17 +775,10 @@ void showHeaterTemp(int temp)
   }
 
   last_ts = nowts;
-  String tempString(temp);
 
-  if (temp < 100)
-  {
-    tempString = " " + tempString + "C";
-  }
 
-  gui_options.show_heat_plate_temp(tempString);
-  //const int xtemp = 13;
-  //lcd.setCursor(xtemp, 0);
-  //lcd.print(tempString);
+  gui_options.show_heat_plate_temp(temp, target_temp);
+
 
 }
 
@@ -708,7 +792,7 @@ String getPwmBarFromPwmValue(byte pwm)
   //const String emptyBar = "empty";
   //const int NoShow=5;
 
-  Serial.println("pwm is " + String(pwm));
+  //Serial.println("pwm is " + String(pwm));
 
   if (pwm < 1)
   {
@@ -729,7 +813,7 @@ void turnHeaterOn()
 
   if (!checkIs20VOK())
   {
-    gui_options.show_message("20V not connected");
+    gui_options.show_message("20V disc");
   }
 
   if ( g_heaterStartTimeStampSec == 0  )
@@ -917,7 +1001,7 @@ void initTempProfile()
 
   g_smtprofile2.loadProfile();
   s_name = g_smtprofile2.getStage(0)->getName();
-  if ( s_name != "S1")
+  if (! s_name.startsWith("Stg"))
   {
     //eeprom is not inited.
     //Serial.println("g_smtprofile2 ->_stageName" + g_smtprofile2.getCurrentStage()->getName());
@@ -967,6 +1051,8 @@ void update_stage_setting()
   g_pid_targetTemp = g_targetTemp;
 
   Serial.println("update_stage_setting g_pid_targetTemp: " + String(g_pid_targetTemp));
+  gui_options.show_heat_plate_temp( g_thermoTempC, g_targetTemp);
+
 
 
 }
@@ -978,7 +1064,7 @@ void processEncoderButtonClick(int guiIndex)
   {
     // * pointing to profile , so clicking button means change another profile
 
-    //Serial.println("Gui_Loc_Temp_Profile");
+     Serial.println("Gui_Loc_Temp_Profile");
 
     // SmtTempProfile g_smtprofile1;
     //SmtTempProfile g_smtprofile2;
@@ -1012,6 +1098,7 @@ void processEncoderButtonClick(int guiIndex)
     }
     // to show active stage
     update_stage_setting();
+
     displayTempProfileStages();
 
   }
@@ -1241,6 +1328,12 @@ void setup() {
   displayTempProfileStages();
   gui_options.displayGuiIndicator();
   //Serial.println("end of setup");
+
+
+  init_lcd_special_chars();
+  // test_special_char();
+
+
 }
 
 
@@ -1262,10 +1355,14 @@ void loop() {
   if (!v20_OK)
   {
     Serial.println("Warning!! 20V disconnected");
-    turnHeaterOff();
+    // some PSU will shutdown if current exceeded it's limit but will return to normal very soon
+    // so we shouldn't shut heater off, otherwise heater is shutdown forever.
+    //turnHeaterOff();
+  } else
+  {
+    // 20V ok
+    gui_options.showHeaterWorkStatePwmBar();
   }
-
-  gui_options.showHeaterWorkStatePwmBar();
   //int guiIndex = gui_options.getGuiIndex();
 
   //displayTargetTemp(targetTemp);
@@ -1291,7 +1388,7 @@ void loop() {
 
   processHeaterTemp(g_targetTemp , g_thermoTempC);
 
-  showHeaterTemp(g_thermoTempC);
+  showHeaterTemp(g_thermoTempC, g_targetTemp );
 
 
   static unsigned long prev_checkRoomTempTimeStamp = 0;

@@ -1,0 +1,5 @@
+Vmax=20V
+R8=100, R7=1.8K , Zener=3.3V
+gate charge time = 15us (good)
+V_min = 6.2V
+

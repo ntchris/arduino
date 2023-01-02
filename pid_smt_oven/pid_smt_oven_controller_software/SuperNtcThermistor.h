@@ -27,7 +27,7 @@ class SuperNtcThermistor
    }
    
    public:
-    SuperNtcThermistor(int adcpin, int lowSideResistor, float room_temp_c , float roomtempNtcResist, float beta = 3950, int max_adc =1023  )
+    SuperNtcThermistor(int adcpin, float lowSideResistor, float room_temp_c , float roomtempNtcResist, float beta = 3950, int max_adc =1023  )
                   :_adcpin(adcpin), _lowResist(lowSideResistor), _ntc_room_temp_resistor(roomtempNtcResist),  
 				  _ntc_beta( beta), _max_adc(max_adc) 
    {

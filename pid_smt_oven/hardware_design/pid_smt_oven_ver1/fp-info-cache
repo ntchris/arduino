@@ -1,0 +1,561 @@
+130939566251409
+myFootPrintLibs
+Arduino_Nano
+Arduino Nano, http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf
+Arduino Nano
+0
+30
+30
+myFootPrintLibs
+Arduino_Nano_order
+Arduino Nano, http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf
+Arduino Nano
+0
+30
+30
+myFootPrintLibs
+Buzzer_9x4.2
+Generic Buzzer, D12mm height 9.5mm with RM7.6mm
+buzzer
+0
+2
+2
+myFootPrintLibs
+Buzzer_12x9.5RM7.6
+Generic Buzzer, D12mm height 9.5mm with RM7.6mm
+buzzer
+0
+2
+2
+myFootPrintLibs
+Buzzer_1707_holeDist_10.5mm
+Generic Buzzer, D15mm height 7.5mm with RM7.6mm
+buzzer
+0
+2
+2
+myFootPrintLibs
+CP_EIA-6032-28_Kemet-C_Pad2.25x2.35mm_HandSolder
+Tantalum Capacitor SMD Kemet-C (6032-28 Metric), IPC_7351 nominal, (Body size from: http://www.kemet.com/Lists/ProductCatalog/Attachments/253/KEM_TC101_STD.pdf), generated with kicad-footprint-generator
+capacitor tantalum
+0
+2
+2
+myFootPrintLibs
+CP_EIA-7343-20_Kemet-V_Pad2.25x2.55mm_HandSolder
+Tantalum Capacitor SMD Kemet-V (7343-20 Metric), IPC_7351 nominal, (Body size from: http://www.kemet.com/Lists/ProductCatalog/Attachments/253/KEM_TC101_STD.pdf), generated with kicad-footprint-generator
+capacitor tantalum
+0
+2
+2
+myFootPrintLibs
+CP_Radial_D8.0mm_P3.80mm
+CP, Radial series, Radial, pin pitch=3.80mm, , diameter=8mm, Electrolytic Capacitor
+CP Radial series Radial pin pitch 3.80mm  diameter 8mm Electrolytic Capacitor
+0
+2
+2
+myFootPrintLibs
+CP_Radial_D10.0mm_P5.00mm
+CP, Radial series, Radial, pin pitch=5.00mm, , diameter=10mm, Electrolytic Capacitor
+CP Radial series Radial pin pitch 5.00mm  diameter 10mm Electrolytic Capacitor
+0
+2
+2
+myFootPrintLibs
+C_1206_3216Metric_Pad1.33x1.80mm_HandSolder
+Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+myFootPrintLibs
+C_1210_3225Metric_Pad1.5x2.80mm_HandSolder
+Capacitor SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+myFootPrintLibs
+DIP-4_W7.62mm
+4-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)
+THT DIP DIL PDIP 2.54mm 7.62mm 300mil
+0
+4
+4
+myFootPrintLibs
+DIP-8_W7.62mm
+8-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)
+THT DIP DIL PDIP 2.54mm 7.62mm 300mil
+0
+8
+8
+myFootPrintLibs
+DIP-14_W7.62mm_Socket_LongPads
+14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils), Socket, LongPads
+THT DIP DIL PDIP 2.54mm 7.62mm 300mil Socket LongPads
+0
+14
+14
+myFootPrintLibs
+D_DO-35_SOD27_P12.70mm_Horizontal
+Diode, DO-35_SOD27 series, Axial, Horizontal, pin pitch=12.7mm, , length*diameter=4*2mm^2, , http://www.diodes.com/_files/packages/DO-35.pdf
+Diode DO-35_SOD27 series Axial Horizontal pin pitch 12.7mm  length 4mm diameter 2mm
+0
+2
+2
+myFootPrintLibs
+D_MiniMELF_Handsoldering_Zener
+Diode Mini-MELF (SOD-80) Handsoldering
+Diode Mini-MELF (SOD-80) Handsoldering
+0
+2
+2
+myFootPrintLibs
+D_SMA_Handsoldering
+Diode SMA (DO-214AC) Handsoldering
+Diode SMA (DO-214AC) Handsoldering
+0
+2
+2
+myFootPrintLibs
+D_SOD-323
+SOD-323
+SOD-323
+0
+2
+2
+myFootPrintLibs
+IDC-Header_2x05_P2.54mm_Vertical
+Through hole IDC box header, 2x05, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
+Through hole vertical IDC box header THT 2x05 2.54mm double row
+0
+10
+10
+myFootPrintLibs
+Inductor_5.3x5.3_H1
+Choke, SMD, 6.3x6.3mm 3mm height
+Choke SMD
+0
+2
+2
+myFootPrintLibs
+Inductor_5.3x5.3_and_6.6
+Choke, SMD, 6.3x6.3mm 3mm height
+Choke SMD
+0
+2
+2
+myFootPrintLibs
+Inductor_6.6
+Choke, SMD, 6.3x6.3mm 3mm height
+Choke SMD
+0
+2
+2
+myFootPrintLibs
+Inductor_6.6_and_10mm
+Choke, SMD, 6.3x6.3mm 3mm height
+Choke SMD
+0
+2
+2
+myFootPrintLibs
+JST_VH_B2P-VH-B_1x02_P3.96mm_Vertical
+JST VH PBT series connector, B2P-VH-B (http://www.jst-mfg.com/product/pdf/eng/eVH.pdf), generated with kicad-footprint-generator
+connector JST VH vertical
+0
+2
+2
+myFootPrintLibs
+JST_VH_B4P-VH-B_1x04_P3.96mm_Vertical
+JST VH PBT series connector, B4P-VH-B (http://www.jst-mfg.com/product/pdf/eng/eVH.pdf), generated with kicad-footprint-generator
+connector JST VH vertical
+0
+4
+4
+myFootPrintLibs
+JST_XH_1x03_P2.54mm_Vertical
+JST XH series connector, B3B-XH-A (http://www.jst-mfg.com/product/pdf/eng/eXH.pdf), generated with kicad-footprint-generator
+connector JST XH vertical
+0
+3
+3
+myFootPrintLibs
+JST_XH_1x04_P2.54mm_Vertical
+JST XH series connector, B4B-XH-A (http://www.jst-mfg.com/product/pdf/eng/eXH.pdf), generated with kicad-footprint-generator
+connector JST XH vertical
+0
+4
+4
+myFootPrintLibs
+JST_XH_1x04_P2.54mm_Vertical_order
+JST XH series connector, B4B-XH-A (http://www.jst-mfg.com/product/pdf/eng/eXH.pdf), generated with kicad-footprint-generator
+connector JST XH vertical
+0
+4
+4
+myFootPrintLibs
+LCD1602_With_I2C_Module
+LCD 16x2 http://www.wincomlcd.com/pdf/WC1602A-SFYLYHTC06.pdf
+LCD 16x2 Alphanumeric 16pin
+0
+4
+4
+myFootPrintLibs
+LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder
+LED SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+LED handsolder
+0
+2
+2
+myFootPrintLibs
+LED_D3.0mm
+LED, diameter 3.0mm, 2 pins
+LED diameter 3.0mm 2 pins
+0
+2
+2
+myFootPrintLibs
+LED_RGB_5050-6
+http://cdn.sparkfun.com/datasheets/Components/LED/5060BRG4.pdf
+RGB LED 5050-6
+0
+6
+6
+myFootPrintLibs
+MAX20003A_Vias
+
+
+0
+26
+21
+myFootPrintLibs
+MAX20003A_dc_buck_module
+
+
+0
+4
+4
+myFootPrintLibs
+Molex_KK-254_1x02_P2.54mm_Vertical_order
+Molex KK-254 Interconnect System, old/engineering part number: AE-6410-02A example for new part number: 22-27-2021, 2 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator
+connector Molex KK-254 vertical
+0
+2
+2
+myFootPrintLibs
+Molex_KK-254_1x04_P2.54mm_Vertical
+Molex KK-254 Interconnect System, old/engineering part number: AE-6410-04A example for new part number: 22-27-2041, 4 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator
+connector Molex KK-254 vertical
+0
+4
+4
+myFootPrintLibs
+Molex_KK-254_1x04_P2.54mm_Vertical_order
+Molex KK-254 Interconnect System, old/engineering part number: AE-6410-04A example for new part number: 22-27-2041, 4 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator
+connector Molex KK-254 vertical
+0
+4
+4
+myFootPrintLibs
+Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical
+Molex KK-254 Interconnect System, old/engineering part number: AE-6410-02A example for new part number: 22-27-2021, 2 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator
+connector Molex KK-254 vertical
+0
+2
+2
+myFootPrintLibs
+Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical
+Molex KK-254 Interconnect System, old/engineering part number: AE-6410-03A example for new part number: 22-27-2031, 3 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator
+connector Molex KK-254 vertical
+0
+3
+3
+myFootPrintLibs
+Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical
+Molex KK-254 Interconnect System, old/engineering part number: AE-6410-04A example for new part number: 22-27-2041, 4 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator
+connector Molex KK-254 vertical
+0
+4
+4
+myFootPrintLibs
+MountingHole_2.0mm
+Mounting Hole 2.1mm, no annular
+mounting hole 2.1mm no annular
+0
+1
+0
+myFootPrintLibs
+MountingHole_2.1mm
+Mounting Hole 2.1mm, no annular
+mounting hole 2.1mm no annular
+0
+0
+0
+myFootPrintLibs
+NodeMCU1.0(12-E)
+
+
+0
+30
+30
+myFootPrintLibs
+PC817_SMD
+
+
+0
+4
+4
+myFootPrintLibs
+PinHeader_1x01_P2.54mm_Vertical_2.2mm_pad
+Through hole straight pin header, 1x01, 2.54mm pitch, single row
+Through hole pin header THT 1x01 2.54mm single row
+0
+1
+1
+myFootPrintLibs
+PinHeader_1x01_P2.54mm_Vertical_large_home_mill
+Through hole straight pin header, 1x01, 2.54mm pitch, single row
+Through hole pin header THT 1x01 2.54mm single row
+0
+1
+1
+myFootPrintLibs
+PinHeader_1x04_P2.54mm_Vertical
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+myFootPrintLibs
+PinHeader__wire_1x04_P2.54mm
+surface-mounted straight pin header, 1x05, 2.54mm pitch, single row, style 2 (pin 1 right)
+Surface mounted pin header SMD 1x05 2.54mm single row style2 pin1 right
+0
+4
+4
+myFootPrintLibs
+PinHeader__wire_1x05_P2.54mm
+surface-mounted straight pin header, 1x05, 2.54mm pitch, single row, style 2 (pin 1 right)
+Surface mounted pin header SMD 1x05 2.54mm single row style2 pin1 right
+0
+5
+5
+myFootPrintLibs
+PinHeader__wire_1x06_P2.54mm
+surface-mounted straight pin header, 1x05, 2.54mm pitch, single row, style 2 (pin 1 right)
+Surface mounted pin header SMD 1x05 2.54mm single row style2 pin1 right
+0
+6
+6
+myFootPrintLibs
+Potentiometer_Bourns_3296W_Vertical
+Potentiometer, vertical, Bourns 3296W, https://www.bourns.com/pdfs/3296.pdf
+Potentiometer vertical Bourns 3296W
+0
+3
+3
+myFootPrintLibs
+R_Axial_DIN0207_L6.3mm_D2.5mm_P15.24mm_Horizontal
+Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=15.24mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0207 series Axial Horizontal pin pitch 15.24mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
+0
+2
+2
+myFootPrintLibs
+R_Axial_DIN0414_L11.9mm_D4.5mm_P25.40mm_Horizontal
+Resistor, Axial_DIN0414 series, Axial, Horizontal, pin pitch=25.4mm, 2W, length*diameter=11.9*4.5mm^2, http://www.vishay.com/docs/20128/wkxwrx.pdf
+Resistor Axial_DIN0414 series Axial Horizontal pin pitch 25.4mm 2W length 11.9mm diameter 4.5mm
+0
+2
+2
+myFootPrintLibs
+R_C_0805_2012Metric_Pad1.20x1.50mm_HandSolder
+Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+myFootPrintLibs
+R_C_1206_3216Metric_Pad1.33x1.80mm_HandSolder
+Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+myFootPrintLibs
+R_thermistor_TH
+Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=15.24mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0207 series Axial Horizontal pin pitch 15.24mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
+0
+2
+2
+myFootPrintLibs
+RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+7
+6
+myFootPrintLibs
+SAMTEC_USB-A-S-X-X-SM2
+
+
+0
+8
+7
+myFootPrintLibs
+SO-8_3.9x4.9mm_P1.27mm
+SO, 8 Pin (https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SO SO
+0
+8
+8
+myFootPrintLibs
+SO08
+SOIC, 0.15 INCH WIDTH
+SOIC, 0.15 INCH WIDTH
+0
+8
+8
+myFootPrintLibs
+SOT-23_PMOSFET
+SOT-23, Standard
+SOT-23
+0
+3
+3
+myFootPrintLibs
+SOT-23_PNP_NPN
+SOT-23, Standard
+SOT-23
+0
+3
+3
+myFootPrintLibs
+SOT-223-3_TabPin2
+module CMS SOT223 4 pins
+CMS SOT
+0
+4
+3
+myFootPrintLibs
+SW_PUSH_6mm_H5mm
+tactile push button, 6x6mm e.g. PHAP33xx series, height=5mm
+tact sw push 6mm
+0
+4
+2
+myFootPrintLibs
+SW_PUSH_LOCK__8.5mm_H8.5mm
+tactile push button, 6x6mm e.g. PHAP33xx series, height=8.5mm
+tact sw push 6mm
+0
+6
+3
+myFootPrintLibs
+SW_Push_1P1T_NO_6x6mm_H9.5mm
+tactile push button, 6x6mm e.g. PTS645xx series, height=9.5mm
+tact sw push 6mm smd
+0
+4
+2
+myFootPrintLibs
+Switch_Tactile_THT_6x6mm
+http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English
+
+0
+4
+2
+myFootPrintLibs
+TC4056ChargeBoostBoard
+
+
+0
+6
+6
+myFootPrintLibs
+TO-252-2
+TO-252 / DPAK SMD package, http://www.infineon.com/cms/en/product/packages/PG-TO252/PG-TO252-3-1/
+DPAK TO-252 DPAK-3 TO-252-3 SOT-428
+0
+6
+3
+myFootPrintLibs
+TQFN-20-1EP_5x5mm_P0.65mm_EP3.25x3.25mm
+TQFN, 20 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T2055-5)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+25
+21
+myFootPrintLibs
+USB_Mini-B_Wuerth_65100516121_Horizontal
+Mini USB 2.0 Type B SMT Horizontal 5 Contacts (https://katalog.we-online.de/em/datasheet/65100516121.pdf)
+Mini USB 2.0 Type B
+0
+11
+9
+myFootPrintLibs
+XH2.54mm_B2B-A_1x02_Vertical
+JST XH series connector, B2B-XH-A (http://www.jst-mfg.com/product/pdf/eng/eXH.pdf), generated with kicad-footprint-generator
+connector JST XH vertical
+0
+2
+2
+myFootPrintLibs
+arduino_pro_mini
+IC, ARDUINO_PRO_MINI x 0,6"
+DIL ARDUINO PRO MINI
+0
+26
+24
+myFootPrintLibs
+boostBoard
+
+
+0
+4
+4
+myFootPrintLibs
+lightSensitiveResistor
+JST VH PBT series connector, B2P-VH-B (http://www.jst-mfg.com/product/pdf/eng/eVH.pdf), generated with kicad-footprint-generator
+connector JST VH vertical
+0
+2
+2
+myFootPrintLibs
+mini360_dcdc_buck_module
+
+
+0
+4
+4
+myFootPrintLibs
+myMod_PinSocket_2x08_P2.54mm_Vertical
+Through hole straight socket strip, 2x08, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x08 2.54mm double row
+0
+16
+16
+myFootPrintLibs
+myMod_PinSocket_2x08_P2.54mm_Vertical_reversed
+Through hole straight socket strip, 2x08, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x08 2.54mm double row
+0
+16
+16
+myFootPrintLibs
+my_WeAct_BlackPill_stm32F401
+Through hole headers for BluePill module. No SWD breakout. Fancy silkscreen.
+module BlluePill Blue Pill header SWD breakout
+0
+40
+40
+myFootPrintLibs
+via
+
+
+0
+1
+1

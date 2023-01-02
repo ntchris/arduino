@@ -1,0 +1,26 @@
+Drill report for E:\GitHubRoot\arduino\pid_smt_oven\hardware_design\pid_smt_oven.kicad_pcb
+Created on 2021-11-25 2:37:54 PM
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'pid_smt_oven-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.600mm  0.0236"  (19 holes)
+    T2  0.800mm  0.0315"  (7 holes)
+    T3  0.900mm  0.0354"  (45 holes)
+    T4  1.600mm  0.0630"  (4 holes)
+
+    Total plated holes count 75
+
+
+Drill file 'pid_smt_oven-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  2.000mm  0.0787"  (4 holes)
+
+    Total unplated holes count 4

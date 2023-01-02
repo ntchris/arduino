@@ -1,0 +1,4 @@
+
+normal plug hole  0.9mm 
+H3.96 plug hole size 1.6mm  (1.3mm is too small)
+

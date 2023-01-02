@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "pid_smt_oven-rescue")(type "Legacy")(uri "${KIPRJMOD}/pid_smt_oven-rescue.lib")(options "")(descr ""))
+)
